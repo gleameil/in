@@ -6,8 +6,9 @@ export function setTime(time: Date) {
 }
 
 export function getTime(): Date {
-  const evernostianNow = parseInt(localStorage.getItem('evernostianNow') ?? '', 10);
-  const startDate = (new Date()).getMonth() === 1 ? new Date(2024, 1) : new Date(2024, 0);
+  const startDate = new Date(2024, 0);
+  const evernostianNowStringFromQuery = new URLSearchParams(window.location.search).get('time');
+  const evernostianNow = parseInt(evernostianNowStringFromQuery ?? '') || parseInt(localStorage.getItem('evernostianNow') ?? '') || startDate;
   return evernostianNow ? new Date(evernostianNow) : startDate;
 }
 
