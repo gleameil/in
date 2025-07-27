@@ -1,0 +1,150 @@
+@keyframes dissolve {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+
+html {
+    overflow: none;
+    user-select: none;
+}
+
+#bed {
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    height: 100vh;
+    left: 19vw;
+}
+
+#bed-div {
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+    width: 133vh;
+    left: 10vw;
+    top: 0;
+}
+
+.item {
+    position: absolute;
+    padding: 3%;
+    border-radius: 50%;
+}
+
+.active:hover {
+    background-color: lightyellow;
+    cursor: pointer;
+}
+
+#switch-image {
+    height: 100%;
+}
+
+#switch {
+    left: 7vw;
+    top: 25%;
+    height: 10%;
+}
+
+#garbage-image {
+    height: 100%;
+}
+
+#garbage {
+    left: 2vw;
+    bottom: 0;
+    height: 40%;
+}
+
+#computer-image {
+    width: 100%;
+}
+
+#computer {
+    right: 18%;
+    top: 30%;
+    width: 20%;
+}
+
+#books-image {
+    height: 100%;
+}
+
+#books {
+    bottom: 0;
+    height: 20%;
+    right: 40%;
+}
+
+#intro-paper {
+    height: 10%;
+    top: 47%;
+    right: 12%;
+}
+
+#intro-paper-image {
+    height: 100%;
+}
+
+#window {
+    top: -5vh;
+    right: 0;
+    height: 10%;
+    border-radius: 50%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 15vw;
+}
+
+#window-image {
+    width: 100%;
+}
+
+/* Intro */
+
+.hidden {
+    display: none;
+}
+
+#intro {
+    background-color: white;
+    position: absolute;
+    left: 20%;
+    z-index: 2;
+    width: 60%;
+    max-height:90%;
+    margin: auto;
+    padding: 15px;
+    padding-bottom: 30px;
+    box-shadow: 2px 2px 5px black;
+    overflow: auto;
+    font-family: 'Indie Flower'
+}
+#home-art  {
+    top: -14%;
+    right: 46%;
+    width: 10vw;
+}
+#home-art-image {
+    height: 10vw;
+    width: 10vw;
+    object-fit: contain;
+    background-color: white;
+    border: 1vw solid white;
+    outline: 0.31vw solid black;
+    box-shadow: 4px 4px 15px black;
+}
+
+/* Lights out */
+
+.dissolving {
+    filter: saturate(0);
+    animation-name: dissolve;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+}
+

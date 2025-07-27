@@ -1,0 +1,112 @@
+#computer-browser-quiz-container {
+  background-color: purple;
+  font-family: cursive;
+  font-size: 2vmin;
+  width: 100vw;
+  height: 86vh;
+  overflow: scroll;
+  top: 7vh;
+  position: absolute;
+}
+
+#quiz-main {
+  display: flex;
+  justify-content: space-around;
+  background-color: magenta;
+}
+
+#computer-browser-quiz-container h1, #computer-browser-quiz-container h2 {
+  color: yellow;
+}
+
+#computer-browser-quiz-container button {
+  border-color: yellow;
+  background-color: blueviolet;
+  color: yellow;
+}
+
+#computer-browser-quiz-container input {
+  color: yellow;
+  background-color: blueviolet;
+}
+
+#computer-browser-quiz-container #sidebar {
+  flex: 1;
+  margin: 20px;
+}
+
+#quizzes, #quiz {
+  flex: 4;
+  margin: 30px; 
+}
+
+.quizLink {
+  margin: 0;
+}
+
+.quizLink:hover {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+#computer-browser-quiz-container .invisible {
+  display: none;
+}
+
+#rankQuestionContainer {
+  display: flex;
+  height: 30vh;
+  overflow-y: scroll;
+}
+
+#sliderQuestionContainer {
+  display: flex;
+}
+
+#computer-browser-quiz-container #instructions {
+  color: yellowgreen;
+}
+
+#computer-browser-quiz-container #optionContainer {
+  flex: 1;
+}
+
+#computer-browser-quiz-container #choiceContainer {
+  flex: 1;
+}
+
+#computer-browser-quiz-container #result {
+  background-color: yellow;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+#computer-browser-quiz-container #result h2 {
+  color: black;
+}
+
+#computer-browser-quiz-container .option {
+  background-color: yellow;
+  padding: 5px;
+  text-align: center;
+}
+
+#computer-browser-quiz-container .choice {
+  border-style: groove;
+}
+
+#computer-browser-quiz-container .optionOrChoice {
+  width: 95%;
+  min-height: 2.6vw;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+#computer-browser-quiz-container label {
+  display: block;
+}
+
+#computer-browser-quiz-container textarea {
+  width: 60%;
+}

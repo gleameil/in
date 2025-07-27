@@ -1,0 +1,29 @@
+#verna-reader-container {
+  border-top: 9vh solid gray;
+  border-bottom: 9vh solid gray;
+  border-left: 30px solid gray;
+  border-right: 30px solid gray;
+}
+
+#verna-reader-text-container {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gainsboro;
+  padding: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.verna-reader-art {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gainsboro;
+}
+
+#verna-reader-right-image, #verna-reader-left-image {
+  max-height: 100%;
+}

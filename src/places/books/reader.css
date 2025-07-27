@@ -1,0 +1,47 @@
+
+.reader-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+}
+
+.reader-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 33%;
+  padding: 40px; 
+  font-size: 3vmin;
+  font-family: "EB Garamond", serif;
+  height: 80vh;
+  overflow-y: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.reader-text {
+  white-space: pre-wrap;
+}
+
+.reader-side-image {
+  width: 95%;
+}
+
+.reader-invisible {
+  visibility: hidden;
+}
+
+.reader-art {
+  width: 33%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reader-image {
+  width: 95%;
+}

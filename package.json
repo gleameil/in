@@ -1,0 +1,14 @@
+{
+  "name": "in",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build --public-url .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4",
+    "sharp": "^0.33.5",
+    "typescript": "^5.8.3"
+  }
+}

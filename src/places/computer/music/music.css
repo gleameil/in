@@ -1,0 +1,50 @@
+#music-library {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  max-height: 85vh;
+}
+
+#music-player-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 18vw;
+}
+
+.music-cover-art-thumbnail {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px white;
+  margin: 5px;
+  object-fit: cover;
+  background-color: rgb(161, 84, 161);
+}
+
+.music-cover-art-large {
+  width: 18vw;
+  height: 18vw;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px white;
+  object-fit: contain;
+  background-color: rgb(161, 84, 161);
+}
+
+#currently-playing-cover {
+  width: 18vw;
+  height: 18vw;
+  border-radius: 10px;
+}
+
+.music-title {
+  color: white;
+  font-family: 'Montserrat';
+  width: 10vw;
+  margin-left: 10px;
+}
+
+.music-title-main {
+  width: 18vw;
+  margin-left: 0; 
+}

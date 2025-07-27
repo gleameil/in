@@ -1,0 +1,568 @@
+
+
+#dark-switch-image {
+  height: 100%;
+  filter: invert(100%);
+}
+
+.active:hover #dark-switch-image {
+  filter: invert(0%)
+}
+
+#dark-switch {
+  left: 7vw;
+  top: 25%;
+  height: 10%;
+}
+
+.cell-content {
+  position: absolute;
+  color: white;
+  width: 60vw;
+  height: 98vh;
+  left: 15vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell-text-story {
+  font-family: 'EB Garamond';
+  font-size: 4vmin;
+}
+
+.cell-text-voice {
+  font-family: 'Nanum Brush Script';
+  font-size: 5.6vmin;
+}
+
+.cell-option {
+  position: absolute;
+  max-width: 20%;
+  cursor: pointer;
+}
+
+.cell-option-large-self {
+  font-family: 'Nanum Brush Script';
+  font-size: 6vmin;
+}
+
+.cell-option-small-self {
+  font-family: 'Nanum Brush Script';
+  font-size: 2vmin;
+}
+
+.cell-option-large-story {
+  font-family: 'EB Garamond';
+  font-size: 4vmin;
+}
+
+.cell-option-small-story {
+  font-family: 'EB Garamond';
+  font-size: 2vmin;
+}
+
+.cell-option:hover {
+  color: rgb(220, 166, 117);
+}
+
+.cell-option-north {
+  top: 2%;
+}
+
+.cell-option-east {
+  right: 2%;
+}
+
+.cell-option-west {
+  left: 2%;
+}
+
+.cell-option-south {
+  bottom: 2%;
+}
+
+.cell-grid-visualization {
+  position: absolute;
+  width: 60vh;
+  height: 60vh;
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(18, 1fr);
+}
+
+.cell-visualization {
+  height: 95%;
+  width: 95%;
+  border: 1px solid white;
+}
+
+#cell-tooltip {
+  position: absolute;
+  background-color: black;
+  font-family: 'EB Garamond';
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+  width: 25vw;
+}
+
+/* Evernost and endings */
+
+@keyframes dr-lightning {
+  0% {
+    transform: translate(0, 0) rotate(116.57deg) scaleX(1);
+  }
+  10% {
+    transform: translate(-2.5vh, 5vh) rotate(116.57deg) scaleX(11);
+  }
+  20% {
+    transform: translate(-5vh, 10vh) rotate(116.57deg) scaleX(1);
+  }
+
+
+  21% {
+    transform: translate(-5vh, 10vh) rotate(63.43deg) scaleX(1);
+  }
+  30% {
+    transform: translate(0vh, 20vh) rotate(63.43deg) scaleX(22);
+  }
+  40% {
+    transform: translate(5vh, 30vh) rotate(63.43deg) scaleX(1);
+  }
+
+
+  41% {
+    transform: translate(5vh, 30vh) rotate(153.45deg) scaleX(1);
+  }
+  50% {
+    transform: translate(-5vh, 35vh) rotate(153.45deg) scaleX(22);;
+  }
+  60% {
+    transform: translate(-15vh, 40vh) rotate(153.45deg) scaleX(1);;
+  }
+
+
+  61% {
+    transform: translate(-15vh, 40vh) rotate(14.036deg) scaleX(1);
+  }
+  70% {
+    transform: translate(5vh, 45vh) rotate(14.036deg) scaleX(41);
+  }
+  80% {
+    transform: translate(25vh, 50vh) rotate(14.036deg) scaleX(1);
+  }
+
+
+  81% {
+    transform: translate(25vh, 50vh) rotate(125deg) scaleX(1);
+  }
+  90% {
+    transform: translate(7.5vh, 75vh) rotate(125deg) scaleX(60);
+  }
+  100%  {
+    transform: translate(-10vh, 100vh) rotate(125deg) scaleX(1);
+  }
+}
+
+@keyframes dr-thunder {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    transform: translate(-2.5vh, 5vh) scale(50);
+    opacity: .2;
+  }
+  20% {
+    transform: translate(-5vh, 10vh) scale(100);
+    opacity: .4;
+  }
+
+
+  21% {
+    transform: translate(-5vh, 10vh) scale(105);
+    opacity: .42;
+  }
+  30% {
+    transform: translate(0vh, 20vh) scale(150);
+    opacity: .6;
+  }
+  40% {
+    transform: translate(5vh, 30vh) scale(200);
+    opacity: .8;
+  }
+
+
+  41% {
+    transform: translate(5vh, 30vh) scale(205);
+    opacity: .82;
+  }
+  50% {
+    transform: translate(-5vh, 35vh) scale(250);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-15vh, 40vh) scale(300);
+    opacity: .8;
+  }
+
+
+  61% {
+    transform: translate(-15vh, 40vh) scale(305);
+    opacity: .78;
+  }
+  70% {
+    transform: translate(5vh, 45vh) scale(350);
+    opacity: .6;
+  }
+  80% {
+    transform: translate(25vh, 50vh) scale(400);
+    opacity: .4;
+  }
+
+
+  81% {
+    transform: translate(25vh, 50vh) scale(405);
+    opacity: .38;
+  }
+  90% {
+    transform: translate(7.5vh, 75vh) scale(450);
+    opacity: .2;
+  }
+  100%  {
+    transform: translate(-10vh, 100vh) scale(500);
+    opacity: 0
+  }
+}
+
+@keyframes dr-lightening-sky {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+@keyframes dr-rising-sun {
+  from {
+    transform: translateY(100vh);
+  } to {
+    transform: translateY(0vh);
+  }
+}
+
+@keyframes dr-fade {
+  from {
+    opacity: 1;
+  } to {
+    opacity: 0;
+  }
+}
+
+@keyframes dr-shrink {
+  from {
+    transform: translate(0) scale(1);
+  } to {
+    transform: translate(-10vw) scale(0);
+  }
+}
+
+@keyframes rotate-in-and-out {
+  0% {
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    transform: scale(1) rotate(180deg);
+  } 
+  100% {
+    transform: scale(0) rotate(360deg);
+  }
+}
+
+.dr-lightning {
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width: 1vh; 
+  height: 1vh;
+  background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255,255, 255, 1) 50%, rgba(255,255, 255, 0) 100%), linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255,255, 255, 1) 50%, rgba(255,255, 255, 0) 100%);
+  animation-name: dr-lightning;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+.dr-thunder {
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width: 1vh; 
+  height: 1vh;
+  border-radius: 50%;
+  background-image: linear-gradient(rgba(211, 50, 66, 0) 0%, rgba(211, 50, 66, 1) 50%, rgba(211, 50, 66, 0) 100%), linear-gradient(to left, rgba(211, 50, 66, 0) 0%, rgba(211, 50, 66, 1) 50%, rgba(211, 50, 66, 0) 100%);
+  animation-name: dr-thunder;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+#dr-thunder-no {
+  background-image: linear-gradient(rgba(211, 50, 66, 0) 0%, rgba(211, 50, 66, 1) 50%, rgba(211, 50, 66, 0) 100%), linear-gradient(to left, rgba(211, 50, 66, 0) 0%, rgba(211, 50, 66, 1) 50%, rgba(211, 50, 66, 0) 100%);
+}
+
+#dr-thunder-madeline {
+  width: 1%;
+  height: 1%;
+  background-image: linear-gradient(rgba(211, 50, 66, 0) 0%, rgba(161, 84, 161, 1) 50%, rgba(211, 50, 66, 0) 100%), linear-gradient(to left, rgba(211, 50, 66, 0) 0%, rgba(211, 50, 66, 1) 50%, rgba(211, 50, 66, 0) 100%);
+}
+
+#dr-volcano {
+  position: absolute;
+  height: 60vh;
+  left: 20%;
+  bottom: -5%;
+}
+
+#dr-demoness {
+  position: absolute;
+  height: 90vh;
+  left: 25%;
+  bottom: -5%;
+  display: none;
+}
+
+.dr-tree {
+  opacity: 0;
+}
+
+#dr-tree {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  bottom: -5%;
+  filter: invert(100%);
+  z-index: 100;
+}
+
+.dr-tree-animated {
+  animation-name: dr-fade;
+  animation-duration: 250ms;
+  animation-iteration-count: 2;
+  animation-direction: alternate-reverse;
+}
+
+.dr-madeline-first-object {
+  z-index: 100;
+  filter: brightness(0);
+}
+
+#dr-hand {
+  position: absolute;
+  height: 40vh;
+  left: 0;
+  bottom: 0;
+  filter: invert(100%);
+  z-index: 100;
+  animation-name: dr-fade;
+  animation-duration: 10s;
+  animation-fill-mode: both;
+  animation-delay: 15s;
+}
+
+.dr-fruit {
+  position: absolute;
+  max-height: 40vh;
+  left: 10vw;
+  bottom: 0;
+  filter: invert(100%);
+  z-index: 99;
+  animation-name: dr-fade;
+  animation-duration: 10s;
+  animation-fill-mode: both;
+}
+
+.dr-fruit-sepia {
+  filter: invert(100%) sepia(100%);
+  animation-name: dr-fade;
+  animation-duration: 10s;
+  animation-fill-mode: both;
+  animation-delay: 10s;
+}
+
+#dr-lightening-sky {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: radial-gradient(at bottom left, rgb(70, 220, 255), rgb(252, 243, 252));
+  position: absolute;
+  animation-name: dr-lightening-sky;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+#dr-rising-sun {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-image: radial-gradient(circle 100vh at bottom left, rgba(255, 255, 224, 1), rgba(255, 255, 224, 0));;
+  animation-name: dr-rising-sun;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+.dr-fade {
+  animation-name: dr-fade;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+}
+
+#dr-effect-parent {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+.dr-ray {
+  position: absolute;
+  height: 1px;
+  transform-origin: left;
+  z-index: 10;
+}
+
+.dr-midday-ray {
+  background-color: rgb(255, 255, 224);
+}
+
+.dr-sunrise-ray, .dr-sunset-ray {
+  background-color: white;
+}
+
+.dr-sunset-ray {
+  transform-origin: right;
+  right: 0;
+  bottom: 0;
+}
+
+.dr-sunrise-ray {
+  transform-origin: left;
+  left: 0;
+  bottom: 0;
+}
+
+.dr-midday-ray {
+  transform-origin: center;
+  left: 0;
+  top: 65h;
+  animation-name: dr-lightening-sky;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+.dr-thick-ray {
+  width: 50vw;
+  height: 2px;
+}
+.dr-mid-ray {
+  width: 87.5vw;
+}
+
+.dr-normal-ray {
+  width: 75vw;
+}
+
+.dr-long-ray {
+  width: 150vw;
+  height: 2px;
+  background-color: gainsboro;
+}
+
+#dr-sky-grows-gold {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation-name: dr-lightening-sky;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+.Verna-dissolution {
+  background-image: radial-gradient(circle at 40%, rgb(183, 183, 83), black);
+}
+
+.Madeline-dissolution {
+  background-image: radial-gradient(circle at 40%, rgb(211, 50, 66), black);
+}
+
+.dr-silhouette {
+  position: absolute;
+  transform-origin: bottom;
+  filter: brightness(0);
+  z-index: 100;
+  left: 40%;
+  bottom: 0;
+  height: 30vh;
+  animation-name: dr-shrink;
+  animation-duration: 5.5s;
+  animation-fill-mode: both;
+  animation-delay: 0;
+}
+
+#dr-silhouette-Madeline, #dr-silhouette-Verna {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-delay: 0s;
+}
+
+#dr-sky-grows-gray {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: gray;
+  animation-name: dr-lightening-sky;
+  animation-duration: 15s;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+#dr-bwbg {
+  background-color: white;
+  filter: invert();
+  animation-name: dr-lightening-sky;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: bottom;
+  animation-duration: 20s;
+  animation-fill-mode: both;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-delay: 30s;
+}
+
+#dr-maze-visualization-michael {
+  animation-name: rotate-in-and-out;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+/*rgb(233, 194, 30), rgb(183,183,83), */

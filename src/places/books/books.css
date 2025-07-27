@@ -1,0 +1,43 @@
+.cover {
+  box-shadow: 2px 2px 5px black;
+  cursor: pointer;
+  max-height: 50vh;
+}
+
+#blech-cover {
+  max-height: 49vh;
+}
+
+#lunes-cover {
+  max-height: 50vh;
+}
+
+#oracle-box {
+  max-height: 35vh;
+}
+
+#mere-reality-cover {
+  max-height: 47vh;
+}
+
+#sketch-diary-cover {
+  max-height: 47vh;
+}
+
+#anthology-cover {
+  max-height: 48vh;
+}
+
+#books-intro-paper {
+  max-height: 25vh;
+  cursor: pointer;
+}
+
+#spread-out-books {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}

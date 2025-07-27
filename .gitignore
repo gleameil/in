@@ -1,0 +1,7 @@
+.parcel-cache
+dist
+node_modules
+notes.md
+package-lock.json
+.vscode
+.DS_Store

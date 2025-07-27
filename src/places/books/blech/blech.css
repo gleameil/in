@@ -1,0 +1,37 @@
+#blech-reader-container {
+  border-top: 9vh solid gray;
+  border-bottom: 9vh solid gray;
+  border-left: 30px solid rgb(220, 166, 117);
+  border-right: 30px solid rgb(220, 166, 117);
+}
+
+#blech-reader-text-container {
+  border-left: 1px solid rgb(211, 50, 66);
+  border-right: 1px solid rgb(211, 50, 66);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gainsboro;
+  padding: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.blech-reader-art {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#blech-reader-side-image {
+  max-width: max-content;
+}
+
+#blech-reader-text {
+  font-family: "Indie Flower";
+}
+
+#blech-reader-text h1 {
+  font-family: "Rock Salt";
+  color: rgb(211, 50, 66);
+}

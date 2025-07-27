@@ -1,0 +1,47 @@
+#sketch-diary-reader-container {
+  border-top: 9vh solid rgb(246, 138, 53);
+  border-bottom: 9vh solid rgb(183,183,83);
+  border-left: 30px solid rgb(211, 50, 66);
+  border-right: 30px solid rgb(233, 194, 30);
+}
+
+#sketch-diary-reader-text-container {
+  border-left: 1px solid rgb(211, 50, 66);
+  border-right: 1px solid rgb(233, 194, 30);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(252, 243, 252);
+  padding: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.sketch-diary-reader-art {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sketch-diary-reader-right-image, #sketch-diary-reader-left-image {
+  max-height: 100%;
+}
+
+/* #mere-reality-reader-text {
+  font-family: "Indie Flower";
+} */
+
+#sketch-diary-reader-text h1 {
+  font-family: "Rock Salt";
+  text-align: center;
+  color: rgb(53, 149, 210)
+}
+
+#sketch-diary-reader-text h2 {
+  font-family: "Indie Flower";
+  font-weight: normal;
+}
+
+#sketch-diary-reader-text p {
+  color: rgb(60, 45, 122);
+}

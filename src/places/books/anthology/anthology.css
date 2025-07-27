@@ -1,0 +1,43 @@
+#anthology-reader-container {
+  border-top: 9vh solid black;
+  border-bottom: 9vh solid black;
+  border-left: 30px solid burlywood;
+  border-right: 30px solid burlywood;
+}
+
+#anthology-reader-text-container {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+#anthology-reader-text p {
+  line-height: 125%;
+  margin: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 1vw;
+  font-family: 'Garamond';
+}
+#anthology-reader-text h1 {
+  text-align: center;
+}
+
+#anthology-reader-text h2 {
+  font-size: 3vmin;
+  text-align: center;
+}
+ 
+.anthology-reader-art {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale(100%) contrast(300%);
+}
+
+#anthology-reader-left-image, #anthology-reader-right-image {
+  max-width: max-content;
+}

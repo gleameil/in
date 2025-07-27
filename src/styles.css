@@ -1,0 +1,88 @@
+html {
+  user-select: none;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  display: none;
+}
+
+#background {
+  position: absolute;
+  top: -1vh;
+  left: -1vw;
+  height: 102vh;
+  width: 102vw;
+  z-index: -3;
+}
+
+#homeward {
+  position: absolute;
+  right: 2vw;
+  top: 2vh;
+  border: none;
+  height: 30px;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  align-items: center;
+  background-color: lightgray;
+  color: black;
+  border-radius: 27px;
+  font-family: "IM Fell English";
+  z-index: 1000;
+}
+
+#homeward:hover {
+  background-color: #f0f0f0;
+}
+
+#homeward:active {
+  background-color: white;
+  color: lightgray;
+}
+
+.image-button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.close-button-image {
+  height: 100%;
+}
+
+.close-button {
+  position: absolute;
+  top: 1%;
+  right: 1.5%;
+  filter: grayscale(100%);
+  z-index: 1;
+  height: 5vh;
+}
+.close-button:hover {
+  cursor: pointer;
+  filter: none;
+}
+
+#sound-control {
+  position: absolute;
+  left: 4.125vh;
+  top: 2.25vh;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  width: 4vw;
+  font-size: 4vmin;
+  height: auto;
+  z-index: 1000;
+}

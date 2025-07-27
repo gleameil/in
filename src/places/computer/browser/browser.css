@@ -1,0 +1,19 @@
+#browser-navigation-header {
+  height: 6vh;
+  width: 100%;
+  background-color: gainsboro;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: start;
+}
+
+.browser-tab {
+  border: none;
+  border-right: 1px solid white;
+  width: 20vw;
+}
+
+.browser-tab-active {
+  background-color: white;;
+}

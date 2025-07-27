@@ -1,0 +1,14 @@
+#books-intro-text-container {
+  font-family: 'Indie Flower';
+  background-color: white;
+  position: absolute;
+  left: 20%;
+  z-index: 2;
+  width: 60%;
+  max-height:90%;
+  margin: auto;
+  padding: 15px;
+  padding-bottom: 30px;
+  box-shadow: 2px 2px 5px black;
+  overflow: auto;
+}

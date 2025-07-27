@@ -1,0 +1,27 @@
+#lunes-reader-container {
+  margin-top: 10px;
+  border-top: 9vh solid #f5542c;
+  width: 99%;
+}
+
+#lunes-reader-text-container {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .highlighted-art {
+  visibility: visible;
+}
+
+.art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-image {
+  max-width: max-content;
+} */

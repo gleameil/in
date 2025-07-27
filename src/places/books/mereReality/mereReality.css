@@ -1,0 +1,133 @@
+@keyframes swan-color-shift {
+  from { background-color: gainsboro } 
+  10% { background-color: #eef5af }
+  50% { background-color: #6ec2cc }
+  90% { background-color: rgb(252, 243, 252)}
+}
+
+@keyframes fade-in {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes fade-out {
+  from { opacity: 1 }
+  to { opacity: 0 }
+}
+
+#mere-reality-reader-container {
+  border-top: 9vh solid gray;
+  border-bottom: 9vh solid gray;
+  border-left: 30px solid rgb(149, 128, 149);
+  border-right: 30px solid rgb(149, 128, 149);
+}
+
+#mere-reality-reader-text-container {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gainsboro;
+  padding: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.mere-reality-reader-art {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mere-reality-reader-right-image, #mere-reality-reader-left-image {
+  max-height: 100%;
+}
+
+/* #mere-reality-reader-text {
+  font-family: "Indie Flower";
+} */
+
+#mere-reality-reader-text h1 {
+  font-family: "Rock Salt";
+  text-align: center;
+}
+
+.swans-bg {
+  animation-name: swan-color-shift;
+  animation-duration: 72s;
+  animation-fill-mode: both;
+}
+
+.swan-stanza {
+  font-family: "IM Fell English";
+  font-size: 3vmin;
+  white-space: pre-wrap;
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+.swan-stanza-fade-out-0 {
+  animation-name: fade-out;
+  animation-duration: 4s;
+  animation-delay: 2.75s;
+  animation-timing-function: linear;
+}
+
+.swan-stanza-fade-out-1 {
+  animation-name: fade-out;
+  animation-duration: 4s;
+  animation-delay: 6.8s;
+  animation-timing-function: linear;
+}
+
+.swan-stanza-fade-out-2 {
+  animation-name: fade-out;
+  animation-duration: 4s;
+  animation-delay: 3.133s;
+  animation-timing-function: linear;
+}
+
+.swan-stanza-fade-out-3 {
+  animation-name: fade-out;
+  animation-duration: 4s;
+  animation-delay: 6s;
+  animation-timing-function: ease-in;
+}
+
+.swan-stanza-fade-out-4 {
+  animation-name: fade-out;
+  animation-duration: 4s;
+  animation-delay: 2.667s;
+  animation-timing-function: ease-in;
+}
+
+.swan-stanza-fade-out-5 {
+  animation-name: fade-out;
+  animation-duration: 4s;
+  animation-delay: 4.1s;
+  animation-timing-function: ease-in;
+}
+
+.swan-stanza-fade-out-6 {
+  animation-name: fade-out;
+  animation-duration: 4s;
+  animation-delay: 5.8s;
+  animation-timing-function: ease-in;
+}
+
+.swan-stanza-fade-out-7 {
+  animation-name: fade-out;
+  animation-duration: 4s;
+  animation-delay: 4s;
+  animation-timing-function: ease-in;
+}
+
+.swan-stanza-fade-out-8 {
+  animation-name: fade-out;
+  animation-duration: 4s;
+  animation-delay: 2.75s;
+  animation-timing-function: ease-in;
+}

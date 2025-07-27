@@ -1,0 +1,97 @@
+#computer-browser-weather-container {
+  width: 100%;
+  height: 86vh;
+  top: 7vh;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  background-color: black;
+  background-size: 7%;
+  background-position: center;
+  background-image: url('../../../../assets/images/books/anthology/snowflake.png')
+}
+
+#computer-browser-weather-container h2 {
+  font-family: 'Montserrat';
+  font-size: 3vmin;
+}
+
+#computer-browser-weather-24hrs-outer-container {
+  padding: 2vw;
+  background-color: white;
+  height: 50%;
+}
+
+#computer-browser-weather-24hrs-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80vw;
+  overflow-x: auto;
+}
+
+#computer-browser-weather-24hrs-text-container {
+  font-family: 'Montserrat';
+}
+
+.computer-browser-weather-hour {
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px gainsboro;
+  margin: 10px;
+  min-width: 10vw;
+  min-height: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.computer-browser-weather-hour-highlighted {
+  background-color: lightyellow;
+}
+
+.computer-browser-weather-hour-prose {
+  font-family: 'Montserrat';
+  font-size: 2vmin;
+}
+
+.computer-browser-weather-hour-label, .computer-browser-weather-hour-temperature {
+  font-family: 'Montserrat';
+  font-size: 2vmin;
+  font-weight: bold;
+}
+
+.computer-browser-weather-hour-weather {
+  font-size: 5vmin;
+  font-family: monospace;
+}
+
+#computer-browser-weather-10d-outer-container {
+  background-color: white;
+  padding: 2vw;
+  height: 50%;
+  width: 80vw;
+}
+
+#computer-browser-weather-10d-container {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  overflow-y: scroll;
+  height: 80%;
+}
+.computer-browser-weather-date {
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px gainsboro;
+  margin: 10px;
+  width: 60vw;
+  padding: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.computer-browser-weather-date-label, .computer-browser-weather-date-temperature {
+  font-family: 'Montserrat';
+  font-size: 1.5vmin;
+}

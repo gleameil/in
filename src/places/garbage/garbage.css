@@ -1,0 +1,203 @@
+#garbage-container {
+  background-color: #ffffe0;
+  width: 100vw;
+  height: 100vh;
+  font-size: 2vmin;
+}
+
+#garbage-dumped-paper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  position: absolute;
+  left: 0;
+  top: calc(4vh + 30px);
+  right: 0;
+  width: 100%;
+  height: calc(90% - 4vh - 30px);
+  user-select: none;
+}
+.garbage-red {
+  color: #d33242;
+}
+.garbage-paper {
+  height: calc(31vh - 10px);
+  width: auto;
+}
+
+.garbage-disabled {
+  filter: contrast(30%) brightness(200%);
+}
+
+.garbage-paper:hover {
+  cursor: pointer;
+  filter: contrast(70%);
+}
+
+.garbage-disabled:hover {
+  cursor: auto;
+  filter: contrast(30%) brightness(200%);
+}
+/*add responsive sizing at the end; also, make the paper crinkly someday*/
+.garbage-modal{
+  display: none;
+  background-color: white;
+  position: absolute;
+  left: 20%;
+  z-index: 2;
+  width: 60%;
+  max-height:90%;
+  margin: auto;
+  padding: 15px;
+  padding-bottom: 30px;
+  box-shadow: 2px 2px 5px black;
+  overflow: auto;
+}
+
+.garbage-image {
+  width: 50vw;
+  height: 80vh;
+  object-fit: contain;
+}
+.garbage-x {
+  position: absolute;
+  top: 1%;
+  right: 1.5%;
+  filter: grayscale(100%);
+  z-index: 1;
+  height: 5vh;
+}
+
+.garbage-x:hover {
+  cursor: pointer;
+  filter: none;
+}
+
+#garbage-x-image {
+  height: 100%;
+}
+
+#garbage-god-modal {
+  width: 40%;
+}
+#garbage-smaller1 {
+  font-size: 2vmin;
+}
+#garbage-smaller2 {
+  font-size: 1.5vmin;
+}
+#garbage-smaller3 {
+  font-size: 1vmin;
+}
+#garbage-smaller4 {
+  font-size: .8vmin;
+}
+.garbage {
+  width: 100%;
+}
+.garbage-modal{
+  margin-top: calc(4vh + 30px);
+  padding: 0;
+  padding-top: 5.5vh;
+  padding-bottom: -5px;
+  overflow: hidden;
+  max-width: 60vw;
+}
+.garbage-strikethrough {
+  text-decoration: line-through solid #d33242;
+}
+.garbage-amb1 {
+  margin-left:24%;
+  font-size: 1.5vmin;
+}
+.garbage-amb2 {
+  margin-left: 40%;
+  font-size: 2 vmin;
+}
+.garbage-amb3 {
+  margin-left: 55%;
+  font-size: 1.5vmin;
+}
+.garbage-amb4 {
+  margin-left: 67%;
+  font-size: 3vmin;
+}
+.garbage-amb5 {
+  margin-left: 80%;
+  font-size: 1.5vmin;
+}
+.garbage-left-poem {
+  margin-left: 5%;
+  font-size: 2vmin;
+}
+.garbage-center-poem {
+  text-align: center;
+  font-size: 2vmin;
+}
+.garbage-right-poem {
+  margin-left: 75%;
+  font-size: 2vmin;
+}
+
+#garbage-firebird {
+  width: 100%;
+  font-size: 2vmin;
+}
+
+#garbage-jazz {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: "Rock Salt", sans-serif;
+  font-size: 4.4vmin;
+  position: absolute;
+  left: -20px;
+}
+#garbage-jazz1 {
+ margin-left: 30%;
+ margin-top: 10%;
+}
+#garbage-jazz2 {
+  margin-left: 30%;
+}
+#garbage-jazz3 {
+  margin-left: 30%;
+}
+#garbage-jazz4 {
+  margin-left: 50%;
+  margin-top: 20%;
+}
+#garbage-jacqueline {
+  width: 35%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+#garbage-skeleton-modal dt {
+  font-weight: bold;
+  color: #d33242;
+}
+#garbage-csl-modal {
+  width: 40%;
+}
+#garbage-csl {
+  margin-left: 10%;
+}
+#garbage-abstract-modal {
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+#garbage-abstract-modal img {
+  max-width: 90%;
+  max-height: 90%;
+}
+.garbage-bold {
+  color: #d33242;
+  font-weight: bold;
+}
+.garbage-synopsis {
+  font-family: Courier, monospace;
+  line-height: 200%;
+  text-indent: 50px;
+}
