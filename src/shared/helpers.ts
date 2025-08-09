@@ -142,3 +142,13 @@ export function sun(parent: HTMLDivElement, rayPrefix: string, time: string) {
     parent.append(ray);
   }
 }
+
+export function expectLetters(e: KeyboardEvent, index: number, letters: string, callback: () => void) {
+    if (index === letters.length) {
+        callback();
+        return;
+    }
+    if (e.key === letters[index]) {
+        document.addEventListener('keydown', e => expectLetters(e, index + 1, letters, callback), { once: true });
+    }
+}

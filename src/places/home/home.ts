@@ -6,7 +6,7 @@ import { lookAtBooks } from "../books/books";
 import { setUpGarbage } from "../garbage/garbage";
 import { setUpDarkRoom } from "../darkRoom/darkRoom";
 import { setUpComputer } from "../computer/computer";
-import { DEV_OUT, HOME_IMAGES } from "./constants";
+import { OUT, HOME_IMAGES } from "./constants";
 import { createItem } from "./helpers";
 import { createIntro, showIntro } from "./intro";
 import './home.css';
@@ -64,7 +64,7 @@ export function comeHome() {
 
   const windowImage = createImage(HOME_IMAGES.window, ['home'], 'window-image');
   const windowDiv = createItem(windowImage, 'window', () => {
-    window.location.assign(`${DEV_OUT}?time=${getTime().getTime()}`);
+    window.location.assign(`${OUT}?time=${getTime().getTime()}`);
   });
   
   const booksImage = createImage(HOME_IMAGES.books, ['home'], 'books-image');
