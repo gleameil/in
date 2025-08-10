@@ -8497,12 +8497,12 @@ export const DARK_ROOM_AUDIO: AudioCatalog = {
     isLoop: false,
   },
   vernaInEvernost: {
-    path: new URL('../../assets/audio/vernaInEvernost.mp3', import.meta.url),
+    path: new URL('../../assets/audio/VernaInEvernost.mp3', import.meta.url),
     id: 'dr-verna-in-evernost',
     isLoop: false,
   },
   michaelInEvernost: {
-    path: new URL('../../assets/audio/michaelInEvernost.mp3', import.meta.url),
+    path: new URL('../../assets/audio/MichaelInEvernost.mp3', import.meta.url),
     id: 'dr-michael-in-evernost',
     isLoop: false,
   },
