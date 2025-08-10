@@ -1,6 +1,3 @@
-// If I am ever bored I can make a Color interface with r,g,b,a properties, functions to go back and forth between rgb/rgba and Color, and a more readable transparentization
-
-// Evidently I got bored...
 export class Color {
   r: number;
   g: number;
