@@ -326,7 +326,7 @@ export const SKETCH_DIARY_IMAGES: ImageCatalog = {
     shouldHide: true,
   },
   haircut6: {
-    path: new URL('../../../assets/images/books/sketchDiary/haircut6.jpg?as=webp&height=820', import.meta.url),
+    path: new URL('../../../assets/images/books/sketchDiary/haircut6.JPG?as=webp&height=820', import.meta.url),
     alt: 'Completed drawing of woman getting haircut in her house'
   },
   indigo0: {
