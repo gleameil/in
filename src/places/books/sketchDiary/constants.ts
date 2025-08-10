@@ -456,7 +456,7 @@ export const SKETCH_DIARY_IMAGES: ImageCatalog = {
     shouldHide: true,
   },
   suncat5: {
-    path: new URL('../../../assets/images/books/sketchDiary/suncat5.jpg?as=webp&height=820', import.meta.url),
+    path: new URL('../../../assets/images/books/sketchDiary/suncat5.JPG?as=webp&height=820', import.meta.url),
     alt: 'completed marker sketch of green-eyed cat outlined in black on wooden ledge with red accents',
   },
 };
