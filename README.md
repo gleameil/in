@@ -41,12 +41,12 @@ Music, art, and writing are mine apart from the public domain bits you'll find i
 
 ## License
 
-Please contact me if you're interested in using any of this. I am likelier to be flexible about code than the contents of the game (in the unlikely event I've done something there worth reusing).
+Please contact me if you're interested in using any of this. I am likelier to be flexible about code than the contents of the gamem though I doubt there's anything too useful there.
 
-## Links
-Find me:
-https://dreamswithopeneyes.itch.io (you will see the previous incarnation of this work, Jennie's Room, there)
-https://instagram.com/dreamswithopeneyes
-https://megmoseman.com
+## Contact & Links
+email: megmoseman@gmail.com
+itch.io: https://dreamswithopeneyes.itch.io (you will see the previous incarnation of this work, Jennie's Room, there)
+Instagram: https://instagram.com/dreamswithopeneyes
+Wordpress blog: https://megmoseman.com
 
 
