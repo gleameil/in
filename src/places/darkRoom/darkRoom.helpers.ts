@@ -76,7 +76,7 @@ function madelineEvernost(resultWords?: string | undefined) {
   cellContent.append(volcano, demoness);
   const tree = createImage(DARK_ROOM_IMAGES.tree, ['dr-tree'], 'dr-tree');
 
-  const timeoutIds: number = [];
+  const timeoutIds: number[] = [];
   let lightningCount = 0;
 
   function makeFadingFruit(fruitIndex: number, index: number) {
