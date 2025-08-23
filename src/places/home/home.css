@@ -90,13 +90,13 @@ html {
 }
 
 #window {
-    top: -5vh;
     right: 0;
-    height: 10%;
+    height: 12vh;
+    width: 40vh;
     border-radius: 50%;
+    padding-top: 0;
     border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    width: 15vw;
+    border-top-right-radius: 0;;
 }
 
 #window-image {
@@ -146,5 +146,47 @@ html {
     animation-timing-function: linear;
     animation-duration: 3s;
     animation-fill-mode: both;
+}
+
+@media (orientation: portrait) {
+    html {
+        overflow: auto;
+    }
+
+    #bed {
+        height: 100vw;
+        width: calc(1220 * 100 / 1080)vw;
+        left: auto;
+        right: 2vw;
+        object-fit: contain;
+    }
+
+    #bed-div {
+        height: 100vw;
+        width: 133vw;
+        left: auto;
+        right: 2vw;
+    }
+
+    #switch {
+        left: 17vw;
+        top: 6vw;
+        height: 7vw;
+    }
+
+    #garbage {
+        right: 2vw;
+        left: auto;
+    }
+
+    #window {
+        right: 0;
+        height: 9vw;
+        width: 30vw;
+        border-radius: 50%;
+        padding-top: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;;
+    }
 }
 

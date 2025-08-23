@@ -10,6 +10,7 @@ import './darkRoom.css'
 export function leaveDarkRoom() {
   removeByClassName('cell-content');
   removeByClassName('dr-audio');
+  document.getElementById('dark-switch')?.remove();
 }
 
 function setUpLightSwitch(comeHome: ()=> void): HTMLDivElement {
