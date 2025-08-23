@@ -54,15 +54,13 @@ function canPlayAudio(): boolean {
 }
 
 export function playIfAllowed(audio: HTMLAudioElement | undefined, callbackStuff?: AudioEndedCallback) {
-  if (!audio && callbackStuff) {
-      setTimeout(callbackStuff.callback, callbackStuff.alternateTimeout);
-      return;
-  }
   if (!!audio && canPlayAudio()) {
     audio.muted = false;
     audio.play();
     if (callbackStuff) {
       audio.addEventListener('ended', callbackStuff.callback)
     }
+  } else if (callbackStuff) {
+    setTimeout(callbackStuff.callback, callbackStuff.alternateTimeout);
   }
 } 
