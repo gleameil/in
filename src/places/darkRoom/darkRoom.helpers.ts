@@ -8,10 +8,12 @@ import { move } from './darkRoom.helpers.out';
 function previousCell(): [location: CellLocation, cellGrid: CellGrid] | undefined {
   const pathTillNowString = localStorage.getItem('darkRoomPath');
   const path: string[] = pathTillNowString?.split('|') ?? [];
-  const previousLocationArr = path[path.length - 2].split('.');
+  const previousLocationArr = path[path.length - 2]?.split('.');
   switch (previousLocationArr[0]) {
     case 'e':
       return [[parseInt(previousLocationArr[1]), parseInt(previousLocationArr[2])], extradimensionalBeginning];
+    case 'c':
+      return [[parseInt(previousLocationArr[1]), parseInt(previousLocationArr[2])], extradimensionalContinuation];
     case 'j':
       return [[parseInt(previousLocationArr[1]), parseInt(previousLocationArr[2])], januaryCellGrid];
   }
