@@ -7,7 +7,7 @@ interface WindowWithAudio {
 
 interface AudioEndedCallback {
   callback: () => void;
-  alternateTimeout: number; // milliseconds
+  alternateTimeout?: number; // milliseconds
 }
 
 export const SOUND_CONTROL_ID = 'sound-control';
@@ -60,7 +60,7 @@ export function playIfAllowed(audio: HTMLAudioElement | undefined, callbackStuff
     if (callbackStuff) {
       audio.addEventListener('ended', callbackStuff.callback)
     }
-  } else if (callbackStuff) {
+  } else if (callbackStuff && callbackStuff.alternateTimeout) {
     setTimeout(callbackStuff.callback, callbackStuff.alternateTimeout);
   }
 } 

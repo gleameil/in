@@ -197,13 +197,13 @@ export function comeHome() {
     function playJazz() {
       jazz.currentTime = 0;
       jazz.volume = 0.2;
-      playIfAllowed(jazz, { callback: playHomeSong, alternateTimeout: 60000 });
+      playIfAllowed(jazz, { callback: playHomeSong });
     }    
     function playHomeSong() {
       music.currentTime = 0;
       music.volume = 0.3;
-      playIfAllowed(music, { callback: playJazz, alternateTimeout: 67000 });
+      playIfAllowed(music, { callback: playJazz });
     }
-    playIfAllowed(music, { callback: playJazz, alternateTimeout: 49000 });
+    playIfAllowed(music, { callback: playJazz });
   }
 }
