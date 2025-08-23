@@ -41,3 +41,9 @@
 #anthology-reader-left-image, #anthology-reader-right-image {
   max-width: max-content;
 }
+
+@media (orientation: portrait) {
+  #anthology-reader-text p {
+    font-size: 3vmin;
+  }
+}

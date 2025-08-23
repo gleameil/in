@@ -26,11 +26,11 @@ export function createReader(className: string, book: Chapters, imageBackgroundC
   const storedTextIndex = localStorage.getItem(`${className}TextIndex`);
   currentTextIndex = storedTextIndex ? parseInt(storedTextIndex) : 0;
   
-  const leftArt = createDivWithElements([], [className, 'reader-art'], `${className}-reader-left-art`);
+  const leftArt = createDivWithElements([], [className, 'reader-art', 'reader-left-art'], `${className}-reader-left-art`);
   leftArt.style.backgroundColor = imageBackgroundColor;
   const text = createDivWithElements([], ['reader-text'], `${className}-reader-text`);
   const textContainer = createDivWithElements([text], [className, 'reader-text-container'], `${className}-reader-text-container`);
-  const rightArt = createDivWithElements([], [className, 'reader-art'], `${className}-reader-right-art`);
+  const rightArt = createDivWithElements([], [className, 'reader-art', 'reader-right-art'], `${className}-reader-right-art`);
   rightArt.style.backgroundColor = imageBackgroundColor;
 
   const reader = createDivWithElements([leftArt, textContainer, rightArt], [className, 'reader-container'], `${className}-reader-container`);

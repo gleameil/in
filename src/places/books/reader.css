@@ -45,3 +45,20 @@
 .reader-image {
   width: 95%;
 }
+
+@media (orientation: portrait) {
+  .reader-text-container {
+    width: 80%;
+    font-size: 4vmin;
+  }
+  
+  .reader-art {
+    width: 10%;
+  } 
+
+  .reader-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
