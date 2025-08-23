@@ -10,6 +10,7 @@
 }
 
 #quiz-main {
+  height: 80vh;
   display: flex;
   justify-content: space-around;
   background-color: magenta;
@@ -109,4 +110,10 @@
 
 #computer-browser-quiz-container textarea {
   width: 60%;
+}
+
+@media (orientation: portrait) {
+  #sidebar {
+    display: none;
+  }
 }
