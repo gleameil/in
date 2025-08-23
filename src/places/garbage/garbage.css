@@ -37,20 +37,17 @@
   filter: contrast(30%) brightness(200%);
 }
 /*add responsive sizing at the end; also, make the paper crinkly someday*/
-.garbage-modal{
+/* .garbage-modal{
   display: none;
   background-color: white;
   position: absolute;
   left: 20%;
   z-index: 2;
-  width: 60%;
   max-height:90%;
   margin: auto;
   padding: 15px;
   padding-bottom: 30px;
-  box-shadow: 2px 2px 5px black;
-  overflow: auto;
-}
+} */
 
 .garbage-image {
   width: 50vw;
@@ -94,12 +91,18 @@
   width: 100%;
 }
 .garbage-modal{
+  display: none;
+  position: relative;
+  margin: auto;
   margin-top: calc(4vh + 30px);
-  padding: 0;
+  z-index: 2;
+  padding: 40px;
   padding-top: 5.5vh;
-  padding-bottom: -5px;
   overflow: hidden;
   max-width: 60vw;
+  max-height: 90%;
+  background-color: white;
+  box-shadow: 2px 2px 5px black;
 }
 .garbage-strikethrough {
   text-decoration: line-through solid #d33242;
