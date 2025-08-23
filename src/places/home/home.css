@@ -6,11 +6,6 @@
     }
 }
 
-html {
-    overflow: none;
-    user-select: none;
-}
-
 #bed {
     position: absolute;
     z-index: -2;

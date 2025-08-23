@@ -6,23 +6,21 @@
 }
 
 #garbage-dumped-paper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
   position: absolute;
-  left: 0;
   top: calc(4vh + 30px);
   right: 0;
   width: 100%;
   height: calc(90% - 4vh - 30px);
-  user-select: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .garbage-red {
   color: #d33242;
 }
 .garbage-paper {
-  height: calc(31vh - 10px);
-  width: auto;
+  height: auto;
+  width: 13vw;
 }
 
 .garbage-disabled {
@@ -200,4 +198,11 @@
   font-family: Courier, monospace;
   line-height: 200%;
   text-indent: 50px;
+}
+
+@media (orientation: portrait) {
+  .garbage-paper {
+    height: 15vh;
+    width: auto;
+  }
 }
