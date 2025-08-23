@@ -27,6 +27,7 @@ export function getBackgroundPath(id: string | undefined): ImagePathAndAltText |
 }
 
 function openIndividualPhoto(image: ImagePathAndAltText, id: string) {
+  document.getElementById('photos-large-image')?.remove()
   const imageModal = document.getElementById('photos-image-modal')!
   const mainImage = createImage(image, ['photos-modal-content'], 'photos-large-image');
   const desktopBackgroundButton = createButtonWithText('Set as desktop background', ['photos-modal-content'], 'photos-desktop-background-button');

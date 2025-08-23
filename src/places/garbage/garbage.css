@@ -36,18 +36,6 @@
   cursor: auto;
   filter: contrast(30%) brightness(200%);
 }
-/*add responsive sizing at the end; also, make the paper crinkly someday*/
-/* .garbage-modal{
-  display: none;
-  background-color: white;
-  position: absolute;
-  left: 20%;
-  z-index: 2;
-  max-height:90%;
-  margin: auto;
-  padding: 15px;
-  padding-bottom: 30px;
-} */
 
 .garbage-image {
   width: 50vw;

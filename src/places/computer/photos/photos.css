@@ -17,6 +17,7 @@
 }
 
 #photos-image-modal {
+  position: absolute;
   background-color: rgb(53, 149, 210);
   margin-top: -10vh;
   width: 60vw;
