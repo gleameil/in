@@ -572,10 +572,10 @@
   }
 
   .cell-content {
-    width: 100vw;
-    height: 80vh;
+    width: 96vw;
+    height: 70vh;
     top: 20vh;
-    left:0;
+    left:2vw;
     display: flex;
     justify-content: center;
     align-items: center;
