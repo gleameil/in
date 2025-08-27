@@ -86,9 +86,3 @@ body {
   height: auto;
   z-index: 1000;
 }
-
-@media (orientation: portrait) {
-  html {
-    overflow: auto;
-  }
-}
