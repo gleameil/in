@@ -1,7 +1,7 @@
 import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio } from "../../shared/helpers";
 import { SHARED_IMAGES } from "../../shared/constants";
 import { JANUARY_COLORS } from "../../shared/color";
-import { getTime } from "../../shared/time/time";
+import { getTime, goToNextKindOfWeather, scheduleForNow } from "../../shared/time/time";
 import { lookAtBooks } from "../books/books";
 import { setUpGarbage } from "../garbage/garbage";
 import { setUpDarkRoom } from "../darkRoom/darkRoom";
@@ -64,6 +64,10 @@ export function comeHome() {
 
   const windowImage = createImage(HOME_IMAGES.window, ['home'], 'window-image');
   const windowDiv = createItem(windowImage, 'window', () => {
+    // Another way out of Out; nights are long but beautiful
+    if (['night', 'cloudy'].includes(scheduleForNow().weather)) {
+      goToNextKindOfWeather();
+    }
     window.location.assign(`${OUT}?time=${getTime().getTime()}`);
   });
   

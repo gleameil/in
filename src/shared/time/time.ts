@@ -1,10 +1,18 @@
 import { Day, JANUARY_SCHEDULE, Time, TimeForDay, TIMES } from "./time.januaryConstants";
 import { WindowWithClock } from "./time.sharedConstants";
 
+// This can be called in various ways:
+// Once a second while you stay In
+// When you finish a poem and you're Out
+// Or if you set it yourself from the laptop
+// Of course, if you're willing to convert times to and from numerical timestamps,
+// You can do this in your own localstorage or via a query param as well
 export function setTime(time: Date) {
   localStorage.setItem('evernostianNow', `${time.getTime()}`);
 }
-
+// the time stored in your browser's localStorage, or, failing that,
+// (if you've cleared localStorage or this is your first time)
+// Jan 1 2024
 export function getTime(): Date {
   const startDate = new Date(2024, 0);
   const evernostianNow = parseInt(localStorage.getItem('evernostianNow') ?? '');
@@ -15,7 +23,6 @@ export function advanceTimeBy(minutes: number) {
   setTime(new Date(getTime().valueOf() + 60000 * minutes))
 }
 
-// It would be prettier to have these in getTime() but we do not want to go through these shenanigans every time we need the time
 function setTimeFromQueryAndRemoveParam(): boolean {
   const query = new URLSearchParams(window.location.search);
   const evernostianNowStringFromQuery = query.get('time');
@@ -30,10 +37,14 @@ function setTimeFromQueryAndRemoveParam(): boolean {
   return false
 }
 
+// Sets the time to: 
+// 1. the timestamp in the "time" query param, or, failing that,
+// 2. what turns up in getTime()
+// Then starts advancing time at a rate of one minute per minute :)
 export function startTime() {
   const queryDidContainTime = setTimeFromQueryAndRemoveParam();
   if (!queryDidContainTime) {
-    setTime(getTime()); // if no time is stored in the browser, sets time to 12am Jan 1 2024 unless it's February, in which case it's Feb 1 2024
+    setTime(getTime());
   }
   if (!(window as WindowWithClock).clock) {
     (window as WindowWithClock).clock = setInterval(() => {
@@ -42,11 +53,15 @@ export function startTime() {
   }
 }
 
+// Less necessary now that Out lives in its own codebase
+// but a good option to have for all that :).
+// Even so, time is reasonably linear while you're In.
 export function stopTime() {
   clearInterval((window as WindowWithClock).clock);
   delete((window as WindowWithClock).clock);
 }
 
+/// Boring bits; don't look too closely 
 export function timestampForTimeOnDate(timestamp: number, hours: number, minutes: number): number {
   const newDate = new Date(timestamp);
   newDate.setHours(hours);
@@ -96,12 +111,14 @@ export function timeOfDayFromDate(time?: Date): Time {
   return TIMES[0];
 }
 
+// Will expand to include February
 export function goToNextTimeOfDay() {
   const time = timeOfDayFromDate()
   const currentDay = dayOfTheMonth();
   const nextIndex = TIMES.indexOf(time) + 1;
   if (nextIndex === TIMES.length) {
     if (currentDay + 1 > 31) {
+      // Where we loop back to the beginning. Expect this to change very soon.
       setTime(new Date(2024, 0)); 
     } else {
       setTime(new Date(2024, 0, currentDay + 1));
@@ -114,6 +131,7 @@ export function goToNextTimeOfDay() {
   }
 }
 
+// Making it harder to get trapped Out in the clouds or the night
 export function goToNextKindOfWeather() {
   const time = timeOfDayFromDate();
   const currentDay = dayOfTheMonth();
@@ -127,6 +145,7 @@ export function goToNextKindOfWeather() {
   }
 }
 
+// Sunrise and sunset are real for a particular place in the US
 export function scheduleForNow(): TimeForDay {
   return JANUARY_SCHEDULE[dayOfTheMonth() - 1][timeOfDayFromDate().name];
 }
