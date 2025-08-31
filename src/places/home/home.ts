@@ -29,17 +29,17 @@ function lightsOut() {
     }
   setBackground(JANUARY_COLORS.black);  
   const images = document.getElementsByTagName('img');
-    for (let i = 0; i < images.length; i++) {
-        images[i].style.filter = 'grayscale() invert()';
-        if (images[i].id === 'switch-image') {
-            continue;
-        }
-        images[i].classList.add('dissolving');
-    }
-    setTimeout(() => {
-      leaveHome(true);
-      setUpDarkRoom(comeHome);
-    }, 2000);
+  for (let i = 0; i < images.length; i++) {
+      images[i].style.filter = 'grayscale() invert()';
+      if (images[i].id === 'switch-image') {
+          continue;
+      }
+      images[i].classList.add('dissolving');
+  }
+  setTimeout(() => {
+    leaveHome(true);
+    setUpDarkRoom(comeHome);
+  }, 2000);
 }
 
 export function comeHome() {
@@ -64,7 +64,7 @@ export function comeHome() {
 
   const windowImage = createImage(HOME_IMAGES.window, ['home'], 'window-image');
   const windowDiv = createItem(windowImage, 'window', () => {
-    // Another way out of Out; nights are long but beautiful
+    // Another way out of Out (rather grim, will grow fuller and fuller of potential) or night (beautiful but uneventful)
     if (['night', 'cloudy'].includes(scheduleForNow().weather)) {
       goToNextKindOfWeather();
     }
