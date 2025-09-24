@@ -69,6 +69,11 @@ export function timestampForTimeOnDate(timestamp: number, hours: number, minutes
   newDate.setSeconds(0);
   return newDate.getTime();
 }
+
+export function month(time?: Date): number {
+  return time?.getMonth() ?? getTime().getMonth();
+}
+
 export function dayOfTheMonth(time?: Date): number {
   return time?.getDate() ?? getTime().getDate();
 }
@@ -133,15 +138,17 @@ export function goToNextTimeOfDay() {
 
 // Making it harder to get trapped Out in the clouds or the night
 export function goToNextKindOfWeather() {
-  const time = timeOfDayFromDate();
-  const currentDay = dayOfTheMonth();
-  const oldWeather = JANUARY_SCHEDULE[currentDay - 1][time.name].weather;
-  let newWeather = oldWeather;
-  while (newWeather === oldWeather) {
-    goToNextTimeOfDay();
-    const newTime = timeOfDayFromDate();
-    const newDay = dayOfTheMonth();
-    newWeather = JANUARY_SCHEDULE[newDay - 1][newTime.name].weather;
+  if (month() === 0) {
+    const time = timeOfDayFromDate();
+    const currentDay = dayOfTheMonth();
+    const oldWeather = JANUARY_SCHEDULE[currentDay - 1][time.name].weather;
+    let newWeather = oldWeather;
+    while (newWeather === oldWeather) {
+      goToNextTimeOfDay();
+      const newTime = timeOfDayFromDate();
+      const newDay = dayOfTheMonth();
+      newWeather = JANUARY_SCHEDULE[newDay - 1][newTime.name].weather;
+    }
   }
 }
 
