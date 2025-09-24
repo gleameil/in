@@ -1,7 +1,7 @@
 import { JANUARY_COLORS } from "../../shared/color";
 import { createDivWithElements, createHomewardButton, removeByClassName, setBackground } from "../../shared/helpers";
 import { BEGINNING_OF_JANUARY } from "../../shared/time/time.januaryConstants.ts";
-import { END_OF_FEBRUARY } from "../../shared/time/time.februaryConstants.ts";
+import { END_OF_JANUARY } from "../../shared/time/time.januaryConstants.ts";
 import { getTime, setTime } from "../../shared/time/time";
 import { APPS } from "./computer.constants";
 import './computer.css';
@@ -38,7 +38,7 @@ function setUpTaskbar() {
   dateTimePicker.id = 'computer-datetime-picker';
   dateTimePicker.value = datetimestring;
   dateTimePicker.min = dateTimeStringFromDate(BEGINNING_OF_JANUARY);
-  dateTimePicker.max = dateTimeStringFromDate(END_OF_FEBRUARY);
+  dateTimePicker.max = dateTimeStringFromDate(END_OF_JANUARY);
   dateTimePicker.addEventListener('change', (event) => {
     const chosenDate = new Date((event.target as HTMLInputElement)?.value);
     setTime(chosenDate);
