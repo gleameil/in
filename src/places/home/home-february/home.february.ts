@@ -106,14 +106,14 @@ function makeBed(isHell: boolean): HTMLDivElement {
 }
 
 function makeWindow(isHell: boolean): HTMLDivElement {
-  const outTheWindow = isHell ? createImage(FEBRUARY_HOME_IMAGES.outTheWindowHell, ['window-february', 'out-the-window'], 'jennies-neighborhood') : createImage(FEBRUARY_HOME_IMAGES.outTheWindowHeaven, ['window-february', 'out-the-window'], 'out-out-the-window');
+  const outTheWindow = isHell ? FEBRUARY_HOME_IMAGES.outTheWindowHell.path.href : FEBRUARY_HOME_IMAGES.outTheWindowHeaven.path.href;
   const windowImage = createImage(FEBRUARY_HOME_IMAGES.window, ['home'], 'window-image-february');
   const windowDiv = createItem(windowImage, 'window-february', () => {
     // Another way out of Out (rather grim, will grow fuller and fuller of potential) or night (beautiful but uneventful)
     // window.location.assign(`${OUT}?time=${getTime().getTime()}`);
   });
-  const windowAndView = createDivWithElements([outTheWindow, windowDiv], ['window-february'], 'window-and-view-february');
-  return windowAndView;
+  windowDiv.style.backgroundImage = `url(${outTheWindow}`;
+  return windowDiv;
 }
 
 export function comeHome() {

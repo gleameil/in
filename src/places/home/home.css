@@ -198,8 +198,8 @@
 
 #bed-and-comforter {
     position: absolute;
-    height: 39vmax;
-    width: 32.5vmax;
+    height: 39vw;
+    width: 32.5vw;
     transform: translateX(50vw) translateY(60vmax) translateZ(-20vmax);
 }
 
@@ -249,16 +249,15 @@
     object-fit: contain;
 }
 
-#window-and-view-february {
+#window-february {
     height: 20vmax;
     width: 26vmax;
-    transform: translateY(60vmax) translateX(50vw) translateZ(-86vmax)
+    transform: translateY(60vmax) translateX(30vw) translateZ(-86vmax);
+    background-size: contain;
+    background-position: center;
 }
 
-#window-february, #window-image-february, #jennies-neighborhood, #out-out-the-window  {
-    position: absolute;
-    top: 0;
-    left: 0;
+#window-image-february {
     height: 100%;
     width: 100%;
     object-fit: contain;
@@ -291,7 +290,12 @@
     }
 
     #bed-and-comforter {
-        transform: translateX(30vw) translateY(60vmax) translateZ(10vmax);
+        transform: translateX(40vw) translateY(60vmax) translateZ(10vmax);
+    }
+
+    #lamp {
+        width: 23vh;
+        height: 60vh;
     }
 
     #bookshelf {
@@ -301,10 +305,10 @@
     }
 
     #mirror {
-        transform: translateX(-0.3vw) translateY(38vh) translateZ(0vmax);
+        transform: translateX(-0.3vw) translateY(48vh) translateZ(0vmax);
     }
 
-    #window-and-view-february {
+    #window-february {
         height: 30vmax;
         width: 39vmax;
         transform: translateY(40vmax) translateX(50vw) translateZ(-86vmax)
