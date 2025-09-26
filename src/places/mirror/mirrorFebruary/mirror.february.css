@@ -1,0 +1,54 @@
+#mirror-close-february {
+    position: relative;
+    height: 101vh;
+    width: 75vh;
+}
+
+#mirror-close-february:hover {
+    cursor: pointer;
+}
+
+#mirror-close-february:hover #found-jennie, #mirror-close-february:hover #lost-jennie {
+    opacity: 0.8
+}
+
+#mirror-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#mirror-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    mask-image: linear-gradient(black transparent);
+}
+
+#found-jennie {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.1
+}
+
+#lost-jennie {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    mask-image: url(../../../assets/images/mirror/february/mirrorMask.png);
+    mask-size: contain;
+    mask-position: center;
+    opacity: 0.1
+}
+

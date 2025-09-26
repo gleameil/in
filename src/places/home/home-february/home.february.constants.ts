@@ -35,6 +35,26 @@ export const FEBRUARY_HOME_IMAGES: ImageCatalog = {
         path: new URL('../../../assets/images/home/february/bookshelf.png?as=webp', import.meta.url),
         alt: 'bookshelf',
     },
+    dresser: {
+        path: new URL('../../../assets/images/home/february/dresser.png?as=webp', import.meta.url),
+        alt: 'cabinet',
+    },
+    mirror: {
+        path: new URL('../../../assets/images/home/february/mirror.png?as=webp', import.meta.url),
+        alt: 'mirror',
+    },
+    window: {
+        path: new URL('../../../assets/images/home/february/window.png?as=webp', import.meta.url),
+        alt: 'window',
+    },
+    outTheWindowHeaven: {
+        path: new URL('../../../assets/images/home/february/outTheWindowHeaven.png?as=webp', import.meta.url),
+        alt: 'indeterminate gray',
+    },
+    outTheWindowHell: {
+        path: new URL('../../../assets/images/home/february/outTheWindowHell.png?as=webp', import.meta.url),
+        alt: 'cartoonishly drawn suburban neighborhood',
+    },
 };
 
 const FEBRUARY_PATTERNS: ImageCatalog = {

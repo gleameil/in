@@ -249,6 +249,33 @@
     object-fit: contain;
 }
 
+#window-and-view-february {
+    height: 20vmax;
+    width: 26vmax;
+    transform: translateY(60vmax) translateX(50vw) translateZ(-86vmax)
+}
+
+#window-february, #window-image-february, #jennies-neighborhood, #out-out-the-window  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#mirror {
+    height: 40vmax;
+    width: 8vmax;
+    transform: translateX(-0.3vw) translateY(65vh) translateZ(-30vmax);
+}
+
+#mirror-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
 
 @media (orientation: portrait) {
     html {
@@ -271,6 +298,16 @@
         height: 25vmax;
         width: 33vmax;
         transform: translateY(75vmax) translateZ(-86vmax);
+    }
+
+    #mirror {
+        transform: translateX(-0.3vw) translateY(38vh) translateZ(0vmax);
+    }
+
+    #window-and-view-february {
+        height: 30vmax;
+        width: 39vmax;
+        transform: translateY(40vmax) translateX(50vw) translateZ(-86vmax)
     }
 
     #bed-div {

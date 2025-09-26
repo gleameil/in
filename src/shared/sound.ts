@@ -19,18 +19,18 @@ function togglePlayingSound() {
     const audioElements = document.getElementsByTagName('audio');
     Array.from(audioElements).forEach(elem => {
       if (elem.id !== 'music-player') {
-        elem.muted = true
+        elem.muted = true;
       }
     });
-    document.getElementById('sound-control')!.innerText = '🔇'
+    document.getElementById('sound-control')!.innerText = '🔇';
   } else {
     windowWithAudio.canPlayAudio = true;
     const audioElements = document.getElementsByTagName('audio');
     Array.from(audioElements).forEach(elem => elem.muted = false);
-    document.getElementById('sound-control')!.innerText = '🔈'
+    document.getElementById('sound-control')!.innerText = '🔈';
     const homeSong = document.getElementById('home-song') as HTMLAudioElement;
     if (homeSong && homeSong.paused) {
-      homeSong.play()
+      homeSong.play();
     }
   }
 }

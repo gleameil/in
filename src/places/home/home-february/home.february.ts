@@ -10,6 +10,7 @@ import '../home.css';
 import { createSoundControl, playIfAllowed, SOUND_CONTROL_ID } from "../../../shared/sound";
 import { MUSIC } from "../../computer/music/music.constants";
 import { ImagePathAndAltText } from "../../../shared/constants";
+import { sideWallFebruary } from "../../mirror/mirrorFebruary/mirror.february.ts";
 // import { lookAtClockAndCalendar } from './clock.ts';
 
 function leaveHome(musicToo: boolean) {
@@ -104,6 +105,17 @@ function makeBed(isHell: boolean): HTMLDivElement {
     return bed;
 }
 
+function makeWindow(isHell: boolean): HTMLDivElement {
+  const outTheWindow = isHell ? createImage(FEBRUARY_HOME_IMAGES.outTheWindowHell, ['window-february', 'out-the-window'], 'jennies-neighborhood') : createImage(FEBRUARY_HOME_IMAGES.outTheWindowHeaven, ['window-february', 'out-the-window'], 'out-out-the-window');
+  const windowImage = createImage(FEBRUARY_HOME_IMAGES.window, ['home'], 'window-image-february');
+  const windowDiv = createItem(windowImage, 'window-february', () => {
+    // Another way out of Out (rather grim, will grow fuller and fuller of potential) or night (beautiful but uneventful)
+    // window.location.assign(`${OUT}?time=${getTime().getTime()}`);
+  });
+  const windowAndView = createDivWithElements([outTheWindow, windowDiv], ['window-february'], 'window-and-view-february');
+  return windowAndView;
+}
+
 export function comeHome() {
   const windowForFebruary = window as WindowForFebruary;
   const isHell = !!windowForFebruary.isHell;
@@ -130,7 +142,10 @@ export function comeHome() {
 
   const room = createDivWithElements([backWall, floor, sideWall], ['home'], 'room');
 
-  const bookshelfImage = createImage(FEBRUARY_HOME_IMAGES.bookshelf, ['home'], 'bookshelf-image');
+  const windowAndView = makeWindow(isHell);
+  room.append(windowAndView);
+
+  const bookshelfImage = isHell? createImage(FEBRUARY_HOME_IMAGES.dresser, ['home'], 'bookshelf-image') : createImage(FEBRUARY_HOME_IMAGES.bookshelf, ['home'], 'bookshelf-image');
   const bookshelf = createItem(bookshelfImage, 'bookshelf', () => {
     // leaveHome(true);
     // lookAtBooks(isHell, comeHome);
@@ -146,13 +161,6 @@ export function comeHome() {
 //     leaveHome(true);
 //     play(isHell, comeHome);
 //   });
-  
-
-//   const windowImage = createImage(FEBRUARY_HOME_IMAGES.window, ['home'], 'window-image');
-//   const windowDiv = createItem(windowImage, 'window', () => {
-//     // Another way out of Out (rather grim, will grow fuller and fuller of potential) or night (beautiful but uneventful)
-//     window.location.assign(`${OUT}?time=${getTime().getTime()}`);
-//   });
 
   const lampImage = createImage(FEBRUARY_HOME_IMAGES.lampOn, ['home'], 'lamp-image');
   const lamp = createItem(lampImage, 'lamp', toggleLights);
@@ -165,11 +173,13 @@ export function comeHome() {
 //   });
 //   all.append(clockAndCalendar);
 
-//   const mirrorImage = createImage(FEBRUARY_HOME_IMAGES.mirror, ['home'], 'mirror-image');
-//   const mirror = createItem(mirrorImage, 'mirror', () => {
-//     leaveHome(false);
-//     lookInMirror(comeHome);
-//   })
+  const mirrorImage = createImage(FEBRUARY_HOME_IMAGES.mirror, ['home'], 'mirror-image');
+  const mirror = createItem(mirrorImage, 'mirror', () => {
+    leaveHome(false);
+    sideWallFebruary(comeHome);
+  })
+
+  room.append(mirror);
 
 //   const doorImage = createImage(FEBRUARY_HOME_IMAGES.door, ['home'], 'door-image')
 //   const door = createItem(mirrorImage, 'door', () => window.location.assign(HOUSE))
