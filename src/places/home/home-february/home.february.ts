@@ -4,7 +4,7 @@ import { getTime } from "../../../shared/time/time";
 // import { lookAtBooks } from "../../books/books";
 // import { setUpDarkRoom } from "../../darkRoom/darkRoom";
 import { FEBRUARY_BACKGROUNDS, FEBRUARY_HOME_IMAGES, WindowForFebruary } from "./home.february.constants";
-// import { OUT, HOUSE } from "../constants";
+import { OUT } from "../constants";
 import { createItem, randomFebruaryBackgroundIndex } from "../helpers";
 import '../home.css';
 import { createSoundControl, playIfAllowed, SOUND_CONTROL_ID } from "../../../shared/sound";
@@ -110,7 +110,7 @@ function makeWindow(isHell: boolean): HTMLDivElement {
   const windowImage = createImage(FEBRUARY_HOME_IMAGES.window, ['home'], 'window-image-february');
   const windowDiv = createItem(windowImage, 'window-february', () => {
     // Another way out of Out (rather grim, will grow fuller and fuller of potential) or night (beautiful but uneventful)
-    // window.location.assign(`${OUT}?time=${getTime().getTime()}`);
+    window.location.assign(`${OUT}?time=${getTime().getTime()}`);
   });
   windowDiv.style.backgroundImage = `url(${outTheWindow}`;
   return windowDiv;
