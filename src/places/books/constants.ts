@@ -16,6 +16,92 @@ export interface Book {
   shouldHide?: () => boolean; 
 }
 
+// export const FEBRUARY_BOOKS_HEAVEN: Book[] = [
+//   { // lost sylphid, lost princess &or golden key
+//     name: 'anthology',
+//     showCover: anthologyCover,
+//     show: februaryAnthology,
+//   },
+//   { // Ruth, happy ending
+//     name: 'courage',
+//     showCover: courageHeavenCover,
+//     show: courageHeaven,
+//   },
+//   { // ? Christy, happy ending???? 
+//     name: 'faith',
+//     showCover: faithHeavenCover,
+//     show: faithHeaven,
+//   },
+//   { // Elinor, happy ending
+//     name: 'temperance',
+//     showCover: temperanceHeavenCover,
+//     show: temperanceHeaven,
+//   },
+//   { // Lily, happy ending ???
+//     name: 'love',
+//     showCover: loveHeavenCover,
+//     show: loveHeaven,
+//   },
+//   { // ...Janus & Lizzie, happy ending?
+//     name: 'justice',
+//     showCover: justiceHeavenCover,
+//     show: justiceHeaven,
+//   },
+//   { // Duessa
+//     name: 'wisdom',
+//     showCover: wisdomHeavenCover,
+//     show: wisdomHeaven,
+//   },
+//   { // Doris? Lost princess?
+//     name: 'hope',
+//     showCover: hopeHeavenCover,
+//     show: hopeHeaven,
+//   },
+// ]
+
+// export const FEBRUARY_BOOKS_HELL: Book[] = [
+//   { // lost sylphid, lost princess &or golden key
+//     name: 'anthology',
+//     showCover: anthologyCover,
+//     show: februaryAnthology,
+//   },
+//   { // Ruth, happy ending
+//     name: 'courage',
+//     showCover: courageHellCover,
+//     show: courageHell,
+//   },
+//   { // ? Christy, happy ending???? 
+//     name: 'faith',
+//     showCover: faithHellCover,
+//     show: faithHell,
+//   },
+//   { // Elinor, happy ending
+//     name: 'temperance',
+//     showCover: temperanceHellCover,
+//     show: temperanceHell,
+//   },
+//   { // Lily, happy ending ???
+//     name: 'love',
+//     showCover: loveHellCover,
+//     show: loveHell,
+//   },
+//   { // ...Janus & Lizzie, happy ending?
+//     name: 'justice',
+//     showCover: justiceHellCover,
+//     show: justiceHell,
+//   },
+//   { // Duessa
+//     name: 'wisdom',
+//     showCover: wisdomHellCover,
+//     show: wisdomHell,
+//   },
+//   { // Doris? Lost princess?
+//     name: 'hope',
+//     showCover: hopeHellCover,
+//     show: hopeHell,
+//   },
+// ]
+
 export const BOOKS: Book[] = [
   {
     name: 'blech',

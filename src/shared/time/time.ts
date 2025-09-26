@@ -1,5 +1,11 @@
-import { Day, JANUARY_SCHEDULE, Time, TimeForDay, TIMES } from "./time.januaryConstants";
+import { END_OF_FEBRUARY } from "./time.februaryConstants";
+import { BEGINNING_OF_JANUARY, Day, JANUARY_SCHEDULE, Time, TimeForDay, TIMES } from "./time.januaryConstants";
 import { WindowWithClock } from "./time.sharedConstants";
+
+export function isValidTime(time?: Date): boolean {
+  const timestamp = time?.getTime();
+  return !!timestamp && timestamp <= END_OF_FEBRUARY.getTime() && timestamp >= BEGINNING_OF_JANUARY.getTime();
+}
 
 // This can be called in various ways:
 // Once a second while you stay In
@@ -20,7 +26,12 @@ export function getTime(): Date {
 }
 
 export function advanceTimeBy(minutes: number) {
-  setTime(new Date(getTime().valueOf() + 60000 * minutes))
+  const newTime = new Date(getTime().valueOf() + 60000 * minutes);
+  if (isValidTime(newTime)) {
+    setTime(new Date(getTime().valueOf() + 60000 * minutes))
+  } else {
+    setTime(new Date(2024, 0));
+  }
 }
 
 function setTimeFromQueryAndRemoveParam(): boolean {
