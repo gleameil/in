@@ -285,7 +285,7 @@
 #clock-and-calendar {
     height: 14vmax;
     width: 21vmax;
-    transform: translateX(6.9vmax) translateY(56vmax) translateZ(-50vmax)
+    transform: translateX(7.2vmax) translateY(56vmax) translateZ(-50vmax)
 }
 
 #clock-and-calendar-image {
@@ -334,7 +334,7 @@
     }
 
     #clock-and-calendar {
-       transform: translateX(6.7vw) translateY(48vmax) translateZ(-50vmax)
+       transform: translateX(7.2vw) translateY(48vmax) translateZ(-50vmax)
     }
 
     #bed-div {
