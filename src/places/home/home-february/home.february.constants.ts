@@ -11,6 +11,10 @@ export const FEBRUARY_HOME_IMAGES: ImageCatalog = {
         path: new URL('../../../assets/images/home/february/bed.png?as=webp', import.meta.url),
         alt: 'Bed'
     },
+    clockAndCalendar: {
+        path: new URL('../../../assets/images/home/february/clockAndCalendar.png?as=webp', import.meta.url),
+        alt: 'clock with red frame and wall calendar',
+    },
     comforterMask: {
         path: new URL('../../../assets/images/home/february/bedMask.png', import.meta.url),
         alt: ''

@@ -149,6 +149,13 @@ export function comeHome() {
   const windowAndView = makeWindow(isHell);
   room.append(windowAndView);
 
+    const wallClockAndCalendarImage = createImage(FEBRUARY_HOME_IMAGES.clockAndCalendar, ['home'], 'clock-and-calendar-image');
+  const clockAndCalendar = createItem(wallClockAndCalendarImage, 'clock-and-calendar', () => {
+    // leaveHome(false);
+    // lookAtClockAndCalendar(comeHome)
+  });
+  room.append(clockAndCalendar);
+
   const bookshelfImage = isHell? createImage(FEBRUARY_HOME_IMAGES.dresser, ['home'], 'bookshelf-image') : createImage(FEBRUARY_HOME_IMAGES.bookshelf, ['home'], 'bookshelf-image');
   const bookshelf = createItem(bookshelfImage, 'bookshelf', () => {
     // leaveHome(true);
@@ -169,13 +176,6 @@ export function comeHome() {
   const lampImage = createImage(FEBRUARY_HOME_IMAGES.lampOn, ['home'], 'lamp-image');
   const lamp = createItem(lampImage, 'lamp', toggleLights);
   all.append(lamp);
-
-//   const wallClockAndCalendarImage = createImage(FEBRUARY_HOME_IMAGES.clockAndCalendar, ['home'], 'clock-and-calendar-image');
-//   const clockAndCalendar = createItem(wallClockAndCalendarImage, 'clock-and-calendar', () => {
-//     leaveHome(false);
-//     lookAtClockAndCalendar(comeHome)
-//   });
-//   all.append(clockAndCalendar);
 
   const mirrorImage = createImage(FEBRUARY_HOME_IMAGES.mirror, ['home'], 'mirror-image');
   const mirror = createItem(mirrorImage, 'mirror', () => {

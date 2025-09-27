@@ -1,5 +1,7 @@
 import { ImageCatalog } from "../../../shared/constants";
 
+export const CITY_DOLENT = `Created me divine Omnipotence, The highest Wisdom and the primal Love.`
+
 export const MIRROR_FEBRUARY_IMAGES: ImageCatalog = {
     frame: {
         path: new URL('../../../assets/images/mirror/february/mirrorClose.png?as=webp', import.meta.url),
@@ -17,4 +19,4 @@ export const MIRROR_FEBRUARY_IMAGES: ImageCatalog = {
         path: new URL('../../../assets/images/mirror/february/mirrorMask.png?as=webp', import.meta.url),
         alt: '',
     },
-}
+};
