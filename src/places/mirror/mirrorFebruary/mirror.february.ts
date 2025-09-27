@@ -9,10 +9,10 @@ export function leaveSideWallFebruary() {
 }
 
 export function sideWallFebruary(comeHome: () => void) {
-    setBackground(FEBRUARY_COLORS.lightGray);
+    const windowForFebruary = window as WindowForFebruary;
+    windowForFebruary.isHell ? setBackground(FEBRUARY_COLORS.lightGray) : setBackground(FEBRUARY_COLORS.white);
     const mirror = makeMirror();
     mirror.addEventListener('click', () => {
-        const windowForFebruary = window as WindowForFebruary;
         windowForFebruary.isHell = !windowForFebruary.isHell;
         leaveSideWallFebruary();
         comeHome();

@@ -131,13 +131,17 @@ export function comeHome() {
   const floor = createDivWithElements([], ['home', 'wall'], 'floor');
   const backWall = createDivWithElements([], ['home', 'wall'], 'back-wall');
   const sideWall = createDivWithElements([], ['home', 'wall'], 'side-wall');
+  const frontWall = createDivWithElements([], ['home', 'wall'], 'front-wall');
 
   if (isHell) {
     setBackground(FEBRUARY_COLORS.lightGray, undefined, backWall)
     setBackground(FEBRUARY_COLORS.gray, undefined, sideWall)
+    setBackground(FEBRUARY_COLORS.lightGray, undefined, frontWall)
   } else {
-    nextBackground(randomFebruaryBackgroundIndex(), backWall);
+    const mainBg = randomFebruaryBackgroundIndex();
+    nextBackground(mainBg, backWall);
     nextBackground(randomFebruaryBackgroundIndex(), sideWall);
+    setBackground(FEBRUARY_COLORS.red, undefined, frontWall);
   }
 
   const room = createDivWithElements([backWall, floor, sideWall], ['home'], 'room');

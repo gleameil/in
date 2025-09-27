@@ -196,6 +196,13 @@
     transform: translateX(-100vmax) rotateY(90deg);
 }
 
+#front-wall {
+    position: absolute;
+    width: 200vmax;
+    height: 200vmax;
+    transform: translateZ(100vmax)
+}
+
 #bed-and-comforter {
     position: absolute;
     height: 39vw;
