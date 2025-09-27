@@ -158,11 +158,6 @@
     position: absolute;
 }
 
-.active-february:hover {
-    filter: contrast(2);
-    cursor: pointer;
-}
-
 #room {
     position: absolute;
     left: 10vmax;

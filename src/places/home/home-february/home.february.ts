@@ -5,7 +5,7 @@ import { getTime } from "../../../shared/time/time";
 // import { setUpDarkRoom } from "../../darkRoom/darkRoom";
 import { FEBRUARY_BACKGROUNDS, FEBRUARY_HOME_IMAGES, WindowForFebruary } from "./home.february.constants";
 import { OUT } from "../constants";
-import { createItem, randomFebruaryBackgroundIndex } from "../helpers";
+import { createItem, isValentinesDay, randomFebruaryBackgroundIndex } from "../helpers";
 import '../home.css';
 import { createSoundControl, playIfAllowed, SOUND_CONTROL_ID } from "../../../shared/sound";
 import { MUSIC } from "../../computer/music/music.constants";
@@ -179,9 +179,11 @@ export function comeHome() {
 
   const mirrorImage = createImage(FEBRUARY_HOME_IMAGES.mirror, ['home'], 'mirror-image');
   const mirror = createItem(mirrorImage, 'mirror', () => {
-    leaveHome(false);
-    sideWallFebruary(comeHome);
-  })
+    if (isValentinesDay()) {
+      leaveHome(false);
+      sideWallFebruary(comeHome);
+    }
+  });
 
   room.append(mirror);
 
