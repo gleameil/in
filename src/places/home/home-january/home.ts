@@ -42,7 +42,7 @@ function lightsOut() {
   }, 2000);
 }
 
-export function comeHome() {
+export function homeJanuary(comeHome: () => void) {
   setBackground(JANUARY_COLORS.white);
 
   const all = document.getElementsByTagName('html')[0];

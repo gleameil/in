@@ -1,0 +1,86 @@
+#clock-and-calendar-february-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#clock-close {
+    position: relative;
+    width: 25vmax;
+    height: 25vmax;
+}
+
+#clock-bg, #calendar-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+}
+
+.clock-numeral {
+    position: absolute;
+    font-family: 'IM Fell English';
+    font-size: 3vmax;
+}
+
+#clock-minute-hand, #clock-hour-hand {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 35%;
+    height: 8%;
+    object-fit: contain;
+    object-position: left;
+    transform-origin: 1% center;
+}
+
+#calendar {
+    position: relative;
+    width: 40vmax;
+    height: 60vmax;
+}
+
+#calendar-header-february {
+    position: absolute;
+    bottom: 43%;
+    width: 100%;
+    text-align: center;
+    font-family: 'Petit Formal Script';
+    font-size: 3vmax;
+    color: rgb(199, 64, 70)
+}
+
+#calendar-grid {
+    position: absolute;
+    width: 90%;
+    height: 33%;
+    bottom: 7%;
+    left: 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.calendar-square {
+    border: 1px solid black;
+}
+
+.february-calendar-today {
+    background-color: rgb(252, 245, 229);
+}
+
+.calendar-square-0, .calendar-square-2 {
+    color: gray;
+    font-style: italic;
+}
+
+@media (orientation: portrait) {
+    /* #calendar {
+        width: vmax;
+        height: 60vmax;
+    } */
+}

@@ -1,7 +1,7 @@
 import { month } from '../../shared/time/time.ts';
 import { createSpan } from '../../shared/helpers.ts';
-import { comeHome as homeJanuary } from './home-january/home.ts';
-import { comeHome as homeFebruary } from './home-february/home.february.ts';
+import { homeJanuary } from './home-january/home.ts';
+import { homeFebruary } from './home-february/home.february.ts';
 
 export function outOfTime() {
   const constructionSign = createSpan('THIS TIME DOES NOT EXIST YET', ['under-construction'], 'under-construction');
@@ -12,10 +12,10 @@ export function outOfTime() {
 export function comeHome() {
   switch (month()) {
     case 0:
-      homeJanuary();
+      homeJanuary(comeHome);
       break;
     case 1:
-      homeFebruary();
+      homeFebruary(comeHome);
       break;
     default:
       throw new Error('Invalid time; something very wrong here');

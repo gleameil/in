@@ -1,6 +1,6 @@
 import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio } from "../../../shared/helpers";
 import { FEBRUARY_COLORS } from "../../../shared/color";
-import { getTime } from "../../../shared/time/time";
+import { getTime, stopTime } from "../../../shared/time/time";
 // import { lookAtBooks } from "../../books/books";
 // import { setUpDarkRoom } from "../../darkRoom/darkRoom";
 import { FEBRUARY_BACKGROUNDS, FEBRUARY_HOME_IMAGES, WindowForFebruary } from "./home.february.constants";
@@ -11,6 +11,7 @@ import { createSoundControl, playIfAllowed, SOUND_CONTROL_ID } from "../../../sh
 import { MUSIC } from "../../computer/music/music.constants";
 import { ImagePathAndAltText } from "../../../shared/constants";
 import { sideWallFebruary } from "../../mirror/mirrorFebruary/mirror.february.ts";
+import { clockAndCalendarFebruary } from "../../clockAndCalendar/clockAndCalendarFebruary/clockAndCalendar.february.ts";
 // import { lookAtClockAndCalendar } from './clock.ts';
 
 function leaveHome(musicToo: boolean) {
@@ -116,7 +117,7 @@ function makeWindow(isHell: boolean): HTMLDivElement {
   return windowDiv;
 }
 
-export function comeHome() {
+export function homeFebruary(comeHome: () => void) {
   const windowForFebruary = window as WindowForFebruary;
   const isHell = !!windowForFebruary.isHell;
 
@@ -151,8 +152,9 @@ export function comeHome() {
 
     const wallClockAndCalendarImage = createImage(FEBRUARY_HOME_IMAGES.clockAndCalendar, ['home'], 'clock-and-calendar-image');
   const clockAndCalendar = createItem(wallClockAndCalendarImage, 'clock-and-calendar', () => {
-    // leaveHome(false);
-    // lookAtClockAndCalendar(comeHome)
+    leaveHome(false);
+    stopTime();
+    clockAndCalendarFebruary(comeHome)
   });
   room.append(clockAndCalendar);
 

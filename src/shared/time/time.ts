@@ -14,7 +14,9 @@ export function isValidTime(time?: Date): boolean {
 // Of course, if you're willing to convert times to and from numerical timestamps,
 // You can do this in your own localstorage or via a query param as well
 export function setTime(time: Date) {
-  localStorage.setItem('evernostianNow', `${time.getTime()}`);
+  if (isValidTime(time)) {
+    localStorage.setItem('evernostianNow', `${time.getTime()}`);
+  }
 }
 // the time stored in your browser's localStorage, or, failing that,
 // (if you've cleared localStorage or this is your first time)
