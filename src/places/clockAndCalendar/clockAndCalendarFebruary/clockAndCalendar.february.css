@@ -31,11 +31,30 @@
     position: absolute;
     top: 45%;
     left: 50%;
-    width: 35%;
     height: 8%;
     object-fit: contain;
     object-position: left;
-    transform-origin: 1% center;
+    transform-origin: left;
+}
+
+#clock-minute-hand {
+    width: 35%;
+
+}
+
+#clock-hour-hand {
+    width: 20%;
+}
+
+#clock-center-piece {
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    border-radius: 50%;
+    background-color: rgb(90, 30, 40);
+    border: 5px solid rgb(70, 50, 60);
+    left: 47%;
+    top: 45%;
 }
 
 #calendar {

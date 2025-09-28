@@ -51,23 +51,30 @@ function clockNumeralLocation(numeral: number): { left: number, top: number } {
 export function makeClock(): HTMLDivElement {
     const clock = createImage(DATETIME_IMAGES_FEBRUARY.clock, ['clock-and-calendar', 'clock'], 'clock-bg');
     const minuteHand = createImage(DATETIME_IMAGES_FEBRUARY.minuteHand, ['clock-and-calendar', 'clock', 'clock-hand'], 'clock-minute-hand');
-    minuteHand.addEventListener('click', () => {
-        const now = getTime();
-        now.setMinutes(now.getMinutes() + 1);
-        setTime(now);
-        showTime(minuteHand, hourHand);
-    })
     const hourHand = createImage(DATETIME_IMAGES_FEBRUARY.hourHand, ['clock-and-calendar', 'clock', 'clock-hand'], 'clock-hour-hand');
-    hourHand.addEventListener('click', () => {
+    
+
+    function advanceTime(isMinute: boolean = false) {
         const oldNow = getTime();
         const now = new Date(oldNow.getTime());
-        now.setHours(now.getHours() + 1);
+        if (isMinute) {
+            now.setMinutes(now.getMinutes() + 1);
+        } else {
+            now.setHours(now.getHours() + 1)
+        }
         setTime(now);
         showTime(minuteHand, hourHand);
         if (oldNow.getDate() !== getTime().getDate()) {
             showDate(oldNow);
         }
-    })
+    }
+
+    const clockCenter = createDivWithElements([], ['clock-and-calendar', 'clock'], 'clock-center-piece');
+
+    minuteHand.addEventListener('click', () => advanceTime(true));
+    hourHand.addEventListener('click', () => advanceTime());
+    clockCenter.addEventListener('click', () => advanceTime());
+
     const numbers: HTMLSpanElement[] = [];
     for (let i = 1; i < 13; i++) {
         const number = createSpan(`${i}`, ['clock-and-calendar', 'clock', 'clock-numeral'], `clock-numeral-${i}`);
@@ -76,7 +83,7 @@ export function makeClock(): HTMLDivElement {
         number.style.top = `${top}%`;
         numbers.push(number);
     }
-    const clockFace = createDivWithElements([...numbers, minuteHand, hourHand], ['clock-and-calendar', 'clock'], 'clock-face');
+    const clockFace = createDivWithElements([...numbers, minuteHand, hourHand, clockCenter], ['clock-and-calendar', 'clock'], 'clock-face');
     showTime(minuteHand, hourHand);
     return createDivWithElements([clock, clockFace], ['clock-and-calendar', 'clock'], 'clock-close');
 }
