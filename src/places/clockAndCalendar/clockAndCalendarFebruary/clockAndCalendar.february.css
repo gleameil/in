@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
+    width: 100%;
 }
 
 #clock-close {
@@ -86,10 +87,14 @@
 
 .calendar-square {
     border: 1px solid black;
+    color:rgb(70, 50, 60);
+    font-family: 'IM Fell English';
+    font-size: 1vmax;
 }
 
-.february-calendar-today {
-    background-color: rgb(252, 245, 229);
+.calendar-holiday-emoji {
+    font-size: 2vmax;
+    display: block;
 }
 
 .calendar-square-0, .calendar-square-2 {

@@ -1,7 +1,7 @@
 import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio } from "../../../shared/helpers";
 import { FEBRUARY_COLORS } from "../../../shared/color";
 import { getTime, stopTime } from "../../../shared/time/time";
-// import { lookAtBooks } from "../../books/books";
+import { lookAtBooks } from "../../books/books";
 // import { setUpDarkRoom } from "../../darkRoom/darkRoom";
 import { FEBRUARY_BACKGROUNDS, FEBRUARY_HOME_IMAGES, WindowForFebruary } from "./home.february.constants";
 import { OUT } from "../constants";
@@ -160,8 +160,8 @@ export function homeFebruary(comeHome: () => void) {
 
   const bookshelfImage = isHell? createImage(FEBRUARY_HOME_IMAGES.dresser, ['home'], 'bookshelf-image') : createImage(FEBRUARY_HOME_IMAGES.bookshelf, ['home'], 'bookshelf-image');
   const bookshelf = createItem(bookshelfImage, 'bookshelf', () => {
-    // leaveHome(true);
-    // lookAtBooks(isHell, comeHome);
+    leaveHome(true);
+    lookAtBooks(comeHome, isHell);
   });
   room.append(bookshelf);
 

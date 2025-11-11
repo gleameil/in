@@ -1,4 +1,4 @@
-import { FEBRUARY_COLORS } from "../../../shared/color";
+import { FEBRUARY_COLORS, JANUARY_COLORS } from "../../../shared/color";
 import { createDivWithElements, createImage, createSpan } from "../../../shared/helpers";
 import { month as getMonth, getTime, setTime } from "../../../shared/time/time";
 import { DATETIME_IMAGES_FEBRUARY, DEGREES_PER_MINUTE_MINUTE_HAND, DEGREES_PER_MINUTE_HOUR_HAND, FebruaryHoliday, FEBRUARY_HOLIDAYS } from "./clockAndCalendar.february.constants";
@@ -16,8 +16,12 @@ function hourHandAngle(minutesFromStartDay: number): number {
 } 
 
 function showDate(originalDate: Date) {
-    document.getElementById(`calendar-square-${originalDate.getMonth()}-${originalDate.getDate()}`)?.classList.remove('february-calendar-today');
-    document.getElementById(`calendar-square-${getMonth()}-${getTime().getDate()}`)?.classList.add('february-calendar-today');
+    const now = getTime();
+    const previousDay = document.getElementById(`calendar-square-${originalDate.getMonth()}-${originalDate.getDate()}`) as HTMLDivElement;
+    const today = document.getElementById(`calendar-square-${getMonth()}-${now.getDate()}`) as HTMLDivElement;
+    if (today) {
+        highlightToday(today, previousDay, getHoliday(now));
+    }
 }
 
 function showTime(minuteHand: HTMLImageElement, hourHand: HTMLImageElement) {
@@ -54,13 +58,17 @@ export function makeClock(): HTMLDivElement {
     const hourHand = createImage(DATETIME_IMAGES_FEBRUARY.hourHand, ['clock-and-calendar', 'clock', 'clock-hand'], 'clock-hour-hand');
     
 
-    function advanceTime(isMinute: boolean = false) {
+    function changeTime(e: MouseEvent, isMinute: boolean = false) {
         const oldNow = getTime();
         const now = new Date(oldNow.getTime());
+        const rightClick = e.button === 2;
+        
+        const change = rightClick ? -1 : 1
+
         if (isMinute) {
-            now.setMinutes(now.getMinutes() + 1);
+            now.setMinutes(now.getMinutes() + change);
         } else {
-            now.setHours(now.getHours() + 1)
+            now.setHours(now.getHours() + change)
         }
         setTime(now);
         showTime(minuteHand, hourHand);
@@ -71,9 +79,9 @@ export function makeClock(): HTMLDivElement {
 
     const clockCenter = createDivWithElements([], ['clock-and-calendar', 'clock'], 'clock-center-piece');
 
-    minuteHand.addEventListener('click', () => advanceTime(true));
-    hourHand.addEventListener('click', () => advanceTime());
-    clockCenter.addEventListener('click', () => advanceTime());
+    minuteHand.addEventListener('click', (e: MouseEvent) => changeTime(e, true));
+    hourHand.addEventListener('click', (e: MouseEvent) => changeTime(e));
+    clockCenter.addEventListener('click', (e: MouseEvent) => changeTime(e));
 
     const numbers: HTMLSpanElement[] = [];
     for (let i = 1; i < 13; i++) {
@@ -86,6 +94,26 @@ export function makeClock(): HTMLDivElement {
     const clockFace = createDivWithElements([...numbers, minuteHand, hourHand, clockCenter], ['clock-and-calendar', 'clock'], 'clock-face');
     showTime(minuteHand, hourHand);
     return createDivWithElements([clock, clockFace], ['clock-and-calendar', 'clock'], 'clock-close');
+}
+
+function removeHighlight(previousDay: HTMLDivElement) {
+    previousDay.style.backgroundColor = 'transparent';
+    previousDay.style.color = FEBRUARY_COLORS.black;
+}
+
+function highlightToday(today: HTMLDivElement, previousDay?: HTMLDivElement, todaysHoliday?: FebruaryHoliday) {
+    if (previousDay) {
+        removeHighlight(previousDay);
+    }
+    const month = getMonth();
+    today.style.backgroundColor = todaysHoliday?.color ?? (month === 0 ? JANUARY_COLORS.white : FEBRUARY_COLORS.white);
+    today.style.color = todaysHoliday?.textColor ?? (month === 0 ? FEBRUARY_COLORS.gray : FEBRUARY_COLORS.black);
+} 
+
+function getHoliday(date: Date): FebruaryHoliday | undefined {
+    const month = date.getMonth();
+    const day = date.getDate();
+    return FEBRUARY_HOLIDAYS.find(holiday => month === 1 && holiday.date === day)
 }
 
 export function makeCalendar(isHell: boolean): HTMLDivElement {
@@ -109,18 +137,20 @@ export function makeCalendar(isHell: boolean): HTMLDivElement {
 
         const calendarSquareElements: HTMLElement[] = [];
         calendarSquareElements.push(createSpan(`${day}`, ['clock-and-calendar', 'calendar', `calendar-square-${month}`, 'calendar-numeral'], `calendar-numeral-${month}-${day}`));
-        const holiday: FebruaryHoliday | undefined = FEBRUARY_HOLIDAYS.find(holiday => month === 1 && holiday.date === day)
+        const holiday: FebruaryHoliday | undefined = getHoliday(new Date(2024, month, day));
         if (holiday) {
             const text = createSpan(holiday.name, ['clock-and-calendar', 'calendar', `calendar-square-${month}`, 'calendar-holiday-text'], `calendar-holiday-text-${month}-${day}`);
-            text.style.color = holiday.textColor;
-            calendarSquareElements.push(text);
+            const emoji = createSpan(holiday.secularEmoji, ['clock-and-calendar', 'calendar', `calendar-square-${month}`, 'calendar-holiday-emoji'], `calendar-holiday-emoji-${month}-${day}`);
+            calendarSquareElements.push(emoji);
         }
         const square = createDivWithElements(calendarSquareElements, ['clock-and-calendar', 'calendar', 'calendar-square'], `calendar-square-${month}-${day}`);
         square.addEventListener('click', () => {
             if (month < 2) {
-                document.getElementById(`calendar-square-${getMonth()}-${getTime().getDate()}`)?.classList.remove('february-calendar-today');
-                square.classList.add('february-calendar-today');
+                const previousDay = document.getElementById(`calendar-square-${getMonth()}-${getTime().getDate()}`) as HTMLDivElement;                
                 setTime(new Date(2024, month, day, 0));
+
+                highlightToday(square, previousDay, holiday)
+
                 const minuteHand = document.getElementById('clock-minute-hand') as HTMLImageElement;
                 const hourHand = document.getElementById('clock-hour-hand') as HTMLImageElement;
                 if (minuteHand && hourHand) {
@@ -129,9 +159,23 @@ export function makeCalendar(isHell: boolean): HTMLDivElement {
             }
         });
 
+        if (holiday) {
+            square.addEventListener('mouseenter', () => {
+                const emoji = document.getElementById(`calendar-holiday-emoji-${month}-${day}`);
+                if (emoji) {
+                    emoji.innerText = holiday.sacredEmoji;
+                }
+            });
+            square.addEventListener('mouseleave', () => {
+                const emoji = document.getElementById(`calendar-holiday-emoji-${month}-${day}`);
+                if (emoji) {
+                    emoji.innerText = holiday.secularEmoji;
+                }
+            });
+        }
 
         if (getMonth() === month && getTime().getDate() === day) {
-            square.classList.add('february-calendar-today');
+            highlightToday(square, undefined, holiday);
         } 
         calendarSquares.push(square)
     }

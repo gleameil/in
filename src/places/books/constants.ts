@@ -8,6 +8,8 @@ import { mereReality, mereRealityCover } from "./mereReality/mereReality";
 import { verna, vernaCover } from './verna/verna';
 import { michael, michaelCover } from "./michael/michael";
 import { madeline, madelineCover } from "./madeline/madeline";
+import { sketchDiaryCover } from "./sketchDiary/sketchDiary";
+import { deificCover, deific } from './february/deific/deific';
 
 export interface Book {
   name: string;
@@ -16,91 +18,114 @@ export interface Book {
   shouldHide?: () => boolean; 
 }
 
-// export const FEBRUARY_BOOKS_HEAVEN: Book[] = [
-//   { // lost sylphid, lost princess &or golden key
-//     name: 'anthology',
-//     showCover: anthologyCover,
-//     show: februaryAnthology,
+// Living Poems in the style of Firebirds
+export const FEBRUARY_BOOKS_HEAVEN: Book[] = [
+  // pair with poor Donne
+  {
+    name: 'deific',
+    showCover: deificCover,
+    show: deific,
+  },
+//   {
+//     name: 'outOfTales',
+//     showCover: outOfTalesCover,
+//     show: outOfTales,
 //   },
-//   { // Ruth, happy ending
-//     name: 'courage',
-//     showCover: courageHeavenCover,
-//     show: courageHeaven,
+//   {
+//     name: 'wiseWoman',
+//     showCover: wiseWomanCover,
+//     show: wiseWoman,
 //   },
-//   { // ? Christy, happy ending???? 
-//     name: 'faith',
-//     showCover: faithHeavenCover,
-//     show: faithHeaven,
+//   {
+//     name: 'sketchDiary',
+//     showCover: februarySketchDiaryCover,
+//     show: februarySketchDiary,
 //   },
-//   { // Elinor, happy ending
-//     name: 'temperance',
-//     showCover: temperanceHeavenCover,
-//     show: temperanceHeaven,
+//   {
+//     name: 'flowerFairies',
+//     showCover: flowerFairiesCover,
+//     show: flowerFairies,
 //   },
-//   { // Lily, happy ending ???
-//     name: 'love',
-//     showCover: loveHeavenCover,
-//     show: loveHeaven,
+//   {
+//     name: 'talesOfOut',
+//     showCover: talesOfOutCover,
+//     show: talesOfOut,
 //   },
-//   { // ...Janus & Lizzie, happy ending?
-//     name: 'justice',
-//     showCover: justiceHeavenCover,
-//     show: justiceHeaven,
+//   {
+//     name: 'duessa',
+//     showCover: duessaCover,
+//     show: duessa,
 //   },
-//   { // Duessa
-//     name: 'wisdom',
-//     showCover: wisdomHeavenCover,
-//     show: wisdomHeaven,
+//   // Doris
+//   {
+//     name: 'romanceLastChapter',
+//     showCover: romanceLastChapterCover,
+//     show: romanceLastChapter,
 //   },
-//   { // Doris? Lost princess?
-//     name: 'hope',
-//     showCover: hopeHeavenCover,
-//     show: hopeHeaven,
+//   {
+//     name: 'holySonnets',
+//     showCover: holySonnetsCover,
+//     show: holySonnets,
 //   },
-// ]
+//   {
+//     name: 'illuminations',
+//     showCover: illuminationsCover,
+//     show: illuminations,
+//   },
+//   {
+//     name: 'songOfTheReed',
+//     showCover: songOfTheReedCover,
+//     show: songOfTheReed,
+//   },
+//   {
+//     name: 'dearEmily',
+//     showCover: illuminationsCover,
+//     show: illuminations,
+//   },
+//   {
+//     name: 'amalie',
+//     showCover: amalieCover,
+//     show: amalie,
+//   }
+//   // { // lost sylphid, lost princess &or golden key
+//   //   name: 'februaryAnthology',
+//   //   showCover: anthologyCover,
+//   //   show: februaryAnthology,
+//   // },
+]
 
-// export const FEBRUARY_BOOKS_HELL: Book[] = [
-//   { // lost sylphid, lost princess &or golden key
-//     name: 'anthology',
-//     showCover: anthologyCover,
-//     show: februaryAnthology,
+export const FEBRUARY_BOOKS_HELL: Book[] = [
+//   {
+//     name: 'holySonnets',
+//     showCover: holySonnetsCover,
+//     show: holySonnets,
 //   },
-//   { // Ruth, happy ending
-//     name: 'courage',
-//     showCover: courageHellCover,
-//     show: courageHell,
+//   {
+//     name: 'illuminations',
+//     showCover: illuminationsCover,
+//     show: illuminations,
 //   },
-//   { // ? Christy, happy ending???? 
-//     name: 'faith',
-//     showCover: faithHellCover,
-//     show: faithHell,
+//   {
+//     name: 'songOfTheReed',
+//     showCover: songOfTheReedCover,
+//     show: songOfTheReedHell,
 //   },
-//   { // Elinor, happy ending
-//     name: 'temperance',
-//     showCover: temperanceHellCover,
-//     show: temperanceHell,
+//   {
+//     name: 'dearEmily',
+//     showCover: illuminationsCover,
+//     show: illuminations,
 //   },
-//   { // Lily, happy ending ???
-//     name: 'love',
-//     showCover: loveHellCover,
-//     show: loveHell,
+//   {
+//     name: 'romanceRoulette',
+//     showCover: romanceRouletteCover,
+//     show: romanceRoulette,
 //   },
-//   { // ...Janus & Lizzie, happy ending?
-//     name: 'justice',
-//     showCover: justiceHellCover,
-//     show: justiceHell,
-//   },
-//   { // Duessa
-//     name: 'wisdom',
-//     showCover: wisdomHellCover,
-//     show: wisdomHell,
-//   },
-//   { // Doris? Lost princess?
-//     name: 'hope',
-//     showCover: hopeHellCover,
-//     show: hopeHell,
-//   },
-// ]
+//   {
+//     name: 'thisThing',
+//     showCover: thisThingCover,
+//     show: thisThing,
+//   }
+]
 
 export const BOOKS: Book[] = [
   {
@@ -193,5 +218,9 @@ export const BOOKS_IMAGES: ImageCatalog = {
   vernaCover: {
     path: new URL('../../assets/images/books/bookCovers/grayDawnCover.jpg', import.meta.url),
     alt: 'Gray book with darker gray banner reading Gray Dawn',
+  },
+  deificCover: {
+    path: new URL('../../assets/images/books/bookCovers/deificCover.jpg', import.meta.url),
+    alt: 'Book with mice (one cartoon, one realistic pencil) on cardboard reading "Songs & Unholy Sonnets / Dei-fic"',
   },
 } as const;

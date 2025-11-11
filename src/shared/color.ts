@@ -168,6 +168,8 @@ export const OUT_COLORS: Colors = {
 
 export type OutColor = typeof OUT_COLORS[keyof typeof OUT_COLORS]
 
+export type DesignColor = JanuaryColor | FebruaryColor | OutColor;
+
 export function makeColorTransparent(rgbOrRgbaString: string, byHowMuch: number): string {
   if (!rgbOrRgbaString) {
     throw new Error('rgba string absent');

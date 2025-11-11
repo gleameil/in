@@ -13,7 +13,7 @@ export function leaveClockAndCalendarFebruary() {
 export function clockAndCalendarFebruary(comeHome: () => void) {
     const windowForFebruary = window as WindowForFebruary;
     const isHell = !!windowForFebruary.isHell;
-    isHell ? setBackground(FEBRUARY_COLORS.lightGray) : setBackground(FEBRUARY_COLORS.white);
+    isHell ? setBackground(FEBRUARY_COLORS.lightGray) : setBackground(FEBRUARY_COLORS.blue);
     const clock = makeClock();
     const calendar = makeCalendar(isHell);
     const clockAndCalendarContainer = createDivWithElements([clock, calendar], ['clock-and-calendar-february'], 'clock-and-calendar-february-container')
