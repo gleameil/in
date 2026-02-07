@@ -858,7 +858,110 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                 },
             ],
         },
-
+        {
+            markdown: `
+            # ✪
+            I called my jeweler, called my smith,
+            and ordered to be wrought forthwith
+            A diadem full fair to see
+            So she might then love me.
+            
+            She wore my fair and glist’ring crown
+            In the country, in the town.
+            In merry May full fair was she,
+            But ay! she loved not me.            
+            `
+        },
+        {
+            title: `Revolt (3)`,
+            poem: [
+                {
+                    markdown: `I’ll show them.`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `I’ll write`,
+                    line: 1,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `*unyou*`,
+                    line: 1,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `*Unyou*`,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `is the gray of cinder blocks.`,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `*Unyou* isn’t`,
+                    line: 1,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `*Unyou* isn’t complex enough either,`,
+                    line: 2,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `but it pretends`,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `to be real, +`,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `they’ll pretend to like it.`,
+                    line: 1,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+            ]
+        }
     ]
 ]
 
