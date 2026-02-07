@@ -158,6 +158,10 @@
     position: absolute;
 }
 
+.item-february:hover {
+    cursor: pointer
+}
+
 #room {
     position: absolute;
     left: 10vmax;
