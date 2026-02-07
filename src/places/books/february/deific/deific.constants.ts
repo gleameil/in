@@ -319,7 +319,7 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                         }
                     },
                     {
-                        markdown: `piper, you lure the girls`,
+                        markdown: `piper, **you** lure the girls`,
                         line: 5,
                         speechBubble: {
                             index: 3,
@@ -697,7 +697,7 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
             title: 'Revolt (1)',
             poem: [
                 {
-                    markdown: `Workshop rejected you.`,
+                    markdown: `Workshop rejected **you**`,
                     speechBubble: {
                         index: 0,
                         arrowLeft: true,
@@ -813,7 +813,7 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
             title: `Revolt (2)`,
             poem: [
                 {
-                    markdown: `(Because, tho' I paint you`,
+                    markdown: `(Because, tho' I paint **you**`,
                     speechBubble: {
                         index: 0,
                         arrowLeft: false,
@@ -870,7 +870,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
             In the country, in the town.
             In merry May full fair was she,
             But ay! she loved not me.            
-            `
+            `,
+            musicOverride: DEIFIC_AUDIO.foolSongV3_4,
         },
         {
             title: `Revolt (3)`,
@@ -961,12 +962,853 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     },
                 },
             ]
-        }
-    ]
+        },
+        {
+            title: `Revolt (4)`,
+            poem: [
+                {
+                    markdown: `A mouse,`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `a cigarette butt,`,
+                    line: 1,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `a multidimensionally`,
+                    line: 2,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `indeterminate`,
+                    line: 2,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `linguistic structure,`,
+                    line: 2,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `a divoce,`,
+                    line: 3,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `*are*.`,
+                    line: 4,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `✸`,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `is`,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `mere`,
+                    line: 1,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `*trammeled*`,
+                    line: 1,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `metaphor`,
+                    line: 1,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+            ]
+        },
+        {
+            title: `Revolt (5)`,
+            poem: [
+                {
+                    markdown: `for what`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `*is*`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `so much better`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `that the comparison`,
+                    line: 1,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `is`,
+                    line: 1,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `the comparison is laughable`,
+                    line: 2,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+            ]
+        },
+        {
+            markdown: `
+            # ✰
+            *I loved a girl as fair, as gay,
+            As any morn in merry May.
+            In merry May full fair was she,
+            But ay! she loved not me.*
+            `,
+            musicOverride: DEIFIC_AUDIO.foolSongChorus,
+
+        },
+        {
+            markdown: `
+            ## Destiny
+            Goatish, I am destined
+            to love you and to lose.
+            To love and to refuse,
+            because your love is not
+            a thing that I can bear.
+            To love, my destiny,
+            and learn it is not love,
+            and it is not you
+            I do not love — that too.
+            
+            Your house is glorious,
+            I’m sure, but I won’t see.
+            The others’ laugh at me.
+            is my seal of doom,
+            because their laugh at me
+            is mine at you. There’s twisting
+            at the root of me
+            that never will come straight.
+            To know me is to hate.         `
+        },
+        {
+            title: `Revolt (6)`,
+            poem: [
+                {
+                    markdown: `Grant my readers`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `mice`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+            ],
+        },
+        {
+            title: `Revolt (7)`,
+            poem: [
+                {
+                    markdown: `+ metaphor`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `so tight`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `they will forgive`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `the 🟌`,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+            ],
+        },
+        {
+            markdown: `
+            # ✧
+            Enough with her, enough with all!
+            I’ll leave my high and handsome hall,
+            To sing and play and act the fool
+            To serve those whom I once did rule.
+            
+            She thought me dead, she thought me gone,
+            She died, she died, and I lived on,
+            And so a happy fool I’ll be
+            While worms with her make free.
+            `,
+            musicOverride: DEIFIC_AUDIO.foolSongEnd,
+        },
+        {
+            title: `Revolt (8)`,
+            poem: [
+                {
+                    markdown: `+ if ✵`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `is not even metaphor,`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `if **you**`,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `are my grubby tee-shirted body`,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `in the fast + frigid stream`,
+                    line: 1,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `or Vaughan Williams’s`,
+                    line: 2,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `“Lark Ascending”`,
+                    line: 3,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `so much less`,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `than **you** are`,
+                    speechBubble: {
+                        index: 3,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `the pressure`,
+                    speechBubble: {
+                        index: 3,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `water`,
+                    speechBubble: {
+                        index: 3,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `exerts`,
+                    line: 1,
+                    speechBubble: {
+                        index: 3,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `on this stretch of limestone`,
+                    line: 1,
+                    speechBubble: {
+                        index: 3,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `to erode shifting patterns`,
+                    line: 2,
+                    speechBubble: {
+                        index: 3,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `no one`,
+                    line: 3,
+                    speechBubble: {
+                        index: 3,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `but **you**`,
+                    line: 3,
+                    speechBubble: {
+                        index: 3,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `will ever see,`,
+                    line: 3,
+                    speechBubble: {
+                        index: 3,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+            ]
+        },
+        {
+            title: `Revolt (9)`,
+            poem: [
+                {
+                    markdown: `the ✦’s`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `still moves me`,
+                    line: 1,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `to revolt.`,
+                    line: 1,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+            ]
+        },
+        {
+            title: `Liar`,
+            poem: [
+                {
+                    markdown: `You call to me`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: false,
+                    },
+                },
+                {
+                    markdown: `with ✦, +`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: false,
+                    },
+                },
+                {
+                    markdown: `I call it lies.`,
+                    line: 1,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: false,
+                    },
+                },
+                {
+                    markdown: `(✮ tells us`,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: false,
+                    },
+                },
+                {
+                    markdown: `what to eat/fuck`,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: false,
+                    },
+                },
+                {
+                    markdown: `+ meaningless intricacies`,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: false,
+                    },
+                },
+                {
+                    markdown: `because evolution`,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: false,
+                    },
+                },
+                {
+                    markdown: `is inefficient?)`,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: false,
+                    },
+                },
+                {
+                    markdown: `(Certain`,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: false,
+                    },
+                },
+                {
+                    markdown: `secret`,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: false,
+                    },
+                },
+                {
+                    markdown: `days`,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: false,
+                    },
+                },
+                {
+                    markdown: `it’s too`,
+                    line: 1,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: false,
+                    },
+                },
+                {
+                    markdown: `❂ —`,
+                    line: 1,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: false,
+                    },
+                },
+                {
+                    markdown: `I can’t stand —)`,
+                    line: 2,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: false,
+                    },
+                },
+                {
+                    markdown: `I’ll pretend **you** came to me`,
+                    speechBubble: {
+                        index: 3,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `to show me the wonder within`,
+                    line: 1,
+                    speechBubble: {
+                        index: 3,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `— **you**,`,
+                    line: 1,
+                    speechBubble: {
+                        index: 3,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `not my brain.`,
+                    line: 2,
+                    speechBubble: {
+                        index: 3,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `I’ll just lie,`,
+                    line: 2,
+                    speechBubble: {
+                        index: 3,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `it’s not that I knew it was bullshit,`,
+                    speechBubble: {
+                        index: 4,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `it’s that I *thought* it was bullshit,`,
+                    line: 1,
+                    speechBubble: {
+                        index: 4,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `+ because I could not care`,
+                    line: 2,
+                    speechBubble: {
+                        index: 4,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `about **you**,`,
+                    line: 2,
+                    speechBubble: {
+                        index: 4,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `I could not care at all.`,
+                    line: 3,
+                    speechBubble: {
+                        index: 4,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+            ]
+        },
+        {
+            markdown: `
+            ## To the Author-God
+            All voices are your voice. Not even I
+            exist—you wrote my thoughts, a minor move
+            well made. Omnipotent, you need not prove
+            your skill—you play so endless day may fl y
+            a little faster. Yes, you’re governed by
+            the rules you set: for logic must approve
+            each play, and nature too, and to remove
+            one bit from your intent’s to fall awry
+            of all—an easy game, and yet less dull
+            than, lonely, contemplating your lone mind.
+            The world’s a poem. If I knew each thought
+            that swam each soul, each fl ower blooming full
+            today, tomorrow gone--in all I’d fi nd
+            the form. The matter we know not.
+            `
+        },
+        {
+            title: `Waking Ugly`,
+            poem: [
+                {
+                    markdown: `Wind,`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `sleet.`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `**Your** ✦’s`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `my heat —`,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `I run.`,
+                    line: 1,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `**You** do not chase.`,
+                    line: 1,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `**You** fly.`,
+                    line: 2,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `I do not chase.`,
+                    line: 2,
+                    speechBubble: {
+                        index: 0,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `The sun makes love`,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `to dream dolls,`,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `lamplight on sudoku,`,
+                    line: 1,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `lilies in the margin,,`,
+                    line: 2,
+                    speechBubble: {
+                        index: 1,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `solutionless.`,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `Third`,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `bloom I draw’s.`,
+                    line: 1,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `a rose.`,
+                    line: 1,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `Prick me red.`,
+                    line: 2,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+                {
+                    markdown: `Or dead.`,
+                    line: 2,
+                    speechBubble: {
+                        index: 2,
+                        arrowLeft: false,
+                        arrowRight: true,
+                    },
+                },
+            ]
+        },
+    ],
 ]
 
 export const DEIFIC: FebruaryBook = {
-    chapters: [],
+    chapters: DEIFIC_CHAPTERS,
     palette: deificColors,
     arrowImage: SHARED_IMAGES.arrowLeft,
     music: DEIFIC_AUDIO.foolSongInterlude,
