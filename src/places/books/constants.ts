@@ -8,6 +8,8 @@ import { mereReality, mereRealityCover } from "./mereReality/mereReality";
 import { verna, vernaCover } from './verna/verna';
 import { michael, michaelCover } from "./michael/michael";
 import { madeline, madelineCover } from "./madeline/madeline";
+import { sketchDiaryCover } from "./sketchDiary/sketchDiary";
+import { deificCover, deific } from './february/deific/deific';
 
 export interface Book {
   name: string;
@@ -15,6 +17,115 @@ export interface Book {
   show: (goBack: () => void) => void;
   shouldHide?: () => boolean; 
 }
+
+// Living Poems in the style of Firebirds
+export const FEBRUARY_BOOKS_HEAVEN: Book[] = [
+  // pair with poor Donne
+  {
+    name: 'deific',
+    showCover: deificCover,
+    show: deific,
+  },
+//   {
+//     name: 'outOfTales',
+//     showCover: outOfTalesCover,
+//     show: outOfTales,
+//   },
+//   {
+//     name: 'wiseWoman',
+//     showCover: wiseWomanCover,
+//     show: wiseWoman,
+//   },
+//   {
+//     name: 'sketchDiary',
+//     showCover: februarySketchDiaryCover,
+//     show: februarySketchDiary,
+//   },
+//   {
+//     name: 'flowerFairies',
+//     showCover: flowerFairiesCover,
+//     show: flowerFairies,
+//   },
+//   {
+//     name: 'talesOfOut',
+//     showCover: talesOfOutCover,
+//     show: talesOfOut,
+//   },
+//   {
+//     name: 'duessa',
+//     showCover: duessaCover,
+//     show: duessa,
+//   },
+//   // Doris
+//   {
+//     name: 'romanceLastChapter',
+//     showCover: romanceLastChapterCover,
+//     show: romanceLastChapter,
+//   },
+//   {
+//     name: 'holySonnets',
+//     showCover: holySonnetsCover,
+//     show: holySonnets,
+//   },
+//   {
+//     name: 'illuminations',
+//     showCover: illuminationsCover,
+//     show: illuminations,
+//   },
+//   {
+//     name: 'songOfTheReed',
+//     showCover: songOfTheReedCover,
+//     show: songOfTheReed,
+//   },
+//   {
+//     name: 'dearEmily',
+//     showCover: illuminationsCover,
+//     show: illuminations,
+//   },
+//   {
+//     name: 'amalie',
+//     showCover: amalieCover,
+//     show: amalie,
+//   }
+//   // { // lost sylphid, lost princess &or golden key
+//   //   name: 'februaryAnthology',
+//   //   showCover: anthologyCover,
+//   //   show: februaryAnthology,
+//   // },
+]
+
+export const FEBRUARY_BOOKS_HELL: Book[] = [
+//   {
+//     name: 'holySonnets',
+//     showCover: holySonnetsCover,
+//     show: holySonnets,
+//   },
+//   {
+//     name: 'illuminations',
+//     showCover: illuminationsCover,
+//     show: illuminations,
+//   },
+//   {
+//     name: 'songOfTheReed',
+//     showCover: songOfTheReedCover,
+//     show: songOfTheReedHell,
+//   },
+//   {
+//     name: 'dearEmily',
+//     showCover: illuminationsCover,
+//     show: illuminations,
+//   },
+//   {
+//     name: 'romanceRoulette',
+//     showCover: romanceRouletteCover,
+//     show: romanceRoulette,
+//   },
+//   {
+//     name: 'thisThing',
+//     showCover: thisThingCover,
+//     show: thisThing,
+//   }
+]
 
 export const BOOKS: Book[] = [
   {
@@ -107,5 +218,9 @@ export const BOOKS_IMAGES: ImageCatalog = {
   vernaCover: {
     path: new URL('../../assets/images/books/bookCovers/grayDawnCover.jpg', import.meta.url),
     alt: 'Gray book with darker gray banner reading Gray Dawn',
+  },
+  deificCover: {
+    path: new URL('../../assets/images/books/bookCovers/deificCover.jpg', import.meta.url),
+    alt: 'Book with mice (one cartoon, one realistic pencil) on cardboard reading "Songs & Unholy Sonnets / Dei-fic"',
   },
 } as const;

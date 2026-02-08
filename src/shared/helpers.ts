@@ -11,7 +11,7 @@ export function createBackground() {
   return background;
 }
 
-export function setBackground(color: string, gradient?: LinearGradient, parent?: HTMLDivElement, imageHref?: string) {
+export function setBackground(color: string, gradient?: LinearGradient, parent?: HTMLDivElement, imageHref?: string, repeat: boolean = false) {
   let bg = document.getElementById('background');
   if (!bg) {
     bg = createBackground();
@@ -25,8 +25,8 @@ export function setBackground(color: string, gradient?: LinearGradient, parent?:
   if (imageHref) {
     all.style.backgroundImage = `url(${imageHref})`;
     all.style.backgroundPosition = 'center';
-    all.style.backgroundSize = 'contain';
-    all.style.backgroundRepeat = 'no-repeat'
+    all.style.backgroundSize = repeat ? '20%' : 'contain';
+    all.style.backgroundRepeat = repeat ? 'repeat' : 'no-repeat'
   }
 
 }

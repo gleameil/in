@@ -143,6 +143,157 @@
     animation-fill-mode: both;
 }
 
+/* February */
+#home-container {
+    width: 102vw;
+    height: 102vh;
+    margin: 0;
+    perspective: 200vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.item-february {
+    position: absolute;
+}
+
+.item-february:hover {
+    cursor: pointer
+}
+
+#room {
+    position: absolute;
+    left: 10vmax;
+    top: -37.5vw;;
+    transform-style: preserve-3d;
+    transform: rotateX(-18deg) translateZ(37.4vmax) translateY(-20vmax);
+}
+
+#floor {
+    position: absolute;
+    background-image: url(../../assets/images/home/february/floor.jpg);
+    background-repeat: repeat;
+    position: absolute;
+    width: 200vmax;
+    height: 200vmax;
+    transform: rotateX(90deg);
+    filter: brightness(1.1);
+}
+
+#back-wall {
+    position: absolute;
+    width: 200vmax;
+    height: 200vmax;
+    transform: translateZ(-100vmax);
+}
+
+#side-wall {
+    position: absolute;
+    width: 200vmax;
+    height: 200vmax;
+    transform: translateX(-100vmax) rotateY(90deg);
+}
+
+#front-wall {
+    position: absolute;
+    width: 200vmax;
+    height: 200vmax;
+    transform: translateZ(100vmax)
+}
+
+#bed-and-comforter {
+    position: absolute;
+    height: 39vw;
+    width: 32.5vw;
+    transform: translateX(50vw) translateY(60vmax) translateZ(-20vmax);
+}
+
+#bed-february {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+#comforter {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-size: 60%;
+    background-repeat: repeat;
+    mask-position: center;
+    mask-size: 100%, 100%;
+    mask-image: url(../../assets/images/home/february/bedMask.png);
+}
+
+#lamp {
+    height: 80vh;
+    width: 30vh;
+    bottom: 0;
+    left: 0;
+}
+
+#lamp-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#bookshelf {
+    height: 20vmax;
+    width: 26vmax;
+    transform: translateY(80vmax) translateZ(-86vmax);
+}
+
+#bookshelf-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#window-february {
+    height: 20vmax;
+    width: 26vmax;
+    transform: translateY(60vmax) translateX(30vw) translateZ(-86vmax);
+    background-size: contain;
+    background-position: center;
+}
+
+#window-image-february {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#mirror {
+    height: 40vmax;
+    width: 8vmax;
+    transform: translateX(-0.3vw) translateY(65vh) translateZ(-30vmax);
+}
+
+#mirror-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#clock-and-calendar {
+    height: 14vmax;
+    width: 21vmax;
+    transform: translateX(7.2vmax) translateY(56vmax) translateZ(-50vmax)
+}
+
+#clock-and-calendar-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+
 @media (orientation: portrait) {
     html {
         overflow: auto;
@@ -154,6 +305,35 @@
         left: auto;
         right: 2vw;
         object-fit: contain;
+    }
+
+    #bed-and-comforter {
+        transform: translateX(40vw) translateY(60vmax) translateZ(10vmax);
+    }
+
+    #lamp {
+        width: 23vh;
+        height: 60vh;
+    }
+
+    #bookshelf {
+        height: 25vmax;
+        width: 33vmax;
+        transform: translateY(75vmax) translateZ(-86vmax);
+    }
+
+    #mirror {
+        transform: translateX(-0.3vw) translateY(48vh) translateZ(0vmax);
+    }
+
+    #window-february {
+        height: 30vmax;
+        width: 39vmax;
+        transform: translateY(40vmax) translateX(50vw) translateZ(-86vmax)
+    }
+
+    #clock-and-calendar {
+       transform: translateX(7.2vw) translateY(48vmax) translateZ(-50vmax)
     }
 
     #bed-div {

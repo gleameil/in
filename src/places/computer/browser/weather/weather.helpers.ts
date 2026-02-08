@@ -1,4 +1,4 @@
-import { Day, JANUARY_SCHEDULE, TimeForDay, Weather } from "../../../../shared/time/time.januaryConstants";
+import { Day, JANUARY_SCHEDULE, TimeForDay, TimeName, Weather } from "../../../../shared/time/time.januaryConstants";
 import { getTime, timeOfDayFromDate } from "../../../../shared/time/time";
 
 export interface HourlyForecast {
@@ -61,14 +61,14 @@ export function getTenDayForecast(): DailyForecast[] {
     var low = 100;
     const weatherThatDay: Set<Weather> = new Set()
     Object.keys(day).forEach(key => {
-      const temp = day[key].temperature;
+      let temp = day[key as TimeName].temperature ?? -100;
       if ((temp ?? -100) > high) {
         high = temp;
       }
       if ((temp ?? 100) < low) {
         low = temp;
       }
-      weatherThatDay.add(day[key].weather)
+      weatherThatDay.add(day[key as TimeName].weather)
     });
     return {
       day: dayNumber,

@@ -1,5 +1,5 @@
 
-import { AudioURLSrc, ImagePathAndAltText, SHARED_IMAGES } from "../../../shared/constants";
+import { AudioURLSrc, SHARED_IMAGES } from "../../../shared/constants";
 import { JANUARY_COLORS } from "../../../shared/color";
 import { createButtonWithImage, createButtonWithText, createDivWithElements, createImage, removeByClassName, setBackground } from "../../../shared/helpers";
 import { createAppButtonWithEmojiOrText } from "../computer.helpers"

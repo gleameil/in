@@ -1,5 +1,11 @@
-import { Day, JANUARY_SCHEDULE, Time, TimeForDay, TIMES } from "./time.januaryConstants";
+import { END_OF_FEBRUARY } from "./time.februaryConstants";
+import { BEGINNING_OF_JANUARY, Day, JANUARY_SCHEDULE, Time, TimeForDay, TIMES } from "./time.januaryConstants";
 import { WindowWithClock } from "./time.sharedConstants";
+
+export function isValidTime(time?: Date): boolean {
+  const timestamp = time?.getTime();
+  return !!timestamp && timestamp <= END_OF_FEBRUARY.getTime() && timestamp >= BEGINNING_OF_JANUARY.getTime();
+}
 
 // This can be called in various ways:
 // Once a second while you stay In
@@ -8,7 +14,9 @@ import { WindowWithClock } from "./time.sharedConstants";
 // Of course, if you're willing to convert times to and from numerical timestamps,
 // You can do this in your own localstorage or via a query param as well
 export function setTime(time: Date) {
-  localStorage.setItem('evernostianNow', `${time.getTime()}`);
+  if (isValidTime(time)) {
+    localStorage.setItem('evernostianNow', `${time.getTime()}`);
+  }
 }
 // the time stored in your browser's localStorage, or, failing that,
 // (if you've cleared localStorage or this is your first time)
@@ -20,7 +28,12 @@ export function getTime(): Date {
 }
 
 export function advanceTimeBy(minutes: number) {
-  setTime(new Date(getTime().valueOf() + 60000 * minutes))
+  const newTime = new Date(getTime().valueOf() + 60000 * minutes);
+  if (isValidTime(newTime)) {
+    setTime(new Date(getTime().valueOf() + 60000 * minutes))
+  } else {
+    setTime(new Date(2024, 0));
+  }
 }
 
 function setTimeFromQueryAndRemoveParam(): boolean {
@@ -69,6 +82,11 @@ export function timestampForTimeOnDate(timestamp: number, hours: number, minutes
   newDate.setSeconds(0);
   return newDate.getTime();
 }
+
+export function month(time?: Date): number {
+  return time?.getMonth() ?? getTime().getMonth();
+}
+
 export function dayOfTheMonth(time?: Date): number {
   return time?.getDate() ?? getTime().getDate();
 }
@@ -133,15 +151,17 @@ export function goToNextTimeOfDay() {
 
 // Making it harder to get trapped Out in the clouds or the night
 export function goToNextKindOfWeather() {
-  const time = timeOfDayFromDate();
-  const currentDay = dayOfTheMonth();
-  const oldWeather = JANUARY_SCHEDULE[currentDay - 1][time.name].weather;
-  let newWeather = oldWeather;
-  while (newWeather === oldWeather) {
-    goToNextTimeOfDay();
-    const newTime = timeOfDayFromDate();
-    const newDay = dayOfTheMonth();
-    newWeather = JANUARY_SCHEDULE[newDay - 1][newTime.name].weather;
+  if (month() === 0) {
+    const time = timeOfDayFromDate();
+    const currentDay = dayOfTheMonth();
+    const oldWeather = JANUARY_SCHEDULE[currentDay - 1][time.name].weather;
+    let newWeather = oldWeather;
+    while (newWeather === oldWeather) {
+      goToNextTimeOfDay();
+      const newTime = timeOfDayFromDate();
+      const newDay = dayOfTheMonth();
+      newWeather = JANUARY_SCHEDULE[newDay - 1][newTime.name].weather;
+    }
   }
 }
 
