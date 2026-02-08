@@ -141,7 +141,7 @@ export function makeCalendar(isHell: boolean): HTMLDivElement {
         if (holiday) {
             const text = createSpan(holiday.name, ['clock-and-calendar', 'calendar', `calendar-square-${month}`, 'calendar-holiday-text'], `calendar-holiday-text-${month}-${day}`);
             const emoji = createSpan(holiday.secularEmoji, ['clock-and-calendar', 'calendar', `calendar-square-${month}`, 'calendar-holiday-emoji'], `calendar-holiday-emoji-${month}-${day}`);
-            calendarSquareElements.push(emoji);
+            calendarSquareElements.push(emoji, text);
         }
         const square = createDivWithElements(calendarSquareElements, ['clock-and-calendar', 'calendar', 'calendar-square'], `calendar-square-${month}-${day}`);
         square.addEventListener('click', () => {

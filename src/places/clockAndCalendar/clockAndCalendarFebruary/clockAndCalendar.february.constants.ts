@@ -40,11 +40,19 @@ export interface FebruaryHoliday {
 
 export const FEBRUARY_HOLIDAYS: FebruaryHoliday[] = [
     {
+        date: 1,
+        name: 'St. Brigid\'s Day',
+        secularEmoji: '☘️',
+        sacredEmoji: '🔥',
+        color: FEBRUARY_COLORS.red,
+        textColor: FEBRUARY_COLORS.white,
+    },
+    {
         date: 2,
         name: 'Groundhog Day',
         secularEmoji: '🐿️',
         sacredEmoji: '🔥',
-        color: FEBRUARY_COLORS.yellow,
+        color: FEBRUARY_COLORS.orange,
     },
     {
         date: 8,
@@ -52,14 +60,6 @@ export const FEBRUARY_HOLIDAYS: FebruaryHoliday[] = [
         secularEmoji: '🎂',
         sacredEmoji: '🩵',
         color: FEBRUARY_COLORS.blue,
-    },
-    {
-        date: 10,
-        name: 'Lunar New Year',
-        secularEmoji: '🧧',
-        sacredEmoji: '🐲',
-        color: FEBRUARY_COLORS.red,
-        textColor: FEBRUARY_COLORS.white,
     },
     {
         date: 11,
@@ -70,19 +70,19 @@ export const FEBRUARY_HOLIDAYS: FebruaryHoliday[] = [
         textColor: FEBRUARY_COLORS.white,
     },
     {
+        date: 13,
+        name: 'Mardi Gras',
+        secularEmoji: '🥞',
+        sacredEmoji: '🥞',
+        color: FEBRUARY_COLORS.yellow,
+    },
+    {
         date: 14,
         name: 'Valentine\'s Day',
         secularEmoji: '❤️',
         sacredEmoji: '♱',
         color: FEBRUARY_COLORS.violet,
         textColor: FEBRUARY_COLORS.white,
-    },
-    {
-        date: 19,
-        name: 'President\'s Day',
-        secularEmoji: '🇺🇸',
-        sacredEmoji: '🇺🇸',
-        color: FEBRUARY_COLORS.orange,
     },
     {
         date: 29,

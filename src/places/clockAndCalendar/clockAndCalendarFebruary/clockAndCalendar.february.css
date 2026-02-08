@@ -86,14 +86,15 @@
 }
 
 .calendar-square {
+    align-items: center;
     border: 1px solid black;
     color:rgb(70, 50, 60);
     font-family: 'IM Fell English';
-    font-size: 1vmax;
+    font-size: 0.6vmax;
 }
 
 .calendar-holiday-emoji {
-    font-size: 2vmax;
+    font-size: 1.6vmax;
     display: block;
 }
 
