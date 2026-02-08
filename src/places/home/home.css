@@ -158,7 +158,7 @@
     position: absolute;
 }
 
-.item-february:hover {
+.active-february:hover {
     cursor: pointer
 }
 
