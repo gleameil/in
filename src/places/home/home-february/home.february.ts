@@ -1,11 +1,11 @@
 import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio } from "../../../shared/helpers";
-import { FEBRUARY_COLORS } from "../../../shared/color";
+import { FEBRUARY_COLORS, FebruaryColor } from "../../../shared/color";
 import { getTime, stopTime } from "../../../shared/time/time";
 import { lookAtBooks } from "../../books/books";
 // import { setUpDarkRoom } from "../../darkRoom/darkRoom";
-import { FEBRUARY_BACKGROUNDS, FEBRUARY_HOME_IMAGES, WindowForFebruary } from "./home.february.constants";
+import { backgroundChoiceFebruary, FEBRUARY_BACKGROUNDS, FEBRUARY_HAS_CHANGING_BACKGROUND, FEBRUARY_HOME_IMAGES, FebruaryChangingBackground, WindowForFebruary } from "./home.february.constants";
 import { OUT } from "../constants";
-import { createItem, isValentinesDay, randomFebruaryBackgroundIndex } from "../helpers";
+import { createItem, isValentinesDay } from "../helpers";
 import '../home.css';
 import { createSoundControl, playIfAllowed, SOUND_CONTROL_ID } from "../../../shared/sound";
 import { MUSIC } from "../../computer/music/music.constants";
@@ -81,6 +81,25 @@ function toggleLights() {
   windowForFebruary.lampIsOn = !windowForFebruary.lampIsOn;
 }
 
+function retrieveColorChoice(object: FebruaryChangingBackground): number | null {
+  const key = `${object}-${backgroundChoiceFebruary}`;
+  const maybeIndexString = localStorage.getItem(key);
+  const maybeIndex = parseInt(maybeIndexString ?? '');
+  if (maybeIndex >= 0 && maybeIndex < FEBRUARY_BACKGROUNDS.length) {
+    return maybeIndex;
+  }
+  return null;
+}
+
+function saveColorChoice(backgroundIndex: number, parent?: HTMLDivElement) {
+  let objectId = parent?.id;
+  if (!objectId) {
+    return;
+  }
+  let key = `${objectId}-${backgroundChoiceFebruary}`
+  localStorage.setItem(key, `${backgroundIndex}`);
+}
+
 function nextBackground(currentBackground?: number, parent?: HTMLDivElement) {
   const bgIndex = currentBackground !== undefined ? (currentBackground + 1) % FEBRUARY_BACKGROUNDS.length : 0;
   const background = FEBRUARY_BACKGROUNDS[bgIndex];
@@ -89,6 +108,8 @@ function nextBackground(currentBackground?: number, parent?: HTMLDivElement) {
   } else {
     setBackground(FEBRUARY_COLORS.white, undefined, parent, background.path.href, true);
   }
+  saveColorChoice(bgIndex, parent);
+
   (parent ?? document.getElementById('background'))?.addEventListener('click', () => {
     nextBackground(bgIndex, parent);
   }, { once: true })
@@ -97,10 +118,13 @@ function nextBackground(currentBackground?: number, parent?: HTMLDivElement) {
 function makeBed(isHell: boolean): HTMLDivElement {
     const bedFrame = createImage(FEBRUARY_HOME_IMAGES.bed, ['home', 'bed-february'], 'bed-february');
     const comforter = createDivWithElements([], ['home', 'bed-february'], 'comforter');
+    const colorChoice = retrieveColorChoice(FEBRUARY_HAS_CHANGING_BACKGROUND.comforter);
     if (isHell) {
       setBackground(FEBRUARY_COLORS.orange, undefined, comforter);
+    } else if (colorChoice !== null) {
+      nextBackground(colorChoice - 1, comforter)
     } else {
-      nextBackground(randomFebruaryBackgroundIndex(), comforter);
+      nextBackground(2, comforter);
     }
     const bed = createDivWithElements([bedFrame, comforter], ['home', 'bed-february'], 'bed-and-comforter');
     return bed;
@@ -139,9 +163,12 @@ export function homeFebruary(comeHome: () => void) {
     setBackground(FEBRUARY_COLORS.gray, undefined, sideWall)
     setBackground(FEBRUARY_COLORS.lightGray, undefined, frontWall)
   } else {
-    const mainBg = randomFebruaryBackgroundIndex();
-    nextBackground(mainBg, backWall);
-    nextBackground(randomFebruaryBackgroundIndex(), sideWall);
+    const storedBackWallBgIndex = retrieveColorChoice(FEBRUARY_HAS_CHANGING_BACKGROUND.backWall);
+    const storedSideWallBgIndex = retrieveColorChoice(FEBRUARY_HAS_CHANGING_BACKGROUND.sideWall);
+    const backWallMinusOne = storedBackWallBgIndex === null ? 0 : storedBackWallBgIndex - 1;
+    const sideWallMinusOne = storedSideWallBgIndex === null ? 1 : storedSideWallBgIndex - 1;
+    nextBackground(backWallMinusOne, backWall);
+    nextBackground(sideWallMinusOne, sideWall);
     setBackground(FEBRUARY_COLORS.red, undefined, frontWall);
   }
 

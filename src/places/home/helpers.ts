@@ -1,10 +1,5 @@
 import { createDivWithElements } from "../../shared/helpers";
 import { getTime, month } from "../../shared/time/time";
-import { FEBRUARY_BACKGROUNDS } from "./home-february/home.february.constants";
-
-export function randomFebruaryBackgroundIndex() {
-  return Math.floor(Math.random() * FEBRUARY_BACKGROUNDS.length);
-}
 
 export function isValentinesDay() {
   return month() === 1 && getTime().getDate() === 14;

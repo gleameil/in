@@ -1,5 +1,6 @@
 import { FEBRUARY_COLORS, FebruaryColor } from "../../../shared/color";
 import { ImageCatalog, ImagePathAndAltText, LinearGradient } from "../../../shared/constants";
+import { setBackground } from "../../../shared/helpers";
 
 export interface WindowForFebruary extends Window {
     lampIsOn?: boolean;
@@ -76,4 +77,14 @@ const FEBRUARY_PATTERNS: ImageCatalog = {
     }
 }
 
-export const FEBRUARY_BACKGROUNDS: (ImagePathAndAltText | FebruaryColor)[] = [FEBRUARY_COLORS.white, FEBRUARY_PATTERNS.snow, FEBRUARY_COLORS.pink, FEBRUARY_PATTERNS.mouse, FEBRUARY_COLORS.blue, FEBRUARY_PATTERNS.polkaDot, FEBRUARY_COLORS.dullViolet]
+export const backgroundChoiceFebruary = 'background-choice-february'
+
+export const FEBRUARY_HAS_CHANGING_BACKGROUND = {
+    sideWall: 'side-wall',
+    backWall: 'back-wall',
+    comforter: 'comforter',
+} as const;
+
+export type FebruaryChangingBackground = typeof FEBRUARY_HAS_CHANGING_BACKGROUND[keyof typeof FEBRUARY_HAS_CHANGING_BACKGROUND]
+
+export const FEBRUARY_BACKGROUNDS: (ImagePathAndAltText | FebruaryColor)[] = [FEBRUARY_COLORS.white, FEBRUARY_PATTERNS.snow, FEBRUARY_COLORS.pink, FEBRUARY_PATTERNS.mouse, FEBRUARY_COLORS.blue, FEBRUARY_PATTERNS.polkaDot, FEBRUARY_COLORS.dullViolet] as const;
