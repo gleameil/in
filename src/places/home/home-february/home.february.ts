@@ -1,4 +1,4 @@
-import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio } from "../../../shared/helpers";
+import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio, urlForOutNow } from "../../../shared/helpers";
 import { FEBRUARY_COLORS, FebruaryColor } from "../../../shared/color";
 import { getTime, stopTime } from "../../../shared/time/time";
 import { lookAtBooks } from "../../books/books";
@@ -135,7 +135,7 @@ function makeWindow(isHell: boolean): HTMLDivElement {
   const windowImage = createImage(FEBRUARY_HOME_IMAGES.window, ['home'], 'window-image-february');
   const windowDiv = createItem(windowImage, 'window-february', () => {
     // Another way out of Out (rather grim, will grow fuller and fuller of potential) or night (beautiful but uneventful)
-    window.location.assign(`${OUT}?time=${getTime().getTime()}`);
+    window.location.assign(urlForOutNow());
   });
   windowDiv.style.backgroundImage = `url(${outTheWindow}`;
   return windowDiv;

@@ -1,4 +1,4 @@
-import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio } from "../../../shared/helpers";
+import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio, urlForOutNow } from "../../../shared/helpers";
 import { SHARED_IMAGES } from "../../../shared/constants";
 import { JANUARY_COLORS } from "../../../shared/color";
 import { getTime, goToNextKindOfWeather, scheduleForNow } from "../../../shared/time/time";
@@ -68,7 +68,7 @@ export function homeJanuary(comeHome: () => void) {
     if (['night', 'cloudy'].includes(scheduleForNow().weather)) {
       goToNextKindOfWeather();
     }
-    window.location.assign(`${OUT}?time=${getTime().getTime()}`);
+    window.location.assign(urlForOutNow());
   });
   
   const booksImage = createImage(HOME_IMAGES.books, ['home'], 'books-image');
