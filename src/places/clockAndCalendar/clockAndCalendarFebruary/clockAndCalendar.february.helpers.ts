@@ -1,7 +1,8 @@
 import { FEBRUARY_COLORS, JANUARY_COLORS } from "../../../shared/color";
 import { createDivWithElements, createImage, createSpan } from "../../../shared/helpers";
 import { month as getMonth, getTime, setTime } from "../../../shared/time/time";
-import { DATETIME_IMAGES_FEBRUARY, DEGREES_PER_MINUTE_MINUTE_HAND, DEGREES_PER_MINUTE_HOUR_HAND, FebruaryHoliday, FEBRUARY_HOLIDAYS } from "./clockAndCalendar.february.constants";
+import { FebruaryHoliday, FEBRUARY_HOLIDAYS } from "../../../shared/time/time.februaryConstants";
+import { DATETIME_IMAGES_FEBRUARY, DEGREES_PER_MINUTE_MINUTE_HAND, DEGREES_PER_MINUTE_HOUR_HAND } from "./clockAndCalendar.february.constants";
 
 function minuteHandAngle(minutesFromStartHour: number): number {
     const degreesFromVertical = DEGREES_PER_MINUTE_MINUTE_HAND * minutesFromStartHour;
