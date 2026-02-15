@@ -1,10 +1,10 @@
-import { END_OF_FEBRUARY } from "./time.februaryConstants";
+import { BEGINNING_OF_FEBRUARY, END_OF_FEBRUARY } from "./time.februaryConstants";
 import { BEGINNING_OF_JANUARY, Day, JANUARY_SCHEDULE, Time, TimeForDay, TIMES } from "./time.januaryConstants";
 import { WindowWithClock } from "./time.sharedConstants";
 
 export function isValidTime(time?: Date): boolean {
   const timestamp = time?.getTime();
-  return !!timestamp && timestamp <= END_OF_FEBRUARY.getTime() && timestamp >= BEGINNING_OF_JANUARY.getTime();
+  return !!timestamp && timestamp <= END_OF_FEBRUARY && timestamp >= BEGINNING_OF_JANUARY;
 }
 
 // This can be called in various ways:
@@ -22,17 +22,20 @@ export function setTime(time: Date) {
 // (if you've cleared localStorage or this is your first time)
 // Jan 1 2024
 export function getTime(): Date {
-  const startDate = new Date(2024, 0);
+  const startDate = new Date(BEGINNING_OF_FEBRUARY);
   const evernostianNow = parseInt(localStorage.getItem('evernostianNow') ?? '');
   return evernostianNow ? new Date(evernostianNow) : startDate;
 }
 
+// Time only advances autonomously in January while you're inside
+// February time advances when you achieve goals
 export function advanceTimeBy(minutes: number) {
   const newTime = new Date(getTime().valueOf() + 60000 * minutes);
-  if (isValidTime(newTime)) {
+  if (isValidTime(newTime) && newTime.getTime() < BEGINNING_OF_FEBRUARY) {
     setTime(new Date(getTime().valueOf() + 60000 * minutes))
   } else {
-    setTime(new Date(2024, 0));
+    setTime(new Date(BEGINNING_OF_FEBRUARY));
+    stopTime();
   }
 }
 
@@ -53,16 +56,18 @@ function setTimeFromQueryAndRemoveParam(): boolean {
 // Sets the time to: 
 // 1. the timestamp in the "time" query param, or, failing that,
 // 2. what turns up in getTime()
-// Then starts advancing time at a rate of one minute per minute :)
+// Then starts advancing time at a rate of one minute per minute if it's still January :)
 export function startTime() {
   const queryDidContainTime = setTimeFromQueryAndRemoveParam();
   if (!queryDidContainTime) {
     setTime(getTime());
   }
-  if (!(window as WindowWithClock).clock) {
-    (window as WindowWithClock).clock = setInterval(() => {
-      advanceTimeBy(1);
-     }, 60000);
+  if (getTime().getTime() < BEGINNING_OF_FEBRUARY) {
+    if (!(window as WindowWithClock).clock) {
+      (window as WindowWithClock).clock = setInterval(() => {
+        advanceTimeBy(1);
+      }, 60000);
+    }
   }
 }
 

@@ -1,7 +1,7 @@
 import { FEBRUARY_COLORS, FebruaryColor } from "../color";
 
-export const BEGINNING_OF_FEBRUARY = new Date(2024, 1);
-export const END_OF_FEBRUARY = new Date(2024, 1, 29, 23, 59, 59);
+export const BEGINNING_OF_FEBRUARY = new Date(2024, 1).getTime();
+export const END_OF_FEBRUARY = new Date(2024, 1, 29, 23, 59, 59).getTime();
 
 export interface FebruaryHoliday {
     date: number,
