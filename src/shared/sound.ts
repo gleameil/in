@@ -38,11 +38,12 @@ function togglePlayingSound() {
 function canPlayFromQueryParam(query: URLSearchParams): boolean {
   const canPlayFromQuery = query.get('canPlay');
   return canPlayFromQuery === 'true';
-} 
+}
+
 
 export function createSoundControl(): HTMLButtonElement {
   let windowWithAudio = (window as unknown) as WindowWithAudio;
-  windowWithAudio.canPlayAudio = canPlayFromQueryParam(new URLSearchParams(window.location.search));
+  windowWithAudio.canPlayAudio = canPlayFromQueryParamRemovingQuery();
   const soundControl = createButtonWithText(windowWithAudio.canPlayAudio ? '🔈': '🔇', [], 'sound-control');
   soundControl.addEventListener('click', togglePlayingSound);
   return soundControl;
