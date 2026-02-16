@@ -37,8 +37,8 @@ function setUpTaskbar() {
   dateTimePicker.type = 'datetime-local';
   dateTimePicker.id = 'computer-datetime-picker';
   dateTimePicker.value = datetimestring;
-  dateTimePicker.min = dateTimeStringFromDate(BEGINNING_OF_JANUARY);
-  dateTimePicker.max = dateTimeStringFromDate(END_OF_FEBRUARY);
+  dateTimePicker.min = dateTimeStringFromDate(new Date(BEGINNING_OF_JANUARY));
+  dateTimePicker.max = dateTimeStringFromDate(new Date(END_OF_FEBRUARY));
   dateTimePicker.addEventListener('change', (event) => {
     const chosenDate = new Date((event.target as HTMLInputElement)?.value);
     setTime(chosenDate);
