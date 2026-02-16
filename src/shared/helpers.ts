@@ -1,7 +1,7 @@
 import { OUT } from '../places/home/constants';
 import { AudioURLSrc, ImagePathAndAltText, ImageURLSrc, LinearGradient } from './constants';
-import { canPlayAudio } from './sound';
-import { getTime } from './time/time';
+import { canPlayAudio, setCanPlayFromQuery } from './sound';
+import { getTime, setTimeFromQuery } from './time/time';
 
 export function makeLinearGradient(gradient: LinearGradient): string {
   return `linear-gradient(${gradient.degrees}deg, ${gradient.color1}, ${gradient.color2})`;
@@ -156,10 +156,16 @@ export function expectLetters(e: KeyboardEvent, index: number, letters: string, 
     }
 }
 
+export function handleQueryParams() {
+  const query = new URLSearchParams(window.location.search);
+  setTimeFromQuery(query);
+  setCanPlayFromQuery(query);
+  window.history.replaceState({}, '', window.location.href.replace(query.toString(), ''));
+}
+
 export function urlForOutNow(): URL {
   const url = new URL(OUT);
   url.searchParams.append('time', `${getTime().getTime()}`);
   url.searchParams.append('canPlay', `${canPlayAudio()}`);
-  console.log(url.toString());
   return url;
 }

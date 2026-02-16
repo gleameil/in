@@ -1,6 +1,11 @@
-import { BEGINNING_OF_FEBRUARY, END_OF_FEBRUARY } from "./time.februaryConstants";
+import { BEGINNING_OF_FEBRUARY, END_OF_FEBRUARY, LIMIT_OF_FEBRUARY_FORESIGHT } from "./time.februaryConstants";
 import { BEGINNING_OF_JANUARY, Day, JANUARY_SCHEDULE, Time, TimeForDay, TIMES } from "./time.januaryConstants";
 import { WindowWithClock } from "./time.sharedConstants";
+
+export function setMaxTime(time?: Date) {
+  const limit = time?.getTime() || localStorage.getItem(LIMIT_OF_FEBRUARY_FORESIGHT) || BEGINNING_OF_FEBRUARY;
+  localStorage.setItem(LIMIT_OF_FEBRUARY_FORESIGHT, `${limit}`);
+}
 
 export function isValidTime(time?: Date): boolean {
   const timestamp = time?.getTime();
@@ -39,18 +44,15 @@ export function advanceTimeBy(minutes: number) {
   }
 }
 
-function setTimeFromQueryAndRemoveParam(): boolean {
-  const query = new URLSearchParams(window.location.search);
+export function setTimeFromQuery(query: URLSearchParams) {
   const evernostianNowStringFromQuery = query.get('time');
   const evernostianNowTimestamp = parseInt(evernostianNowStringFromQuery ?? '');
   // should never be falsy, aka 0, aka the epoch, because this creation does not go that far back in time
   if (evernostianNowTimestamp) {
     setTime(new Date(evernostianNowTimestamp));
-    query.delete('time');
-    window.location.replace(window.location.href.replace(window.location.search, query.toString()));
-    return true
+  } else {
+    setTime(getTime());
   }
-  return false
 }
 
 // Sets the time to: 
@@ -58,10 +60,6 @@ function setTimeFromQueryAndRemoveParam(): boolean {
 // 2. what turns up in getTime()
 // Then starts advancing time at a rate of one minute per minute if it's still January :)
 export function startTime() {
-  const queryDidContainTime = setTimeFromQueryAndRemoveParam();
-  if (!queryDidContainTime) {
-    setTime(getTime());
-  }
   if (getTime().getTime() < BEGINNING_OF_FEBRUARY) {
     if (!(window as WindowWithClock).clock) {
       (window as WindowWithClock).clock = setInterval(() => {

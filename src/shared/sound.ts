@@ -35,22 +35,14 @@ function togglePlayingSound() {
   }
 }
 
-function canPlayFromQueryParam(query: URLSearchParams): boolean {
-  const canPlayFromQuery = query.get('canPlay');
-  return canPlayFromQuery === 'true';
-}
-
-function canPlayFromQueryParamRemovingQuery(): boolean {
-  const query = new URLSearchParams(window.location.search);
-  const canPlay = canPlayFromQueryParam(new URLSearchParams(query));
-  query.delete('canPlay');
-  window.location.replace(window.location.href.replace(window.location.search, query.toString()));
-  return canPlay;
+export function setCanPlayFromQuery(query: URLSearchParams) {
+  const canPlayQueryValue = query.get('canPlay');
+  const windowWithAudio = (window as unknown) as WindowWithAudio;  
+  windowWithAudio.canPlayAudio = canPlayQueryValue === 'true';
 }
 
 export function createSoundControl(): HTMLButtonElement {
-  let windowWithAudio = (window as unknown) as WindowWithAudio;
-  windowWithAudio.canPlayAudio = canPlayFromQueryParamRemovingQuery();
+  const windowWithAudio = (window as unknown) as WindowWithAudio;
   const soundControl = createButtonWithText(windowWithAudio.canPlayAudio ? '🔈': '🔇', [], 'sound-control');
   soundControl.addEventListener('click', togglePlayingSound);
   return soundControl;

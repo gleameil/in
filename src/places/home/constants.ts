@@ -1,6 +1,7 @@
 import { ImageCatalog } from "../../shared/constants";
 
-export const OUT = "https://gleameil.github.io/out";
+// export const OUT = "https://gleameil.github.io/out";
+export const OUT = 'http://localhost:8080';
 
 export const INTRO_TEXT = `Hey, we don't know each other, but I'm glad you came.
 Room isn't much. I must wear my plain brown gown and never go too fine. 

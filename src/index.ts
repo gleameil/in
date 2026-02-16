@@ -1,10 +1,11 @@
 import { comeHome } from "./places/home/home";
 import { startTime } from "./shared/time/time";
-import { createSpan, expectLetters, removeByClassName } from  './shared/helpers';
+import { createSpan, expectLetters, handleQueryParams, removeByClassName } from  './shared/helpers';
 
 const LETTERS = 'jennie';
 
 function comeIn() {
+  handleQueryParams();
   removeByClassName('under-construction');
   // Docmentation in `startTime` itself, but it's remarkably fun
   // Finding concrete ways to embody my insistence that "time is strange in Evernost"
