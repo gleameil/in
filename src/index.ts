@@ -1,12 +1,29 @@
 import { comeHome } from "./places/home/home";
-import { startTime } from "./shared/time/time";
-import { createSpan, expectLetters, handleQueryParams, removeByClassName } from  './shared/helpers';
+import { getLimitOfFebruaryForesight, startTime } from "./shared/time/time";
+import { createSpan, expectLetters, handleQueryParams, removeByClassName, setBackground } from  './shared/helpers';
+import {  } from "./shared/time/time.februaryConstants";
+import { makeFirstMirror } from "./places/mirror/mirrorFebruary/mirror.february.helpers";
+import { FEBRUARY_COLORS } from "./shared/color";
 
 const LETTERS = 'jennie';
+
+function februaryOpening() {
+  setBackground(FEBRUARY_COLORS.white);
+  makeFirstMirror(0);
+}
+
+function enterFebruary() {
+  if (getLimitOfFebruaryForesight() === null) {
+    februaryOpening();
+  } else {
+    comeHome()
+  }
+}
 
 function comeIn() {
   handleQueryParams();
   removeByClassName('under-construction');
+
   // Docmentation in `startTime` itself, but it's remarkably fun
   // Finding concrete ways to embody my insistence that "time is strange in Evernost"
   startTime();
@@ -15,7 +32,7 @@ function comeIn() {
   // any more than they are in the literal year (in the northern hemisphere, where I'm based)
   // with the cold, the dirty snow, holidays past
   console.log('Welcoming you In.')
-  comeHome();
+  enterFebruary();
 }
 
 // Don't need this now but may off and on

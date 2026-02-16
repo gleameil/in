@@ -16,13 +16,26 @@
     opacity: 0;
 }
 
+#mirror-close-february:hover #mirror-silhouette {
+    opacity: 0.3;
+}
+
+#mirror-close-february:hover #mirror-background {
+    filter: hue-rotate(95deg) brightness(0.25);
+}
+
+#mirror-close-february:hover #mirror-text {
+    opacity: 1;
+    color: var(--blue);
+}
+
 #mirror-frame {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 #mirror-background {
@@ -31,16 +44,23 @@
     left: 0;
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    filter: hue-rotate(125deg) grayscale(0.25);
+    opacity: 1;
 }
 
-#found-jennie {
+#found-jennie, #mirror-silhouette {
     position: absolute;
     bottom: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    opacity: 0.1
+    opacity: 0.1;
+    object-fit: cover
+}
+
+#mirror-silhouette {
+    filter: contrast(.25) brightness(0.25);
 }
 
 #lost-jennie-gates-of-hell {
@@ -49,13 +69,32 @@
     left: 0;
     opacity: 0.5;
     font-family: 'Nanum Brush Script';
-    font-size: 7vmax;
+    font-size: 5vmax;
     mask-image: url(../../../assets/images/mirror/february/mirrorMask.png);
-    mask-size: contain;
+    mask-size: cover;
     mask-position: center;
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
+
+#mirror-text {
+    align-items: center;
+    color: var(--blue);
+    justify-content: center;
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    opacity: 0.8;
+    color: var(--gray);
+    font-family: 'IM Fell English';
+    font-size: 2vmax;
+    text-align: center;
+    mask-position: center;
+    height: 50%;
+    width: 60%;
+}
+
 
 #lost-jennie {
     position: absolute;
@@ -64,8 +103,35 @@
     height: 100%;
     width: 100%;
     mask-image: url(../../../assets/images/mirror/february/mirrorMask.png);
-    mask-size: contain;
+    mask-size: cover;
     mask-position: center;
-    opacity: 0.3
+    opacity: 0.3;
+    object-fit: cover;
 }
 
+#you-text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: var(--gold);
+    color: var(--white);
+    font-family: 'EB Garamond';
+    font-size: 3vmax;
+    padding: 2vmax;
+    width: 101vw;
+    text-align: center;
+}
+
+.you-option {
+    text-align: center;
+    background-color: var(--white);
+    box-shadow: none;
+    outline: none;
+    border: none;
+    padding: 1vmax;
+    margin: 0.25vmax;
+    height: 4vmax;
+    width: 80vw;
+    font-family: 'EB Garamond';
+    font-size: 2vmax;
+}
