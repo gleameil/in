@@ -43,6 +43,7 @@ function canPlayFromQueryParam(query: URLSearchParams): boolean {
 function canPlayFromQueryParamRemovingQuery(): boolean {
   const query = new URLSearchParams(window.location.search);
   const canPlay = canPlayFromQueryParam(new URLSearchParams(query));
+  query.delete('canPlay');
   window.location.replace(window.location.href.replace(window.location.search, query.toString()));
   return canPlay;
 }
