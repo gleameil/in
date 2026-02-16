@@ -141,7 +141,7 @@ const FEBRUARY_OPENING: MirrorInteractionSequence = {
         nextId: `s`
     },
     r: {
-        markdown: `One thing. You're a human on a computer, right? In *real*?`,
+        markdown: `One thing. You're a human on a computer, right? In *real*? Here's what they said to say, for that.`,
         speaker: 'mirror',
         nextId: 't',
     },
@@ -151,7 +151,7 @@ const FEBRUARY_OPENING: MirrorInteractionSequence = {
         nextId: 'noGame',
     },
     t: {
-        markdown: `Everything you accomplish lives in your browser data — in localStorage or indexedDB.`,
+        markdown: `Everything you accomplish lives in your browser data — in localStorage or indexedDB for gleameil.github.io.`,
         speaker: 'mirror',
         nextId: 'u',
     },
