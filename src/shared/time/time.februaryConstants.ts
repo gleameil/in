@@ -5,6 +5,7 @@ export const INITIAL_LIMIT_OF_FEBRUARY_FORESIGHT = new Date(2024, 1, 1, 23, 59, 
 export const END_OF_FEBRUARY = new Date(2024, 1, 29, 23, 59, 59).getTime();
 
 export const LIMIT_OF_FEBRUARY_FORESIGHT_KEY = 'limitOfFebruaryForesight';
+export const LIMITLESS = 'limitless';
 
 export interface FebruaryHoliday {
     date: number,

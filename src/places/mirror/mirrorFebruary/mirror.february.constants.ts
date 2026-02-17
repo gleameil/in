@@ -80,7 +80,7 @@ const FEBRUARY_OPENING: MirrorInteractionSequence = {
         nextId: 'g',
     },
     g: {
-        markdown: `Still, I know we'll figure it out.`,
+        markdown: `Still, I know we'll figure it out one way or another.`,
         speaker: 'mirror',
         nextId: 'h',
     },
@@ -95,29 +95,69 @@ const FEBRUARY_OPENING: MirrorInteractionSequence = {
         nextId: 'j',
     },
     j: {
-        markdown: `That's all I know, honestly. I thought *you* would know more!`,
+        markdown: `Except it's all kind of metaphorical. That's all I know, honestly. I thought *you* would know more!`,
         speaker: 'mirror',
         nextId: 'k',
     },
     k: {
         markdown: `But will you help me?`,
         speaker: 'mirror',
+        nextId: 'aa',
+    },
+    aa: {
+        markdown: `Actually, better question!`,
+        speaker: 'mirror',
+        nextId: 'ab',
+    },
+    ab: {
+        markdown: `Any time you spend here at all helps *me*.`,
+        speaker: 'mirror',
+        nextId: 'ac',
+    },
+    ac: {
+        markdown: `We both need to explore. But do you want *my* help?`,
+        speaker: 'mirror',
+        nextId: 'ad',
+    },
+    ad: {
+        markdown: `If yes, I'll send you looking for things,`,
+        speaker: 'mirror',
+        nextId: 'ae',
+    },
+    ae: {
+        markdown: `and you get to see the good you do.`,
+        speaker: 'mirror',
+        nextId: 'af',
+    },
+    af: {
+        markdown: `Otherwise you can explore on your own.`,
+        speaker: 'mirror',
+        nextId: 'ag',
+    },
+    ag: {
+        markdown: `It'll be more like they said January was for you. Mysterious. A lot to see, but not a lot of direction.`,
+        speaker: 'mirror',
+        nextId: 'ah',
+    },
+    ah: {
+        markdown: `Will you epxlore with me or without?`,
+        speaker: 'mirror',
         nextId: 'l',
     },
     l: {
         options: [
             {
-                markdown: `I guess so.`,
+                markdown: `With!`,
                 nextId: 'y',
             },
             {
-                markdown: `Nah, sorry...`,
+                markdown: `Maybe without...`,
                 nextId: 'z'
             },
         ]
     },
     m: {
-        markdown: `I certainly *hope* so. It won't be too hard on *us*.`,
+        markdown: `I certainly *hope* so! You never know, though...`,
         speaker: 'mirror',
         nextId: 'r',
     },
@@ -127,12 +167,12 @@ const FEBRUARY_OPENING: MirrorInteractionSequence = {
         nextId: 'o',
     },
     o: {
-        markdown: `But sometimes exploring freely teaches you more than anything else would!`,
+        markdown: `But freedom can teach you more than anything else!`,
         speaker: 'mirror',
         nextId: 'p',
     },
     p: {
-        markdown: `and the more either of us learns, the better it is`,
+        markdown: `and the more either of us learns, the better —`,
         speaker: 'mirror',
         nextId: `q`,
     },
@@ -142,7 +182,7 @@ const FEBRUARY_OPENING: MirrorInteractionSequence = {
         nextId: `s`
     },
     r: {
-        markdown: `One thing. You're a human on a computer, right? In *real*? Here's what they said to say, for that.`,
+        markdown: `One thing. You're a human on a computer, right? In *real*, I mean? Here's what they said to say, for that.`,
         speaker: 'mirror',
         nextId: 't',
     },
@@ -152,12 +192,12 @@ const FEBRUARY_OPENING: MirrorInteractionSequence = {
         nextId: 'noGame',
     },
     t: {
-        markdown: `Everything you accomplish lives in your browser data — in localStorage or indexedDB for gleameil.github.io.`,
+        markdown: `Everything you accomplish lives in your browser — in something called localStorage or indexedDB for https://gleameil.github.io.`,
         speaker: 'mirror',
         nextId: 'u',
     },
     u: {
-        markdown: `So if you delete that you'll lose your progress. So to speak.`,
+        markdown: `(If you understand any of that any better than I do!) But they say if you delete your browsing data you'll lose your progress.`,
         speaker: 'mirror',
         nextId: 'v',
     },
@@ -177,7 +217,7 @@ const FEBRUARY_OPENING: MirrorInteractionSequence = {
         nextId: 'game',
     },
     y: {
-        markdown: `Do you think we'll figure out what's going on if we do?`,
+        markdown: `Do you think we'll figure out what's going on?`,
         speaker: 'you',
         nextId: 'm',
     },

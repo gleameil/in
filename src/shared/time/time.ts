@@ -1,4 +1,4 @@
-import { BEGINNING_OF_FEBRUARY, END_OF_FEBRUARY, LIMIT_OF_FEBRUARY_FORESIGHT_KEY } from "./time.februaryConstants";
+import { BEGINNING_OF_FEBRUARY, END_OF_FEBRUARY, LIMIT_OF_FEBRUARY_FORESIGHT_KEY, LIMITLESS } from "./time.februaryConstants";
 import { BEGINNING_OF_JANUARY, Day, JANUARY_SCHEDULE, Time, TimeForDay, TIMES } from "./time.januaryConstants";
 import { WindowWithClock } from "./time.sharedConstants";
 
@@ -8,7 +8,12 @@ export function setMaxTime(time: string) {
 
 export function isValidTime(time?: Date): boolean {
   const timestamp = time?.getTime();
-  return !!timestamp && timestamp <= END_OF_FEBRUARY && timestamp >= BEGINNING_OF_JANUARY;
+  const limitOfFebruaryForesight = getLimitOfFebruaryForesight();
+  if (limitOfFebruaryForesight === LIMITLESS) {
+    return !!timestamp && timestamp <= END_OF_FEBRUARY && timestamp >= BEGINNING_OF_JANUARY;
+  } 
+  const numericLimit = parseInt(limitOfFebruaryForesight ?? '', 10);
+  return !!timestamp && timestamp <= numericLimit && timestamp >= BEGINNING_OF_JANUARY;
 }
 
 // This can be called in various ways:
