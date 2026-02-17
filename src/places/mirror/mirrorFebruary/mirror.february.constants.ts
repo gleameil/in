@@ -74,7 +74,7 @@ const FEBRUARY_OPENING: MirrorInteractionSequence = {
         nextId: 'f'
     },
     f: {
-        markdown: `You don't know either! Things are worse than I thought!`,
+        markdown: `You don't know either? Things are worse than I thought!`,
         speaker: 'mirror',
         nextId: 'g',
     },
@@ -106,12 +106,12 @@ const FEBRUARY_OPENING: MirrorInteractionSequence = {
     l: {
         options: [
             {
-                markdown: `I guess so. Do you think we'll figure out what's going on if we do?`,
-                nextId: 'm',
+                markdown: `I guess so.`,
+                nextId: 'y',
             },
             {
-                markdown: `I thought this was supposed to be some kind of art environment. I'm not sure I feel up for a game.`,
-                nextId: 'n'
+                markdown: `Nah, sorry...`,
+                nextId: 'z'
             },
         ]
     },
@@ -161,12 +161,12 @@ const FEBRUARY_OPENING: MirrorInteractionSequence = {
         nextId: 'v',
     },
     v: {
-        markdown: `I'll try to make it so you can download it all at some point,`,
+        markdown: `They'll try to make it so you can download it all at some point,`,
         speaker: 'mirror',
         nextId: 'w',
     },
     w: {
-        markdown: `but I'm not there yet.`,
+        markdown: `but it's not there yet.`,
         speaker: 'mirror',
         nextId: 'x',
     },
@@ -175,6 +175,16 @@ const FEBRUARY_OPENING: MirrorInteractionSequence = {
         speaker: 'mirror',
         nextId: 'game',
     },
+    y: {
+        markdown: `Do you think we'll figure out what's going on if we do?`,
+        speaker: 'you',
+        nextId: 'm',
+    },
+    z: {
+        markdown: `I thought this was supposed to be some kind of art environment. I'm not sure I feel up for a game.`,
+        speaker: 'you',
+        nextId: 'n'
+    }
 } as const;
 
 export interface MirrorInteractionCatalog {

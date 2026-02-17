@@ -12,21 +12,25 @@ function createMirrorSpeechDiv(dialogue: MirrorSpeech): HTMLDivElement {
         throw new Error('Missing Mirror Speech')
     }
     text.innerText = dialogue.markdown;
+    text.classList.remove('you-text-hidden');
     return text;
 }
 
 function createMirrorOptions(dialogue: MirrorChoice, interaction: MirrorInteraction, mirror: HTMLDivElement, youText: HTMLDivElement): HTMLDivElement {
     const options = dialogue.options.map((option, index) => {
         const optionButton = createButtonWithText(option.markdown, ['mirror-close', 'you-option'], `you-option${index}`);
-        optionButton.addEventListener('click', () => {
-            goToMirrorId(option.nextId, interaction, mirror, youText);
+        optionButton.addEventListener('click', (e) => {
+            e.stopPropagation();
             removeByClassName('you-option');
-        }, { once: true})
+            youText.classList.add('you-text-hidden');
+            goToMirrorId(option.nextId, interaction, mirror, youText);
+        }, { once: true});
         return optionButton;
     });
 
     youText.innerHTML = '';
     youText.append(... options);
+    youText.classList.remove('you-text-hidden');
     return youText;
 }
 
@@ -36,8 +40,13 @@ function goToMirrorId(id: string, interaction: MirrorInteraction, mirror: HTMLDi
         // handle end states that exist in enum thing and return OR
         throw new Error('missing dialogue item')
     } else if ((dialogueItem as MirrorSpeech).markdown) {
-        createMirrorSpeechDiv(dialogueItem as MirrorSpeech);
-        mirror.addEventListener('click', () => {
+        const speech = createMirrorSpeechDiv(dialogueItem as MirrorSpeech);
+        const clickable = speech.id === 'you-text' ? speech : mirror;
+        clickable.addEventListener('click', () => {
+            speech.innerText = '';
+            if (speech.id === 'you-text') {
+                speech.classList.add('you-text-hidden')
+            }
             goToMirrorId((dialogueItem as MirrorSpeech).nextId, interaction, mirror, youText)
         }, { once: true })
     } else {
@@ -59,7 +68,7 @@ export function makeFirstMirror(today: number) {
     const background = createImage(MIRROR_FEBRUARY_IMAGES.mirrorMask, ['mirror-close'], 'mirror-background');
     const interlocutor = createImage(MIRROR_FEBRUARY_IMAGES.foundJennie, ['mirror-close'], 'mirror-silhouette');
     const mirrorText = createDivWithElements([], ['mirror-close'], 'mirror-text');
-    const youText = createDivWithElements([], ['mirror-close'], 'you-text');
+    const youText = createDivWithElements([], ['mirror-close', 'you-text-hidden'], 'you-text');
     const mirror = createDivWithElements([background, interlocutor, mirrorText, frame], ['mirror-close'], 'mirror-close-february');
     document.getElementsByTagName('html')[0].append(createDivWithElements([mirror, youText], ['side-wall-february'], 'side-wall-february-container'));
     startInteraction(today, mirror, youText);

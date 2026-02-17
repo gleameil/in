@@ -17,17 +17,17 @@
 }
 
 #mirror-close-february:hover #mirror-silhouette {
-    opacity: 0.3;
+    opacity: 0.1;
 }
 
 #mirror-close-february:hover #mirror-background {
-    filter: hue-rotate(95deg) brightness(0.25);
+    filter: hue-rotate(125deg);
 }
-
+/* 
 #mirror-close-february:hover #mirror-text {
     opacity: 1;
     color: var(--blue);
-}
+} */
 
 #mirror-frame {
     position: absolute;
@@ -45,7 +45,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
-    filter: hue-rotate(125deg) grayscale(0.25);
+    filter: hue-rotate(125deg) brightness(0.925);
     opacity: 1;
 }
 
@@ -118,8 +118,18 @@
     font-family: 'Nanum Brush Script';
     font-size: 3vmax;
     padding: 2vmax;
-    width: 101vw;
+    width: 60vw;
+    height: 40vh;
+    border-radius: 50%;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.75;
+}
+
+.you-text-hidden {
+    visibility: hidden;
 }
 
 .you-option {
@@ -130,8 +140,11 @@
     border: none;
     padding: 1vmax;
     margin: 0.25vmax;
-    height: 4vmax;
-    width: 80vw;
+    width: 40%;
     font-family: 'EB Garamond';
     font-size: 2vmax;
+}
+
+#you-text:hover {
+    opacity: 1;
 }
