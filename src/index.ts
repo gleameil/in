@@ -9,7 +9,7 @@ const LETTERS = 'jennie';
 
 function februaryOpening() {
   setBackground(FEBRUARY_COLORS.white);
-  makeFirstMirror(0);
+  makeFirstMirror(0, comeHome);
 }
 
 function enterFebruary() {

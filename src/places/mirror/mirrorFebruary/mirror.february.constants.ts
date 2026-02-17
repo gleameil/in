@@ -45,6 +45,7 @@ export interface MirrorInteractionSequence {
 export interface MirrorInteraction {
     firstId: string;
     interactionSequence: MirrorInteractionSequence;
+    effectIds: string[];
 }
 
 const FEBRUARY_OPENING: MirrorInteractionSequence = {
@@ -195,5 +196,10 @@ export const FEBRUARY_IN_THE_MIRROR: MirrorInteractionCatalog = {
     0: {
         firstId: 'a',
         interactionSequence: FEBRUARY_OPENING,
+        effectIds: ['game', 'noGame']
     },
 } as const;
+
+export interface MirrorEffectCatalog {
+    [effectId: string]: (comeHome: () => void) => void;
+}

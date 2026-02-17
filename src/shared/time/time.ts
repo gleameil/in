@@ -2,8 +2,8 @@ import { BEGINNING_OF_FEBRUARY, END_OF_FEBRUARY, LIMIT_OF_FEBRUARY_FORESIGHT_KEY
 import { BEGINNING_OF_JANUARY, Day, JANUARY_SCHEDULE, Time, TimeForDay, TIMES } from "./time.januaryConstants";
 import { WindowWithClock } from "./time.sharedConstants";
 
-export function setMaxTime(time: Date) {
-  localStorage.setItem(LIMIT_OF_FEBRUARY_FORESIGHT_KEY, `${time.getTime()}`);
+export function setMaxTime(time: string) {
+  localStorage.setItem(LIMIT_OF_FEBRUARY_FORESIGHT_KEY, time);
 }
 
 export function isValidTime(time?: Date): boolean {

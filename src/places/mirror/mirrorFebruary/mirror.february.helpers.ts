@@ -1,6 +1,19 @@
 import { createButtonWithText, createDivWithElements, createImage, createSpan, removeByClassName } from "../../../shared/helpers";
 import { WindowForFebruary } from "../../home/home-february/home.february.constants";
-import { CITY_DOLENT, FEBRUARY_IN_THE_MIRROR, MIRROR_FEBRUARY_IMAGES, MirrorChoice, MirrorInteraction, MirrorSpeech } from "./mirror.february.constants";
+import { CITY_DOLENT, FEBRUARY_IN_THE_MIRROR, MIRROR_FEBRUARY_IMAGES, MirrorChoice, MirrorEffectCatalog, MirrorInteraction, MirrorSpeech } from "./mirror.february.constants";
+import { setMaxTime } from "../../../shared/time/time";
+import { INITIAL_LIMIT_OF_FEBRUARY_FORESIGHT } from "../../../shared/time/time.februaryConstants";
+
+const MIRROR_EFFECTS: MirrorEffectCatalog = {
+    game: (comeHome: () => void) => {
+        setMaxTime(`${INITIAL_LIMIT_OF_FEBRUARY_FORESIGHT}`);
+        comeHome();
+    },
+    noGame: (comeHome: () => void) => {
+        setMaxTime('limitless');
+        comeHome();
+    }
+} as const;
 
 function interactionForToday(today: number): MirrorInteraction | undefined {
     return FEBRUARY_IN_THE_MIRROR[today] 
@@ -16,14 +29,14 @@ function createMirrorSpeechDiv(dialogue: MirrorSpeech): HTMLDivElement {
     return text;
 }
 
-function createMirrorOptions(dialogue: MirrorChoice, interaction: MirrorInteraction, mirror: HTMLDivElement, youText: HTMLDivElement): HTMLDivElement {
+function createMirrorOptions(dialogue: MirrorChoice, interaction: MirrorInteraction, mirror: HTMLDivElement, youText: HTMLDivElement, comeHome: () => void): HTMLDivElement {
     const options = dialogue.options.map((option, index) => {
         const optionButton = createButtonWithText(option.markdown, ['mirror-close', 'you-option'], `you-option${index}`);
         optionButton.addEventListener('click', (e) => {
             e.stopPropagation();
             removeByClassName('you-option');
             youText.classList.add('you-text-hidden');
-            goToMirrorId(option.nextId, interaction, mirror, youText);
+            goToMirrorId(option.nextId, interaction, mirror, youText, comeHome);
         }, { once: true});
         return optionButton;
     });
@@ -34,11 +47,14 @@ function createMirrorOptions(dialogue: MirrorChoice, interaction: MirrorInteract
     return youText;
 }
 
-function goToMirrorId(id: string, interaction: MirrorInteraction, mirror: HTMLDivElement, youText: HTMLDivElement) {
+function goToMirrorId(id: string, interaction: MirrorInteraction, mirror: HTMLDivElement, youText: HTMLDivElement, comeHome: () => void) {
+    if (interaction.effectIds.includes(id)) {
+        MIRROR_EFFECTS[id]?.(comeHome);
+        return;
+    }
     const dialogueItem = interaction.interactionSequence[id];
     if (dialogueItem === undefined) {
-        // handle end states that exist in enum thing and return OR
-        throw new Error('missing dialogue item')
+        throw new Error(`missing dialogue item or effect of id ${id}`)
     } else if ((dialogueItem as MirrorSpeech).markdown) {
         const speech = createMirrorSpeechDiv(dialogueItem as MirrorSpeech);
         const clickable = speech.id === 'you-text' ? speech : mirror;
@@ -47,23 +63,23 @@ function goToMirrorId(id: string, interaction: MirrorInteraction, mirror: HTMLDi
             if (speech.id === 'you-text') {
                 speech.classList.add('you-text-hidden')
             }
-            goToMirrorId((dialogueItem as MirrorSpeech).nextId, interaction, mirror, youText)
+            goToMirrorId((dialogueItem as MirrorSpeech).nextId, interaction, mirror, youText, comeHome)
         }, { once: true })
     } else {
-        createMirrorOptions(dialogueItem as MirrorChoice, interaction, mirror, youText);
+        createMirrorOptions(dialogueItem as MirrorChoice, interaction, mirror, youText, comeHome);
     }
 
 }
 
-function startInteraction(today: number, mirror: HTMLDivElement, youText: HTMLDivElement) {
+function startInteraction(today: number, mirror: HTMLDivElement, youText: HTMLDivElement, comeHome: () => void) {
     const interaction = interactionForToday(today);
     if (interaction === undefined) {
         throw new Error('missing interaction')
     }
-    goToMirrorId(interaction.firstId, interaction, mirror, youText);
+    goToMirrorId(interaction.firstId, interaction, mirror, youText, comeHome);
 }
 
-export function makeFirstMirror(today: number) {
+export function makeFirstMirror(today: number, comeHome: () => void) {
     const frame = createImage(MIRROR_FEBRUARY_IMAGES.frame, ['mirror-close'], 'mirror-frame');
     const background = createImage(MIRROR_FEBRUARY_IMAGES.mirrorMask, ['mirror-close'], 'mirror-background');
     const interlocutor = createImage(MIRROR_FEBRUARY_IMAGES.foundJennie, ['mirror-close'], 'mirror-silhouette');
@@ -71,7 +87,7 @@ export function makeFirstMirror(today: number) {
     const youText = createDivWithElements([], ['mirror-close', 'you-text-hidden'], 'you-text');
     const mirror = createDivWithElements([background, interlocutor, mirrorText, frame], ['mirror-close'], 'mirror-close-february');
     document.getElementsByTagName('html')[0].append(createDivWithElements([mirror, youText], ['side-wall-february'], 'side-wall-february-container'));
-    startInteraction(today, mirror, youText);
+    startInteraction(today, mirror, youText, comeHome);
 }
 
 export function makeMirror(): HTMLDivElement {

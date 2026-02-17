@@ -1,6 +1,7 @@
 import { FEBRUARY_COLORS, FebruaryColor } from "../color";
 
 export const BEGINNING_OF_FEBRUARY = new Date(2024, 1).getTime();
+export const INITIAL_LIMIT_OF_FEBRUARY_FORESIGHT = new Date(2024, 1, 1, 23, 59, 59).getTime();
 export const END_OF_FEBRUARY = new Date(2024, 1, 29, 23, 59, 59).getTime();
 
 export const LIMIT_OF_FEBRUARY_FORESIGHT_KEY = 'limitOfFebruaryForesight';
