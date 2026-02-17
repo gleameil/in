@@ -100,7 +100,7 @@
 
 .calendar-square-0, .calendar-square-2, .calendar-square-disabled {
     color: gray;
-    font-style: italic;
+    filter: grayscale()
 }
 
 @media (orientation: portrait) {
