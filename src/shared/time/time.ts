@@ -183,3 +183,16 @@ export function previousTime(time: Time): Time {
 export function getLimitOfFebruaryForesight(): string | null {
   return localStorage.getItem(LIMIT_OF_FEBRUARY_FORESIGHT_KEY);
 }
+
+export function lastValidTime(): number {
+  const limitOfFebruaryForesight = getLimitOfFebruaryForesight();
+  const numericLimit = parseInt(limitOfFebruaryForesight ?? '', 10);
+  if (numericLimit) {
+    return numericLimit
+  }
+  if (limitOfFebruaryForesight === 'limitless') {
+    return END_OF_FEBRUARY;
+  }
+  console.error('invalid limit of February foresight', limitOfFebruaryForesight);
+  return END_OF_FEBRUARY;
+}

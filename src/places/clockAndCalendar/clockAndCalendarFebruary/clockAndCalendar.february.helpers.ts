@@ -1,6 +1,6 @@
 import { FEBRUARY_COLORS, JANUARY_COLORS } from "../../../shared/color";
 import { createDivWithElements, createImage, createSpan } from "../../../shared/helpers";
-import { month as getMonth, getTime, setTime } from "../../../shared/time/time";
+import { month as getMonth, getTime, lastValidTime, setTime } from "../../../shared/time/time";
 import { FebruaryHoliday, FEBRUARY_HOLIDAYS } from "../../../shared/time/time.februaryConstants";
 import { DATETIME_IMAGES_FEBRUARY, DEGREES_PER_MINUTE_MINUTE_HAND, DEGREES_PER_MINUTE_HOUR_HAND } from "./clockAndCalendar.february.constants";
 
@@ -122,6 +122,8 @@ export function makeCalendar(isHell: boolean): HTMLDivElement {
     const calendarBg = createImage(image, ['clock-and-calendar', 'calendar'], 'calendar-bg');
     const calendarHeader = createSpan('February', ['clock-and-calendar', 'calendar'], 'calendar-header-february');
     const calendarSquares: HTMLDivElement[] = [];
+    const end = lastValidTime();
+    
     for (let i = 0; i < 35; i++) {
         let day: number;
         let month: number;
@@ -135,7 +137,7 @@ export function makeCalendar(isHell: boolean): HTMLDivElement {
             day = i - 32;
             month = 2;
         }
-
+        const squareDate = new Date(2024, month, day, 0);
         const calendarSquareElements: HTMLElement[] = [];
         calendarSquareElements.push(createSpan(`${day}`, ['clock-and-calendar', 'calendar', `calendar-square-${month}`, 'calendar-numeral'], `calendar-numeral-${month}-${day}`));
         const holiday: FebruaryHoliday | undefined = getHoliday(new Date(2024, month, day));
@@ -146,7 +148,7 @@ export function makeCalendar(isHell: boolean): HTMLDivElement {
         }
         const square = createDivWithElements(calendarSquareElements, ['clock-and-calendar', 'calendar', 'calendar-square'], `calendar-square-${month}-${day}`);
         square.addEventListener('click', () => {
-            if (month < 2) {
+            if (squareDate.getTime() <= end) {
                 const previousDay = document.getElementById(`calendar-square-${getMonth()}-${getTime().getDate()}`) as HTMLDivElement;                
                 setTime(new Date(2024, month, day, 0));
 
@@ -178,6 +180,9 @@ export function makeCalendar(isHell: boolean): HTMLDivElement {
         if (getMonth() === month && getTime().getDate() === day) {
             highlightToday(square, undefined, holiday);
         } 
+        if (squareDate.getTime() > end) {
+            square.classList.add('calendar-square-disabled')
+        }
         calendarSquares.push(square)
     }
     const calendarGrid = createDivWithElements(calendarSquares, ['clock-and-calendar', 'calendar'], 'calendar-grid');

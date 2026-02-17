@@ -1,4 +1,4 @@
-import { createButtonWithText, createDivWithElements, createImage, createSpan, removeByClassName } from "../../../shared/helpers";
+import { createButtonWithText, createDivWithElements, createImage, createSpan, fillWithMarkdown, removeByClassName } from "../../../shared/helpers";
 import { WindowForFebruary } from "../../home/home-february/home.february.constants";
 import { CITY_DOLENT, FEBRUARY_IN_THE_MIRROR, MIRROR_FEBRUARY_IMAGES, MirrorChoice, MirrorEffectCatalog, MirrorInteraction, MirrorSpeech } from "./mirror.february.constants";
 import { setMaxTime } from "../../../shared/time/time";
@@ -26,14 +26,15 @@ function createMirrorSpeechDiv(dialogue: MirrorSpeech): HTMLDivElement {
     if (!text) {
         throw new Error('Missing Mirror Speech')
     }
-    text.innerText = dialogue.markdown;
+    fillWithMarkdown(text, dialogue.markdown);
     text.classList.remove('you-text-hidden');
     return text;
 }
 
 function createMirrorOptions(dialogue: MirrorChoice, interaction: MirrorInteraction, mirror: HTMLDivElement, youText: HTMLDivElement, comeHome: () => void): HTMLDivElement {
     const options = dialogue.options.map((option, index) => {
-        const optionButton = createButtonWithText(option.markdown, ['mirror-close', 'you-option'], `you-option${index}`);
+        const optionButton = createButtonWithText('', ['mirror-close', 'you-option'], `you-option${index}`);
+        fillWithMarkdown(optionButton, option.markdown);
         optionButton.addEventListener('click', (e) => {
             e.stopPropagation();
             removeByClassName('you-option');
@@ -61,7 +62,7 @@ function goToMirrorId(id: string, interaction: MirrorInteraction, mirror: HTMLDi
         const speech = createMirrorSpeechDiv(dialogueItem as MirrorSpeech);
         const clickable = speech.id === 'you-text' ? speech : mirror;
         clickable.addEventListener('click', () => {
-            speech.innerText = '';
+            speech.innerHTML = '';
             if (speech.id === 'you-text') {
                 speech.classList.add('you-text-hidden')
             }

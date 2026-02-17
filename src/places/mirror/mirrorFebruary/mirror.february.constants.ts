@@ -187,12 +187,12 @@ const FEBRUARY_OPENING: MirrorInteractionSequence = {
         nextId: 't',
     },
     s: {
-        markdown: `I won't ask again unless you clear your browser data (localStorage in particular).`,
+        markdown: `I won't ask again unless you clear your browser data (\`localStorage\` in particular).`,
         speaker: 'mirror',
         nextId: 'noGame',
     },
     t: {
-        markdown: `Everything you accomplish lives in your browser — in something called localStorage or indexedDB for https://gleameil.github.io.`,
+        markdown: `Everything you accomplish lives in your browser — in something called \`localStorage\` or \`indexedDB\` for https://gleameil.github.io.`,
         speaker: 'mirror',
         nextId: 'u',
     },

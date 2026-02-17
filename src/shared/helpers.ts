@@ -1,3 +1,5 @@
+import markdownIt from 'markdown-it-ts';
+
 import { OUT } from '../places/home/constants';
 import { Color, FebruaryColor, JANUARY_COLORS, JanuaryColor } from './color';
 import { AudioURLSrc, ImagePathAndAltText, ImageURLSrc, LinearGradient } from './constants';
@@ -184,4 +186,9 @@ export function urlForOutNow(): URL {
   url.searchParams.append('time', `${getTime().getTime()}`);
   url.searchParams.append('canPlay', `${canPlayAudio()}`);
   return url;
+}
+
+export function fillWithMarkdown(element: HTMLElement, markdown: string) {
+  const md = markdownIt();
+  element.innerHTML = md.render(markdown);
 }
