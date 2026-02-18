@@ -1,4 +1,4 @@
-import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio, urlForOutNow } from "../../../shared/helpers";
+import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio, urlForOutNow, Background } from "../../../shared/helpers";
 import { FEBRUARY_COLORS, FebruaryColor } from "../../../shared/color";
 import { getTime, stopTime } from "../../../shared/time/time";
 import { lookAtBooks } from "../../books/books";
@@ -100,14 +100,18 @@ function saveColorChoice(backgroundIndex: number, parent?: HTMLDivElement) {
   localStorage.setItem(key, `${backgroundIndex}`);
 }
 
-function nextBackground(currentBackground?: number, parent?: HTMLDivElement) {
-  const bgIndex = currentBackground !== undefined ? (currentBackground + 1) % FEBRUARY_BACKGROUNDS.length : 0;
-  const background = FEBRUARY_BACKGROUNDS[bgIndex];
+function setFebruaryBackground(background: (string | ImagePathAndAltText), parent?: HTMLDivElement) {
   if (typeof background === 'string') {
     setBackground(background, undefined, parent, undefined, true);
   } else {
     setBackground(FEBRUARY_COLORS.white, undefined, parent, background.path.href, true);
   }
+}
+
+function nextBackground(currentBackground?: number, parent?: HTMLDivElement) {
+  const bgIndex = currentBackground !== undefined ? (currentBackground + 1) % FEBRUARY_BACKGROUNDS.length : 0;
+  const background = FEBRUARY_BACKGROUNDS[bgIndex];
+  setFebruaryBackground(background, parent);
   saveColorChoice(bgIndex, parent);
 
   (parent ?? document.getElementById('background'))?.addEventListener('click', () => {
@@ -169,7 +173,7 @@ export function homeFebruary(comeHome: () => void) {
     const sideWallMinusOne = storedSideWallBgIndex === null ? 1 : storedSideWallBgIndex - 1;
     nextBackground(backWallMinusOne, backWall);
     nextBackground(sideWallMinusOne, sideWall);
-    setBackground(FEBRUARY_COLORS.red, undefined, frontWall);
+    nextBackground(backWallMinusOne, frontWall);
   }
 
   const room = createDivWithElements([backWall, floor, sideWall], ['home'], 'room');
@@ -208,10 +212,14 @@ export function homeFebruary(comeHome: () => void) {
 
   const mirrorImage = createImage(FEBRUARY_HOME_IMAGES.mirror, ['home'], 'mirror-image');
   const mirror = createItem(mirrorImage, 'mirror', () => {
-    if (isValentinesDay()) {
       leaveHome(false);
+      if (windowForFebruary.isHell) {
+        setBackground(FEBRUARY_COLORS.lightGray)
+      } else {
+        const sideWallBackground = FEBRUARY_BACKGROUNDS[retrieveColorChoice(FEBRUARY_HAS_CHANGING_BACKGROUND.sideWall) ?? 1];
+        setFebruaryBackground(sideWallBackground);
+      }
       sideWallFebruary(comeHome);
-    }
   });
 
   room.append(mirror);

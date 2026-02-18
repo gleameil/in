@@ -1,15 +1,19 @@
-import { BEGINNING_OF_FEBRUARY, END_OF_FEBRUARY, LIMIT_OF_FEBRUARY_FORESIGHT } from "./time.februaryConstants";
+import { BEGINNING_OF_FEBRUARY, END_OF_FEBRUARY, LIMIT_OF_FEBRUARY_FORESIGHT_KEY, LIMITLESS } from "./time.februaryConstants";
 import { BEGINNING_OF_JANUARY, Day, JANUARY_SCHEDULE, Time, TimeForDay, TIMES } from "./time.januaryConstants";
 import { WindowWithClock } from "./time.sharedConstants";
 
-export function setMaxTime(time?: Date) {
-  const limit = time?.getTime() || localStorage.getItem(LIMIT_OF_FEBRUARY_FORESIGHT) || BEGINNING_OF_FEBRUARY;
-  localStorage.setItem(LIMIT_OF_FEBRUARY_FORESIGHT, `${limit}`);
+export function setMaxTime(time: string) {
+  localStorage.setItem(LIMIT_OF_FEBRUARY_FORESIGHT_KEY, time);
 }
 
 export function isValidTime(time?: Date): boolean {
   const timestamp = time?.getTime();
-  return !!timestamp && timestamp <= END_OF_FEBRUARY && timestamp >= BEGINNING_OF_JANUARY;
+  const limitOfFebruaryForesight = getLimitOfFebruaryForesight();
+  if (limitOfFebruaryForesight === LIMITLESS) {
+    return !!timestamp && timestamp <= END_OF_FEBRUARY && timestamp >= BEGINNING_OF_JANUARY;
+  } 
+  const numericLimit = parseInt(limitOfFebruaryForesight ?? '', 10);
+  return !!timestamp && timestamp <= numericLimit && timestamp >= BEGINNING_OF_JANUARY;
 }
 
 // This can be called in various ways:
@@ -55,10 +59,7 @@ export function setTimeFromQuery(query: URLSearchParams) {
   }
 }
 
-// Sets the time to: 
-// 1. the timestamp in the "time" query param, or, failing that,
-// 2. what turns up in getTime()
-// Then starts advancing time at a rate of one minute per minute if it's still January :)
+// Starts advancing time at a rate of one minute per minute if it's still January :)
 export function startTime() {
   if (getTime().getTime() < BEGINNING_OF_FEBRUARY) {
     if (!(window as WindowWithClock).clock) {
@@ -177,4 +178,21 @@ export function previousTime(time: Time): Time {
   const currentIndex = TIMES.indexOf(time);
   const previousIndex = currentIndex - 1 < 0 ? TIMES.length - 1 : currentIndex - 1;
   return TIMES[previousIndex];
+}
+
+export function getLimitOfFebruaryForesight(): string | null {
+  return localStorage.getItem(LIMIT_OF_FEBRUARY_FORESIGHT_KEY);
+}
+
+export function lastValidTime(): number {
+  const limitOfFebruaryForesight = getLimitOfFebruaryForesight();
+  const numericLimit = parseInt(limitOfFebruaryForesight ?? '', 10);
+  if (numericLimit) {
+    return numericLimit
+  }
+  if (limitOfFebruaryForesight === 'limitless') {
+    return END_OF_FEBRUARY;
+  }
+  console.error('invalid limit of February foresight', limitOfFebruaryForesight);
+  return END_OF_FEBRUARY;
 }

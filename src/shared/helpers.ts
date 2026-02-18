@@ -1,4 +1,7 @@
+import markdownIt from 'markdown-it-ts';
+
 import { OUT } from '../places/home/constants';
+import { Color, FebruaryColor, JANUARY_COLORS, JanuaryColor } from './color';
 import { AudioURLSrc, ImagePathAndAltText, ImageURLSrc, LinearGradient } from './constants';
 import { canPlayAudio, setCanPlayFromQuery } from './sound';
 import { getTime, setTimeFromQuery } from './time/time';
@@ -12,6 +15,21 @@ export function createBackground() {
   const background = createDivWithElements([], [], 'background');
   html.append(background);
   return background;
+}
+
+export class Background {
+    background: ImagePathAndAltText | Color;
+    constructor(background: ImagePathAndAltText | Color) {
+        this.background = background
+    }
+
+    setAsCurrent(parent?: HTMLDivElement) {
+        if (typeof (this.background as ImagePathAndAltText)?.path?.href === 'string') {
+            setBackground(JANUARY_COLORS.white, undefined, parent, (this.background as ImagePathAndAltText)?.path?.href, true);
+        } else {
+            setBackground((this.background as Color).rgbaString(), undefined, parent);
+        }
+    }
 }
 
 export function setBackground(color: string, gradient?: LinearGradient, parent?: HTMLDivElement, imageHref?: string, repeat: boolean = false) {
@@ -168,4 +186,9 @@ export function urlForOutNow(): URL {
   url.searchParams.append('time', `${getTime().getTime()}`);
   url.searchParams.append('canPlay', `${canPlayAudio()}`);
   return url;
+}
+
+export function fillWithMarkdown(element: HTMLElement, markdown: string) {
+  const md = markdownIt();
+  element.innerHTML = md.render(markdown);
 }

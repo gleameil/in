@@ -1,3 +1,22 @@
+:root {
+  --violet: rgb(111, 82, 120);
+  --dullViolet: rgb(169, 147, 169);
+  --indigo: rgb(98, 98, 153);
+  --cyan: rgb(82, 107, 124);
+  --blue: rgb(189, 211, 246);
+  --green: rgb(80, 108, 88);
+  --yellow: rgb(220, 196, 143);
+  --gold: rgb(131, 123, 88);
+  --orange: rgb(208, 179, 156);
+  --darkRed: rgb(90, 30, 20);
+  --red: rgb(199, 64, 70);
+  --pink: rgb(203, 162, 170);
+  --white: rgb(252, 245, 229);
+  --black: rgb(70, 50, 60);
+  --gray: rgb(128, 128, 128);
+  --lightGray: rgb(220, 220, 220);
+}
+
 html {
   user-select: none;
   overflow: hidden;
