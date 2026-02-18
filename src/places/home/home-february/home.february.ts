@@ -184,6 +184,12 @@ export function homeFebruary(comeHome: () => void) {
     const wallClockAndCalendarImage = createImage(FEBRUARY_HOME_IMAGES.clockAndCalendar, ['home'], 'clock-and-calendar-image');
   const clockAndCalendar = createItem(wallClockAndCalendarImage, 'clock-and-calendar', () => {
     leaveHome(false);
+    if (windowForFebruary.isHell) {
+      setBackground(FEBRUARY_COLORS.lightGray);
+    } else {
+      const backWallBackground = FEBRUARY_BACKGROUNDS[retrieveColorChoice(FEBRUARY_HAS_CHANGING_BACKGROUND.backWall) ?? 1];
+      setFebruaryBackground(backWallBackground);
+    }
     stopTime();
     clockAndCalendarFebruary(comeHome)
   });
