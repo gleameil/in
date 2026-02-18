@@ -1,12 +1,13 @@
 import { createButtonWithText, createDivWithElements, createImage, createSpan, fillWithMarkdown, removeByClassName } from "../../../shared/helpers";
 import { WindowForFebruary } from "../../home/home-february/home.february.constants";
 import { CITY_DOLENT, FEBRUARY_IN_THE_MIRROR, MIRROR_FEBRUARY_IMAGES, MirrorChoice, MirrorEffectCatalog, MirrorInteraction, MirrorSpeech } from "./mirror.february.constants";
-import { setMaxTime } from "../../../shared/time/time";
-import { INITIAL_LIMIT_OF_FEBRUARY_FORESIGHT, LIMITLESS } from "../../../shared/time/time.februaryConstants";
+import { setMaxTime, setTime } from "../../../shared/time/time";
+import { BEGINNING_OF_FEBRUARY, INITIAL_LIMIT_OF_FEBRUARY_FORESIGHT, LIMITLESS } from "../../../shared/time/time.februaryConstants";
 
 const MIRROR_EFFECTS: MirrorEffectCatalog = {
     game: (comeHome: () => void) => {
         setMaxTime(`${INITIAL_LIMIT_OF_FEBRUARY_FORESIGHT}`);
+        setTime(new Date(BEGINNING_OF_FEBRUARY));
         removeByClassName('side-wall-february');
         comeHome();
     },
