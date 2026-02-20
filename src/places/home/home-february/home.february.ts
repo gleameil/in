@@ -197,10 +197,10 @@ export function homeFebruary(comeHome: () => void) {
   room.append(clockAndCalendar);
 
   const bookshelfImage = isHell? createImage(FEBRUARY_HOME_IMAGES.dresser, ['home'], 'bookshelf-image') : createImage(FEBRUARY_HOME_IMAGES.bookshelf, ['home'], 'bookshelf-image');
-  const bookshelf = createItem(bookshelfImage, 'bookshelf') /* , () => {
+  const bookshelf = createItem(bookshelfImage, 'bookshelf' , () => {
     leaveHome(true);
     lookAtBooks(comeHome, isHell);
-  }); // click handler */
+  });
   room.append(bookshelf);
 
   const bed = makeBed(isHell, FEBRUARY_HOME_IMAGES.bed.imageLeft);

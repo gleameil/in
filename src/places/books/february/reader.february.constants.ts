@@ -1,5 +1,5 @@
 import { Color, ColorSet } from "../../../shared/color";
-import { AudioPath, ImagePathAndAltText, SHARED_IMAGES } from "../../../shared/constants";
+import { AudioPath, ImageCatalog, ImagePathAndAltText, SHARED_IMAGES } from "../../../shared/constants";
 
 export interface SpeechBubble {
     index: number;
@@ -21,16 +21,19 @@ export interface Marginalia {
     bottom: ImagePathAndAltText;
 }
 
-export interface StaticPage {
-    markdown?: string;
-    marginalia?: Marginalia;
+interface FebruaryPageBasis {
     musicOverride?: AudioPath;
+    canShow?: () => boolean;
 }
 
-export interface PoemPage {
+export interface StaticPage extends FebruaryPageBasis {
+    markdown: string;
+    marginalia?: Marginalia;
+}
+
+export interface PoemPage extends FebruaryPageBasis {
     title?: string;
     poem: FragmentedPoem;
-    musicOverride?: AudioPath;
 }
 
 export type FebruaryPage = StaticPage | PoemPage;
@@ -43,6 +46,7 @@ export interface FebruaryBook {
     palette: ColorSet;
     arrowImage: ImagePathAndAltText;
     music?: AudioPath;
+    imageCatalogToLoad: ImageCatalog;
 }
 
 export interface BookColors extends ColorSet {

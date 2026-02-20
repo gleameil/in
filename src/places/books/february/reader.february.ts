@@ -1,0 +1,175 @@
+import { Color, FEBRUARY_COLOR_SET } from '../../../shared/color';
+import { createDivWithElements, createImage, removeByClassName, loadImagesForCatalog, createButtonWithImage, fillWithMarkdown } from "../../../shared/helpers";
+import { SpeechBubble, PoemFragment, FragmentedPoem, Marginalia, StaticPage, PoemPage, FebruaryPage, FebruaryChapter, FebruaryBook, BookColors } from './reader.february.constants';
+import { SHARED_IMAGES } from '../../../shared/constants';
+import './reader.february.css';
+
+function loadImagesForBook(className: string, book: FebruaryBook) {
+  loadImagesForCatalog(book.imageCatalogToLoad, [className]);
+}
+
+function makeStaticPage(className: string): HTMLDivElement {
+  const textContainer = createDivWithElements([], [className, 'february-reader-text-container'], `${className}-february-reader-text-container`);  
+
+  const marginaliaLeft = createDivWithElements([], [className, 'february-reader-marginalia-left'], `${className}-february-reader-marginalia-left`);
+  const marginaliaTop = createDivWithElements([], [className, 'february-reader-marginalia-top'], `${className}-february-reader-marginalia-top`);
+  const marginaliaRight = createDivWithElements([], [className, 'february-reader-marginalia-right'], `${className}-february-reader-marginalia-right`);
+  const marginaliaBottom = createDivWithElements([], [className, 'february-reader-marginalia-bottom'], `${className}-february-reader-marginalia-bottom`);
+
+  const centerPane = createDivWithElements([marginaliaTop, textContainer, marginaliaBottom], [className, 'february-reader-center-pane'], `${className}-february-reader-static-page-center-pane`);
+
+  return createDivWithElements([marginaliaLeft, centerPane, marginaliaRight], [className, 'static-page', 'february-reader-page-hidden'], `${className}-static-page`);
+}
+
+function makePoemPage(className: string): HTMLDivElement {
+  const backButtonImage = createImage(SHARED_IMAGES.arrowLeft, [className, 'february-reader-poem-page-back-button-image'], `${className}-february-reader-poem-page-back-button-image`);
+  const backButton = createButtonWithImage(backButtonImage, [className, 'february-reader-poem-page-back-button'], `${className}-february-reader-poem-page-back-button`);
+  return createDivWithElements([backButton], [className, 'poem-page', 'february-reader-page-hidden'], `${className}-poem-page`);
+}
+
+function populateStaticPage(page: StaticPage, back: () => void, forward: () => void, className: string) {
+  const staticPageElement = document.getElementById(`${className}-static-page`);
+  const textContainer = document.getElementById(`${className}-february-reader-text-container`);
+  if (!staticPageElement) {
+    console.error('Static page element missing');
+    return; // replace with error state?
+  }
+  if (!textContainer) {
+    console.error('Text container element missing');
+    return; // replace with error state?
+  }
+
+  const marginaliaLeft = document.getElementById(`${className}-february-reader-marginalia-left`);
+  if (!marginaliaLeft) {
+    console.error('Missing left image container');
+  }
+  if (page.marginalia?.left.imageLeft) {
+    marginaliaLeft?.replaceChildren(page.marginalia.left.imageLeft);
+  } else {
+    const left = createImage(SHARED_IMAGES.arrowLeft, ['february-reader-static-page-back-button'], 'february-reader-poem-page-back-button');
+    marginaliaLeft?.replaceChildren(left)
+  }
+  marginaliaLeft?.addEventListener('click', back, { once: true });
+
+  if (page.marginalia?.top.imageLeft) {
+    document.getElementById(`${className}-february-reader-marginalia-top`)?.replaceChildren(page.marginalia.top.imageLeft);
+  }
+
+  const marginaliaRight = document.getElementById(`${className}-february-reader-marginalia-right`);
+  if (!marginaliaRight) {
+    console.error('Missing right image container');
+  }
+  if (page.marginalia?.right.imageLeft) {
+    const marginaliaRight = document.getElementById(`${className}-february-reader-marginalia-right`);
+    if (!marginaliaRight) {
+      console.error('Missing right image container');
+    }
+    marginaliaRight?.replaceChildren(page.marginalia.right.imageLeft);
+  } else {
+    const right = createImage(SHARED_IMAGES.arrowRight, ['february-reader-static-page-forward-button'], 'february-reader-poem-page-forward-button');
+    marginaliaRight?.replaceChildren(right)
+  }
+  marginaliaRight?.addEventListener('click', forward, { once: true });
+  
+  if (page.marginalia?.bottom.imageLeft) {
+    document.getElementById(`${className}-february-reader-marginalia-bottom`)?.replaceChildren(page.marginalia.bottom.imageLeft);
+  }
+  fillWithMarkdown(textContainer, page.markdown);
+  staticPageElement.classList.remove('february-reader-page-hidden');
+}
+
+function populatePoemPage(page: PoemPage, back: () => void, forward: () => void, className: string) {
+  const poemPageElement = document.getElementById(`${className}-poem-page`);
+    const backButton = document.getElementById(`${className}-february-reader-poem-page-back-button`);
+  if (!poemPageElement) {
+    console.error('Poem page element missing');
+    return; // replace with error state?
+  }
+  if (!backButton) {
+    console.error('Back button missing');
+    return;
+  }
+
+  backButton.addEventListener('click', back, { once: true });
+
+  poemPageElement.classList.remove('february-reader-page-hidden');
+}
+
+export function createFebruaryReader(className: string, book: FebruaryBook) {
+  loadImagesForBook(className, book);
+  let currentChapterIndex = 0;
+  let currentTextIndex = 0;
+
+  const storedChapterIndex = localStorage.getItem(`${className}ChapterIndex`);
+  currentChapterIndex = storedChapterIndex ? parseInt(storedChapterIndex) : 0;
+  const storedTextIndex = localStorage.getItem(`${className}TextIndex`);
+  currentTextIndex = storedTextIndex ? parseInt(storedTextIndex) : 0;
+
+  const poemPage = makePoemPage(className);
+  const staticPage = makeStaticPage(className);
+
+  const reader = createDivWithElements([poemPage, staticPage], [className, 'february-reader'], `${className}-february-reader`);
+
+  document.getElementsByTagName('html')[0].append(reader);
+  goToFragment(currentChapterIndex, currentTextIndex, false);
+
+  function forward() {
+    goToFragment(currentChapterIndex , currentTextIndex + 1, true);
+  }
+
+  function back() {
+    goToFragment(currentChapterIndex, currentTextIndex - 1, false);
+  }
+
+  function goToFragment(chapterIndex: number, textIndex: number, isGoingForward: boolean) {
+    console.log(`Chapter index: ${chapterIndex}, text index: ${textIndex}`);
+    const chapters = book.chapters;
+    if (chapterIndex >= chapters.length) {
+      return;
+    } else if (textIndex >= chapters[chapterIndex].length) {
+      goToFragment(chapterIndex + 1, 0, false);
+      return;
+    } else if (textIndex < 0) {
+      if (chapterIndex !== 0) {
+        goToFragment(chapterIndex - 1, chapters[chapterIndex - 1].length - 1, false);   
+        return;
+      }
+      return;
+    } else if (isGoingForward && !(chapters[chapterIndex]?.[textIndex]?.canShow ?? (() => true)())) {
+      alert('Explore more to keep reading.');
+      return;
+    }
+
+    poemPage.classList.add('february-reader-page-hidden');
+    staticPage.classList.add('february-reader-page-hidden');
+    localStorage.setItem(`${className}ChapterIndex`, `${chapterIndex}`);
+    localStorage.setItem(`${className}TextIndex`, `${textIndex}`);
+
+    currentChapterIndex = chapterIndex;
+    currentTextIndex = textIndex;
+    const page = chapters[chapterIndex][textIndex];
+
+    if ((page as StaticPage).markdown) {
+      populateStaticPage(page as StaticPage, back, forward, className);
+    } else if ((page as PoemPage).poem) {
+      populatePoemPage(page as PoemPage, back, forward, className);
+    }
+  }
+
+  window.addEventListener('keydown', event => {
+    switch(event.code) {
+      case "KeyA":
+      case "ArrowLeft": 
+        back();    
+        break;
+      case "KeyD":
+      case "ArrowRight":
+        forward();
+        break;
+      default:
+        break;
+    }
+  });
+
+  document.getElementsByTagName('html')[0].append(reader);
+}
