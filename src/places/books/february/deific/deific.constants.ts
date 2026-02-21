@@ -858,7 +858,7 @@ So she might then love me.\n
 
 She wore my fair and glist’ring crown\n
 In the country, in the town.\n
-In merry May full fair was she\n,
+In merry May full fair was she,\n
 But ay! she loved not me.`,
             musicOverride: DEIFIC_AUDIO.foolSongV3_4,
         },

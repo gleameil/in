@@ -11,10 +11,10 @@ function loadImagesForBook(className: string, book: FebruaryBook) {
 function makeStaticPage(className: string): HTMLDivElement {
   const textContainer = createDivWithElements([], [className, 'february-reader-text-container'], `${className}-february-reader-text-container`);  
 
-  const marginaliaLeft = createDivWithElements([], [className, 'february-reader-marginalia-left'], `${className}-february-reader-marginalia-left`);
-  const marginaliaTop = createDivWithElements([], [className, 'february-reader-marginalia-top'], `${className}-february-reader-marginalia-top`);
-  const marginaliaRight = createDivWithElements([], [className, 'february-reader-marginalia-right'], `${className}-february-reader-marginalia-right`);
-  const marginaliaBottom = createDivWithElements([], [className, 'february-reader-marginalia-bottom'], `${className}-february-reader-marginalia-bottom`);
+  const marginaliaLeft = createDivWithElements([], [className, 'february-reader-marginalia-left', `${className}-reader-marginalia`, `${className}-reader-marginalia-horizontal`], `${className}-february-reader-marginalia-left`);
+  const marginaliaTop = createDivWithElements([], [className, 'february-reader-marginalia-top', `${className}-reader-marginalia`, `${className}-reader-marginalia-vertical`], `${className}-february-reader-marginalia-top`);
+  const marginaliaRight = createDivWithElements([], [className, 'february-reader-marginalia-right', `${className}-reader-marginalia`, `${className}-reader-marginalia-horizontal`], `${className}-february-reader-marginalia-right`);
+  const marginaliaBottom = createDivWithElements([], [className, 'february-reader-marginalia-bottom', `${className}-reader-marginalia`, `${className}-reader-marginalia-vertical`], `${className}-february-reader-marginalia-bottom`);
 
   const centerPane = createDivWithElements([marginaliaTop, textContainer, marginaliaBottom], [className, 'february-reader-center-pane'], `${className}-february-reader-static-page-center-pane`);
 
@@ -127,7 +127,7 @@ export function createFebruaryReader(className: string, book: FebruaryBook, home
     console.log(`Chapter index: ${chapterIndex}, text index: ${textIndex}`);
     const chapters = book.chapters;
     if (chapterIndex >= chapters.length) {
-      document.getElementById('homeward')?.click();
+      homeward();
       return;
     } else if (textIndex >= chapters[chapterIndex].length) {
       goToFragment(chapterIndex + 1, 0, false);

@@ -1,7 +1,3 @@
-.february-reader-page-hidden {
-  display: none;
-}
-
 .february-reader {
   width: 99%;
   height: 99%;
@@ -24,11 +20,24 @@
   height: 100%;
 }
 
+.february-reader-marginalia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.february-reader-marginalia-left, .february-reader-marginalia-right {
+  width: 25%;
+  height: 80%;
+}
+
+.february-reader-marginalia-top, .february-reader-marginalia-bottom {
+  height: 10%;
+}
+
 .february-reader-text-container {
-  padding: 40px;
   font-size: 3vmin;
   font-family: 'EB Garamond';
-  width: 100%;
   height: 80%;
   align-items: center;
   overflow-y: auto; 

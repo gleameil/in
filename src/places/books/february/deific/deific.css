@@ -1,0 +1,45 @@
+.deific {
+  --white: rgb(255, 255, 255);
+  --lightWarm: rgb(255, 255, 0);
+  --lightCool: rgb(240, 240, 240);
+  --midWarm: rgb(255, 0, 255);
+  --midCool: rgb(211, 211, 211);
+  --darkWarm: rgb(137, 135, 135);
+  --darkCool: rgb(143, 144, 143);
+  --black: rgb(0, 0, 0);
+}
+
+#deific-february-reader {
+  background-color: var(--black);
+}
+
+.deific-reader-marginalia-horizontal {
+  background-color: var(--midWarm);
+}
+
+.deific-reader-marginalia-vertical {
+  background-color: var(--lightWarm);
+}
+
+#deific-february-reader-text-container {
+  background-color: var(--white);
+}
+
+#deific-february-reader-text-container h1 {
+  text-align: center;
+  color: var(--lightWarm);
+  text-shadow: var(--black) 4px 4px 2px;
+  font-size: 10vmax;
+}
+
+#deific-february-reader-text-container h2 {
+  margin-left: 40px;
+  font-family: 'UnifrakturMaguntia';
+}
+
+#deific-february-reader-text-container p {
+  font-size: 2.25vmax;
+  margin-left: 40px;
+  margin-top: 0;
+  margin-bottom: 0;
+}

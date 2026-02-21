@@ -3,6 +3,7 @@ import { createHomewardButton, createImage, removeByClassName, setBackground } f
 import { BOOKS_IMAGES } from "../../constants";
 import { createFebruaryReader } from "../reader.february";
 import { DEIFIC } from "./deific.constants";
+import './deific.css';
 
 export function deificCover(): HTMLImageElement {
   return createImage(BOOKS_IMAGES.deificCover, ['cover'], 'deific-cover');
