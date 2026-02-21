@@ -15,11 +15,14 @@ export function leaveDeific() {
 export function deific(goBack: () => void) {
     setBackground(FEBRUARY_COLORS.gray);
     const all = document.getElementsByTagName('html')[0];
-    const homeward = createHomewardButton('Stop reading', ['deific'], () => {
-        leaveDeific()
-        goBack();
-      });
-      createFebruaryReader('deific', DEIFIC);
+    
+    function goHomeward() {
+      leaveDeific()
+      goBack();
+    }
+
+    const homeward = createHomewardButton('Stop reading', ['deific'], goHomeward)
+      createFebruaryReader('deific', DEIFIC, goHomeward);
 
       all.append(homeward);
 }

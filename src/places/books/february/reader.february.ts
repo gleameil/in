@@ -18,13 +18,13 @@ function makeStaticPage(className: string): HTMLDivElement {
 
   const centerPane = createDivWithElements([marginaliaTop, textContainer, marginaliaBottom], [className, 'february-reader-center-pane'], `${className}-february-reader-static-page-center-pane`);
 
-  return createDivWithElements([marginaliaLeft, centerPane, marginaliaRight], [className, 'static-page', 'february-reader-page-hidden'], `${className}-static-page`);
+  return createDivWithElements([marginaliaLeft, centerPane, marginaliaRight], [className, 'static-page'], `${className}-static-page`);
 }
 
 function makePoemPage(className: string): HTMLDivElement {
   const backButtonImage = createImage(SHARED_IMAGES.arrowLeft, [className, 'february-reader-poem-page-back-button-image'], `${className}-february-reader-poem-page-back-button-image`);
   const backButton = createButtonWithImage(backButtonImage, [className, 'february-reader-poem-page-back-button'], `${className}-february-reader-poem-page-back-button`);
-  return createDivWithElements([backButton], [className, 'poem-page', 'february-reader-page-hidden'], `${className}-poem-page`);
+  return createDivWithElements([backButton], [className, 'poem-page'], `${className}-poem-page`);
 }
 
 function populateStaticPage(page: StaticPage, back: () => void, forward: () => void, className: string) {
@@ -75,7 +75,7 @@ function populateStaticPage(page: StaticPage, back: () => void, forward: () => v
     document.getElementById(`${className}-february-reader-marginalia-bottom`)?.replaceChildren(page.marginalia.bottom.imageLeft);
   }
   fillWithMarkdown(textContainer, page.markdown);
-  staticPageElement.classList.remove('february-reader-page-hidden');
+  staticPageElement.style.display = 'flex';
 }
 
 function populatePoemPage(page: PoemPage, back: () => void, forward: () => void, className: string) {
@@ -92,10 +92,10 @@ function populatePoemPage(page: PoemPage, back: () => void, forward: () => void,
 
   backButton.addEventListener('click', back, { once: true });
 
-  poemPageElement.classList.remove('february-reader-page-hidden');
+  poemPageElement.style.display = 'flex';
 }
 
-export function createFebruaryReader(className: string, book: FebruaryBook) {
+export function createFebruaryReader(className: string, book: FebruaryBook, homeward: () => void) {
   loadImagesForBook(className, book);
   let currentChapterIndex = 0;
   let currentTextIndex = 0;
@@ -106,7 +106,9 @@ export function createFebruaryReader(className: string, book: FebruaryBook) {
   currentTextIndex = storedTextIndex ? parseInt(storedTextIndex) : 0;
 
   const poemPage = makePoemPage(className);
+  poemPage.style.display = 'none';
   const staticPage = makeStaticPage(className);
+  staticPage.style.display = 'none';
 
   const reader = createDivWithElements([poemPage, staticPage], [className, 'february-reader'], `${className}-february-reader`);
 
@@ -125,6 +127,7 @@ export function createFebruaryReader(className: string, book: FebruaryBook) {
     console.log(`Chapter index: ${chapterIndex}, text index: ${textIndex}`);
     const chapters = book.chapters;
     if (chapterIndex >= chapters.length) {
+      document.getElementById('homeward')?.click();
       return;
     } else if (textIndex >= chapters[chapterIndex].length) {
       goToFragment(chapterIndex + 1, 0, false);
@@ -140,8 +143,8 @@ export function createFebruaryReader(className: string, book: FebruaryBook) {
       return;
     }
 
-    poemPage.classList.add('february-reader-page-hidden');
-    staticPage.classList.add('february-reader-page-hidden');
+    poemPage.style.display = 'none';
+    staticPage.style.display = 'none';
     localStorage.setItem(`${className}ChapterIndex`, `${chapterIndex}`);
     localStorage.setItem(`${className}TextIndex`, `${textIndex}`);
 
@@ -154,9 +157,7 @@ export function createFebruaryReader(className: string, book: FebruaryBook) {
     } else if ((page as PoemPage).poem) {
       populatePoemPage(page as PoemPage, back, forward, className);
     }
-  }
-
-  window.addEventListener('keydown', event => {
+    window.addEventListener('keydown', event => {
     switch(event.code) {
       case "KeyA":
       case "ArrowLeft": 
@@ -164,12 +165,14 @@ export function createFebruaryReader(className: string, book: FebruaryBook) {
         break;
       case "KeyD":
       case "ArrowRight":
+      case "Enter":
+      case "Space":
         forward();
         break;
       default:
         break;
-    }
-  });
-
+      }
+    }, { once: true });
+  }
   document.getElementsByTagName('html')[0].append(reader);
 }
