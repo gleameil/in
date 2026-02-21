@@ -189,7 +189,7 @@ export function urlForOutNow(): URL {
 }
 
 export function fillWithMarkdown(element: HTMLElement, markdown: string) {
-  const md = markdownIt();
+  const md = markdownIt({ html: true });
   element.innerHTML = md.render(markdown);
 }
 

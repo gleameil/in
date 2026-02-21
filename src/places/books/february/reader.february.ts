@@ -10,13 +10,14 @@ function loadImagesForBook(className: string, book: FebruaryBook) {
 
 function makeStaticPage(className: string): HTMLDivElement {
   const textContainer = createDivWithElements([], [className, 'february-reader-text-container'], `${className}-february-reader-text-container`);  
+  const textWindow = createDivWithElements([textContainer], [className, 'february-reader-text-window'], `${className}-february-reader-text-window`);
 
   const marginaliaLeft = createDivWithElements([], [className, 'february-reader-marginalia-left', `${className}-reader-marginalia`, `${className}-reader-marginalia-horizontal`], `${className}-february-reader-marginalia-left`);
   const marginaliaTop = createDivWithElements([], [className, 'february-reader-marginalia-top', `${className}-reader-marginalia`, `${className}-reader-marginalia-vertical`], `${className}-february-reader-marginalia-top`);
   const marginaliaRight = createDivWithElements([], [className, 'february-reader-marginalia-right', `${className}-reader-marginalia`, `${className}-reader-marginalia-horizontal`], `${className}-february-reader-marginalia-right`);
   const marginaliaBottom = createDivWithElements([], [className, 'february-reader-marginalia-bottom', `${className}-reader-marginalia`, `${className}-reader-marginalia-vertical`], `${className}-february-reader-marginalia-bottom`);
 
-  const centerPane = createDivWithElements([marginaliaTop, textContainer, marginaliaBottom], [className, 'february-reader-center-pane'], `${className}-february-reader-static-page-center-pane`);
+  const centerPane = createDivWithElements([marginaliaTop, textWindow, marginaliaBottom], [className, 'february-reader-center-pane'], `${className}-february-reader-static-page-center-pane`);
 
   return createDivWithElements([marginaliaLeft, centerPane, marginaliaRight], [className, 'static-page'], `${className}-static-page`);
 }
@@ -127,6 +128,8 @@ export function createFebruaryReader(className: string, book: FebruaryBook, home
     console.log(`Chapter index: ${chapterIndex}, text index: ${textIndex}`);
     const chapters = book.chapters;
     if (chapterIndex >= chapters.length) {
+      localStorage.removeItem(`${className}TextIndex`);
+      localStorage.removeItem(`${className}ChapterIndex`);
       homeward();
       return;
     } else if (textIndex >= chapters[chapterIndex].length) {

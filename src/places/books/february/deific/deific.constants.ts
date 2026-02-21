@@ -439,7 +439,7 @@ I plucked the rose, the daffodil,\n
 Of all sweet odors drank my fill.\n
 I wove a crown full fair to see\n
 So she might then love me.\n
-
+<br>\n
 She took my bright and od'rous crown.\n
 She danced it up the hills and down.\n
 In merry May full fair was she,\n
@@ -855,7 +855,7 @@ I called my jeweler, called my smith,\n
 and ordered to be wrought forthwith\n
 A diadem full fair to see\n
 So she might then love me.\n
-
+<br>\n
 She wore my fair and glist’ring crown\n
 In the country, in the town.\n
 In merry May full fair was she,\n
@@ -1138,7 +1138,7 @@ To love, my destiny,\n
 and learn it is not love,\n
 and it is not you\n
 I do not love — that too.\n
-
+<br>\n
 Your house is glorious,\n
 I’m sure, but I won’t see.\n
 The others’ laugh at me.\n
@@ -1213,7 +1213,7 @@ Enough with her, enough with all!\n
 I’ll leave my high and handsome hall,\n
 To sing and play and act the fool\n
 To serve those whom I once did rule.\n
-
+<br>\n
 She thought me dead, she thought me gone,\n
 She died, she died, and I lived on,\n
 And so a happy fool I’ll be\n

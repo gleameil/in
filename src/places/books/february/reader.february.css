@@ -35,10 +35,16 @@
   height: 10%;
 }
 
+.february-reader-text-window {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+
 .february-reader-text-container {
   font-size: 3vmin;
   font-family: 'EB Garamond';
-  height: 80%;
   align-items: center;
   overflow-y: auto; 
 }

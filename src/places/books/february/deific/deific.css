@@ -21,8 +21,9 @@
   background-color: var(--lightWarm);
 }
 
-#deific-february-reader-text-container {
+#deific-february-reader-text-window {
   background-color: var(--white);
+  box-shadow: 4px 4px 2px;
 }
 
 #deific-february-reader-text-container h1 {
@@ -30,16 +31,17 @@
   color: var(--lightWarm);
   text-shadow: var(--black) 4px 4px 2px;
   font-size: 10vmax;
+  margin: 0;
 }
 
 #deific-february-reader-text-container h2 {
-  margin-left: 40px;
   font-family: 'UnifrakturMaguntia';
 }
 
 #deific-february-reader-text-container p {
-  font-size: 2.25vmax;
-  margin-left: 40px;
+  font-size: 2.25vmin;
+  margin-left: 2em;
+  text-indent: -2em;
   margin-top: 0;
   margin-bottom: 0;
 }
