@@ -301,6 +301,7 @@ export function createFebruaryReader(className: string, book: FebruaryBook, home
       audio.addEventListener('ended', () => {
         if (book.music) {
           changeAudioSource(audio, book.music.path);
+          playIfAllowed(audio);
         }
       }, { once: true })
     }
@@ -310,8 +311,7 @@ export function createFebruaryReader(className: string, book: FebruaryBook, home
     } else if ((page as PoemPage).poem) {
       populatePoemPage(page as PoemPage, back, forward, className);
     }
-
-    if (audio?.paused) {
+    if (audio?.paused || audio?.ended) {
       playIfAllowed(audio);
     }
   }

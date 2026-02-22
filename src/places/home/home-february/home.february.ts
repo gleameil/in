@@ -155,7 +155,7 @@ export function homeFebruary(comeHome: () => void) {
   all.id = 'home-container';
 
   if (!document.getElementById(SOUND_CONTROL_ID)) {
-    all.append(createSoundControl());
+    document.getElementsByTagName('html')[0].append(createSoundControl());
   }
 
   const floor = createDivWithElements([], ['home', 'wall'], 'floor');
