@@ -62,9 +62,11 @@
   background-color: var(--white);
   margin: 1vw;
   padding: 1vw;
+  padding-left: 2vw;
+  text-indent: -1vw;
   border-radius: 1vmax;
   font-family: 'Reenie Beanie';
-  font-size: 2vmax;
+  font-size: 3.25vh;
   width: 40%;
   align-self: center;
 }

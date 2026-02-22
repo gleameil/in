@@ -137,6 +137,7 @@ function pagePoem(poem: FragmentedPoem, className: string, parent: HTMLElement):
     }
 
     line.append(phraseSpan);
+    currentSpeechBubble.scrollIntoView({ behavior: 'smooth' });
   }
 }
 
@@ -169,6 +170,7 @@ function populatePoemPage(page: PoemPage, back: () => void, forward: () => void,
   const poem = pagePoem(page.poem, className, container)
 
   function proceed() {
+    console.log('proceed, clicks = ', clicks);
     clicks++;
     const result = poem(clicks);
     if (result === END) {
@@ -176,29 +178,29 @@ function populatePoemPage(page: PoemPage, back: () => void, forward: () => void,
       forward();
     }
   }
-  backButton.addEventListener('click', back, { once: true });
-  window.addEventListener('keydown', event => {
-    switch(event.code) {
-      case "KeyA":
-      case "ArrowLeft":
-        back()
-        break;
-      default:
-        break;
-    }
-  }, { once: true })
+  backButton.addEventListener('click', () => {
+    window.removeEventListener('keydown', handleForwardKeypress);
+    back()
+  }, { once: true });
+  
   container.addEventListener('click', proceed);
 
   function handleForwardKeypress(event: KeyboardEvent) {
     switch(event.code) {
-    case "KeyD":
-    case "ArrowRight":
-    case "Enter":
-    case "Space":
-      proceed();
-      break;
-    default:
-      break;
+      case "KeyA":
+      case "ArrowLeft":
+        console.log(event.code, 'trying to go back');
+        window.removeEventListener('keydown', handleForwardKeypress);
+        back()
+      case "KeyD":
+      case "ArrowRight":
+      case "Enter":
+      case "Space":
+        console.log('handleForwardKeypress', event.code)
+        proceed();
+        break;
+      default:
+        break;
     }
   }
 
@@ -253,6 +255,7 @@ export function createFebruaryReader(className: string, book: FebruaryBook, home
         goToFragment(chapterIndex - 1, chapters[chapterIndex - 1].length - 1, false);   
         return;
       }
+      goToFragment(chapterIndex, 0, isGoingForward);
       return;
     } else if (isGoingForward && !(chapters[chapterIndex]?.[textIndex]?.canShow ?? (() => true)())) {
       alert('Explore more to keep reading.');
@@ -274,5 +277,4 @@ export function createFebruaryReader(className: string, book: FebruaryBook, home
       populatePoemPage(page as PoemPage, back, forward, className);
     }
   }
-  document.getElementsByTagName('html')[0].append(reader);
 }
