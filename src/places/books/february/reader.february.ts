@@ -4,9 +4,12 @@ import { SpeechBubble, PoemFragment, FragmentedPoem, Marginalia, StaticPage, Poe
 import { SHARED_IMAGES } from '../../../shared/constants';
 import './reader.february.css';
 import { changeAudioSource, playIfAllowed } from '../../../shared/sound';
+import { windowKeyHandlers } from '../../../shared/state';
 
-// Track persistent forward-key handlers per reader instance so we can remove them
-const poemKeyHandlers: Map<string, (e: KeyboardEvent) => void> = new Map();
+export function leaveFebruaryReader(className: string) {
+  removeByClassName(className);
+  leavePoemPage(className);
+}
 
 function loadImagesForBook(className: string, book: FebruaryBook) {
   loadImagesForCatalog(book.imageCatalogToLoad, [className]);
@@ -145,6 +148,14 @@ function pagePoem(poem: FragmentedPoem, className: string, parent: HTMLElement):
   }
 }
 
+function leavePoemPage(className: string) {
+  const existing = windowKeyHandlers.get(className);
+  if (existing) {
+    window.removeEventListener('keydown', existing);
+    windowKeyHandlers.delete(className);
+  }
+}
+
 function populatePoemPage(page: PoemPage, back: () => void, forward: () => void, className: string) {
   document.getElementById(`${className}-poem-page-container`)?.remove();
   const poemPageElement = document.getElementById(`${className}-poem-page`);
@@ -174,24 +185,15 @@ function populatePoemPage(page: PoemPage, back: () => void, forward: () => void,
   const poem = pagePoem(page.poem, className, container)
 
   function proceed() {
-    console.log('proceed, clicks = ', clicks);
     clicks++;
     const result = poem(clicks);
     if (result === END) {
-      const existing = poemKeyHandlers.get(className);
-      if (existing) {
-        window.removeEventListener('keydown', existing);
-        poemKeyHandlers.delete(className);
-      }
+      leavePoemPage(className)
       forward();
     }
   }
   backButton.addEventListener('click', () => {
-    const existing = poemKeyHandlers.get(className);
-    if (existing) {
-      window.removeEventListener('keydown', existing);
-      poemKeyHandlers.delete(className);
-    }
+    leavePoemPage(className);
     back();
   }, { once: true });
   
@@ -201,19 +203,13 @@ function populatePoemPage(page: PoemPage, back: () => void, forward: () => void,
     switch(event.code) {
       case "KeyA":
       case "ArrowLeft":
-        console.log(event.code, 'trying to go back');
-        const existing = poemKeyHandlers.get(className);
-        if (existing) {
-          window.removeEventListener('keydown', existing);
-          poemKeyHandlers.delete(className);
-        }
+        leavePoemPage(className);
         back();
         break;
       case "KeyD":
       case "ArrowRight":
       case "Enter":
       case "Space":
-        console.log('handlePoemPageKeydown', event.code)
         proceed();
         break;
       default:
@@ -221,13 +217,9 @@ function populatePoemPage(page: PoemPage, back: () => void, forward: () => void,
     }
   }
   // remove any previously-registered forward handler for this reader instance
-  const previous = poemKeyHandlers.get(className);
-  if (previous) {
-    window.removeEventListener('keydown', previous);
-    poemKeyHandlers.delete(className);
-  }
+  leavePoemPage(className);
   window.addEventListener('keydown', handlePoemPageKeydown);
-  poemKeyHandlers.set(className, handlePoemPageKeydown);
+  windowKeyHandlers.set(className, handlePoemPageKeydown);
 
   poemPageElement.append(container);
   proceed();
@@ -269,15 +261,14 @@ export function createFebruaryReader(className: string, book: FebruaryBook, home
   }
 
   function goToFragment(chapterIndex: number, textIndex: number, isGoingForward: boolean) {
-    console.log(`Chapter index: ${chapterIndex}, text index: ${textIndex}`);
     const chapters = book.chapters;
     if (chapterIndex >= chapters.length) {
       localStorage.removeItem(`${className}TextIndex`);
       localStorage.removeItem(`${className}ChapterIndex`);
-      const existing = poemKeyHandlers.get(className);
+      const existing = windowKeyHandlers.get(className);
       if (existing) {
         window.removeEventListener('keydown', existing);
-        poemKeyHandlers.delete(className);
+        windowKeyHandlers.delete(className);
       }
       homeward();
       return;
@@ -319,8 +310,9 @@ export function createFebruaryReader(className: string, book: FebruaryBook, home
     } else if ((page as PoemPage).poem) {
       populatePoemPage(page as PoemPage, back, forward, className);
     }
-  }
-  if (audio) {
-    playIfAllowed(audio)
+
+    if (audio?.paused) {
+      playIfAllowed(audio);
+    }
   }
 }

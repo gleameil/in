@@ -1,8 +1,19 @@
+import { windowKeyHandlers } from '../../shared/state';
 import { JANUARY_COLORS, JanuaryColor } from '../../shared/color';
 import { createDivWithElements, createImage, removeByClassName } from '../../shared/helpers';
 import { makeParagraphs } from '../../shared/text';
 import { Chapter, Chapters, Page } from './reader.constants';
 import './reader.css';
+
+const JANUARY_KEY_EVENT_HANDLER_KEY = 'januaryReader'
+export function leaveJanuaryReader(className: string) {
+  const existing = windowKeyHandlers.get(JANUARY_KEY_EVENT_HANDLER_KEY);
+  if (existing) {
+    window.removeEventListener('keydown', existing);
+    windowKeyHandlers.delete(JANUARY_KEY_EVENT_HANDLER_KEY);
+  }
+  removeByClassName(className);
+}
 
 function loadImagesForBook(className: string, book: Chapters) {
   book.forEach((chapter: Chapter) => {
@@ -47,12 +58,18 @@ export function createReader(className: string, book: Chapters, imageBackgroundC
 
   function removeHighlightLeft() {
     document.getElementById(`${className}-reader-left-image`)?.classList.add('reader-invisible');
-    document.getElementById(`${className}-reader-left-art`)!.style.backgroundColor = imageBackgroundColor;
+    const leftArt = document.getElementById(`${className}-reader-left-art`);
+    if (leftArt) {
+      leftArt.style.backgroundColor = imageBackgroundColor;
+    }
   } 
   
   function removeHighlightRight() {
     document.getElementById(`${className}-reader-right-image`)?.classList.add('reader-invisible');
-    document.getElementById(`${className}-reader-right-art`)!.style.backgroundColor = imageBackgroundColor;
+    const rightArt = document.getElementById(`${className}-reader-right-art`);
+    if (rightArt) {
+      rightArt.style.backgroundColor = imageBackgroundColor;
+    }
   }
 
   function highlightLeft() {
@@ -120,9 +137,9 @@ export function createReader(className: string, book: Chapters, imageBackgroundC
         fragment.effect();
       }
     }
-  }  
+  }
 
-  window.addEventListener('keydown', event => {
+  function januaryReaderKeyHandler(event: KeyboardEvent) {
     switch(event.code) {
       case "KeyA":
       case "ArrowLeft": 
@@ -137,7 +154,10 @@ export function createReader(className: string, book: Chapters, imageBackgroundC
       default:
         break;
     }
-  });
+  }
+
+  window.addEventListener('keydown', januaryReaderKeyHandler);
+  windowKeyHandlers.set(JANUARY_KEY_EVENT_HANDLER_KEY, januaryReaderKeyHandler);
 
   leftArt.addEventListener('mouseover', highlightLeft);
   leftArt.addEventListener('mouseleave', removeHighlightLeft);
