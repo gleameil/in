@@ -14,7 +14,7 @@
   width: 33%;
   padding: 40px; 
   font-size: 3vmin;
-  font-family: "EB Garamond", serif;
+  font-family: "EB Garamond";
   height: 80vh;
   overflow-y: auto;
   background-size: contain;
@@ -54,7 +54,7 @@
   
   .reader-art {
     width: 10%;
-  } 
+  }
 
   .reader-image {
     height: 100%;
