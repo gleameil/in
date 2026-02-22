@@ -389,7 +389,7 @@ Than that gay maid's whose heart I could not earn.`
                         }
                     },
                     {
-                        markdown: `+ my brain said,`,
+                        markdown: `& my brain said,`,
                         line: 8,
                         speechBubble: {
                             index: 3,
@@ -502,7 +502,7 @@ I'd rather sing with hell than emptiness.`
                     },
                 },
                 {
-                    markdown: `+ I don't always`,
+                    markdown: `& I don't always`,
                     line: 3,
                     speechBubble: {
                         index: 0,
@@ -634,7 +634,7 @@ I'd rather sing with hell than emptiness.`
                     },
                 },
                 {
-                    markdown: `+ I still would have both`,
+                    markdown: `& I still would have both`,
                     speechBubble: {
                         index: 4,
                         arrowLeft: true,
@@ -773,7 +773,7 @@ And you can care for him — when I am here?"`,
                     },
                 },
                 {
-                    markdown: `(Why would I bother with that bore +`,
+                    markdown: `(Why would I bother with that bore &`,
                     speechBubble: {
                         index: 3,
                         arrowLeft: false,
@@ -934,7 +934,7 @@ But ay! she loved not me.`,
                     },
                 },
                 {
-                    markdown: `to be real, +`,
+                    markdown: `to be real, &`,
                     speechBubble: {
                         index: 2,
                         arrowLeft: false,
@@ -1000,7 +1000,7 @@ But ay! she loved not me.`,
                     },
                 },
                 {
-                    markdown: `a divoce,`,
+                    markdown: `a divorce,`,
                     line: 3,
                     speechBubble: {
                         index: 0,
@@ -1174,7 +1174,7 @@ To know me is to hate.`
             title: `Revolt (7)`,
             poem: [
                 {
-                    markdown: `+ metaphor`,
+                    markdown: `& metaphor`,
                     speechBubble: {
                         index: 0,
                         arrowLeft: false,
@@ -1224,7 +1224,7 @@ While worms with her make free.\n`,
             title: `Revolt (8)`,
             poem: [
                 {
-                    markdown: `+ if ✵`,
+                    markdown: `& if ✵`,
                     speechBubble: {
                         index: 0,
                         arrowLeft: false,
@@ -1256,7 +1256,7 @@ While worms with her make free.\n`,
                     },
                 },
                 {
-                    markdown: `in the fast + frigid stream`,
+                    markdown: `in the fast & frigid stream`,
                     line: 1,
                     speechBubble: {
                         index: 1,
@@ -1405,7 +1405,7 @@ While worms with her make free.\n`,
             title: `Liar`,
             poem: [
                 {
-                    markdown: `You call to me`,
+                    markdown: `**You** call to me`,
                     speechBubble: {
                         index: 0,
                         arrowLeft: false,
@@ -1413,7 +1413,7 @@ While worms with her make free.\n`,
                     },
                 },
                 {
-                    markdown: `with ✦, +`,
+                    markdown: `with ✦, &`,
                     speechBubble: {
                         index: 0,
                         arrowLeft: false,
@@ -1446,7 +1446,7 @@ While worms with her make free.\n`,
                     },
                 },
                 {
-                    markdown: `+ meaningless intricacies`,
+                    markdown: `& meaningless intricacies`,
                     speechBubble: {
                         index: 1,
                         arrowLeft: false,
@@ -1582,7 +1582,7 @@ While worms with her make free.\n`,
                     },
                 },
                 {
-                    markdown: `+ because I could not care`,
+                    markdown: `& because I could not care`,
                     line: 2,
                     speechBubble: {
                         index: 4,

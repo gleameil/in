@@ -1,6 +1,8 @@
 import { Color, ColorSet } from "../../../shared/color";
 import { AudioPath, ImageCatalog, ImagePathAndAltText, SHARED_IMAGES } from "../../../shared/constants";
 
+export const END = 'end';
+
 export interface SpeechBubble {
     index: number;
     arrowLeft: boolean;

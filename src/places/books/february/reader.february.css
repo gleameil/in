@@ -43,10 +43,30 @@
 }
 
 .february-reader-text-container {
-  font-size: 3vmin;
-  font-family: 'EB Garamond';
+  font-family: 'IM Fell English';
   align-items: center;
   overflow-y: auto; 
 }
 
+/*Poem page*/
 
+.poem-page {
+  width: 100%;
+  height: 100%;
+}
+
+.february-reader-poem-page-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.february-reader-speech-bubble {
+  display: block;
+}
+
+.february-reader-poem-phrase p {
+  display: inline;
+}

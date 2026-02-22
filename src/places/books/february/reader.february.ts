@@ -1,6 +1,6 @@
 import { Color, FEBRUARY_COLOR_SET } from '../../../shared/color';
-import { createDivWithElements, createImage, removeByClassName, loadImagesForCatalog, createButtonWithImage, fillWithMarkdown } from "../../../shared/helpers";
-import { SpeechBubble, PoemFragment, FragmentedPoem, Marginalia, StaticPage, PoemPage, FebruaryPage, FebruaryChapter, FebruaryBook, BookColors } from './reader.february.constants';
+import { createDivWithElements, createImage, removeByClassName, loadImagesForCatalog, createButtonWithImage, fillWithMarkdown, createSpan } from "../../../shared/helpers";
+import { SpeechBubble, PoemFragment, FragmentedPoem, Marginalia, StaticPage, PoemPage, FebruaryPage, FebruaryChapter, FebruaryBook, BookColors, END } from './reader.february.constants';
 import { SHARED_IMAGES } from '../../../shared/constants';
 import './reader.february.css';
 
@@ -71,6 +71,23 @@ function populateStaticPage(page: StaticPage, back: () => void, forward: () => v
     marginaliaRight?.replaceChildren(right)
   }
   marginaliaRight?.addEventListener('click', forward, { once: true });
+
+  window.addEventListener('keydown', event => {
+    switch(event.code) {
+      case "KeyA":
+      case "ArrowLeft": 
+        back();    
+        break;
+      case "KeyD":
+      case "ArrowRight":
+      case "Enter":
+      case "Space":
+        forward();
+        break;
+      default:
+        break;
+      }
+    }, { once: true });
   
   if (page.marginalia?.bottom.imageLeft) {
     document.getElementById(`${className}-february-reader-marginalia-bottom`)?.replaceChildren(page.marginalia.bottom.imageLeft);
@@ -79,20 +96,116 @@ function populateStaticPage(page: StaticPage, back: () => void, forward: () => v
   staticPageElement.style.display = 'flex';
 }
 
+function pagePoem(poem: FragmentedPoem, className: string, parent: HTMLElement): (clicks: number) => string | undefined {
+  return (clicks: number) => {
+    const phrase = poem[clicks - 1];
+    if (!phrase) {
+      return END;
+    }
+    const phraseSpan = createSpan('', [className, `february-reader-poem-phrase`, `${className}-poem-phrase`], `${className}-poem-phrase-${clicks-1}`);
+    fillWithMarkdown(phraseSpan, phrase.markdown);
+
+    let currentSpeechBubble = document.getElementById(`${className}-speech-bubble${phrase.speechBubble?.index ?? 0}`);
+    if (!currentSpeechBubble) {
+      currentSpeechBubble = createDivWithElements([], ['february-reader-speech-bubble', `${className}-speech-bubble`], `${className}-speech-bubble${phrase.speechBubble?.index ?? 0}`);
+      parent.append(currentSpeechBubble);
+    }
+
+    if (phrase.speechBubble?.arrowLeft && phrase.speechBubble?.arrowRight) {
+      currentSpeechBubble.classList.add(`${className}-speech-bubble-left`, `${className}-speech-bubble-right`);
+    } else if (phrase.speechBubble?.arrowLeft) {
+      currentSpeechBubble.classList.remove(`${className}-speech-bubble-right`);
+      currentSpeechBubble.classList.add(`${className}-speech-bubble-left`);
+    } else if (phrase.speechBubble?.arrowRight) {
+      currentSpeechBubble.classList.remove(`${className}-speech-bubble-left`);
+      currentSpeechBubble.classList.add(`${className}-speech-bubble-right`);
+    } else {
+      currentSpeechBubble.classList.remove(`${className}-speech-bubble-right`);
+      currentSpeechBubble.classList.remove(`${className}-speech-bubble-left`);
+    }
+
+    let currentStanza = document.getElementById(`${className}-${phrase.speechBubble?.index ?? 0}-stanza${phrase.stanza ?? 0}`);
+    if (!currentStanza) {
+      currentStanza = createDivWithElements([], ['february-reader-poem-stanza', `${className}-stanza`], `${className}-${phrase.speechBubble?.index ?? 0}-stanza${phrase.stanza ?? 0}`);
+      currentSpeechBubble.append(currentStanza);
+    }
+
+    let line = document.getElementById(`${className}-${phrase.speechBubble?.index ?? 0}-stanza${phrase.stanza ?? 0}-line${phrase.line ?? 0}`);
+    if (!line) {
+      line = createDivWithElements([], ['february-reader-poem-line', `${className}-line`], `${className}-${phrase.speechBubble?.index ?? 0}-stanza${phrase.stanza ?? 0}-line${phrase.line ?? 0}`);
+      currentStanza.append(line);
+    }
+
+    line.append(phraseSpan);
+  }
+}
+
 function populatePoemPage(page: PoemPage, back: () => void, forward: () => void, className: string) {
+  document.getElementById(`${className}-poem-page-container`)?.remove();
   const poemPageElement = document.getElementById(`${className}-poem-page`);
     const backButton = document.getElementById(`${className}-february-reader-poem-page-back-button`);
   if (!poemPageElement) {
     console.error('Poem page element missing');
     return; // replace with error state?
   }
+  
   if (!backButton) {
     console.error('Back button missing');
     return;
   }
 
-  backButton.addEventListener('click', back, { once: true });
+  let clicks = 0;
 
+  const container = createDivWithElements([], ['february-reader-poem-page-container'], `${className}-poem-page-container`);
+  const title = page.title;
+  if (title) {
+    const titleElement = document.createElement('h1');
+    titleElement.id = `${className}-title-${title}`;
+    titleElement.innerText = title;
+    titleElement.classList.add(`${className}-poem-page-title`);
+    container.append(titleElement);
+  }
+
+  const poem = pagePoem(page.poem, className, container)
+
+  function proceed() {
+    clicks++;
+    const result = poem(clicks);
+    if (result === END) {
+      window.removeEventListener('keydown', handleForwardKeypress);
+      forward();
+    }
+  }
+  backButton.addEventListener('click', back, { once: true });
+  window.addEventListener('keydown', event => {
+    switch(event.code) {
+      case "KeyA":
+      case "ArrowLeft":
+        back()
+        break;
+      default:
+        break;
+    }
+  }, { once: true })
+  container.addEventListener('click', proceed);
+
+  function handleForwardKeypress(event: KeyboardEvent) {
+    switch(event.code) {
+    case "KeyD":
+    case "ArrowRight":
+    case "Enter":
+    case "Space":
+      proceed();
+      break;
+    default:
+      break;
+    }
+  }
+
+  window.addEventListener('keydown', handleForwardKeypress);
+
+  poemPageElement.append(container);
+  proceed();
   poemPageElement.style.display = 'flex';
 }
 
@@ -160,22 +273,6 @@ export function createFebruaryReader(className: string, book: FebruaryBook, home
     } else if ((page as PoemPage).poem) {
       populatePoemPage(page as PoemPage, back, forward, className);
     }
-    window.addEventListener('keydown', event => {
-    switch(event.code) {
-      case "KeyA":
-      case "ArrowLeft": 
-        back();    
-        break;
-      case "KeyD":
-      case "ArrowRight":
-      case "Enter":
-      case "Space":
-        forward();
-        break;
-      default:
-        break;
-      }
-    }, { once: true });
   }
   document.getElementsByTagName('html')[0].append(reader);
 }

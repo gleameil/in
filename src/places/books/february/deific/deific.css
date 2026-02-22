@@ -9,6 +9,8 @@
   --black: rgb(0, 0, 0);
 }
 
+/*Static page*/
+
 #deific-february-reader {
   background-color: var(--black);
 }
@@ -44,4 +46,52 @@
   text-indent: -2em;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+/*Poem Page*/
+
+.deific-poem-page-title {
+  color: var(--lightWarm);
+  font-family: 'Petit Formal Script';
+  font-size: 3vmax;
+  font-weight: normal;
+  text-align: center;
+}
+
+.deific-speech-bubble {
+  background-color: var(--white);
+  margin: 1vw;
+  padding: 1vw;
+  border-radius: 1vmax;
+  font-family: 'Reenie Beanie';
+  font-size: 2vmax;
+  width: 40%;
+  align-self: center;
+}
+
+.deific-speech-bubble strong {
+  font-family: 'Petit Formal Script';
+  color: var(--midWarm);
+}
+
+.deific-speech-bubble em {
+  font-family: 'Montserrat';
+  color: var(--darkWarm);
+}
+
+.deific-speech-bubble-left {
+  background-color: var(--midWarm);
+  color: var(--white);
+  border-bottom-left-radius: 0;
+  align-self: flex-start;
+}
+
+.deific-speech-bubble-left strong {
+  color: var(--lightWarm);
+}
+
+.deific-speech-bubble-right {
+  background-color: var(--lightWarm);
+  border-bottom-right-radius: 0;
+  align-self: flex-end;
 }
