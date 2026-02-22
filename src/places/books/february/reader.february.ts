@@ -190,8 +190,8 @@ function populatePoemPage(page: PoemPage, back: () => void, forward: () => void,
       case "KeyA":
       case "ArrowLeft":
         console.log(event.code, 'trying to go back');
-        window.removeEventListener('keydown', handleForwardKeypress);
         back()
+        window.removeEventListener('keydown', handleForwardKeypress);
       case "KeyD":
       case "ArrowRight":
       case "Enter":
