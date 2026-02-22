@@ -17,12 +17,12 @@
 
 .deific-reader-marginalia-horizontal {
   background-color: var(--midWarm);
-  box-shadow: 3px 3px 1vw var(--midWarm), -3px -3px 1vw var(--midWarm);
+  box-shadow: 1px 1px 1vw var(--midWarm), -1px -1px 1vw var(--midWarm);
 }
 
 .deific-reader-marginalia-vertical {
   background-color: var(--lightWarm);
-  box-shadow: 3px 3px 1vw var(--lightWarm), -3px -3px 1vw var(--lightWarm);
+  box-shadow: 1px 1px 1vw var(--lightWarm), -1px -1px 1vw var(--lightWarm);
 }
 
 #deific-february-reader-text-window {
@@ -62,6 +62,7 @@
 
 .deific-speech-bubble {
   background-color: var(--white);
+  color: var(--black);
   margin: 1vw;
   padding: 1vw;
   padding-left: 2vw;
@@ -85,24 +86,23 @@
 }
 
 .deific-speech-bubble-left {
-  background-color: var(--midWarm);
-  color: var(--white);
+  background-color: var(--lightWarm);
   border-bottom-left-radius: 0;
   align-self: flex-start;
+  box-shadow: inset 0.5vw 0.5vw 1vw var(--midWarm), inset -0.5vw -0.5vw 1vw var(--lightCool);
 }
 
-.deific-speech-bubble-left strong {
+.deific-speech-bubble-right strong {
   color: var(--lightWarm);
 }
 
-.deific-speech-bubble-left em {
-  font-family: 'Montserrat';
+.deific-speech-bubble-right em {
   color: var(--lightCool);
 }
 
 .deific-speech-bubble-right {
-  background-color: var(--lightWarm);
+  background-color: var(--midWarm);
   border-bottom-right-radius: 0;
   align-self: flex-end;
-  box-shadow: inset 0.5vw 0.5vw 1vw var(--midWarm), inset -0.5vw -0.5vw 1vw var(--lightCool);
+  color: var(--white);
 }

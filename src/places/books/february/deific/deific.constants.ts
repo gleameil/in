@@ -470,8 +470,8 @@ I'd rather sing with hell than emptiness.`
                     markdown: `but many lovers of serious 🟈`,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -479,8 +479,8 @@ I'd rather sing with hell than emptiness.`
                     line: 1,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -488,8 +488,8 @@ I'd rather sing with hell than emptiness.`
                     line: 1,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -497,8 +497,8 @@ I'd rather sing with hell than emptiness.`
                     line: 2,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -506,8 +506,8 @@ I'd rather sing with hell than emptiness.`
                     line: 3,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -515,8 +515,8 @@ I'd rather sing with hell than emptiness.`
                     line: 3,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -524,24 +524,24 @@ I'd rather sing with hell than emptiness.`
                     line: 4,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
                     markdown: `perhaps you idiosyncratically call Tolkien sparkles`,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
                     markdown: `yes`,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -549,8 +549,8 @@ I'd rather sing with hell than emptiness.`
                     line: 1,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -558,8 +558,8 @@ I'd rather sing with hell than emptiness.`
                     line: 2,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     }
                 },
                 {
@@ -567,8 +567,8 @@ I'd rather sing with hell than emptiness.`
                     line: 3,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -576,8 +576,8 @@ I'd rather sing with hell than emptiness.`
                     line: 4,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -585,8 +585,8 @@ I'd rather sing with hell than emptiness.`
                     line: 5,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -594,8 +594,8 @@ I'd rather sing with hell than emptiness.`
                     line: 6,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -603,8 +603,8 @@ I'd rather sing with hell than emptiness.`
                     line: 7,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -612,8 +612,8 @@ I'd rather sing with hell than emptiness.`
                     line: 7,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -621,40 +621,32 @@ I'd rather sing with hell than emptiness.`
                     line: 8,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
                     markdown: `burn`,
                     speechBubble: {
                         index: 3,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
                     markdown: `& I still would have both`,
                     speechBubble: {
                         index: 4,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
                     markdown: `over reality-as-I-perceive-it`,
                     speechBubble: {
                         index: 4,
-                        arrowLeft: true,
-                        arrowRight: false,
-                    },
-                },
-                {
-                    markdown: `any day`,
-                    speechBubble: {
-                        index: 4,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
             ],
@@ -691,24 +683,24 @@ And you can care for him — when I am here?"`,
                     markdown: `Workshop rejected **you**`,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
                     markdown: `Sad girl,`,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
                     markdown: `sick mother`,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
@@ -716,8 +708,8 @@ And you can care for him — when I am here?"`,
                     line: 1,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
@@ -725,8 +717,8 @@ And you can care for him — when I am here?"`,
                     line: 1,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
@@ -734,17 +726,17 @@ And you can care for him — when I am here?"`,
                     line: 2,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
-                    markdown: `do **you** add?`,
+                    markdown: `does **you** add?`,
                     line: 3,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
@@ -752,24 +744,24 @@ And you can care for him — when I am here?"`,
                     line: 3,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
                     markdown: `fantasy.`,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
                     markdown: `(🟉)`,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
