@@ -1,8 +1,12 @@
 import { Color, FEBRUARY_COLOR_SET } from '../../../shared/color';
-import { createDivWithElements, createImage, removeByClassName, loadImagesForCatalog, createButtonWithImage, fillWithMarkdown, createSpan } from "../../../shared/helpers";
+import { createDivWithElements, createImage, removeByClassName, loadImagesForCatalog, createButtonWithImage, fillWithMarkdown, createSpan, createAudio } from "../../../shared/helpers";
 import { SpeechBubble, PoemFragment, FragmentedPoem, Marginalia, StaticPage, PoemPage, FebruaryPage, FebruaryChapter, FebruaryBook, BookColors, END } from './reader.february.constants';
 import { SHARED_IMAGES } from '../../../shared/constants';
 import './reader.february.css';
+import { changeAudioSource, playIfAllowed } from '../../../shared/sound';
+
+// Track persistent forward-key handlers per reader instance so we can remove them
+const poemKeyHandlers: Map<string, (e: KeyboardEvent) => void> = new Map();
 
 function loadImagesForBook(className: string, book: FebruaryBook) {
   loadImagesForCatalog(book.imageCatalogToLoad, [className]);
@@ -174,37 +178,56 @@ function populatePoemPage(page: PoemPage, back: () => void, forward: () => void,
     clicks++;
     const result = poem(clicks);
     if (result === END) {
-      window.removeEventListener('keydown', handleForwardKeypress);
+      const existing = poemKeyHandlers.get(className);
+      if (existing) {
+        window.removeEventListener('keydown', existing);
+        poemKeyHandlers.delete(className);
+      }
       forward();
     }
   }
   backButton.addEventListener('click', () => {
-    window.removeEventListener('keydown', handleForwardKeypress);
-    back()
+    const existing = poemKeyHandlers.get(className);
+    if (existing) {
+      window.removeEventListener('keydown', existing);
+      poemKeyHandlers.delete(className);
+    }
+    back();
   }, { once: true });
   
   container.addEventListener('click', proceed);
 
-  function handleForwardKeypress(event: KeyboardEvent) {
+  function handlePoemPageKeydown(event: KeyboardEvent) {
     switch(event.code) {
       case "KeyA":
       case "ArrowLeft":
         console.log(event.code, 'trying to go back');
-        back()
-        window.removeEventListener('keydown', handleForwardKeypress);
+        const existing = poemKeyHandlers.get(className);
+        if (existing) {
+          window.removeEventListener('keydown', existing);
+          poemKeyHandlers.delete(className);
+        }
+        back();
+        break;
       case "KeyD":
       case "ArrowRight":
       case "Enter":
       case "Space":
-        console.log('handleForwardKeypress', event.code)
+        console.log('handlePoemPageKeydown', event.code)
         proceed();
         break;
       default:
         break;
     }
   }
-
-  window.addEventListener('keydown', handleForwardKeypress);
+  // remove any previously-registered forward handler for this reader instance
+  const previous = poemKeyHandlers.get(className);
+  if (previous) {
+    window.removeEventListener('keydown', previous);
+    poemKeyHandlers.delete(className);
+  }
+  window.addEventListener('keydown', handlePoemPageKeydown);
+  poemKeyHandlers.set(className, handlePoemPageKeydown);
 
   poemPageElement.append(container);
   proceed();
@@ -228,6 +251,12 @@ export function createFebruaryReader(className: string, book: FebruaryBook, home
 
   const reader = createDivWithElements([poemPage, staticPage], [className, 'february-reader'], `${className}-february-reader`);
 
+  let audio: HTMLAudioElement | undefined;
+  if (book.music) {
+    audio = createAudio(book.music.path, [className, 'february-reader-default-audio'], `${className}-default-audio`);
+    reader.append(audio);
+  }
+
   document.getElementsByTagName('html')[0].append(reader);
   goToFragment(currentChapterIndex, currentTextIndex, false);
 
@@ -245,6 +274,11 @@ export function createFebruaryReader(className: string, book: FebruaryBook, home
     if (chapterIndex >= chapters.length) {
       localStorage.removeItem(`${className}TextIndex`);
       localStorage.removeItem(`${className}ChapterIndex`);
+      const existing = poemKeyHandlers.get(className);
+      if (existing) {
+        window.removeEventListener('keydown', existing);
+        poemKeyHandlers.delete(className);
+      }
       homeward();
       return;
     } else if (textIndex >= chapters[chapterIndex].length) {
@@ -271,10 +305,22 @@ export function createFebruaryReader(className: string, book: FebruaryBook, home
     currentTextIndex = textIndex;
     const page = chapters[chapterIndex][textIndex];
 
+    if (audio && page.musicOverride) {
+      changeAudioSource(audio, page.musicOverride.path);
+      audio.addEventListener('ended', () => {
+        if (book.music) {
+          changeAudioSource(audio, book.music.path);
+        }
+      }, { once: true })
+    }
+
     if ((page as StaticPage).markdown) {
       populateStaticPage(page as StaticPage, back, forward, className);
     } else if ((page as PoemPage).poem) {
       populatePoemPage(page as PoemPage, back, forward, className);
     }
+  }
+  if (audio) {
+    playIfAllowed(audio)
   }
 }
