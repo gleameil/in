@@ -36,6 +36,7 @@ export interface StaticPage extends FebruaryPageBasis {
 export interface PoemPage extends FebruaryPageBasis {
     title?: string;
     poem: FragmentedPoem;
+    theme?: number;
 }
 
 export type FebruaryPage = StaticPage | PoemPage;

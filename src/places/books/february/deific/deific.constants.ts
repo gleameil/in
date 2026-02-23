@@ -45,6 +45,10 @@ const DEIFIC_AUDIO: AudioCatalog = {
 const DEIFIC_CHAPTERS: FebruaryChapter[] = [
     [
         {
+            markdown: `# Unholy Songs & Sonnets
+## Dei-fic`
+        },
+        {
             markdown: `
 # 🟒
 *I loved a girl as fair, as gay,*\n
@@ -78,8 +82,8 @@ Than that gay maid's whose heart I could not earn.`
                         markdown: `Make your obstacles a wall,`,
                         speechBubble: {
                             index: 0,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -87,8 +91,8 @@ Than that gay maid's whose heart I could not earn.`
                         line: 1,
                         speechBubble: {
                             index: 0,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -96,8 +100,8 @@ Than that gay maid's whose heart I could not earn.`
                         line: 1,
                         speechBubble: {
                             index: 0,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -105,8 +109,8 @@ Than that gay maid's whose heart I could not earn.`
                         line: 1,
                         speechBubble: {
                             index: 0,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -114,8 +118,8 @@ Than that gay maid's whose heart I could not earn.`
                         line: 1,
                         speechBubble: { 
                             index: 0,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -130,8 +134,8 @@ Than that gay maid's whose heart I could not earn.`
                         markdown: `Channeling isn't hard, just write`,
                         speechBubble: {
                             index: 2,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -139,8 +143,8 @@ Than that gay maid's whose heart I could not earn.`
                         line: 1,
                         speechBubble: {
                             index: 2,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -148,8 +152,8 @@ Than that gay maid's whose heart I could not earn.`
                         line: 1,
                         speechBubble: {
                             index: 2,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -410,8 +414,8 @@ Than that gay maid's whose heart I could not earn.`
                         markdown: `I sense the archangel Michael over you.`,
                         speechBubble: {
                             index: 4,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         }
                     },
                     {
@@ -1785,7 +1789,9 @@ the form. The matter we know not.
 export const DEIFIC: FebruaryBook = {
     chapters: DEIFIC_CHAPTERS,
     palette: deificColors,
+    // TODO: Better arrow image
     arrowImage: SHARED_IMAGES.arrowLeft,
     music: DEIFIC_AUDIO.foolSongInterlude,
+    // TODO: Add image
     imageCatalogToLoad: {},
 }

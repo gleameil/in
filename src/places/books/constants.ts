@@ -10,6 +10,7 @@ import { michael, michaelCover } from "./michael/michael";
 import { madeline, madelineCover } from "./madeline/madeline";
 import { sketchDiaryCover } from "./sketchDiary/sketchDiary";
 import { deificCover, deific } from './february/deific/deific';
+import { holySonnets, holySonnetsCover } from "./february/holySonnets/holySonnets";
 
 export interface Book {
   name: string;
@@ -62,11 +63,11 @@ export const FEBRUARY_BOOKS_HEAVEN: Book[] = [
 //     showCover: romanceLastChapterCover,
 //     show: romanceLastChapter,
 //   },
-//   {
-//     name: 'holySonnets',
-//     showCover: holySonnetsCover,
-//     show: holySonnets,
-//   },
+  {
+    name: 'holySonnets',
+    showCover: holySonnetsCover,
+    show: holySonnets,
+  },
 //   {
 //     name: 'illuminations',
 //     showCover: illuminationsCover,
@@ -223,4 +224,8 @@ export const BOOKS_IMAGES: ImageCatalog = {
     path: new URL('../../assets/images/books/bookCovers/deificCover.jpg', import.meta.url),
     alt: 'Book with mice (one cartoon, one realistic pencil) on cardboard reading "Songs & Unholy Sonnets / Dei-fic"',
   },
+  holySonnetsCover: {
+    path: new URL('../../assets/images/books/bookCovers/holySonnets.webp', import.meta.url),
+    alt: 'Book with mouse reading "Holy Sonnets ~ John Donne"',
+  }
 } as const;

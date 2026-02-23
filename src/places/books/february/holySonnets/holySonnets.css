@@ -1,0 +1,74 @@
+.holy-sonnets {
+  --white: rgb(255, 255, 255);
+  --lightWarm: rgb(255, 250, 205);
+  --lightCool: rgb(240, 240, 240);
+  --midWarm: rgb(199, 64, 70);
+  --midCool: rgb(211, 211, 211);
+  --darkWarm: rgb(137, 135, 135);
+  --darkCool: rgb(72, 61, 139);
+  --black: rgb(70, 50, 60);
+}
+
+.holy-sonnets h1 {
+  font-family: 'UnifrakturMaguntia';
+  color: var(--midWarm)
+}
+
+#holy-sonnets-poem-page-container {
+  align-items: center;
+  justify-content: center;
+}
+
+.holy-sonnets-poem-page-theme0 {
+  background-color: var(--lightCool);
+  background-image: url(../../../../assets/images/books/february/holySonnets/mouse.png);
+  background-size: 30vmax;
+  background-position-y: -25%;
+  font-family: 'IM Fell English';
+  font-size: 2.25vmax;
+  color: var(--darkCool); 
+}
+.holy-sonnets-poem-page-theme1 {
+  background-color: var(--black);
+  font-family: 'Montserrat';
+  font-size: 2vmax;
+  color: var(--lightCool);
+
+}
+
+.holy-sonnets-poem-page-theme0 em {
+  font-family: 'Montserrat';
+  color: var(--black);
+}
+
+.holy-sonnets-poem-page-theme0 strong {
+  font-family: 'UnifrakturMaguntia';
+  color: var(--midWarm);
+}
+
+.holy-sonnets-poem-page-theme1 em {
+  font-family: 'IM Fell English';
+  font-size: 2.75vmax;
+  color: var(--white);
+}
+
+.holy-sonnets-poem-page-theme1 strong {
+  font-family: 'UnifrakturMaguntia';
+  color: var(--lightWarm);
+}
+
+.holy-sonnets-speech-bubble {
+  min-width: 60%;
+  min-height: 42vmax;
+  padding: 2vw;
+  padding-left: 4vw;
+  text-indent: -2vw;
+  background-color: white;
+  border-radius: 1vw;
+}
+
+.holy-sonnets-poem-page-theme1 .holy-sonnets-speech-bubble {
+  background-color: var(--black);
+  min-height: 50vmax
+
+}

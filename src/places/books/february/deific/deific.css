@@ -40,6 +40,7 @@
 
 #deific-february-reader-text-container h2 {
   font-family: 'UnifrakturMaguntia';
+  text-align: center;
 }
 
 #deific-february-reader-text-container p {
@@ -55,7 +56,7 @@
 .deific-poem-page-title {
   color: var(--lightWarm);
   font-family: 'Petit Formal Script';
-  font-size: 3vmax;
+  font-size: 4vmax;
   font-weight: normal;
   text-align: center;
 }

@@ -171,7 +171,12 @@ function populatePoemPage(page: PoemPage, back: () => void, forward: () => void,
   }
 
   let clicks = 0;
-
+  poemPageElement.classList.forEach(token => {
+    if (token.match(/\w+-poem-page-theme\d/)) {
+      poemPageElement.classList.remove(token);
+    }
+  });
+  poemPageElement.classList.add(`${className}-poem-page-theme${page.theme ?? 0}`)
   const container = createDivWithElements([], ['february-reader-poem-page-container'], `${className}-poem-page-container`);
   const title = page.title;
   if (title) {
