@@ -1166,8 +1166,776 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
     ],
   },
   {
-    poem: []
-  }
+    poem: [
+      {
+        markdown: `At the *round earth's*`,
+      },
+      {
+        markdown: `**imagin'd**`,
+      },
+      {
+        markdown: `corners,`,
+      },
+      {
+        markdown: `blow`,
+      },
+      {
+        markdown: `Your trumpets,`,
+        line: 1,
+      },
+      {
+        markdown: `**Angells**,`,
+        line: 1,
+      },
+      {
+        markdown: `and arise,`,
+        line: 1,
+      },
+      {
+        markdown: `*arise*`,
+        line: 1,
+      },
+      {
+        markdown: `From death,`,
+        line: 2,
+      },
+      {
+        markdown: `you *numberlesse*`,
+        line: 2,
+      },
+      {
+        markdown: `infinities`,
+        line: 2,
+      },
+      {
+        markdown: `Of soules,`,
+        line: 3,
+      },
+      {
+        markdown: `and`,
+        line: 3,
+      },
+      {
+        markdown: `to your scattred bodies`,
+        line: 3,
+      },
+      {
+        markdown: `goe,`,
+        line: 3,
+      },
+      {
+        markdown: `*All*`,
+        line: 4,
+      },
+      {
+        markdown: ` whom the flood *did*,`,
+        line: 4,
+      },
+      {
+        markdown: `and fire *shall*`,
+        line: 4,
+      },
+      {
+        markdown: `o'erthrow,`,
+        line: 4,
+      },
+      {
+        markdown: `**All**`,
+        line: 5,
+      },
+      {
+        markdown: `whom *warre*,`,
+        line: 5,
+      },
+      {
+        markdown: `dearth,`,
+        line: 5,
+      },
+      {
+        markdown: `age,`,
+        line: 5,
+      },
+      {
+        markdown: `*agues*,`,
+        line: 5,
+      },
+      {
+        markdown: `**tyrannies**,`,
+        line: 5,
+      },
+      {
+        markdown: `*Despaire*,`,
+        line: 6,
+      },
+      {
+        markdown: `law,`,
+        line: 6,
+      },
+      {
+        markdown: `chance,`,
+        line: 6,
+      },
+      {
+        markdown: `hath **slaine**, and you`,
+        line: 6,
+      },
+      {
+        markdown: `whose **eyes**,`,
+        line: 6,
+      },
+      {
+        markdown: `*Shall behold God*,`,
+        line: 7,
+      },
+      {
+        markdown: `and *never*`,
+        line: 7,
+      },
+      {
+        markdown: `tast`,
+        line: 7,
+      },
+      {
+        markdown: `deaths woe.`,
+        line: 7,
+      },
+      {
+        markdown: `But`,
+        line: 8,
+      },
+      {
+        markdown: `let them *sleepe*, Lord,`,
+        line: 8,
+      },
+      {
+        markdown: `and mee mourne`,
+        line: 8,
+      },
+      {
+        markdown: `a space,`,
+        line: 8,
+      },
+      {
+        markdown: `For,`,
+        line: 9,
+      },
+      {
+        markdown: `if above all these,`,
+        line: 9,
+      },
+      {
+        markdown: `**my** synnes abound,`,
+        line: 9,
+      },
+      {
+        markdown: `'Tis *late*'`,
+        line: 10,
+      },
+      {
+        markdown: `to aske abundance`,
+        line: 10,
+      },
+      {
+        markdown: `of thy grace,`,
+        line: 10,
+      },
+      {
+        markdown: `When *wee* are there;`,
+        line: 11,
+      },
+      {
+        markdown: `here`,
+        line: 11,
+      },
+      {
+        markdown: `on this *lowly ground*,`,
+        line: 11,
+      },
+      {
+        markdown: `*Teach* me`,
+        line: 12,
+      },
+      {
+        markdown: `how to repent;`,
+        line: 12,
+      },
+      {
+        markdown: `for that's as good`,
+        line: 12,
+      },
+      {
+        markdown: `As if`,
+        line: 13,
+      },
+      {
+        markdown: `thou hadst seal'd`,
+        line: 13,
+      },
+      {
+        markdown: `my pardon`,
+        line: 13,
+      },
+      {
+        markdown: `with **thy blood**.`,
+        line: 13,
+      },
+    ],
+  },
+  {
+    poem: [
+      {
+        markdown: `If *faithfull soules*`,
+      },
+      {
+        markdown: `be *alike* **glorifi'd**`,
+      },
+      {
+        markdown: `As *Angels*,`,
+        line: 1,
+      },
+      {
+        markdown: `then my *fathers soule*`,
+        line: 1,
+      },
+      {
+        markdown: `doth see,`,
+        line: 1,
+      },
+      {
+        markdown: `And adds *this even*`,
+        line: 2,
+      },
+      {
+        markdown: `to **full felicitie**,`,
+        line: 2,
+      },
+      {
+        markdown: `That *valiantly*`,
+        line: 3,
+      },
+      {
+        markdown: `I **hels wide mouth**`,
+        line: 3,
+      },
+      {
+        markdown: `o'rstride:`,
+        line: 3,
+      },
+      {
+        markdown: `But if`,
+        line: 4,
+      },
+      {
+        markdown: `our *mindes*`,
+        line: 4,
+      },
+      {
+        markdown: `to these soules`,
+        line: 4,
+      },
+      {
+        markdown: `be descry'd`,
+        line: 4,
+      },
+      {
+        markdown: `By circumstances,`,
+        line: 5,
+      },
+      {
+        markdown: `and by **signes** that be`,
+        line: 5,
+      },
+      {
+        markdown: `*Apparent*`,
+        line: 6,
+      },
+      {
+        markdown: `in us,`,
+        line: 6,
+      },
+      {
+        markdown: `not immediately,`,
+        line: 6,
+      },
+      {
+        markdown: `How shall *my* mindes`,
+        line: 7,
+      },
+      {
+        markdown: `*white truth*`,
+        line: 7,
+      },
+      {
+        markdown: `by *them*`,
+        line: 7,
+      },
+      {
+        markdown: `be try'd?`,
+        line: 7,
+      },
+      {
+        markdown: `They see`,
+        line: 8,
+      },
+      {
+        markdown: `**idolatrous lovers**`,
+        line: 8,
+      },
+      {
+        markdown: `weepe and mourne,`,
+        line: 8,
+      },
+      {
+        markdown: `And *vile*`,
+        line: 9,
+      },
+      {
+        markdown: `blasphemous`,
+        line: 9,
+      },
+      {
+        markdown: `**Conjurers**`,
+        line: 9,
+      },
+      {
+        markdown: `to call`,
+        line: 9,
+      },
+      {
+        markdown: `On **Iefus name**,`,
+        line: 10,
+      },
+      {
+        markdown: `and *Pharisaicall*`,
+        line: 10,
+      },
+      {
+        markdown: `*Dissemblers*`,
+        line: 11,
+      },
+      {
+        markdown: `feigne devotion.`,
+        line: 11,
+      },
+      {
+        markdown: `Then turne`,
+        line: 11,
+      },
+      {
+        markdown: `O *pensive soule*,`,
+        line: 12,
+      },
+      {
+        markdown: `to **God**,`,
+        line: 12,
+      },
+      {
+        markdown: `for *he* knowes best`,
+        line: 12,
+      },
+      {
+        markdown: `Thy *true* griefe,`,
+        line: 13,
+      },
+      {
+        markdown: `for **he**`,
+        line: 13,
+      },
+      {
+        markdown: `put it in *my breast*`,
+        line: 13,
+      },
+    ],
+  },
+  {
+    poem: [
+      {
+        markdown: `If *poysonous mineralls*,`
+      },
+      {
+        markdown: `and if **that tree**,`
+      },
+      {
+        markdown: `Whose **fruit**`,
+        line: 1,
+      },
+      {
+        markdown: `threw death`,
+        line: 1,
+      },
+      {
+        markdown: `on *else immortall* us,`,
+        line: 1,
+      },
+      {
+        markdown: `If *lecherous goats*,`,
+        line: 2,
+      },
+      {
+        markdown: `if *serpents envious*`,
+        line: 2,
+      },
+      {
+        markdown: `Cannot be **damn'd**;`,
+        line: 3,
+      },
+      {
+        markdown: `*Alas*;`,
+        line: 3,
+      },
+      {
+        markdown: `why should *I* bee?`,
+        line: 3,
+      },
+      {
+        markdown: `Why should *intent*`,
+        line: 4,
+      },
+      {
+        markdown: `or *reason*,`,
+        line: 4,
+      },
+      {
+        markdown: `borne in **mee**,`,
+        line: 4,
+      },
+      {
+        markdown: `Make *sinnes*, else **equall**,`,
+        line: 5,
+      },
+      {
+        markdown: `in mee`,
+        line: 5,
+      },
+      {
+        markdown: `more heinous?`,
+        line: 5,
+      },
+      {
+        markdown: `And *mercy* being easie,`,
+        line: 6,
+      },
+      {
+        markdown: `and **glorious**`,
+        line: 6,
+      },
+      {
+        markdown: `To God;`,
+        line: 7,
+      },
+      {
+        markdown: `in *his sterne wrath*,`,
+        line: 7,
+      },
+      {
+        markdown: `why *threatens* hee?`,
+        line: 7,
+      },
+      {
+        markdown: `But who am *I*`,
+        line: 8,
+      },
+      {
+        markdown: `that dare dispute`,
+        line: 8,
+      },
+      {
+        markdown: `with **thee**`,
+        line: 8,
+      },
+      {
+        markdown: `O God?`,
+        line: 9,
+      },
+      {
+        markdown: `*Oh!*`,
+        line: 9,
+      },
+      {
+        markdown: `of *thine onely* worthy`,
+        line: 9,
+      },
+      {
+        markdown: `**blood**,`,
+        line: 9,
+      },
+      {
+        markdown: `And *my teares*,`,
+        line: 10,
+      },
+      {
+        markdown: `*make* a heavenly`,
+        line: 10,
+      },
+      {
+        markdown: `*Lethean*`,
+        line: 10,
+      },
+      {
+        markdown: `flood,`,
+        line: 10,
+      },
+      {
+        markdown: `And *dronwe* in it`,
+        line: 11,
+      },
+      {
+        markdown: `my *sinnes blacke memorie*;`,
+        line: 11,
+      },
+      {
+        markdown: `That **thou**`,
+        line: 12,
+      },
+      {
+        markdown: `remember them,`,
+        line: 12,
+      },
+      {
+        markdown: `*some* claime`,
+        line: 12,
+      },
+      {
+        markdown: `as debt,`,
+        line: 12,
+      },
+      {
+        markdown: `*I*`,
+        line: 13,
+      },
+      {
+        markdown: `thinke it mercy,`,
+        line: 13,
+      },
+      {
+        markdown: `if thou wilt`,
+        line: 13,
+      },
+      {
+        markdown: `**forget**.`,
+        line: 13,
+      },
+    ],
+  },
+  {
+    poem: [
+      {
+        markdown: `**Death**`,
+      },
+      {
+        markdown: `*be not proud*,`,
+      },
+      {
+        markdown: `though *some*`
+      },
+      {
+        markdown: `have *called* thee`,
+      },
+      {
+        markdown: `*Mighty* and *dreadfull*,`,
+        line: 1,
+      },
+      {
+        markdown: `for,`,
+        line: 1,
+      },
+      {
+        markdown: `thou *art*`,
+        line: 1,
+      },
+      {
+        markdown: `*not*`,
+        line: 1,
+      },
+      {
+        markdown: `*soe*,`,
+        line: 1,
+      },
+      {
+        markdown: `For, those, whom`,
+        line: 2,
+      },
+      {
+        markdown: `thou *think'st*,`,
+        line: 2,
+      },
+      {
+        markdown: `thou dost *overthrow*,`,
+        line: 2,
+      },
+      {
+        markdown: `Die **not**,`,
+        line: 3,
+      },
+      {
+        markdown: `*poore* death,`,
+        line: 3,
+      },
+      {
+        markdown: `nor yet canst thou`,
+        line: 3,
+      },
+      {
+        markdown: `kill *mee*.`,
+        line: 3,
+      },
+      {
+        markdown: `From *rest*`,
+        line: 4,
+      },
+      {
+        markdown: `and *sleepe*,`,
+        line: 4,
+      },
+      {
+        markdown: `which but thy *pictures* bee`,
+        line: 4,
+      },
+      {
+        markdown: `Much pleasure,`,
+        line: 5,
+      },
+      {
+        markdown: `then from *thee*,`,
+        line: 5,
+      },
+      {
+        markdown: `much *more* must flow,`,
+        line: 5,
+      },
+      {
+        markdown: `And *soonest*`,
+        line: 6,
+      },
+      {
+        markdown: `our *best men*`,
+        line: 6,
+      },
+      {
+        markdown: `with *thee* doe goe,`,
+        line: 6,
+      },
+      {
+        markdown: `Rest of their bones,`,
+        line: 7,
+      },
+      {
+        markdown: `and soules deliverie.`,
+        line: 7,
+      },
+      {
+        markdown: `Thou art *slave*`,
+        line: 8,
+      },
+      {
+        markdown: `to **Fate**,`,
+        line: 8,
+      },
+      {
+        markdown: `*Chance*,`,
+        line: 8,
+      },
+      {
+        markdown: `kings, and desperate men,`,
+        line: 8,
+      },
+      {
+        markdown: `And dost`,
+        line: 9,
+      },
+      {
+        markdown: `with *poyson*,`,
+        line: 9,
+      },
+      {
+        markdown: `**warre**,`,
+        line: 9,
+      },
+      {
+        markdown: `and *sicknesse*`,
+        line: 9,
+      },
+      {
+        markdown: `dwell,`,
+        line: 9,
+      },
+      {
+        markdown: `And poppie, or *charmes*`,
+        line: 10,
+      },
+      {
+        markdown: `can make us sleepe as well,`,
+        line: 10,
+      },
+      {
+        markdown: `And *better*`,
+        line: 11,
+      },
+      {
+        markdown: `than thy stroake;`,
+        line: 11,
+      },
+      {
+        markdown: `why`,
+        line: 11,
+      },
+      {
+        markdown: `*swell'st* thou`,
+        line: 11,
+      },
+      {
+        markdown: `then?`,
+        line: 11,
+      },
+      {
+        markdown: `*One short sleepe*`,
+        line: 12,
+      },
+      {
+        markdown: `past,`,
+        line: 12,
+      },
+      {
+        markdown: `wee wake`,
+        line: 12,
+      },
+      {
+        markdown: `**eternally**,`,
+        line: 12,
+      },
+      {
+        markdown: `And **death**`,
+        line: 13,
+      },
+      {
+        markdown: `*shall*`,
+        line: 13,
+      },
+      {
+        markdown: `*be*`,
+        line: 13,
+      },
+      {
+        markdown: `*no*`,
+        line: 13,
+      },
+      {
+        markdown: `*more*;`,
+        line: 13,
+      },
+      {
+        markdown: `death,`,
+        line: 13,
+      },
+      {
+        markdown: `**thou shalt die**.`,
+        line: 13,
+      },
+    ]
+  },
+  {
+    poem: [],
+  },
 ]] as const;
 
 export const HOLY_SONNETS: FebruaryBook = {

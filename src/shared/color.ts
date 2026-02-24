@@ -147,7 +147,7 @@ export const FEBRUARY_COLORS: MonthColors = {
   red: 'rgb(199, 64, 70)',
   pink: 'rgb(203, 162, 170)',
   white: 'rgb(252, 245, 229)', // parchment here: https://htmlcolorcodes.com/colors/,
-  black: 'rgb(70, 50, 60)',
+  black: 'rgb(70, 50, 55)',
   gray: 'rgb(128, 128, 128)',
   lightGray: 'rgb(220, 220, 220)',
 } as const;
