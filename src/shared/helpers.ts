@@ -193,6 +193,11 @@ export function fillWithMarkdown(element: HTMLElement, markdown: string) {
   element.innerHTML = md.render(markdown);
 }
 
+export function fillWithMarkdownInline(element: HTMLElement, markdown: string) {
+  const md = markdownIt()
+  element.innerHTML = md.renderInline(markdown);
+}
+
 export function loadImagesForCatalog(imageCatalog: ImageCatalog, classNames: string[]) {
   let imageKeys = Object.keys(imageCatalog);
   imageKeys.forEach(key => {

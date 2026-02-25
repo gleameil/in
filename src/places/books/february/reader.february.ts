@@ -1,5 +1,5 @@
 import { Color, FEBRUARY_COLOR_SET } from '../../../shared/color';
-import { createDivWithElements, createImage, removeByClassName, loadImagesForCatalog, createButtonWithImage, fillWithMarkdown, createSpan, createAudio } from "../../../shared/helpers";
+import { createDivWithElements, createImage, removeByClassName, loadImagesForCatalog, createButtonWithImage, fillWithMarkdown, fillWithMarkdownInline, createSpan, createAudio } from "../../../shared/helpers";
 import { SpeechBubble, PoemFragment, FragmentedPoem, Marginalia, StaticPage, PoemPage, FebruaryPage, FebruaryChapter, FebruaryBook, BookColors, END } from './reader.february.constants';
 import { SHARED_IMAGES } from '../../../shared/constants';
 import './reader.february.css';
@@ -110,7 +110,7 @@ function pagePoem(poem: FragmentedPoem, className: string, parent: HTMLElement):
       return END;
     }
     const phraseSpan = createSpan('', [className, `february-reader-poem-phrase`, `${className}-poem-phrase`], `${className}-poem-phrase-${clicks-1}`);
-    fillWithMarkdown(phraseSpan, phrase.markdown);
+    fillWithMarkdownInline(phraseSpan, `${phrase.markdown} `);
 
     let currentSpeechBubble = document.getElementById(`${className}-speech-bubble${phrase.speechBubble?.index ?? 0}`);
     if (!currentSpeechBubble) {

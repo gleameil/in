@@ -42,7 +42,9 @@
 }
 
 .holy-sonnets-poem-page-theme0 strong {
-  font-family: 'UnifrakturMaguntia';
+  font-family: 'Manufacturing Consent';
+  font-size: 2.65vmax;
+  font-weight: normal;
   color: var(--midWarm);
 }
 
@@ -53,13 +55,15 @@
 }
 
 .holy-sonnets-poem-page-theme1 strong {
-  font-family: 'UnifrakturMaguntia';
+  font-family: 'Manufacturing Consent';
+  font-size: 2.65vmax;
+  font-weight: normal;
   color: var(--lightWarm);
 }
 
 .holy-sonnets-speech-bubble {
   min-width: 60%;
-  min-height: 42vmax;
+  min-height: 45vmax;
   padding: 2vw;
   padding-left: 4vw;
   text-indent: -2vw;
