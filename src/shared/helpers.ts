@@ -2,7 +2,7 @@ import markdownIt from 'markdown-it-ts';
 
 import { OUT } from '../places/home/constants';
 import { Color, FebruaryColor, JANUARY_COLORS, JanuaryColor } from './color';
-import { AudioURLSrc, ImagePathAndAltText, ImageURLSrc, LinearGradient } from './constants';
+import { AudioURLSrc, ImageCatalog, ImagePathAndAltText, ImageURLSrc, LinearGradient } from './constants';
 import { canPlayAudio, setCanPlayFromQuery } from './sound';
 import { getTime, setTimeFromQuery } from './time/time';
 
@@ -189,6 +189,19 @@ export function urlForOutNow(): URL {
 }
 
 export function fillWithMarkdown(element: HTMLElement, markdown: string) {
-  const md = markdownIt();
+  const md = markdownIt({ html: true });
   element.innerHTML = md.render(markdown);
+}
+
+export function fillWithMarkdownInline(element: HTMLElement, markdown: string) {
+  const md = markdownIt()
+  element.innerHTML = md.renderInline(markdown);
+}
+
+export function loadImagesForCatalog(imageCatalog: ImageCatalog, classNames: string[]) {
+  let imageKeys = Object.keys(imageCatalog);
+  imageKeys.forEach(key => {
+    const imagePath = imageCatalog[key];
+    imagePath.imageLeft = createImage(imagePath, classNames, `image-${key}`);
+  });
 }

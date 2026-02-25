@@ -1,0 +1,69 @@
+.february-reader {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.static-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.february-reader-center-pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+
+.february-reader-marginalia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.february-reader-marginalia-left, .february-reader-marginalia-right {
+  width: 25%;
+  height: 80%;
+}
+
+.february-reader-marginalia-top, .february-reader-marginalia-bottom {
+  height: 10%;
+}
+
+.february-reader-text-window {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+
+.february-reader-text-container {
+  font-family: 'IM Fell English';
+  align-items: center;
+  overflow-y: auto; 
+}
+
+/*Poem page*/
+
+.poem-page {
+  width: 100%;
+  height: 100%;
+}
+
+.february-reader-poem-page-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.february-reader-speech-bubble {
+  display: block;
+}
