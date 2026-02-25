@@ -118,7 +118,7 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 6,
       },
       {
-        markdown: `by sinne in it,`,
+        markdown: `By sinne in it,`,
         line: 7,
       },
       {
@@ -407,7 +407,7 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 12,
       },
       {
-        markdown: `yet wilt'not *chuse* me`,
+        markdown: `yet wilt not *chuse* me`,
         line: 12,
       },
       {
@@ -423,7 +423,7 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 13,
       },
       {
-        markdown: `to *lose* mee`,
+        markdown: `to *lose* mee.`,
         line: 13,
       },
     ],
@@ -1542,7 +1542,7 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 13,
       },
       {
-        markdown: `put it in *my breast*`,
+        markdown: `put it in *my breast*.`,
         line: 13,
       },
     ],
@@ -2727,7 +2727,7 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 5,
       },
       {
-        markdown: `(for he ne'er **begonne**,)`,
+        markdown: `(for he ne'er **begonne**)`,
         line: 5,
       },
       {
@@ -2763,7 +2763,7 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 8,
       },
       {
-        markdown: `which my search`,
+        markdown: `which by search`,
         line: 8,
       },
       {
@@ -3276,7 +3276,7 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 5,
       },
       {
-        markdown: `**truth**`,
+        markdown: `truth`,
         line: 5,
       },
       {
@@ -3316,13 +3316,278 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 7,
       },
       {
-        markdown: `*Laments*`,
+        markdown: `hill`,
         line: 7,
+      },
+      {
+        markdown: `*appeare*?`,
+        line: 7,
+      },
+      {
+        markdown: `*Dwells* she`,
+        line: 8,
+      },
+      {
+        markdown: `with us,`,
+        line: 8,
+      },
+      {
+        markdown: `or like **adventuring knights**`,
+        line: 8,
+      },
+      {
+        markdown: `First *travaile* we`,
+        line: 9,
+      },
+      {
+        markdown: `to seeke`,
+        line: 9,
+      },
+      {
+        markdown: `and *then* make Love?`,
+        line: 9,
+      },
+      {
+        markdown: `*Betray*`,
+        line: 10,
+      },
+      {
+        markdown: `kind *husband*`,
+        line: 10,
+      },
+      {
+        markdown: `**thy spouse**`,
+        line: 10,
+      },
+      {
+        markdown: `to our sights,`,
+        line: 10,
+      },
+      {
+        markdown: `And let myne`,
+        line: 11,
+      },
+      {
+        markdown: `*amorous*`,
+        line: 11,
+      },
+      {
+        markdown: `soule`,
+        line: 11,
+      },
+      {
+        markdown: `court`,
+        line: 11,
+      },
+      {
+        markdown: `thy *mild Dove*,`,
+        line: 11,
+      },
+      {
+        markdown: `Who is most **trew**,`,
+        line: 12,
+      },
+      {
+        markdown: `and *pleasing to thee*,`,
+        line: 12,
+      },
+      {
+        markdown: `then`,
+        line: 12,
+      },
+      {
+        markdown: `When`,
+        line: 13,
+      },
+      {
+        markdown: `she is **embrac'd** and open to`,
+        line: 13,
+      },
+      {
+        markdown: `most men.`,
+        line: 13,
       },
     ],
   },
   {
-    poem: [],
+    poem: [
+      {
+        markdown: `*Oh*,`
+      },
+      {
+        markdown: `to **vex** me,`
+      },
+      {
+        markdown: `*contraryes* meet`
+      },
+      {
+        markdown: `in **one**:`
+      },
+      {
+        markdown: `*Inconstancy*`,
+        line: 1,
+      },
+      {
+        markdown: `**unnaturally**`,
+        line: 1,
+      },
+      {
+        markdown: `*hath begott*`,
+        line: 1,
+      },
+      {
+        markdown: `A *constant* habit;`,
+        line: 2,
+      },
+      {
+        markdown: `that`,
+        line: 2,
+      },
+      {
+        markdown: `when I *would* not`,
+        line: 2,
+      },
+      {
+        markdown: `I *change* in vowes,`,
+        line: 3,
+      },
+      {
+        markdown: `and in *devotione*.`,
+        line: 3,
+      },
+      {
+        markdown: `As *humorous*`,
+        line: 4,
+      },
+      {
+        markdown: `is my *contritione*`,
+        line: 4,
+      },
+      {
+        markdown: `As`,
+        line: 5,
+      },
+      {
+        markdown: `my prophane Love,`,
+        line: 5,
+      },
+      {
+        markdown: `*and*`,
+        line: 5,
+      },
+      {
+        markdown: `*as soone* forgott:`,
+        line: 5,
+      },
+      {
+        markdown: `As **ridlingly**`,
+        line: 6,
+      },
+      {
+        markdown: `distemper'd,`,
+        line: 6,
+      },
+      {
+        markdown: `cold and hott,`,
+        line: 6,
+      },
+      {
+        markdown: `As *praying*,`,
+        line: 7,
+      },
+      {
+        markdown: `as mute;`,
+        line: 7,
+      },
+      {
+        markdown: `as **infinite**,`,
+        line: 7,
+      },
+      {
+        markdown: `as none.`,
+        line: 7,
+      },
+      {
+        markdown: `I *durst not view heaven*`,
+        line: 8,
+      },
+      {
+        markdown: `yesterday;`,
+        line: 8,
+      },
+      {
+        markdown: `and *to day*`,
+        line: 8,
+      },
+      {
+        markdown: `In *prayers*`,
+        line: 9,
+      },
+      {
+        markdown: `and **flattering** speaches`,
+        line: 9,
+      },
+      {
+        markdown: `I court God:`,
+        line: 9,
+      },
+      {
+        markdown: `To morrow`,
+        line: 10,
+      },
+      {
+        markdown: `I quake`,
+        line: 10,
+      },
+      {
+        markdown: `with *true feare*`,
+        line: 10,
+      },
+      {
+        markdown: `of his rod.`,
+        line: 10,
+      },
+      {
+        markdown: `So`,
+        line: 11,
+      },
+      {
+        markdown: `my **devout fitts**`,
+        line: 11,
+      },
+      {
+        markdown: `come`,
+        line: 11,
+      },
+      {
+        markdown: `and go away`,
+        line: 11,
+      },
+      {
+        markdown: `Like`,
+        line: 12,
+      },
+      {
+        markdown: `a *fantastique Ague*:`,
+        line: 12,
+      },
+      {
+        markdown: `save that here`,
+        line: 12,
+      },
+      {
+        markdown: `Those are my **best** dayes,`,
+        line: 13,
+      },
+      {
+        markdown: `when I *shake*`,
+        line: 13,
+      },
+      {
+        markdown: `with *feare*.`,
+        line: 13,
+      },
+    ],
   }
 ]] as const;
 
