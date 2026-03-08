@@ -31,7 +31,7 @@ const DEIFIC_AUDIO: AudioCatalog = {
         isLoop: false,
     },
     foolSongV3_4: {
-        path: new URL('../../../../assets/audio/foolSongV3-4.mp3', import.meta.url),
+        path: new URL('../../../../assets/audio/foolSongv3-4.mp3', import.meta.url),
         id: 'foolSongV3-4',
         isLoop: false,
     },
