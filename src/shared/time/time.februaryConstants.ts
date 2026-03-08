@@ -16,6 +16,29 @@ export interface FebruaryHoliday {
     textColor?: FebruaryColor,
 }
 
+export const FEBRUARY_FAVICON = {
+    appleTouchIcon: {
+        path: new URL('../../assets/february-favicon/apple-touch-icon.png', import.meta.url),
+        alt: '',
+    },
+    faviconMedium: {
+        path: new URL('../../assets/february-favicon/favicon-32x32.png', import.meta.url),
+        alt: '',
+    },
+    faviconSmall: {
+        path: new URL('../../assets/february-favicon/favicon-16x16.png', import.meta.url),
+        alt: '',
+    },
+    faviconMain: {
+        path: new URL('../../assets/february-favicon/favicon-48x48.png', import.meta.url),
+        alt: '',
+    },
+    webmanifest: {
+        path: new URL('../../assets/february-favicon/site.webmanifest', import.meta.url),
+        alt: '',
+    },    
+}
+
 export const FEBRUARY_HOLIDAYS: FebruaryHoliday[] = [
     {
         date: 1,
