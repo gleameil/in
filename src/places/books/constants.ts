@@ -26,6 +26,7 @@ export const FEBRUARY_BOOKS_HEAVEN: Book[] = [
     name: 'deific',
     showCover: deificCover,
     show: deific,
+    shouldHide: () => true,
   },
 //   {
 //     name: 'outOfTales',
