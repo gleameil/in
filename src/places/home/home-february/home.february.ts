@@ -1,4 +1,4 @@
-import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio, urlForOutNow, Background } from "../../../shared/helpers";
+import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio, urlForOutNow, Background, loadImagesForCatalog } from "../../../shared/helpers";
 import { FEBRUARY_COLORS, FebruaryColor } from "../../../shared/color";
 import { getTime, stopTime } from "../../../shared/time/time";
 import { lookAtBooks } from "../../books/books";
@@ -119,8 +119,8 @@ function nextBackground(currentBackground?: number, parent?: HTMLDivElement) {
   }, { once: true })
 }
 
-function makeBed(isHell: boolean): HTMLDivElement {
-    const bedFrame = createImage(FEBRUARY_HOME_IMAGES.bed, ['home', 'bed-february'], 'bed-february');
+function makeBed(isHell: boolean, frame?: HTMLImageElement): HTMLDivElement {
+    const bedFrame = frame ?? createImage(FEBRUARY_HOME_IMAGES.bed, ['home', 'bed-february'], 'bed-february');
     const comforter = createDivWithElements([], ['home', 'bed-february'], 'comforter');
     const colorChoice = retrieveColorChoice(FEBRUARY_HAS_CHANGING_BACKGROUND.comforter);
     if (isHell) {
@@ -146,6 +146,7 @@ function makeWindow(isHell: boolean): HTMLDivElement {
 }
 
 export function homeFebruary(comeHome: () => void) {
+  loadImagesForCatalog(FEBRUARY_HOME_IMAGES, ['home']);
   const windowForFebruary = window as WindowForFebruary;
   const isHell = !!windowForFebruary.isHell;
 
@@ -154,7 +155,7 @@ export function homeFebruary(comeHome: () => void) {
   all.id = 'home-container';
 
   if (!document.getElementById(SOUND_CONTROL_ID)) {
-    all.append(createSoundControl());
+    document.getElementsByTagName('html')[0].append(createSoundControl());
   }
 
   const floor = createDivWithElements([], ['home', 'wall'], 'floor');
@@ -196,13 +197,13 @@ export function homeFebruary(comeHome: () => void) {
   room.append(clockAndCalendar);
 
   const bookshelfImage = isHell? createImage(FEBRUARY_HOME_IMAGES.dresser, ['home'], 'bookshelf-image') : createImage(FEBRUARY_HOME_IMAGES.bookshelf, ['home'], 'bookshelf-image');
-  const bookshelf = createItem(bookshelfImage, 'bookshelf') /* , () => {
+  const bookshelf = createItem(bookshelfImage, 'bookshelf' , () => {
     leaveHome(true);
     lookAtBooks(comeHome, isHell);
-  }); // click handler */
+  });
   room.append(bookshelf);
 
-  const bed = makeBed(isHell);
+  const bed = makeBed(isHell, FEBRUARY_HOME_IMAGES.bed.imageLeft);
   room.append(bed);
   all.append(room);
 

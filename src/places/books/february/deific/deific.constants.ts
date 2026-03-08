@@ -16,27 +16,27 @@ const deificColors: BookColors = {
 
 const DEIFIC_AUDIO: AudioCatalog = {
     foolSongInterlude: {
-        path: new URL('../../../assets/audio/foolSongInterlude.mp3', import.meta.url),
+        path: new URL('../../../../assets/audio/foolSongInterlude.mp3', import.meta.url),
         id: 'foolSongInterlude',
         isLoop: true,
     },
     foolSongChorus: {
-        path: new URL('../../../assets/audio/foolSongChorus.mp3', import.meta.url),
+        path: new URL('../../../../assets/audio/foolSongChorus.mp3', import.meta.url),
         id: 'foolSongChorus',
         isLoop: false,
     },
     foolSongV1_2: {
-        path: new URL('../../../assets/audio/foolSongV1-2.mp3', import.meta.url),
+        path: new URL('../../../../assets/audio/foolSongV1-2.mp3', import.meta.url),
         id: 'foolSongV1-2',
         isLoop: false,
     },
     foolSongV3_4: {
-        path: new URL('../../../assets/audio/foolSongV3-4.mp3', import.meta.url),
+        path: new URL('../../../../assets/audio/foolSongV3-4.mp3', import.meta.url),
         id: 'foolSongV3-4',
         isLoop: false,
     },
     foolSongEnd: {
-        path: new URL('../../../assets/audio/foolSongEnd.mp3', import.meta.url),
+        path: new URL('../../../../assets/audio/foolSongEnd.mp3', import.meta.url),
         id: 'foolSongEnd',
         isLoop: false,
     },
@@ -45,33 +45,35 @@ const DEIFIC_AUDIO: AudioCatalog = {
 const DEIFIC_CHAPTERS: FebruaryChapter[] = [
     [
         {
+            markdown: `# Unholy Songs & Sonnets
+## Dei-fic`
+        },
+        {
             markdown: `
-            # 🟒
-            *I loved a girl as fair, as gay,
-            As any morn in merry May.
-            In merry May full fair was she,
-            But ay! she loved not me.*
-            `,
+# 🟒
+*I loved a girl as fair, as gay,*\n
+*As any morn in merry May.*\n
+*In merry May full fair was she,*\n
+*But ay! she loved not me.*`,
             musicOverride: DEIFIC_AUDIO.foolSongChorus,
         },
         {
             markdown: `
-            ## Heavy Love
-            I loved a girl blithe as a morn in May.
-            I longed for her to see that love divine
-            Is less than that I bear her, and less fine,
-            But, as one jesting, she would always say,
-            "Dear sir, I beg you take your love away.
-            Bestow it on some warmer heart than mine,
-            And with some sterner spirit let it twine.
-            I am to frail to bear its weight. Oh, slay
-            Me not!" Time passed, and I could not deny
-            She loved me not. For woe, to you I turn
-            My suit, O Night, and, gazing long, I scry
-            Deep in the dark between the stars' cold burn
-            A woman's form more darkly fair, more high,
-            Than that gay maid's whose heart I could not earn.
-            `
+## Heavy Love
+I loved a girl blithe as a morn in May.\n
+I longed for her to see that love divine\n
+Is less than that I bear her, and less fine,\n
+But, as one jesting, she would always say,\n
+"Dear sir, I beg you take your love away.\n
+Bestow it on some warmer heart than mine,\n
+And with some sterner spirit let it twine.\n
+I am to frail to bear its weight. Oh, slay\n
+Me not!" Time passed, and I could not deny\n
+She loved me not. For woe, to you I turn\n
+My suit, O Night, and, gazing long, I scry\n
+Deep in the dark between the stars' cold burn\n
+A woman's form more darkly fair, more high,\n
+Than that gay maid's whose heart I could not earn.`
         },
         {
             title: 'Afternoon with the psychic',
@@ -80,8 +82,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                         markdown: `Make your obstacles a wall,`,
                         speechBubble: {
                             index: 0,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -89,8 +91,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                         line: 1,
                         speechBubble: {
                             index: 0,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -98,8 +100,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                         line: 1,
                         speechBubble: {
                             index: 0,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -107,8 +109,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                         line: 1,
                         speechBubble: {
                             index: 0,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -116,8 +118,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                         line: 1,
                         speechBubble: { 
                             index: 0,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -132,8 +134,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                         markdown: `Channeling isn't hard, just write`,
                         speechBubble: {
                             index: 2,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -141,8 +143,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                         line: 1,
                         speechBubble: {
                             index: 2,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -150,8 +152,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                         line: 1,
                         speechBubble: {
                             index: 2,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         },
                     },
                     {
@@ -391,7 +393,7 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                         }
                     },
                     {
-                        markdown: `+ my brain said,`,
+                        markdown: `& my brain said,`,
                         line: 8,
                         speechBubble: {
                             index: 3,
@@ -412,8 +414,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                         markdown: `I sense the archangel Michael over you.`,
                         speechBubble: {
                             index: 4,
-                            arrowLeft: false,
-                            arrowRight: true,
+                            arrowLeft: true,
+                            arrowRight: false,
                         }
                     },
                     {
@@ -436,38 +438,34 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
             ],
         },
         {
-            markdown: `
-            # 🟆
-            I plucked the rose, the daffodil,
-            Of all sweet odors drank my fill.
-            I wove a crown full fair to see
-            So she might then love me.
-            
-            She took my bright and od'rous crown.
-            She danced it up the hills and down.
-            In merry May full fair was she,
-            But ay! she loved not me.
-            `,
+            markdown: `# 🟆
+I plucked the rose, the daffodil,\n
+Of all sweet odors drank my fill.\n
+I wove a crown full fair to see\n
+So she might then love me.\n
+<br>\n
+She took my bright and od'rous crown.\n
+She danced it up the hills and down.\n
+In merry May full fair was she,\n
+But ay! she loved not me.`,
             musicOverride: DEIFIC_AUDIO.foolSongV1_2,
         },
         {
-            markdown: `
-            ## Courting the Night
-            They chant supernal peace into night's face —
-            peace was never further from my mind.
-            For them, night's holy paradox, a trace
-            of God, a void. They do not hear the wind.
-            The wind, that flying, crying, spying why,
-            ruins the roiots. Night holds no consolation, no.
-            It echoes, echoes, twists the chanted lie.
-            It echoes, echoes, all my railing woe.
-            It echoes, echoes, echoes, and I strum
-            the strings, I sing. Dead symphhonies arise.
-            My voice twines with lost ghosts', and devils hum
-            beneath the screech of birds with yellow eyes —
-            but no. There is no choir, though I confess
-            I'd rather sing with hell than emptiness.
-            `
+            markdown: `## Courting the Night
+They chant supernal peace into night's face —\n
+peace was never further from my mind.\n
+For them, night's holy paradox, a trace\n
+of God, a void. They do not hear the wind.\n
+The wind, that flying, crying, spying why,\n
+ruins the roiots. Night holds no consolation, no.\n
+It echoes, echoes, twists the chanted lie.\n
+It echoes, echoes, all my railing woe.\n
+It echoes, echoes, echoes, and I strum\n
+the strings, I sing. Dead symphhonies arise.\n
+My voice twines with lost ghosts', and devils hum\n
+beneath the screech of birds with yellow eyes —\n
+but no. There is no choir, though I confess\n
+I'd rather sing with hell than emptiness.`
         },
         {
             title: 'Discord dms',
@@ -476,8 +474,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     markdown: `but many lovers of serious 🟈`,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -485,8 +483,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 1,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -494,8 +492,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 1,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -503,17 +501,17 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 2,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
-                    markdown: `+ I don't always`,
+                    markdown: `& I don't always`,
                     line: 3,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -521,8 +519,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 3,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -530,24 +528,24 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 4,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
                     markdown: `perhaps you idiosyncratically call Tolkien sparkles`,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
                     markdown: `yes`,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -555,8 +553,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 1,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -564,8 +562,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 2,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     }
                 },
                 {
@@ -573,8 +571,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 3,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -582,8 +580,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 4,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -591,8 +589,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 5,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -600,8 +598,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 6,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -609,8 +607,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 7,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -618,8 +616,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 7,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
@@ -627,71 +625,60 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 8,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
                     markdown: `burn`,
                     speechBubble: {
                         index: 3,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
-                    markdown: `+ I still would have both`,
+                    markdown: `& I still would have both`,
                     speechBubble: {
                         index: 4,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
                     markdown: `over reality-as-I-perceive-it`,
                     speechBubble: {
                         index: 4,
-                        arrowLeft: true,
-                        arrowRight: false,
-                    },
-                },
-                {
-                    markdown: `any day`,
-                    speechBubble: {
-                        index: 4,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
             ],
         },
         {
-            markdown: `
-            # 🟊
-            *I loved a girl as fair, as gay
-            As any morn in merry May.
-            In merry May full fair was she,
-            But ay! she loved not me.*`,
+            markdown: `# 🟊
+*I loved a girl as fair, as gay*\n
+*As any morn in merry May.*\n
+*In merry May full fair was she,*\n
+*But ay! she loved not me.*`,
             musicOverride: DEIFIC_AUDIO.foolSongChorus,
         },
         {
-            markdown: `
-            ## Sacrifice
-            I want to marry him, the only one
-            who knows me and would still do anything
-            to save me, and whose touch is like the sun,
-            the wind, the rain — in one — who bought the ring
-            and told true, laughing tales of five years' love
-            for me — for me — that evening in the park,
-            the one whose seeking mind can fly above
-            not only me but clouds, into the dark
-            between the spheres — the one for whom I feel
-            quite nearly nothing more than quick desire,
-            because you ask me, laughing, "Would you kneel
-            before that thoughtless fool, give him the fire
-            I gave to you? You say he has no peer?
-            And you can care for him — when I am here?"
-            `,
+            markdown: `## Sacrifice
+I want to marry him, the only one\n
+who knows me and would still do anything\n
+to save me, and whose touch is like the sun,\n
+the wind, the rain — in one — who bought the ring\n
+and told true, laughing tales of five years' love\n
+for me — for me — that evening in the park,\n
+the one whose seeking mind can fly above\n
+not only me but clouds, into the dark\n
+between the spheres — the one for whom I feel\n
+quite nearly nothing more than quick desire,\n
+because you ask me, laughing, "Would you kneel\n
+before that thoughtless fool, give him the fire\n
+I gave to you? You say he has no peer?\n
+And you can care for him — when I am here?"`,
         },
         {
             title: 'Revolt (1)',
@@ -700,24 +687,24 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     markdown: `Workshop rejected **you**`,
                     speechBubble: {
                         index: 0,
-                        arrowLeft: true,
-                        arrowRight: false,
+                        arrowLeft: false,
+                        arrowRight: true,
                     },
                 },
                 {
                     markdown: `Sad girl,`,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
                     markdown: `sick mother`,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
@@ -725,8 +712,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 1,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
@@ -734,8 +721,8 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 1,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
@@ -743,17 +730,17 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 2,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
-                    markdown: `do **you** add?`,
+                    markdown: `does **you** add?`,
                     line: 3,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
@@ -761,28 +748,28 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     line: 3,
                     speechBubble: {
                         index: 1,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
                     markdown: `fantasy.`,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
                     markdown: `(🟉)`,
                     speechBubble: {
                         index: 2,
-                        arrowLeft: false,
-                        arrowRight: true,
+                        arrowLeft: true,
+                        arrowRight: false,
                     },
                 },
                 {
-                    markdown: `(Why would I bother with that bore +`,
+                    markdown: `(Why would I bother with that bore &`,
                     speechBubble: {
                         index: 3,
                         arrowLeft: false,
@@ -859,18 +846,16 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
             ],
         },
         {
-            markdown: `
-            # ✪
-            I called my jeweler, called my smith,
-            and ordered to be wrought forthwith
-            A diadem full fair to see
-            So she might then love me.
-            
-            She wore my fair and glist’ring crown
-            In the country, in the town.
-            In merry May full fair was she,
-            But ay! she loved not me.            
-            `,
+            markdown: `# ✪
+I called my jeweler, called my smith,\n
+and ordered to be wrought forthwith\n
+A diadem full fair to see\n
+So she might then love me.\n
+<br>\n
+She wore my fair and glist’ring crown\n
+In the country, in the town.\n
+In merry May full fair was she,\n
+But ay! she loved not me.`,
             musicOverride: DEIFIC_AUDIO.foolSongV3_4,
         },
         {
@@ -945,7 +930,7 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     },
                 },
                 {
-                    markdown: `to be real, +`,
+                    markdown: `to be real, &`,
                     speechBubble: {
                         index: 2,
                         arrowLeft: false,
@@ -1011,7 +996,7 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     },
                 },
                 {
-                    markdown: `a divoce,`,
+                    markdown: `a divorce,`,
                     line: 3,
                     speechBubble: {
                         index: 0,
@@ -1130,38 +1115,35 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
             ]
         },
         {
-            markdown: `
-            # ✰
-            *I loved a girl as fair, as gay,
-            As any morn in merry May.
-            In merry May full fair was she,
-            But ay! she loved not me.*
-            `,
+            markdown: `# ✰
+*I loved a girl as fair, as gay,*\n
+*As any morn in merry May.*\n
+*In merry May full fair was she,*\n
+*But ay! she loved not me.*`,
             musicOverride: DEIFIC_AUDIO.foolSongChorus,
 
         },
         {
-            markdown: `
-            ## Destiny
-            Goatish, I am destined
-            to love you and to lose.
-            To love and to refuse,
-            because your love is not
-            a thing that I can bear.
-            To love, my destiny,
-            and learn it is not love,
-            and it is not you
-            I do not love — that too.
-            
-            Your house is glorious,
-            I’m sure, but I won’t see.
-            The others’ laugh at me.
-            is my seal of doom,
-            because their laugh at me
-            is mine at you. There’s twisting
-            at the root of me
-            that never will come straight.
-            To know me is to hate.         `
+            markdown: `## Destiny
+Goatish, I am destined\n
+to love you and to lose.\n
+To love and to refuse,\n
+because your love is not\n
+a thing that I can bear.\n
+To love, my destiny,\n
+and learn it is not love,\n
+and it is not you\n
+I do not love — that too.\n
+<br>\n
+Your house is glorious,\n
+I’m sure, but I won’t see.\n
+The others’ laugh at me.\n
+is my seal of doom,\n
+because their laugh at me\n
+is mine at you. There’s twisting\n
+at the root of me\n
+that never will come straight.\n
+To know me is to hate.`
         },
         {
             title: `Revolt (6)`,
@@ -1188,7 +1170,7 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
             title: `Revolt (7)`,
             poem: [
                 {
-                    markdown: `+ metaphor`,
+                    markdown: `& metaphor`,
                     speechBubble: {
                         index: 0,
                         arrowLeft: false,
@@ -1222,25 +1204,23 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
             ],
         },
         {
-            markdown: `
-            # ✧
-            Enough with her, enough with all!
-            I’ll leave my high and handsome hall,
-            To sing and play and act the fool
-            To serve those whom I once did rule.
-            
-            She thought me dead, she thought me gone,
-            She died, she died, and I lived on,
-            And so a happy fool I’ll be
-            While worms with her make free.
-            `,
+            markdown: `# ✧
+Enough with her, enough with all!\n
+I’ll leave my high and handsome hall,\n
+To sing and play and act the fool\n
+To serve those whom I once did rule.\n
+<br>\n
+She thought me dead, she thought me gone,\n
+She died, she died, and I lived on,\n
+And so a happy fool I’ll be\n
+While worms with her make free.\n`,
             musicOverride: DEIFIC_AUDIO.foolSongEnd,
         },
         {
             title: `Revolt (8)`,
             poem: [
                 {
-                    markdown: `+ if ✵`,
+                    markdown: `& if ✵`,
                     speechBubble: {
                         index: 0,
                         arrowLeft: false,
@@ -1272,7 +1252,7 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     },
                 },
                 {
-                    markdown: `in the fast + frigid stream`,
+                    markdown: `in the fast & frigid stream`,
                     line: 1,
                     speechBubble: {
                         index: 1,
@@ -1421,7 +1401,7 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
             title: `Liar`,
             poem: [
                 {
-                    markdown: `You call to me`,
+                    markdown: `**You** call to me`,
                     speechBubble: {
                         index: 0,
                         arrowLeft: false,
@@ -1429,7 +1409,7 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     },
                 },
                 {
-                    markdown: `with ✦, +`,
+                    markdown: `with ✦, &`,
                     speechBubble: {
                         index: 0,
                         arrowLeft: false,
@@ -1462,7 +1442,7 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     },
                 },
                 {
-                    markdown: `+ meaningless intricacies`,
+                    markdown: `& meaningless intricacies`,
                     speechBubble: {
                         index: 1,
                         arrowLeft: false,
@@ -1598,7 +1578,7 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
                     },
                 },
                 {
-                    markdown: `+ because I could not care`,
+                    markdown: `& because I could not care`,
                     line: 2,
                     speechBubble: {
                         index: 4,
@@ -1627,22 +1607,21 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
             ]
         },
         {
-            markdown: `
-            ## To the Author-God
-            All voices are your voice. Not even I
-            exist—you wrote my thoughts, a minor move
-            well made. Omnipotent, you need not prove
-            your skill—you play so endless day may fl y
-            a little faster. Yes, you’re governed by
-            the rules you set: for logic must approve
-            each play, and nature too, and to remove
-            one bit from your intent’s to fall awry
-            of all—an easy game, and yet less dull
-            than, lonely, contemplating your lone mind.
-            The world’s a poem. If I knew each thought
-            that swam each soul, each fl ower blooming full
-            today, tomorrow gone--in all I’d fi nd
-            the form. The matter we know not.
+            markdown: `## To the Author-God
+All voices are your voice. Not even I\n
+exist—you wrote my thoughts, a minor move\n
+well made. Omnipotent, you need not prove\n
+your skill—you play so endless day may fly\n
+a little faster. Yes, you’re governed by\n
+the rules you set: for logic must approve\n
+each play, and nature too, and to remove\n
+one bit from your intent’s to fall awry\n
+of all—an easy game, and yet less dull\n
+than, lonely, contemplating your lone mind.\n
+The world’s a poem. If I knew each thought\n
+that swam each soul, each fl ower blooming full\n
+today, tomorrow gone--in all I’d find\n
+the form. The matter we know not.
             `
         },
         {
@@ -1810,6 +1789,9 @@ const DEIFIC_CHAPTERS: FebruaryChapter[] = [
 export const DEIFIC: FebruaryBook = {
     chapters: DEIFIC_CHAPTERS,
     palette: deificColors,
+    // TODO: Better arrow image
     arrowImage: SHARED_IMAGES.arrowLeft,
     music: DEIFIC_AUDIO.foolSongInterlude,
+    // TODO: Add image
+    imageCatalogToLoad: {},
 }

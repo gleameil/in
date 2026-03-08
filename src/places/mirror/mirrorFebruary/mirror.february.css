@@ -26,7 +26,7 @@
 /* 
 #mirror-close-february:hover #mirror-text {
     opacity: 1;
-    color: var(--blue);
+    color: var(--blueFebruary);
 } */
 
 #mirror-frame {
@@ -80,13 +80,13 @@
 
 #mirror-text {
     align-items: center;
-    color: var(--blue);
+    color: var(--blueFebruary);
     justify-content: center;
     position: absolute;
     top: 25%;
     left: 20%;
     opacity: 0.8;
-    color: var(--gray);
+    color: var(--grayFebruary);
     font-family: 'IM Fell English';
     font-size: 3vmax;
     text-align: center;
@@ -113,8 +113,8 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    background-color: var(--red);
-    color: var(--white);
+    background-color: var(--redFebruary);
+    color: var(--whiteFebruary);
     font-family: 'Nanum Brush Script';
     font-size: 3vmax;
     padding: 2vmax;
@@ -134,7 +134,7 @@
 
 .you-option {
     text-align: center;
-    background-color: var(--white);
+    background-color: var(--whiteFebruary);
     box-shadow: none;
     outline: none;
     border: none;

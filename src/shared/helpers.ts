@@ -2,7 +2,7 @@ import markdownIt from 'markdown-it-ts';
 
 import { OUT } from '../places/home/constants';
 import { Color, FebruaryColor, JANUARY_COLORS, JanuaryColor } from './color';
-import { AudioURLSrc, ImagePathAndAltText, ImageURLSrc, LinearGradient } from './constants';
+import { AudioURLSrc, ImageCatalog, ImagePathAndAltText, ImageURLSrc, LinearGradient } from './constants';
 import { canPlayAudio, setCanPlayFromQuery } from './sound';
 import { getTime, setTimeFromQuery } from './time/time';
 
@@ -144,10 +144,10 @@ export function makeCoordinateStringVW(number: number): string {
   return `${number}vw`;
 }
 
-export function sun(parent: HTMLDivElement, rayPrefix: string, time: string) {
+export function sun(parent: HTMLDivElement, rayPrefix: string, entropy: boolean = false) {
   for (let i = 0; i < 720; i++) {
     const ray = document.createElement('div');
-    ray.classList.add(`${rayPrefix}-ray`, `${rayPrefix}-${time}-ray`);
+    ray.classList.add(`${rayPrefix}-ray`);
     if (i % 14 === 0) {
         ray.classList.add(`${rayPrefix}-mid-ray`);
     } else if (i % 6 === 0) {
@@ -157,9 +157,13 @@ export function sun(parent: HTMLDivElement, rayPrefix: string, time: string) {
     }
     if (i % 3 === 0 && ray.classList.contains(`${rayPrefix}-normal-ray`)) {
         ray.id = `${i}`
-        ray.classList.replace(`${rayPrefix}-${time}-normal-ray`, `${rayPrefix}-long-ray`);
+        ray.classList.replace(`${rayPrefix}-normal-ray`, `${rayPrefix}-long-ray`);
     }
-    ray.style.transform = `rotate(-${i/2}deg)`;
+    ray.style.transform = `rotate(-${Math.random() * 360}deg)`;
+    if (entropy) {
+      ray.style.top = `${Math.random() * 100}vh`;
+      ray.style.left = `${Math.random() * 200 - 100}vw`;
+    }
     parent.append(ray);
   }
 }
@@ -189,6 +193,22 @@ export function urlForOutNow(): URL {
 }
 
 export function fillWithMarkdown(element: HTMLElement, markdown: string) {
-  const md = markdownIt();
+  const md = markdownIt({ html: true });
   element.innerHTML = md.render(markdown);
+}
+
+export function fillWithMarkdownInline(element: HTMLElement, markdown: string) {
+  const md = markdownIt()
+  element.innerHTML = md.renderInline(markdown);
+}
+
+export function loadImagesForCatalog(imageCatalog: ImageCatalog, classNames: string[], isBook: boolean = false) {
+  let imageKeys = Object.keys(imageCatalog);
+  imageKeys.forEach(key => {
+    const imagePath = imageCatalog[key];
+    imagePath.imageLeft = createImage(imagePath, classNames, `image-${key}${isBook ? '-left' : ''}`);
+    if (isBook) {
+      imagePath.imageRight = createImage(imagePath, classNames, `image-${key}-right`)
+    }
+  });
 }

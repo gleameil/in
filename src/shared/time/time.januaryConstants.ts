@@ -1,5 +1,6 @@
 import { LinearGradient } from '../constants';
-import { JanuaryColor, JANUARY_COLORS } from '../color'
+import { JanuaryColor, JANUARY_COLORS } from '../color';
+import { ImageCatalog } from "../constants";
 
 export const BEGINNING_OF_JANUARY = new Date(2024, 0).getTime();
 export const END_OF_JANUARY = new Date(2024, 0, 31, 23, 59, 59).getTime();
@@ -2156,3 +2157,27 @@ export const JANUARY_SCHEDULE: Day[] = [
     },
   },
 ] as const;
+
+
+export const JANUARY_FAVICON: ImageCatalog = {
+  appleTouchIcon: {
+    path: new URL('../../assets/apple-touch-icon.png', import.meta.url),
+    alt: '',
+  },
+  faviconMedium: {
+    path: new URL('../../assets/favicon-32x32.png', import.meta.url),
+    alt: '',
+  },
+  faviconSmall: {
+    path: new URL('../../assets/favicon-16x16.png', import.meta.url),
+    alt: '',
+  },
+  faviconMain: {
+    path: new URL('../../assets/favicon-48x48.png', import.meta.url),
+    alt: '',
+  },
+  webmanifest: {
+    path: new URL('../../assets/site.webmanifest', import.meta.url),
+    alt: '',
+  },
+};

@@ -1,6 +1,7 @@
-import { BEGINNING_OF_FEBRUARY, END_OF_FEBRUARY, LIMIT_OF_FEBRUARY_FORESIGHT_KEY, LIMITLESS } from "./time.februaryConstants";
-import { BEGINNING_OF_JANUARY, Day, JANUARY_SCHEDULE, Time, TimeForDay, TIMES } from "./time.januaryConstants";
-import { WindowWithClock } from "./time.sharedConstants";
+import { ImagePathAndAltText } from "../constants";
+import { BEGINNING_OF_FEBRUARY, END_OF_FEBRUARY, FEBRUARY_FAVICON, LIMIT_OF_FEBRUARY_FORESIGHT_KEY, LIMITLESS } from "./time.februaryConstants";
+import { BEGINNING_OF_JANUARY, Day, JANUARY_FAVICON, JANUARY_SCHEDULE, Time, TimeForDay, TIMES } from "./time.januaryConstants";
+import { FAVICON_LINK_IDS, WindowWithClock } from "./time.sharedConstants";
 
 export function setMaxTime(time: string) {
   localStorage.setItem(LIMIT_OF_FEBRUARY_FORESIGHT_KEY, time);
@@ -16,6 +17,39 @@ export function isValidTime(time?: Date): boolean {
   return !!timestamp && timestamp <= numericLimit && timestamp >= BEGINNING_OF_JANUARY;
 }
 
+function changeLinkHref(path: ImagePathAndAltText, link: HTMLElement | null) {
+  if (!link) {
+    return;
+  }
+  (link as HTMLLinkElement).setAttribute('href', path.path.href);
+}
+
+function showFaviconForMonth(month: number) {
+  switch (month) {
+    case 1:
+      changeLinkHref(FEBRUARY_FAVICON.faviconMain, document.getElementById(FAVICON_LINK_IDS.faviconMain));
+      changeLinkHref(FEBRUARY_FAVICON.appleTouchIcon, document.getElementById(FAVICON_LINK_IDS.appleTouchIcon));
+      changeLinkHref(FEBRUARY_FAVICON.faviconMedium, document.getElementById(FAVICON_LINK_IDS.faviconMedium));
+      changeLinkHref(FEBRUARY_FAVICON.faviconSmall, document.getElementById(FAVICON_LINK_IDS.faviconSmall));
+      changeLinkHref(FEBRUARY_FAVICON.webmanifest, document.getElementById(FAVICON_LINK_IDS.webmanifest));
+      break;
+    case 0:
+      changeLinkHref(JANUARY_FAVICON.faviconMain, document.getElementById(FAVICON_LINK_IDS.faviconMain));
+      changeLinkHref(JANUARY_FAVICON.appleTouchIcon, document.getElementById(FAVICON_LINK_IDS.appleTouchIcon));
+      changeLinkHref(JANUARY_FAVICON.faviconMedium, document.getElementById(FAVICON_LINK_IDS.faviconMedium));
+      changeLinkHref(JANUARY_FAVICON.faviconSmall, document.getElementById(FAVICON_LINK_IDS.faviconSmall));
+      changeLinkHref(JANUARY_FAVICON.webmanifest, document.getElementById(FAVICON_LINK_IDS.webmanifest));
+      break;
+    default:
+      // Fallback to January assets
+      changeLinkHref(JANUARY_FAVICON.faviconMain, document.getElementById(FAVICON_LINK_IDS.faviconMain));
+      changeLinkHref(JANUARY_FAVICON.appleTouchIcon, document.getElementById(FAVICON_LINK_IDS.appleTouchIcon));
+      changeLinkHref(JANUARY_FAVICON.faviconMedium, document.getElementById(FAVICON_LINK_IDS.faviconMedium));
+      changeLinkHref(JANUARY_FAVICON.faviconSmall, document.getElementById(FAVICON_LINK_IDS.faviconSmall));
+      changeLinkHref(JANUARY_FAVICON.webmanifest, document.getElementById(FAVICON_LINK_IDS.webmanifest));
+  }
+}
+
 // This can be called in various ways:
 // Once a second while you stay In
 // When you finish a poem and you're Out
@@ -24,6 +58,9 @@ export function isValidTime(time?: Date): boolean {
 // You can do this in your own localstorage or via a query param as well
 export function setTime(time: Date) {
   if (isValidTime(time)) {
+    if (getTime().getMonth() !== time.getMonth()) {
+      showFaviconForMonth(time.getMonth());
+    }
     localStorage.setItem('evernostianNow', `${time.getTime()}`);
   }
 }
@@ -61,13 +98,15 @@ export function setTimeFromQuery(query: URLSearchParams) {
 
 // Starts advancing time at a rate of one minute per minute if it's still January :)
 export function startTime() {
-  if (getTime().getTime() < BEGINNING_OF_FEBRUARY) {
+  const time = getTime();
+  if (time.getTime() < BEGINNING_OF_FEBRUARY) {
     if (!(window as WindowWithClock).clock) {
       (window as WindowWithClock).clock = setInterval(() => {
         advanceTimeBy(1);
       }, 60000);
     }
   }
+  showFaviconForMonth(time.getMonth());
 }
 
 // Less necessary now that Out lives in its own codebase
