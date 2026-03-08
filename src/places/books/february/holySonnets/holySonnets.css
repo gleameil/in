@@ -1,17 +1,35 @@
-.holy-sonnets {
+:root {
   --white: rgb(255, 255, 255);
   --lightWarm: rgb(255, 250, 205);
-  --lightCool: rgb(240, 240, 240);
+  --lightCool: #f0f0f0;
   --midWarm: rgb(199, 64, 70);
   --midCool: rgb(211, 211, 211);
-  --darkWarm: rgb(137, 135, 135);
-  --darkCool: rgb(72, 61, 139);
-  --black: rgb(70, 50, 55);
+  --darkWarm: #888686;
+  --darkCool: #483d8b;
+  --black: #463237;
+}
+
+#holy-sonnets-static-page {
+  color: var(--white)
+}
+
+.holy-sonnets a {
+  color: var(--midCool)
 }
 
 .holy-sonnets h1 {
   font-family: 'UnifrakturMaguntia';
-  color: var(--midWarm)
+  color: var(--midWarm);
+}
+
+#image-mouse-left, #image-mouse-right, #image-donne-left, #image-donne-right {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;;
+}
+
+#image-mouse-left, #image-mouse-right {
+  filter: invert() brightness(1.5);
 }
 
 #holy-sonnets-poem-page-container {
@@ -22,23 +40,48 @@
 .holy-sonnets-poem-page-theme0 {
   background-color: var(--lightCool);
   background-image: url(../../../../assets/images/books/february/holySonnets/mouse.png);
-  background-size: 30vmax;
-  background-position-y: -25%;
+  background-size: 40vmax;
+  background-position-x: -20%;
+  background-position-y: -35%;
   font-family: 'IM Fell English';
   font-size: 2.25vmax;
-  color: var(--darkCool); 
+  color: var(--black);
+  margin: 0;
 }
 .holy-sonnets-poem-page-theme1 {
-  background-color: var(--black);
+  background-color: transparent;
   font-family: 'Montserrat';
+  font-weight: 200;
+  font-variant: small-caps;
   font-size: 2vmax;
-  color: var(--lightCool);
+  color: var(--lightWarm);
+}
 
+.holy-sonnets-poem-page-theme2 {
+  background-color: transparent;
+  font-family: 'Montserrat';
+  font-size: 2.5vmax;
+  font-weight: 200;
+  color: var(--black)
+
+}
+
+.holy-sonnets-poem-page-theme2 strong {
+  font-family: 'Manufacturing Consent';
+  font-size: 2.65vmax;
+  color: var(--darkWarm);
+}
+
+.holy-sonnets-poem-page-theme2 em {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  color: var(--midWarm);
 }
 
 .holy-sonnets-poem-page-theme0 em {
   font-family: 'Montserrat';
-  color: var(--black);
+  font-weight: 300;
+  color: var(--darkCool);
 }
 
 .holy-sonnets-poem-page-theme0 strong {
@@ -58,7 +101,9 @@
   font-family: 'Manufacturing Consent';
   font-size: 2.65vmax;
   font-weight: normal;
-  color: var(--lightWarm);
+  font-variant:normal;
+  color: var(--midWarm);
+  text-shadow: 1px 1px var(--lightWarm);
 }
 
 .holy-sonnets-speech-bubble {
@@ -74,5 +119,70 @@
 .holy-sonnets-poem-page-theme1 .holy-sonnets-speech-bubble {
   background-color: var(--black);
   min-height: 50vmax
+}
 
+.holy-sonnets-poem-page-theme2 .holy-sonnets-speech-bubble {
+  background-color: var(--white);
+  min-height: 45vmax;
+  min-width: 70%;
+}
+
+/* Rays */
+
+.holy-sonnets-ray {
+  position: absolute;
+  height: 1px;
+  top: 0;
+  z-index: -1;
+}
+
+.holy-sonnets-poem-page-theme2 .holy-sonnets-ray {
+  background-color: var(--darkWarm);
+}
+
+.holy-sonnets-poem-page-theme2 .holy-sonnets-thick-ray {
+  background-color: var(--midCool);
+}
+
+.holy-sonnets-poem-page-theme2 .holy-sonnets-long-ray {
+  background-color: var(--lightCool);
+}
+
+.holy-sonnets-poem-page-theme2 .holy-sonnets-mid-ray {
+  background-color: var(--white);
+}
+
+.holy-sonnets-mid-ray {
+  right: 0vw;
+  top: 99vh;
+  width: 100vw;
+  height: 2px;
+  background-color: var(--midWarm);
+}
+.holy-sonnets-thick-ray {
+  width: 175vw;
+  right: 5vw;
+  background-color: var(--lightWarm);
+}
+
+.holy-sonnets-normal-ray {
+  right: -25vw;
+  top: 60vh;
+  width: 150vw;
+  background-color: var(--darkCool)
+}
+
+.holy-sonnets-white-ray {
+  right: 25vw;
+  width: 150vw;
+  top: 95vh;
+  background-color: var(--lightWarm);
+}
+
+.holy-sonnets-long-ray {
+  right: -50vw;
+  top: 95vh;
+  width: 300vw;
+  height: 2px;
+  background-color: var(--lightWarm);
 }

@@ -1,8 +1,8 @@
 import { Color, FEBRUARY_COLOR_SET, JANUARY_COLOR_SET, OUT_COLOR_SET } from "../../../../shared/color";
-import { SHARED_IMAGES } from "../../../../shared/constants";
+import { AudioCatalog, ImageCatalog, ImagePathAndAltText, SHARED_IMAGES } from "../../../../shared/constants";
 import { BookColors, FebruaryBook, FebruaryChapter } from "../reader.february.constants";
 
-export const holyColors: BookColors = {
+export const HOLY_COLORS: BookColors = {
   white: JANUARY_COLOR_SET.white,
   lightWarm: JANUARY_COLOR_SET.yellow,
   lightCool: OUT_COLOR_SET.almostWhite,
@@ -12,12 +12,38 @@ export const holyColors: BookColors = {
   darkCool: Color.fromString('rgb(2, 61, 139)'),
   black: FEBRUARY_COLOR_SET.black,
 }
+
+export const HOLY_IMAGES: ImageCatalog = {
+  donne: {
+    path: new URL('../../../../assets/images/books/february/holySonnets/Donne-shroud.png?as=webp&width=1000', import.meta.url),
+    alt: `engraving of English poet John Donne in a shroud`,
+  },
+  mouse: {
+    path: new URL('../../../../assets/images/books/february/holySonnets/mouse.png?as=webp&width=500', import.meta.url),
+    alt: 'pencil drawing of a mouse'
+  }
+};
+
+export const HOLY_MUSIC: AudioCatalog = {
+  hipocondrie: {
+    path: new URL('../../../../assets/audio/hipocondrie.mp3', import.meta.url),
+    id: 'hipocondrie',
+    isLoop: true,
+  }
+}
+
 const HOLY_CHAPTERS: FebruaryChapter[] = [[
   {
     markdown: `# Holy Sonnets
 ## by John Donne
 With thanks to [Project Gutenberg](https://www.gutenberg.org/files/48688/48688-h/48688-h.htm#pagei.322)\n
-Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
+Music adapted from the works of Jan Dismas Zelenka (1679-1745)`,
+    marginalia: {
+      left: HOLY_IMAGES.donne,
+      top: HOLY_IMAGES.mouse,
+      bottom: HOLY_IMAGES.mouse,
+      right: HOLY_IMAGES.donne,
+    }
   },
   {
     poem: [
@@ -209,7 +235,8 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         markdown: `heart.`,
         line: 13,
       },
-    ]
+    ],
+    theme: 2,
   },
   {
     poem: [
@@ -427,7 +454,7 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 13,
       },
     ],
-    theme: 1,
+    theme: 0,
   },
   {
     poem: [
@@ -613,6 +640,7 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 13,
       },
     ],
+    theme: 2,
   },
   {
     poem: [
@@ -793,7 +821,8 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         markdown: `to white.`,
         line: 13,
       },
-    ]
+    ],
+    theme: 2,
   },
   {
     poem: [
@@ -986,7 +1015,8 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         markdown: `heale.`,
         line: 13,
       },
-    ]
+    ],
+    theme: 1,
   },
   {
     poem: [
@@ -1164,6 +1194,7 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 13,
       },
     ],
+    theme: 2,
   },
   {
     poem: [
@@ -1716,6 +1747,7 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 13,
       },
     ],
+    theme: 2,
   },
   {
     poem: [
@@ -1931,7 +1963,8 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         markdown: `**thou shalt die**.`,
         line: 13,
       },
-    ]
+    ],
+    theme: 1,
   },
   {
     poem: [
@@ -2100,6 +2133,7 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 13,
       },
     ],
+    theme: 2,
   },
   {
     poem: [
@@ -2478,6 +2512,7 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 13,
       },
     ],
+    theme: 1,
   },
   {
     poem: [
@@ -2665,7 +2700,8 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         markdown: `you **ravish** mee.`,
         line: 13,
       },
-    ]
+    ],
+    theme: 2,
   },
   {
     poem: [
@@ -2846,7 +2882,8 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         markdown: `**much more**.`,
         line: 13,
       },
-    ]
+    ],
+    theme: 2,
   },
   {
     poem: [
@@ -3408,6 +3445,7 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 13,
       },
     ],
+    theme: 2,
   },
   {
     poem: [
@@ -3588,14 +3626,24 @@ Music adapted from the works of Jan Dismas Zelenka (1679-1745)`
         line: 13,
       },
     ],
+  },
+  {
+    markdown: `Fin`,
+    marginalia: {
+      left: HOLY_IMAGES.donne,
+      right: HOLY_IMAGES.donne,
+      top: HOLY_IMAGES.mouse,
+      bottom: HOLY_IMAGES.mouse,
+    }
   }
 ]] as const;
 
 export const HOLY_SONNETS: FebruaryBook = {
   chapters: HOLY_CHAPTERS,
-  palette: holyColors,
+  palette: HOLY_COLORS,
   // TODO: Better arrow image
   arrowImage: SHARED_IMAGES.arrowLeft,
   // TODO: Add music and images
-  imageCatalogToLoad: {},
+  imageCatalogToLoad: HOLY_IMAGES,
+  music: HOLY_MUSIC.hipocondrie,
 }

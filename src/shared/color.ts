@@ -12,7 +12,7 @@ export class Color {
   static hexPattern = /#([a-f,\d]{2}){3,4}/
 
   static fromString(colorString: string): Color {
-    if (colorString = 'initial') {
+    if (colorString === 'initial') {
       return new Color(255, 255, 255, 1);
     }
 

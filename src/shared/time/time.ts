@@ -59,7 +59,6 @@ function showFaviconForMonth(month: number) {
 export function setTime(time: Date) {
   if (isValidTime(time)) {
     if (getTime().getMonth() !== time.getMonth()) {
-      console.log('previous time', getTime().getMonth(), 'currentTime', time.getMonth());
       showFaviconForMonth(time.getMonth());
     }
     localStorage.setItem('evernostianNow', `${time.getTime()}`);

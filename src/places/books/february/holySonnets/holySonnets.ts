@@ -1,7 +1,7 @@
-import { createHomewardButton, createImage, setBackground } from "../../../../shared/helpers";
+import { Background, createHomewardButton, createImage, loadImagesForCatalog, setBackground } from "../../../../shared/helpers";
 import { BOOKS_IMAGES } from "../../constants";
 import { createFebruaryReader, leaveFebruaryReader } from "../reader.february";
-import { HOLY_SONNETS, holyColors } from "./holySonnets.constants";
+import { HOLY_SONNETS, HOLY_IMAGES, HOLY_COLORS } from "./holySonnets.constants";
 import './holySonnets.css';
 
 export function holySonnetsCover(): HTMLImageElement {
@@ -9,8 +9,8 @@ export function holySonnetsCover(): HTMLImageElement {
 }
 
 export function holySonnets(goBack: () => void) {
-  console.log('trying to open holy sonnets')
-  setBackground(holyColors.lightCool.rgbaString());
+  const background = new Background(HOLY_COLORS.black);
+  background.setAsCurrent();
   const all = document.getElementsByTagName('html')[0];
 
   function goHomeward() {

@@ -1,5 +1,4 @@
-import { Color, FEBRUARY_COLOR_SET } from '../../../shared/color';
-import { createDivWithElements, createImage, removeByClassName, loadImagesForCatalog, createButtonWithImage, fillWithMarkdown, fillWithMarkdownInline, createSpan, createAudio } from "../../../shared/helpers";
+import { createDivWithElements, createImage, removeByClassName, loadImagesForCatalog, createButtonWithImage, fillWithMarkdown, fillWithMarkdownInline, createSpan, createAudio, sun } from "../../../shared/helpers";
 import { SpeechBubble, PoemFragment, FragmentedPoem, Marginalia, StaticPage, PoemPage, FebruaryPage, FebruaryChapter, FebruaryBook, BookColors, END } from './reader.february.constants';
 import { SHARED_IMAGES } from '../../../shared/constants';
 import './reader.february.css';
@@ -12,7 +11,7 @@ export function leaveFebruaryReader(className: string) {
 }
 
 function loadImagesForBook(className: string, book: FebruaryBook) {
-  loadImagesForCatalog(book.imageCatalogToLoad, [className]);
+  loadImagesForCatalog(book.imageCatalogToLoad, [className], true);
 }
 
 function makeStaticPage(className: string): HTMLDivElement {
@@ -36,6 +35,7 @@ function makePoemPage(className: string): HTMLDivElement {
 }
 
 function populateStaticPage(page: StaticPage, back: () => void, forward: () => void, className: string) {
+  removeByClassName(`${className}-ray`);
   const staticPageElement = document.getElementById(`${className}-static-page`);
   const textContainer = document.getElementById(`${className}-february-reader-text-container`);
   if (!staticPageElement) {
@@ -67,17 +67,21 @@ function populateStaticPage(page: StaticPage, back: () => void, forward: () => v
   if (!marginaliaRight) {
     console.error('Missing right image container');
   }
-  if (page.marginalia?.right.imageLeft) {
+  if (page.marginalia?.right.imageRight) {
     const marginaliaRight = document.getElementById(`${className}-february-reader-marginalia-right`);
     if (!marginaliaRight) {
       console.error('Missing right image container');
     }
-    marginaliaRight?.replaceChildren(page.marginalia.right.imageLeft);
+    marginaliaRight?.replaceChildren(page.marginalia.right.imageRight);
   } else {
     const right = createImage(SHARED_IMAGES.arrowRight, ['february-reader-static-page-forward-button'], 'february-reader-poem-page-forward-button');
     marginaliaRight?.replaceChildren(right)
   }
   marginaliaRight?.addEventListener('click', forward, { once: true });
+
+  if (page.marginalia?.bottom.imageRight) {
+    document.getElementById(`${className}-february-reader-marginalia-bottom`)?.replaceChildren(page.marginalia.bottom.imageRight);
+  }
 
   window.addEventListener('keydown', event => {
     switch(event.code) {
@@ -95,10 +99,7 @@ function populateStaticPage(page: StaticPage, back: () => void, forward: () => v
         break;
       }
     }, { once: true });
-  
-  if (page.marginalia?.bottom.imageLeft) {
-    document.getElementById(`${className}-february-reader-marginalia-bottom`)?.replaceChildren(page.marginalia.bottom.imageLeft);
-  }
+
   fillWithMarkdown(textContainer, page.markdown);
   staticPageElement.style.display = 'flex';
 }
@@ -144,7 +145,9 @@ function pagePoem(poem: FragmentedPoem, className: string, parent: HTMLElement):
     }
 
     line.append(phraseSpan);
-    currentSpeechBubble.scrollIntoView({ behavior: 'smooth' });
+    if (className === 'deific') {
+      currentSpeechBubble.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }
 
@@ -157,6 +160,7 @@ function leavePoemPage(className: string) {
 }
 
 function populatePoemPage(page: PoemPage, back: () => void, forward: () => void, className: string) {
+  removeByClassName(`${className}-ray`);
   document.getElementById(`${className}-poem-page-container`)?.remove();
   const poemPageElement = document.getElementById(`${className}-poem-page`);
     const backButton = document.getElementById(`${className}-february-reader-poem-page-back-button`);
@@ -168,6 +172,20 @@ function populatePoemPage(page: PoemPage, back: () => void, forward: () => void,
   if (!backButton) {
     console.error('Back button missing');
     return;
+  }
+
+  // throw this into config eventually
+  if (className === 'holy-sonnets') {
+    switch (page.theme || 0) {
+        case 1:
+          sun(poemPageElement as HTMLDivElement, className);
+          break;
+        case 2:
+          sun(poemPageElement as HTMLDivElement, className, true);
+          break;
+        default:
+          break;
+      }
   }
 
   let clicks = 0;
