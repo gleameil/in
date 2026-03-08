@@ -172,6 +172,7 @@
 
 #floor {
     position: absolute;
+    background-color: var(--whiteFebruary);
     background-image: url(../../assets/images/home/february/floor.jpg);
     background-repeat: repeat;
     position: absolute;
