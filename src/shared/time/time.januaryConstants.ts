@@ -2173,7 +2173,7 @@ export const JANUARY_FAVICON: ImageCatalog = {
     alt: '',
   },
   faviconMain: {
-    path: new URL('../../assets/favicon-48x48.png', import.meta.url),
+    path: new URL('../../assets/favicon.ico', import.meta.url),
     alt: '',
   },
   webmanifest: {

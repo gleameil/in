@@ -30,7 +30,7 @@ export const FEBRUARY_FAVICON = {
         alt: '',
     },
     faviconMain: {
-        path: new URL('../../assets/february-favicon/favicon-48x48.png', import.meta.url),
+        path: new URL('../../assets/february-favicon/favicon.ico', import.meta.url),
         alt: '',
     },
     webmanifest: {
