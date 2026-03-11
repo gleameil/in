@@ -10,6 +10,7 @@ export function showWeatherTabName(): HTMLButtonElement {
 }
 export function leaveWeatherTab() {
   removeByClassName('weather');
+  document.getElementById('computer-datetime-picker')?.removeEventListener('change', switchToWeatherTab);
   document.getElementById('weather-tab')?.classList.remove('browser-tab-active');
 }
 
@@ -76,6 +77,7 @@ function tenDayForecast(): HTMLDivElement {
   return createDivWithElements([dailyHeader, forecastContainer], [], 'computer-browser-weather-10d-outer-container');
 }
 export function switchToWeatherTab() {
+  leaveWeatherTab();
   const all = document.getElementsByTagName('html')[0];
   setBackground(JANUARY_COLORS.white);
   document.getElementById('weather-tab')?.classList.add('browser-tab-active')
