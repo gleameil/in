@@ -20,17 +20,17 @@ function twentyFourHourForecast(): HTMLDivElement {
   const hourlyDivs = forecast.map((hour, index) => {
     const time = document.createElement('span');
     time.classList.add('computer-browser-weather-hour-label');
-    time.id = `computer-browser-weather-label-${hour.time.getTime()}`;
+    time.id = `computer-browser-weather-label-${index}`;
     time.innerText = `${hour.time.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}`;
     const weather = document.createElement('span');
     weather.classList.add('computer-browser-weather-hour-weather');
-    weather.id = `computer-browser-weather-${hour.time.getTime()}-${hour.weather}`;
+    weather.id = `computer-browser-weather-${index}-${hour.weather}`;
     weather.innerText = WEATHER_ICONS[hour.weather];
     const temperature = document.createElement('span');
     temperature.classList.add('computer-browser-weather-hour-temperature');
-    temperature.id = `computer-browser-weather-${hour.time.getTime()}-${temperature}`;
+    temperature.id = `computer-browser-weather-${index}-${temperature}`;
     temperature.innerText = `${hour.temperature}°F`
-    const hourlyDiv = createDivWithElements([time, weather, temperature], ['computer-browser-weather-hour'], `computer-browser-weather-hour-${hour.time.getHours()}`);
+    const hourlyDiv = createDivWithElements([time, weather, temperature], ['computer-browser-weather-hour'], `computer-browser-weather-hour-${index}`);
     function removeHighlights() {
       const hours = document.getElementsByClassName('computer-browser-weather-hour');
       for (let i = 0; i < hours.length; i++) {
@@ -47,11 +47,8 @@ function twentyFourHourForecast(): HTMLDivElement {
       document.getElementById('computer-browser-weather-24hrs-outer-container')?.append(prose);
     }
     hourlyDiv.addEventListener('click', highlight);
-    if (index === 0) {
-      highlight();
-    }
     return hourlyDiv;
-  })
+  });
   const forecasts = createDivWithElements(hourlyDivs, [], 'computer-browser-weather-24hrs-container');
   return createDivWithElements([hourlyHeader, forecasts], [], 'computer-browser-weather-24hrs-outer-container');
 }
@@ -85,5 +82,6 @@ export function switchToWeatherTab() {
   const hourlyForecast = twentyFourHourForecast();
   const dailyForecast = tenDayForecast();
   all.append(createDivWithElements([hourlyForecast, dailyForecast], ['weather', 'browser'],'computer-browser-weather-container'));
+  document.getElementById('computer-browser-weather-hour-0')?.click();
   document.getElementById('computer-datetime-picker')?.addEventListener('change', switchToWeatherTab);
 }
