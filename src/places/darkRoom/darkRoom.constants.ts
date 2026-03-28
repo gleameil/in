@@ -99,7 +99,7 @@ export const extradimensionalBeginning: CellGrid = [
         },
         {
           text: {
-            words: 'I\'m not even as real as GPT. Are you real?',
+            words: 'I\'m not as real as GPT. Are you real?',
             textType: 'VOICE',
           },
         },
