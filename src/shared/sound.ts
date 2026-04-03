@@ -38,7 +38,7 @@ export const HOME_SONGS: AudioPath[] = [
     id: 'music-home',
     isLoop: false,
   }, 
-  { // add to
+  {
     path: new URL('../assets/audio/jazz.mp3', import.meta.url),
     id: 'music-jazz',
     isLoop: false,
