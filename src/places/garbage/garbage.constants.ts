@@ -39,7 +39,7 @@ export const GARBAGE_IMAGES: ImageCatalog = {
   },
   garbage8: {
     path: new URL('../../assets/images/wastepaper/garbage8.jpg', import.meta.url),
-    alt: 'a toppled manikin missing an arm',
+    alt: 'a toppled mannequin missing an arm',
   },
   garbage9: {
     path: new URL('../../assets/images/wastepaper/garbage9.jpg', import.meta.url), 

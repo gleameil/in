@@ -144,10 +144,13 @@ export function makeCoordinateStringVW(number: number): string {
   return `${number}vw`;
 }
 
-export function sun(parent: HTMLDivElement, rayPrefix: string, entropy: boolean = false) {
+export function sun(parent: HTMLDivElement, rayPrefix: string, time?: string, entropy: boolean = false) {
   for (let i = 0; i < 720; i++) {
     const ray = document.createElement('div');
     ray.classList.add(`${rayPrefix}-ray`);
+    if (time) {
+      ray.classList.add(`${rayPrefix}-${time}-ray`);
+    }
     if (i % 14 === 0) {
         ray.classList.add(`${rayPrefix}-mid-ray`);
     } else if (i % 6 === 0) {
