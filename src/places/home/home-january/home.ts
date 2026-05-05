@@ -11,7 +11,7 @@ import { createItem } from "../helpers";
 import { createIntro, showIntro } from "./intro";
 import '../home.css';
 import { getBackgroundPath } from "../../computer/photos/photos";
-import { createSoundControl, playIfAllowed, SOUND_CONTROL_ID } from "../../../shared/sound";
+import { createSoundControl, HOME_SONGS, playIfAllowed, SOUND_CONTROL_ID, startPlaylist } from "../../../shared/sound";
 import { MUSIC } from "../../computer/music/music.constants";
 import { comeHome as comeHomeAnytime } from '../home.ts';
 
@@ -194,20 +194,7 @@ export function homeJanuary(comeHome: () => void) {
 
   if (!document.getElementById('home-song')) {
     const music = createAudio(MUSIC.home.path, ['home-music'], 'home-song');
-    const jazz = createAudio(MUSIC.jazz.path, ['home-music'], 'jazz');
-    music.volume = 0.3;
     all.append(music);
-    all.append(jazz);
-    function playJazz() {
-      jazz.currentTime = 0;
-      jazz.volume = 0.2;
-      playIfAllowed(jazz, { callback: playHomeSong });
-    }    
-    function playHomeSong() {
-      music.currentTime = 0;
-      music.volume = 0.3;
-      playIfAllowed(music, { callback: playJazz });
-    }
-    playIfAllowed(music, { callback: playJazz });
+    startPlaylist('home-song', HOME_SONGS);
   }
 }

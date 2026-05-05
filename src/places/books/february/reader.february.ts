@@ -181,7 +181,7 @@ function populatePoemPage(page: PoemPage, back: () => void, forward: () => void,
           sun(poemPageElement as HTMLDivElement, className);
           break;
         case 2:
-          sun(poemPageElement as HTMLDivElement, className, true);
+          sun(poemPageElement as HTMLDivElement, className, undefined, true);
           break;
         default:
           break;

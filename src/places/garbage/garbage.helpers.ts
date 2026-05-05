@@ -499,7 +499,7 @@ export function createPreambleModal() {
   const paragraph1 = document.createElement('p');
   paragraph1.innerText = 'Let’s say — after all, this is fiction — he was right. Say even that on all the quintillions of planets in our universe, there are only we and our animal cousins for intelligent life. Do you find this chillingly lonely and egocentric? I do. I almost believe it anyway.';
   const paragraph2 = document.createElement('p');
-  paragraph2.innerText = 'But — did you catch the word <i>most</i>? There are an infinite number of multiples of twenty but (I can’t help but feel) a much larger infinity of real numbers. Likewise, I feel, there are an infinite number of right ways to play a musical phrase but a much larger infinity of wrong ones. And in cosmogony, say, there are an infinite number of good universes but a much larger infinity of bad ones.';
+  paragraph2.innerText = 'But — did you catch the word most? There are an infinite number of multiples of twenty but (I can’t help but feel) a much larger infinity of real numbers. Likewise, I feel, there are an infinite number of right ways to play a musical phrase but a much larger infinity of wrong ones. And in cosmogony, say, there are an infinite number of good universes but a much larger infinity of bad ones.';
   const paragraph3 = document.createElement('p');
   paragraph3.innerText = 'Let’s think about good universes (so distant from ours with its death and entropy and empty space). Say that some of them —  even many of them — are aware of one another, and of the bad universes — and, hence, of us. They look at us and see a miracle — but, because we all die, a tragedy.';
   const paragraph4 = document.createElement('p');

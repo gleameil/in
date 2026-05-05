@@ -1,4 +1,4 @@
-import { AudioURLSrc } from "./constants";
+import { AudioPath, AudioURLSrc } from "./constants";
 import { createButtonWithText } from "./helpers";
 
 interface WindowWithAudio {
@@ -11,6 +11,40 @@ interface AudioEndedCallback {
 }
 
 export const SOUND_CONTROL_ID = 'sound-control';
+
+export function startPlaylist(audioElementId: string, musicPaths: AudioPath[]) {
+  const audio = document.getElementById(audioElementId) as HTMLAudioElement;
+  if (!audio || musicPaths.length === 0) return;
+
+  // Build callback chain in reverse so each step knows its successor
+  const callbacks: (() => void)[] = [];
+  musicPaths.forEach((_, i) => {
+    const index = i;
+    callbacks.push(() => {
+      const track = musicPaths[index];
+      ((audio as unknown) as AudioURLSrc).src = track.path;
+      audio.currentTime = 0;
+      const nextCallback = callbacks[(index + 1) % musicPaths.length];
+      playIfAllowed(audio, { callback: nextCallback });
+    });
+  });
+
+  callbacks[0]();
+}
+// — the Amanuensis
+
+export const HOME_SONGS: AudioPath[] = [
+  {
+    path: new URL('../assets/audio/home.mp3', import.meta.url),
+    id: 'music-home',
+    isLoop: false,
+  }, 
+  {
+    path: new URL('../assets/audio/jazz.mp3', import.meta.url),
+    id: 'music-jazz',
+    isLoop: false,
+  },
+]
 
 function togglePlayingSound() {
   let windowWithAudio = (window as unknown) as WindowWithAudio;
@@ -28,9 +62,10 @@ function togglePlayingSound() {
     const audioElements = document.getElementsByTagName('audio');
     Array.from(audioElements).forEach(elem => elem.muted = false);
     document.getElementById('sound-control')!.innerText = '🔈';
+
     const homeSong = document.getElementById('home-song') as HTMLAudioElement;
     if (homeSong && homeSong.paused) {
-      homeSong.play();
+      startPlaylist('home-song', HOME_SONGS);
     }
   }
 }
@@ -63,7 +98,7 @@ export function playIfAllowed(audio: HTMLAudioElement | undefined, callbackStuff
     audio.muted = false;
     audio.play();
     if (callbackStuff) {
-      audio.addEventListener('ended', callbackStuff.callback)
+      audio.addEventListener('ended', callbackStuff.callback, { once: true })
     }
   } else if (callbackStuff && callbackStuff.alternateTimeout) {
     setTimeout(callbackStuff.callback, callbackStuff.alternateTimeout);

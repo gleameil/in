@@ -35,6 +35,11 @@ jobs:
       - name: Build Parcel project
         run: npm run build
       
+      - name: Copy static files
+        run: |
+          mkdir -p dist/reading-layer
+          cp reading-layer/index.html dist/reading-layer/index.html
+      
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
