@@ -222,12 +222,15 @@ function setBordersoOnCellElement(cellElement: HTMLDivElement, cell: Cell) {
 function visualizeCellGrid(cellGrid: CellGrid): HTMLElement {
   const cellGridElement = document.createElement('div');
   cellGridElement.classList.add('cell-grid-visualization', 'cell-content');
+  const tooltip = document.createElement('div');
+  tooltip.id = 'cell-tooltip';
+  tooltip.style.zIndex = '1000';
+  cellGridElement.append(tooltip);
+
   const pathString = localStorage.getItem('darkRoomPath');
   cellGrid.forEach((row, y) => {
     row.forEach((cell, x) => {
       const cellElement = document.createElement('div');
-      const tooltip = document.createElement('div');
-      tooltip.id = 'cell-tooltip';
       cellElement.classList.add('cell-visualization');
       cellElement.id = `cell-visualization${x}-${y}`;
       cellElement.addEventListener('mouseover', () => {
@@ -236,7 +239,6 @@ function visualizeCellGrid(cellGrid: CellGrid): HTMLElement {
           tooltip.style.display = 'block';
           tooltip.style.top = `${cellElement.offsetTop + 20}px`;
           tooltip.style.left = `${cellElement.offsetLeft + 20}px`;
-          cellElement.append(tooltip);
         }
       });
       cellElement.addEventListener('mouseout', () => {
