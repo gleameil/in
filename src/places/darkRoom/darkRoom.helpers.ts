@@ -629,7 +629,7 @@ function showCell(location: CellLocation, cellGrid: CellGrid, contentIndex: numb
     audio.volume = 0.2;
     audio.currentTime = 0;
     playIfAllowed(audio);
-  });
+  }, { once: true });
   all.append(content);
 }
 

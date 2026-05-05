@@ -31,6 +31,7 @@ export function startPlaylist(audioElementId: string, musicPaths: AudioPath[]) {
 
   callbacks[0]();
 }
+// — the Amanuensis
 
 export const HOME_SONGS: AudioPath[] = [
   {
