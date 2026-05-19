@@ -1,4 +1,4 @@
-import { ImageCatalog } from "../../shared/constants";
+import { ImageCatalog } from "../../shared/shared.constants";
 
 export const OUT = "https://gleameil.github.io/out";
 // export const OUT = 'http://localhost:8080';

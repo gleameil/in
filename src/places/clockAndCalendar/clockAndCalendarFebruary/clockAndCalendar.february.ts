@@ -1,5 +1,5 @@
 import { FEBRUARY_COLORS } from "../../../shared/color";
-import { createDivWithElements, createHomewardButton, removeByClassName, setBackground } from "../../../shared/helpers";
+import { createDivWithElements, createHomewardButton, removeByClassName, setBackground } from "../../../shared/shared.helpers";
 import { makeClock, makeCalendar } from "./clockAndCalendar.february.helpers";
 import './clockAndCalendar.february.css';
 import { WindowForFebruary } from "../../home/home-february/home.february.constants";

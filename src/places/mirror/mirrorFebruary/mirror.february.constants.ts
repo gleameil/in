@@ -1,4 +1,4 @@
-import { ImageCatalog } from "../../../shared/constants";
+import { ImageCatalog } from "../../../shared/shared.constants";
 
 export const CITY_DOLENT = `Created me divine Omnipotence, The highest Wisdom and the primal Love.`
 

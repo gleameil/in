@@ -1,4 +1,4 @@
-import { createButtonWithText } from "../../shared/helpers";
+import { createButtonWithText } from "../../shared/shared.helpers";
 
 export function createAppButtonWithEmojiOrText(buttonTextOrEmoji: string, classNames: string[], id: string) {
   return createButtonWithText(buttonTextOrEmoji, ['app-icon-button', ...classNames], id);

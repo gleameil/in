@@ -1,7 +1,7 @@
 import { makeParagraphs } from "../../../shared/text";
-import { createButtonWithImage, createDivWithElements, createImage } from "../../../shared/helpers";
+import { createButtonWithImage, createDivWithElements, createImage } from "../../../shared/shared.helpers";
 import { INTRO_TEXT } from "../constants";
-import { SHARED_IMAGES } from "../../../shared/constants";
+import { SHARED_IMAGES } from "../../../shared/shared.constants";
 
 export function hideIntro() {
   document.getElementById('intro')?.classList.add('hidden');

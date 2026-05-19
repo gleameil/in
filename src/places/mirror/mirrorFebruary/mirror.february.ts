@@ -1,5 +1,5 @@
 import { FEBRUARY_COLORS } from "../../../shared/color";
-import { createDivWithElements, createHomewardButton, removeByClassName, setBackground } from "../../../shared/helpers";
+import { createDivWithElements, createHomewardButton, removeByClassName, setBackground } from "../../../shared/shared.helpers";
 import { makeMirror } from "./mirror.february.helpers";
 import './mirror.february.css';
 import { WindowForFebruary, FEBRUARY_BACKGROUNDS } from "../../home/home-february/home.february.constants";

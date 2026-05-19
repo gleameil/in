@@ -1,5 +1,5 @@
 import { Color, FEBRUARY_COLOR_SET, JANUARY_COLOR_SET, OUT_COLOR_SET } from "../../../../shared/color";
-import { AudioCatalog, ImageCatalog, ImagePathAndAltText, SHARED_IMAGES } from "../../../../shared/constants";
+import { AudioCatalog, ImageCatalog, ImagePathAndAltText, SHARED_IMAGES } from "../../../../shared/shared.constants";
 import { BookColors, FebruaryBook, FebruaryChapter } from "../reader.february.constants";
 
 export const HOLY_COLORS: BookColors = {

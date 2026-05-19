@@ -1,4 +1,4 @@
-import { ImageCatalog } from "../../../shared/constants";
+import { ImageCatalog } from "../../../shared/shared.constants";
 import { ANTHOLOGY_IMAGES } from "../anthology/constants";
 import { Chapters } from "../reader.constants";
 

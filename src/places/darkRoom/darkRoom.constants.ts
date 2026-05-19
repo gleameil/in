@@ -1,4 +1,4 @@
-import { ImagePathAndAltText, AudioCatalog, ImageCatalog } from "../../shared/constants";
+import { ImagePathAndAltText, AudioCatalog, ImageCatalog } from "../../shared/shared.constants";
 import { JanuaryColor, JANUARY_COLORS } from "../../shared/color";
 
 export type CellLocation = [x: number, y: number];

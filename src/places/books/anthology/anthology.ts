@@ -1,6 +1,6 @@
-import { createHomewardButton, createImage, removeByClassName, setBackground } from "../../../shared/helpers";
+import { createHomewardButton, createImage, removeByClassName, setBackground } from "../../../shared/shared.helpers";
 import { JANUARY_COLORS } from "../../../shared/color";
-import { BOOKS_IMAGES } from "../constants";
+import { BOOKS_IMAGES } from "../books.constants";
 import { createReader, leaveJanuaryReader } from "../reader";
 import { ANTHOLOGY_CHAPTERS } from "./constants";
 import './anthology.css';

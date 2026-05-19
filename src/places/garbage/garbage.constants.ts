@@ -1,4 +1,4 @@
-import { ImageCatalog } from "../../shared/constants";
+import { ImageCatalog } from "../../shared/shared.constants";
 
 export const GARBAGE_IMAGES: ImageCatalog = {
   chrome: {

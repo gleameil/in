@@ -1,4 +1,4 @@
-import { AudioCatalog, AudioPath, ImageCatalog, ImagePathAndAltText } from "../../../shared/constants";
+import { AudioCatalog, AudioPath, ImageCatalog, ImagePathAndAltText } from "../../../shared/shared.constants";
 import { SKETCH_DIARY_IMAGES } from "../../books/sketchDiary/constants";
 
 interface AudioPathForMusicApp extends AudioPath {

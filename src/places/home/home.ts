@@ -1,5 +1,5 @@
 import { month } from '../../shared/time/time.ts';
-import { createSpan } from '../../shared/helpers.ts';
+import { createSpan } from '../../shared/shared.helpers.ts';
 import { homeJanuary } from './home-january/home.ts';
 import { homeFebruary } from './home-february/home.february.ts';
 

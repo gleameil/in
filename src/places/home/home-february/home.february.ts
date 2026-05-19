@@ -1,4 +1,4 @@
-import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio, urlForOutNow, Background, loadImagesForCatalog } from "../../../shared/helpers";
+import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio, urlForOutNow, Background, loadImagesForCatalog } from "../../../shared/shared.helpers.ts";
 import { FEBRUARY_COLORS, FebruaryColor } from "../../../shared/color";
 import { getTime, stopTime } from "../../../shared/time/time";
 import { lookAtBooks } from "../../books/books";
@@ -9,7 +9,7 @@ import { createItem, isValentinesDay } from "../helpers";
 import '../home.css';
 import { createSoundControl, playIfAllowed, SOUND_CONTROL_ID } from "../../../shared/sound";
 import { MUSIC } from "../../computer/music/music.constants";
-import { ImagePathAndAltText } from "../../../shared/constants";
+import { ImagePathAndAltText } from "../../../shared/shared.constants.ts";
 import { sideWallFebruary } from "../../mirror/mirrorFebruary/mirror.february.ts";
 import { clockAndCalendarFebruary } from "../../clockAndCalendar/clockAndCalendarFebruary/clockAndCalendar.february.ts";
 // import { lookAtClockAndCalendar } from './clock.ts';

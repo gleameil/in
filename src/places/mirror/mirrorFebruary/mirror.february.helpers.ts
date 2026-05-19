@@ -1,4 +1,4 @@
-import { createButtonWithText, createDivWithElements, createImage, createSpan, fillWithMarkdown, removeByClassName } from "../../../shared/helpers";
+import { createButtonWithText, createDivWithElements, createImage, createSpan, fillWithMarkdown, removeByClassName } from "../../../shared/shared.helpers";
 import { WindowForFebruary } from "../../home/home-february/home.february.constants";
 import { CITY_DOLENT, FEBRUARY_IN_THE_MIRROR, MIRROR_FEBRUARY_IMAGES, MirrorChoice, MirrorEffectCatalog, MirrorInteraction, MirrorSpeech } from "./mirror.february.constants";
 import { setMaxTime, setTime } from "../../../shared/time/time";

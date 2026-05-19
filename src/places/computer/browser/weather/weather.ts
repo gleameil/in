@@ -1,5 +1,5 @@
 import { JANUARY_COLORS } from "../../../../shared/color";
-import { createDivWithElements, removeByClassName, setBackground } from "../../../../shared/helpers";
+import { createDivWithElements, removeByClassName, setBackground } from "../../../../shared/shared.helpers";
 import { createBrowserTabWithText } from "../../computer.helpers";
 import { getTenDayForecast, getTwentyFourHourForecast } from "./weather.helpers";
 import { WEATHER_ICONS } from './weather.constants';

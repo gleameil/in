@@ -1,9 +1,9 @@
 import { JANUARY_COLORS } from "../../../shared/color";
-import { createAudio, createHomewardButton, createImage, removeByClassName, setBackground } from "../../../shared/helpers";
-import { BOOKS_IMAGES, } from "../constants";
+import { createAudio, createHomewardButton, createImage, removeByClassName, setBackground } from "../../../shared/shared.helpers";
+import { BOOKS_IMAGES, } from "../books.constants";
 import { createReader, leaveJanuaryReader } from "../reader";
 import { sketchDiary, sketchDiaryCover } from "../sketchDiary/sketchDiary";
-import { MERE_REALITY_CHAPTERS } from "./constants";
+import { MERE_REALITY_CHAPTERS } from "./mereReality.constants";
 import './mereReality.css';
 
 export function mereRealityCover(): HTMLImageElement {
