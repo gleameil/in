@@ -1,5 +1,5 @@
 import { AudioCatalog, AudioPath, ImageCatalog, ImagePathAndAltText } from "../../../shared/shared.constants";
-import { SKETCH_DIARY_IMAGES } from "../../books/sketchDiary/constants";
+import { SKETCH_DIARY_IMAGES } from "../../books/sketchDiary/sketchDiary.constants";
 
 interface AudioPathForMusicApp extends AudioPath {
   songTitle: string;
