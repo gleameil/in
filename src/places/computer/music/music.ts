@@ -1,7 +1,7 @@
 
-import { AudioURLSrc, SHARED_IMAGES } from "../../../shared/constants";
+import { AudioURLSrc, SHARED_IMAGES } from "../../../shared/shared.constants";
 import { JANUARY_COLORS } from "../../../shared/color";
-import { createButtonWithImage, createButtonWithText, createDivWithElements, createImage, removeByClassName, setBackground } from "../../../shared/helpers";
+import { createButtonWithImage, createButtonWithText, createDivWithElements, createImage, removeByClassName, setBackground } from "../../../shared/shared.helpers";
 import { createAppButtonWithEmojiOrText } from "../computer.helpers"
 import './music.css';
 import { MUSIC } from './music.constants';

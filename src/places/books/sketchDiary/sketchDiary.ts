@@ -1,8 +1,8 @@
 import { JANUARY_COLORS } from "../../../shared/color";
-import { createHomewardButton, createImage, removeByClassName, setBackground } from "../../../shared/helpers";
-import { BOOKS_IMAGES, } from "../constants";
+import { createHomewardButton, createImage, removeByClassName, setBackground } from "../../../shared/shared.helpers";
+import { BOOKS_IMAGES, } from "../books.constants";
 import { createReader, leaveJanuaryReader } from "../reader";
-import { SKETCH_DIARY_CHAPTERS } from "./constants";
+import { SKETCH_DIARY_CHAPTERS } from "./sketchDiary.constants";
 import './sketchDiary.css';
 
 export function sketchDiaryCover(): HTMLImageElement {

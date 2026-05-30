@@ -7,7 +7,7 @@ import { SKETCH_DIARY_IMAGES } from "../../books/sketchDiary/constants";
 import { VERNA_IMAGES } from "../../books/verna/constants";
 import { HOME_IMAGES } from "../../home/constants";
 import { GARBAGE_IMAGES } from "../../garbage/garbage.constants";
-import { ImageCatalog } from "../../../shared/constants";
+import { ImageCatalog } from "../../../shared/shared.constants";
 
 /// take a screenshot of pretty things from dark room, night, out, snowsight -- allow screenshot of snowsight to be stored in-app??? that'd be cool but hard
 

@@ -1,5 +1,5 @@
 import { JANUARY_COLORS } from "../../shared/color";
-import { createDivWithElements, createHomewardButton, removeByClassName, setBackground } from "../../shared/helpers";
+import { createDivWithElements, createHomewardButton, removeByClassName, setBackground } from "../../shared/shared.helpers.ts";
 import { BEGINNING_OF_JANUARY } from "../../shared/time/time.januaryConstants.ts";
 import { getTime, lastValidTime, setTime } from "../../shared/time/time";
 import { APPS } from "./computer.constants";

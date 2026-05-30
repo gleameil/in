@@ -1,5 +1,5 @@
 import { FEBRUARY_COLORS, JANUARY_COLORS } from "../../../shared/color";
-import { createDivWithElements, createImage, createSpan } from "../../../shared/helpers";
+import { createDivWithElements, createImage, createSpan } from "../../../shared/shared.helpers";
 import { month as getMonth, getTime, lastValidTime, setTime } from "../../../shared/time/time";
 import { FebruaryHoliday, FEBRUARY_HOLIDAYS } from "../../../shared/time/time.februaryConstants";
 import { DATETIME_IMAGES_FEBRUARY, DEGREES_PER_MINUTE_MINUTE_HAND, DEGREES_PER_MINUTE_HOUR_HAND } from "./clockAndCalendar.february.constants";

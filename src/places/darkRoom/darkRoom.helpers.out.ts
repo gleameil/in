@@ -1,6 +1,6 @@
-import { removeByClassName } from "../../shared/helpers";
-import { randomInRange, randomIntegerInRange } from "../../shared/helpers";
-import { makeCoordinateStringVH } from "../../shared/helpers";
+import { removeByClassName } from "../../shared/shared.helpers";
+import { randomInRange, randomIntegerInRange } from "../../shared/shared.helpers";
+import { makeCoordinateStringVH } from "../../shared/shared.helpers";
 
 interface Coordinates {
   fromLeft: number;

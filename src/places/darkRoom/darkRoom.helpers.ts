@@ -1,6 +1,6 @@
 import { JANUARY_COLORS } from '../../shared/color';
-import { sun } from '../../shared/helpers';
-import { createDivWithElements, createImage, removeByClassName } from '../../shared/helpers';
+import { sun } from '../../shared/shared.helpers';
+import { createDivWithElements, createImage, removeByClassName } from '../../shared/shared.helpers';
 import { Cell, CellDirection, CellGrid, CellLocation, CellState, CellText, Character, DARK_ROOM_AUDIO, DARK_ROOM_IMAGES, EffectCatalog, EvernostTransition, extradimensionalBeginning, extradimensionalContinuation, januaryCellGrid, MADELINE_DISSOLUTION, MICHAEL_EVERNOST, MICHAEL_REBIRTH, STARTING_CELL_LOCATION, Transition, TransitionType, VERNA_DISSOLUTION } from './darkRoom.constants';
 import { playIfAllowed } from '../../shared/sound';
 import { move } from './darkRoom.helpers.out';

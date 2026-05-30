@@ -1,5 +1,5 @@
-import { SHARED_IMAGES } from "../../../shared/constants";
-import { createButtonWithImage, createDivWithElements, createImage, removeByClassName } from "../../../shared/helpers";
+import { SHARED_IMAGES } from "../../../shared/shared.constants";
+import { createButtonWithImage, createDivWithElements, createImage, removeByClassName } from "../../../shared/shared.helpers";
 import { createAppButtonWithEmojiOrText } from "../computer.helpers"
 import { BrowserTab, BROWSER_TABS } from "./browser.constants";
 import './browser.css';

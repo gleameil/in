@@ -2,7 +2,7 @@ import markdownIt from 'markdown-it-ts';
 
 import { OUT } from '../places/home/constants';
 import { Color, FebruaryColor, JANUARY_COLORS, JanuaryColor } from './color';
-import { AudioURLSrc, ImageCatalog, ImagePathAndAltText, ImageURLSrc, LinearGradient } from './constants';
+import { AudioURLSrc, ImageCatalog, ImagePathAndAltText, ImageURLSrc, LinearGradient } from './shared.constants';
 import { canPlayAudio, setCanPlayFromQuery } from './sound';
 import { getTime, setTimeFromQuery } from './time/time';
 

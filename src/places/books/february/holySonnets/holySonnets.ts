@@ -1,5 +1,5 @@
-import { Background, createHomewardButton, createImage, loadImagesForCatalog, setBackground } from "../../../../shared/helpers";
-import { BOOKS_IMAGES } from "../../constants";
+import { Background, createHomewardButton, createImage, loadImagesForCatalog, setBackground } from "../../../../shared/shared.helpers";
+import { BOOKS_IMAGES } from "../../books.constants";
 import { createFebruaryReader, leaveFebruaryReader } from "../reader.february";
 import { HOLY_SONNETS, HOLY_IMAGES, HOLY_COLORS } from "./holySonnets.constants";
 import './holySonnets.css';

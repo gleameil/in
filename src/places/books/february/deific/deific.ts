@@ -1,6 +1,6 @@
 import { FEBRUARY_COLORS } from "../../../../shared/color";
-import { createHomewardButton, createImage, removeByClassName, setBackground } from "../../../../shared/helpers";
-import { BOOKS_IMAGES } from "../../constants";
+import { createHomewardButton, createImage, removeByClassName, setBackground } from "../../../../shared/shared.helpers";
+import { BOOKS_IMAGES } from "../../books.constants";
 import { createFebruaryReader, leaveFebruaryReader } from "../reader.february";
 import { DEIFIC } from "./deific.constants";
 import './deific.css';

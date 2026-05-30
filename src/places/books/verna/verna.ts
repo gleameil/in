@@ -1,6 +1,6 @@
 import { JANUARY_COLORS } from "../../../shared/color";
-import { createHomewardButton, createImage, removeByClassName, setBackground } from "../../../shared/helpers";
-import { BOOKS_IMAGES } from "../constants";
+import { createHomewardButton, createImage, removeByClassName, setBackground } from "../../../shared/shared.helpers";
+import { BOOKS_IMAGES } from "../books.constants";
 import { createReader, leaveJanuaryReader } from "../reader";
 import { VERNA_CHAPTERS } from "./constants";
 import './verna.css';

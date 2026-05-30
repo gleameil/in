@@ -1,10 +1,10 @@
 import { IMAGE_SOURCES } from "./photos.constants";
-import { ImagePathAndAltText, SHARED_IMAGES } from "../../../shared/constants";
+import { ImagePathAndAltText, SHARED_IMAGES } from "../../../shared/shared.constants";
 import { JANUARY_COLORS } from "../../../shared/color";
-import { createButtonWithImage, createButtonWithText, createDivWithElements, createImage, removeByClassName, setBackground } from "../../../shared/helpers";
+import { createButtonWithImage, createButtonWithText, createDivWithElements, createImage, removeByClassName, setBackground } from "../../../shared/shared.helpers";
 import { createAppButtonWithEmojiOrText } from "../computer.helpers"
 import './photos.css';
-import { ImageCatalog } from "../../../shared/constants";
+import { ImageCatalog } from "../../../shared/shared.constants";
 import { anyModal, close } from '../../garbage/garbage.helpers';
 
 export function photosIcon(): HTMLButtonElement {

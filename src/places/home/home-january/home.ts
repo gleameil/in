@@ -1,5 +1,5 @@
-import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio, urlForOutNow } from "../../../shared/helpers";
-import { SHARED_IMAGES } from "../../../shared/constants";
+import { createDivWithElements, removeByClassName, createImage, setBackground, createAudio, urlForOutNow } from "../../../shared/shared.helpers.ts";
+import { SHARED_IMAGES } from "../../../shared/shared.constants.ts";
 import { JANUARY_COLORS } from "../../../shared/color";
 import { getTime, goToNextKindOfWeather, scheduleForNow } from "../../../shared/time/time";
 import { lookAtBooks } from "../../books/books";

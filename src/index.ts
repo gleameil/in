@@ -1,7 +1,6 @@
 import { comeHome } from "./places/home/home";
 import { getLimitOfFebruaryForesight, startTime } from "./shared/time/time";
-import { createSpan, expectLetters, handleQueryParams, removeByClassName, setBackground } from  './shared/helpers';
-import {  } from "./shared/time/time.februaryConstants";
+import { createSpan, expectLetters, handleQueryParams, removeByClassName, setBackground } from  './shared/shared.helpers';
 import { makeFirstMirror } from "./places/mirror/mirrorFebruary/mirror.february.helpers";
 import { FEBRUARY_COLORS } from "./shared/color";
 

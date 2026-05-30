@@ -1,4 +1,4 @@
-import { ImagePathAndAltText } from "../constants";
+import { ImagePathAndAltText } from "../shared.constants";
 import { BEGINNING_OF_FEBRUARY, END_OF_FEBRUARY, FEBRUARY_FAVICON, LIMIT_OF_FEBRUARY_FORESIGHT_KEY, LIMITLESS } from "./time.februaryConstants";
 import { BEGINNING_OF_JANUARY, Day, JANUARY_FAVICON, JANUARY_SCHEDULE, Time, TimeForDay, TIMES } from "./time.januaryConstants";
 import { FAVICON_LINK_IDS, WindowWithClock } from "./time.sharedConstants";

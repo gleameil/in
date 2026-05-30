@@ -1,6 +1,6 @@
 import { windowKeyHandlers } from '../../shared/state';
 import { JANUARY_COLORS, JanuaryColor } from '../../shared/color';
-import { createDivWithElements, createImage, removeByClassName } from '../../shared/helpers';
+import { createDivWithElements, createImage, removeByClassName } from '../../shared/shared.helpers';
 import { makeParagraphs } from '../../shared/text';
 import { Chapter, Chapters, Page } from './reader.constants';
 import './reader.css';

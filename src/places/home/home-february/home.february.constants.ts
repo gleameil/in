@@ -1,6 +1,6 @@
 import { FEBRUARY_COLORS, FebruaryColor } from "../../../shared/color";
-import { ImageCatalog, ImagePathAndAltText, LinearGradient } from "../../../shared/constants";
-import { setBackground } from "../../../shared/helpers";
+import { ImageCatalog, ImagePathAndAltText, LinearGradient } from "../../../shared/shared.constants";
+import { setBackground } from "../../../shared/shared.helpers";
 
 export interface WindowForFebruary extends Window {
     lampIsOn?: boolean;

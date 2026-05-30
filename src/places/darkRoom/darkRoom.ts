@@ -1,5 +1,5 @@
 import { JANUARY_COLORS } from "../../shared/color";
-import { createAudio, createDivWithElements, createImage, removeByClassName, setBackground } from "../../shared/helpers";
+import { createAudio, createDivWithElements, createImage, removeByClassName, setBackground } from "../../shared/shared.helpers";
 import { HOME_IMAGES } from "../home/constants";
 import { createItem } from "../home/helpers";
 import { begin } from './darkRoom.helpers';

@@ -1,4 +1,4 @@
-import { ImageCatalog, SHARED_IMAGES } from "../../../shared/constants";
+import { ImageCatalog, SHARED_IMAGES } from "../../../shared/shared.constants";
 import { Chapters } from "../reader.constants";
 
 export const SKETCH_DIARY_IMAGES: ImageCatalog = {

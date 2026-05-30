@@ -1,7 +1,7 @@
 import { createFirebirdModal, createAmbitionModal, createPreambleModal, createJennyieModal, createPoemModal, createIntroductionModal, createJazzModal, createCslModal, createAbstractModal, createTrivialModal, createKnotModal, createGarbageModals, createPaperBalls, close, ope } from './garbage.helpers'
 import { GARBAGE } from './garbage.constants';
 import { JANUARY_COLORS } from '../../shared/color';
-import { createHomewardButton, setBackground, removeByClassName } from '../../shared/helpers';
+import { createHomewardButton, setBackground, removeByClassName } from '../../shared/shared.helpers';
 import './garbage.css';
 
 function leaveGarbage() {

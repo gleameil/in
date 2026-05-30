@@ -1,5 +1,5 @@
-import { ImageCatalog } from "../../../shared/constants";
-import { removeByClassName } from "../../../shared/helpers";
+import { ImageCatalog } from "../../../shared/shared.constants";
+import { removeByClassName } from "../../../shared/shared.helpers";
 import { playIfAllowed } from "../../../shared/sound";
 import { Chapters } from "../reader.constants";
 

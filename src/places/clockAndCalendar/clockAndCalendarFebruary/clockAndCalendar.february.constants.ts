@@ -1,4 +1,4 @@
-import { ImageCatalog } from "../../../shared/constants";
+import { ImageCatalog } from "../../../shared/shared.constants";
 
 // 360deg / 1440 minutes per day
 export const DEGREES_PER_MINUTE_HOUR_HAND = 0.5;

@@ -1,4 +1,4 @@
-import { removeByClassName } from "../../../../shared/helpers";
+import { removeByClassName } from "../../../../shared/shared.helpers";
 import { createBrowserTabWithText } from "../../computer.helpers";
 import { quizzesInitial } from "./quizzes.helpers";
 import './quizzes.css'

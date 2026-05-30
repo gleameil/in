@@ -1,4 +1,4 @@
-import { ImageCatalog } from "../../shared/constants";
+import { ImageCatalog } from "../../shared/shared.constants";
 import { blech, blechCover } from './blech/blech';
 import { loonOfLoons, loonOfLoonsCover } from './loonOfLoons/loonOfLoons';
 import { oracle, oracleBox } from './oracle/oracle';

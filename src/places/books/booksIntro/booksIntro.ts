@@ -1,6 +1,6 @@
-import { createDivWithElements, createHomewardButton, createImage, removeByClassName } from "../../../shared/helpers";
+import { createDivWithElements, createHomewardButton, createImage, removeByClassName } from "../../../shared/shared.helpers";
 import { makeParagraphs } from "../../../shared/text";
-import { BOOKS_IMAGES } from "../constants";
+import { BOOKS_IMAGES } from "../books.constants";
 import { BOOKS_INTRO } from './constants';
 import './booksIntro.css';
 

@@ -1,6 +1,6 @@
 import { JANUARY_COLORS } from "../../../shared/color";
-import { createHomewardButton, createImage, removeByClassName, setBackground } from "../../../shared/helpers";
-import { BOOKS_IMAGES } from "../constants";
+import { createHomewardButton, createImage, removeByClassName, setBackground } from "../../../shared/shared.helpers";
+import { BOOKS_IMAGES } from "../books.constants";
 import { createReader, leaveJanuaryReader } from "../reader";
 import { LOON_OF_LUNES_CHAPTERS } from "./constants";
 import './lunes.css';

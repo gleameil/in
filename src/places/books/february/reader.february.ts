@@ -1,6 +1,6 @@
-import { createDivWithElements, createImage, removeByClassName, loadImagesForCatalog, createButtonWithImage, fillWithMarkdown, fillWithMarkdownInline, createSpan, createAudio, sun } from "../../../shared/helpers";
+import { createDivWithElements, createImage, removeByClassName, loadImagesForCatalog, createButtonWithImage, fillWithMarkdown, fillWithMarkdownInline, createSpan, createAudio, sun } from "../../../shared/shared.helpers";
 import { SpeechBubble, PoemFragment, FragmentedPoem, Marginalia, StaticPage, PoemPage, FebruaryPage, FebruaryChapter, FebruaryBook, BookColors, END } from './reader.february.constants';
-import { SHARED_IMAGES } from '../../../shared/constants';
+import { SHARED_IMAGES } from '../../../shared/shared.constants';
 import './reader.february.css';
 import { changeAudioSource, playIfAllowed } from '../../../shared/sound';
 import { windowKeyHandlers } from '../../../shared/state';

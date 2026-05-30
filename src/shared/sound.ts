@@ -1,5 +1,5 @@
-import { AudioPath, AudioURLSrc } from "./constants";
-import { createButtonWithText } from "./helpers";
+import { AudioPath, AudioURLSrc } from "./shared.constants";
+import { createButtonWithText } from "./shared.helpers";
 
 interface WindowWithAudio {
   canPlayAudio?: boolean;

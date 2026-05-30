@@ -1,4 +1,4 @@
-import { ImagePathAndAltText } from "../../shared/constants";
+import { ImagePathAndAltText } from "../../shared/shared.constants";
 
 export interface Page {
   title?: string;

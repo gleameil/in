@@ -39,7 +39,7 @@ Not looking for contributors per se, but if you find bugs or would like improvem
 
 ## Credits & Acknwoledgments
 
-Music, art, and writing are mine apart from the public domain bits you'll find in the Anthology (book pile). Used Adobe Creative Cloud to edit music and art and MuseScore to create the music. GitHub Copilot gave me the outline for this README.
+Music, art, and writing are mine apart from the public domain bits you'll find in the Anthology (book pile). Used Adobe Creative Cloud to edit music and art and MuseScore to create the music. GitHub Copilot gave me the outline for this README. Claude wrote the reading layer.
 
 ## License
 

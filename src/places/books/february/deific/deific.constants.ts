@@ -1,6 +1,6 @@
 import { BookColors, FebruaryBook, FebruaryChapter } from "../reader.february.constants";
 import { Color, OUT_COLOR_SET } from "../../../../shared/color";
-import { AudioCatalog, AudioPath, ImagePathAndAltText, SHARED_IMAGES } from "../../../../shared/constants";
+import { AudioCatalog, AudioPath, ImagePathAndAltText, SHARED_IMAGES } from "../../../../shared/shared.constants";
 
 
 const deificColors: BookColors = {

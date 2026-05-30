@@ -1,5 +1,5 @@
-import { SHARED_IMAGES } from "../../shared/constants";
-import { createDivWithElements, createImage, createSpan } from "../../shared/helpers";
+import { SHARED_IMAGES } from "../../shared/shared.constants";
+import { createDivWithElements, createImage, createSpan } from "../../shared/shared.helpers";
 import { GARBAGE, GARBAGE_IMAGES } from './garbage.constants';
 
 export function anyModal() {
