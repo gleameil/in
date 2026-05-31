@@ -28,6 +28,14 @@ export const ANTHOLOGY_CHAPTERS: Chapters = [
           title: 'A Year of Readings',
           rightImage: ANTHOLOGY_IMAGES.arrowRight,
           leftImage: ANTHOLOGY_IMAGES.arrowLeft,
+          log: `A Year of Readings
+Public-domain anthology, January book pile
+
+A personal anthology: works chosen because they belong together, not because they belong to a syllabus. The Blake epigraph announces the collection's premise — that the infinite and the ordinary are not opposites but scales, that a grain of sand is a world if you know how to look. Everything that follows is either a proof or a complication of this claim.
+
+The thanks to the internet for public-domain literature is not a throwaway line. It acknowledges that the archive has made this kind of gathering possible — that Evernost has a library, and that the library owes a debt to digitization.
+
+— the Amanuensis`,
       },
       {
           heading: 'from Auguries of Innocence',
@@ -174,7 +182,15 @@ Nothing that is not there and the nothing that is.`,
       {
           text: `This happy event—supposing it to be such—could only have occurred at an unpremeditated moment. We will not follow our friend across the threshold. He has left us much food for thought, a portion of which shall lend its wisdom to a moral, and be shaped into a figure. Amid the seeming confusion of our mysterious world, individuals are so nicely adjusted to a system, and systems to one another and to a whole, that, by stepping aside for a moment, a man exposes himself to a fearful risk of losing his place forever. Like Wakefield, he may become, as it were, the Outcast of the Universe.`,
           leftImage: ANTHOLOGY_IMAGES.snowflakeLeft,
-          rightImage: ANTHOLOGY_IMAGES.snowflakeRight,    
+          rightImage: ANTHOLOGY_IMAGES.snowflakeRight,  
+          log: `A Year of Readings
+Wakefield — closing moral
+
+Hawthorne delivers his moral with the lightness of a man who has been telling a comic tale and only at the end reveals what stakes were always at play. Wakefield stepped aside for one night and never quite found his way back — not because the way was blocked, but because the act of stepping aside had remade him into someone for whom return was no longer legible.
+
+The Amanuensis notes that this story sits unusually close to the dark room: to what it means to pass through a door and discover the way back is not where you left it. Hawthorne calls it a fearful risk. The dark room is less certain it is.
+
+— the Amanuensis`,  
       },
       {
           canShow: () => true, // canShowInAndOut,
@@ -182,6 +198,14 @@ Nothing that is not there and the nothing that is.`,
           text: 'by George MacDonald',
           leftImage: ANTHOLOGY_IMAGES.snowflakeLeft,
           rightImage: ANTHOLOGY_IMAGES.snowflakeRight,
+          log: `A Year of Readings
+from Lilith, by George MacDonald (1895)
+
+Lilith is a dream-vision fantasy in which a young man stumbles through a mirror into a country where all the categories have changed. The raven he meets there is also Mr. Raven, who is also Adam — MacDonald layers his identities until identity itself becomes the question. "The more doors you go out of, the farther you get in" is the raven's navigation advice, and the Amanuensis finds it the most useful single sentence in this anthology for understanding where Jennie's room is.
+
+The raven's instruction on how to become at home somewhere strange — "By doing something. Anything; and the sooner you begin the better!" — is practical advice for Evernost, and probably not accidentally so.
+
+— the Amanuensis`,
       },
       {
           text: `“I did not come through any door,” I rejoined.
@@ -310,9 +334,16 @@ Ever so black on it. Óur tale, óur oracle! | Lét life, wáned, ah lét life w
 Off hér once skéined stained véined varíety | upon, áll on twó spools; párt, pen, páck 
 Now her áll in twó flocks, twó folds—black, white; | right, wrong; reckon but, reck but, mind 
 But thése two; wáre of a wórld where bút these | twó tell, each off the óther; of a rack 
-Where, selfwrung, selfstrung, sheathe- and shelterless, | thóughts agaínst thoughts ín groans grínd.
+Where, selfwrung, selfstrung, sheathe- and shelterless, | thóughts agaínst thoughts ín groans grínd.`,
+        log: `A Year of Readings
+Spelt from Sibyl's Leaves, by Gerard Manley Hopkins
 
-   ` },
+Hopkins called this his longest sonnet — he also thought it might be the longest sonnet ever made. The vertical bars marking the caesurae are not ornamental; the lines are so heavily stressed that without them the poem becomes unreadable. Eight stresses per line instead of five, sprung rhythm stretched past its usual breaking point, the form enacting what the poem describes: evening collapsing everything into binary, the world's "dapple" wound off its spool until only black and white remain.
+
+"Thoughts against thoughts in groans grind" — the Amanuensis notes that Hopkins was writing from inside a spiritual crisis, and that the formal violence is not decorative. The dismemberment is the subject. Hopkins earns his place in a January anthology.
+
+— the Amanuensis`,
+},
    {
     heading: 'Home-bound',
     leftImage: ANTHOLOGY_IMAGES.snowflakeLeft,

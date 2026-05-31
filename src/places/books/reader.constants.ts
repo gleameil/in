@@ -4,6 +4,7 @@ export interface Page {
   title?: string;
   heading?: string;
   text?: string;
+  log?: string;
   rightImage: ImagePathAndAltText;
   leftImage: ImagePathAndAltText;
   canShow?: () => boolean;

@@ -117,6 +117,9 @@ export function createReader(className: string, book: Chapters, imageBackgroundC
       localStorage.setItem(`${className}TextIndex`, `${textIndex}`);
       
       const fragment = book[chapterIndex][textIndex];
+      if (fragment.log) {
+        console.log(fragment.log)
+      }
       removeByClassName('reader-image');
       document.getElementById(`${className}-reader-right-art`)?.append(fragment.rightImage.imageRight!);
       document.getElementById(`${className}-reader-left-art`)?.append(fragment.leftImage.imageLeft!);
