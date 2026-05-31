@@ -1,5 +1,5 @@
 import { createDivWithElements, createHomewardButton, removeByClassName, setBackground } from '../../shared/shared.helpers';
-import { Book, BOOKS, FEBRUARY_BOOKS_HELL, FEBRUARY_BOOKS_HEAVEN } from './constants';
+import { Book, BOOKS, FEBRUARY_BOOKS_HELL, FEBRUARY_BOOKS_HEAVEN } from './books.constants';
 import './books.css';
 import { JANUARY_COLORS, DesignColor, FEBRUARY_COLORS } from '../../shared/color';
 import { month } from '../../shared/time/time';

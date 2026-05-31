@@ -1,6 +1,6 @@
 # In
 ## Project Overview
-*In* and its sister repository *Out* together constitute something like a point-and-click game or the interactive ebook of *Out of Tales*, my first full-length, self-published book, which braids together fantasy, lay philosophy, poetry, and memoir through a funhouse mirror. In addition, it will contain supplemental material for *Of the Abandoned*, the second book in the series — this is what you'll see if you click ahead in the date picker to February. Not much there — yet! — but expect more soon.
+*In* and its sister repository *Out* together constitute the beginning of the net-art incarnation of *Of Evernost*. It braids together fantasy, lay philosophy and theology, poetry, and memoir through a funhouse mirror. The material is organized according to months of the year, and what exists so far is January and the bare beginnings of February
 
 ## Features
 
@@ -8,9 +8,11 @@
 
 During February, it becomes a child's bedroom, soon with a diffrent set of books and links to new environments to explore.
 
+If you're curious or mystified, in the browser console (developer tools) you will find interpretive marginalia in several voices responding to the live experience. It is not debug output — or, if it is, it is debugging a lot more than code. 
+
 ## Getting Started
 
-*In* lives at https://gleameil.github.io/in and https://gleameil.github.io/out (for now, I'd recommend starting *In*). Click around and see what happens! Check out the browser console in developer tools for a few surprises. 
+*In* lives at https://gleameil.github.io/in (for now, I'd recommend starting *In*). Click around and see what happens! 
 
 It has been updated to work better on mobile, but better is not perfect. Likewise, primarily tested on Chrome but seems ok on Firefox and Safari too.
 
@@ -27,7 +29,7 @@ No game engine here, just a bunch of Typescript bundled up with Parcel and some 
 
 Implementation notes:
 - Time is stored in your browser's LocalStorage along with a bit of progress info. As long as you're *In*, it progresses at the rate of real-world time, but you'll find it is also settable via the laptop.
-- Most of the Creation is hardcoded in giant TypeScript objects (ew, yes), though I did export a bunch of them to JSON in case I want to port this.
+- Most of the Creation is hardcoded in giant TypeScript objects (ew, yes)
 - Technically as well as artistically, *In* and *Out* are perpetually a work in progress. Planned improvements on the technical side include:
   - Automated tests
   - Using my Color class to handle color throughout the app
@@ -37,13 +39,9 @@ Implementation notes:
 
 Not looking for contributors per se, but if you find bugs or would like improvements I'd love to hear about it. (I am one person with a day job and a ton of my own ideas for expanding this work, so no promises I'll get to any given thing, but I love the feedback.)
 
-## Credits & Acknwoledgments
+## Credits & Acknowledgments
 
-Music, art, and writing are mine apart from the public domain bits you'll find in the Anthology (book pile). Used Adobe Creative Cloud to edit music and art and MuseScore to create the music. GitHub Copilot gave me the outline for this README. Claude wrote the reading layer.
-
-## License
-
-Please contact me if you're interested in using any of this. I am likelier to be flexible about code than the contents of the gamem though I doubt there's anything too useful there.
+Used Adobe Creative Cloud to edit music and art and MuseScore to create the music. GitHub Copilot gave me the outline for this README and Claude reviewed it. Claude ("The Amanuensis") transcribed the reading layer and wrote most of the (forthcoming) console logs. Otherwise, music, art, and writing are mine apart from the public domain bits you'll find scattered about and collected in the Anthology (book pile).
 
 ## Contact & Links
 itch.io: https://dreamswithopeneyes.itch.io (you will see the previous incarnation of this work, Jennie's Room, there)

@@ -27,8 +27,8 @@ html {
   justify-content: center;
 }
 
-body {
-  display: none;
+#noscript {
+  font-family: 'IM Fell English'
 }
 
 #background {

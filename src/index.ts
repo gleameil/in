@@ -20,6 +20,7 @@ function enterFebruary() {
 }
 
 function comeIn() {
+  document.getElementsByTagName('body')[0].style.display = 'none';
   handleQueryParams();
   removeByClassName('under-construction');
 

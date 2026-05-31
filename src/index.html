@@ -13,6 +13,42 @@
         <link id="webmanifest" rel="manifest" href="assets/site.webmanifest">
         <link id="favicon" rel="icon" href="assets/images/no-image.png">
         <script src="index.ts" type="module" defer></script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "CreativeWork",
+                "name": "Of Evernost: January",
+                "url": "https://gleameil.github.io/in/",
+                "description": "A browser-based point-and-click net art piece by Meg Moseman. The player inhabits Jennie's room — a quiet space floating deep Elsewhere in Evernost — and explores it by clicking on objects. Six interactive objects yield branching narrative, poetry, illustrated books, time-indexed prose, and sketchbook art. No score, no failure state; curiosity is the only goal.",
+                "author": {
+                    "@type": "Person",
+                    "name": "Meg Moseman",
+                    "url": "https://megmoseman.com"
+                },
+                "genre": ["net art", "interactive fiction", "experimental literature", "hypertext poetry"],
+                "accessibilityFeature": ["readingOrder", "alternativeText"],
+                "accessibilityHazard": "noFlashingHazard",
+                "accessMode": ["visual", "textual"],
+                "accessModeSufficient": ["textual"],
+                "abstract": "Part of Of Evernost, a long-form creative project by Meg Moseman. January is the primary interactive piece: a hand-drawn room in a pocket universe conceived as heaven, Faerie, or Fantasyland. Companion text-accessible reading layer available.",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "name": "Of Evernost",
+                    "url": "https://gleameil.github.io"
+                },
+                "workExample": {
+                    "@type": "CreativeWork",
+                    "name": "Of Evernost: In — Reading Layer",
+                    "url": "https://gleameil.github.io/in/reading-layer/",
+                    "description": "Text-accessible version of the January interactive piece, presenting all object content in reading order with contextual notes."
+                }
+            }
+        </script>
         <title>In</title>
     </head>
+    <noscript>
+        <p id="noscript">This experience requires JavaScript. 
+            <a href="/in/reading-layer/">Read the text version instead.</a>
+        </p>
+    </noscript>
 </html>

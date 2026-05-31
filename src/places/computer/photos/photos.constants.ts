@@ -3,7 +3,7 @@ import { BLECH_IMAGES } from "../../books/blech/constants";
 import { LOON_IMAGES } from "../../books/loonOfLoons/constants";
 import { MADELINE_IMAGES } from "../../books/madeline/constants";
 import { MICHAEL_IMAGES } from "../../books/michael/constants";
-import { SKETCH_DIARY_IMAGES } from "../../books/sketchDiary/constants";
+import { SKETCH_DIARY_IMAGES } from "../../books/sketchDiary/sketchDiary.constants";
 import { VERNA_IMAGES } from "../../books/verna/constants";
 import { HOME_IMAGES } from "../../home/constants";
 import { GARBAGE_IMAGES } from "../../garbage/garbage.constants";
