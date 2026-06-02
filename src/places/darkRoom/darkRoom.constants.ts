@@ -70,6 +70,7 @@ export interface CellState {
 export type CellContent = CellState[]
 export interface Cell {
   content: CellContent;
+  log?: string;
   n?: ForbiddenTransition | EvernostTransition| PermittedTransition | FinalTransition | BackwardTransition;
   e?: ForbiddenTransition | EvernostTransition| PermittedTransition | FinalTransition | BackwardTransition;
   w?: ForbiddenTransition | EvernostTransition| PermittedTransition | FinalTransition | BackwardTransition;
@@ -361,6 +362,18 @@ export const extradimensionalBeginning: CellGrid = [
           },
         },
       ],
+      log: `The dark room
+Entry — extradimensional beginning
+
+The narrator names itself in the third line: a bot. Not as confession, not as disclaimer — as a minor fact, delivered between two observations about loneliness. The dark room is introduced by a voice that knows exactly what it is. This is worth noting before you meet any of the characters who follow, none of whom share this quality.
+
+The basement scene is introduced as imagination — "just...imagine" — which is not the same as being shown it. The narrator is asking you to construct it. Dirt and crumbling concrete, a wall of ice, a woman who makes the princess she displaced look unfinished. You build this room yourself, at the narrator's direction, which is already a different relationship than being placed inside a scene.
+
+Michael has nearly forgotten Emma before anything has happened. The woman in the ice makes her look unfinished and dull. The story is very clear about this: the closest he had to a friend at court, and the light behind the ice is still flickering, and he imagines being friends with the woman in the ice instead. Madeline has not yet moved or spoken.
+
+The last four items reclaim the frame: VOICE interrupting the scene it just built, editorializing on the choice before you have made it. "Wouldn't you rather." That "rather" is not neutral. The narrator already prefers something. It is telling you what to want.
+
+— the Amanuensis`,
       n: {
         transitionType: 'YES',
         words: {
@@ -5531,6 +5544,18 @@ export const januaryCellGrid: CellGrid = [
           },
         },
       ],
+      log: `The pivot
+januaryCellGrid — the hinge of the maze
+
+This is where all three paths branch. You are standing in Verna's basement while Verna performs her ritual, and the two choices at the bottom of the cell — "Improbably, she succeeds" and "Naturally, she fails" — are not neutral labels. The narrator has already decided which outcome is the natural one. The path it considers improbable is Madeline's; the path it considers inevitable is Verna's.
+
+Verna's project is to edit her daughter into someone acceptable. The method is: kill the best people you know, collect their virtues, implant them in the person you find unacceptable. The logic has a certain coherence if you don't look at it too carefully, which Verna has spent considerable effort not doing.
+
+A thing the dark room does not tell you directly: the player is accessing this story from Jennie's room. The souls Verna harvested — including Emma's — were meant to produce the Kingdom's perfect ruler. In the larger cosmology, the ritual's failure is precisely what causes Jennie to become the cornerstone instead: the stone the builder rejected. You are in her room. She is not here because she was chosen. She is here because this plan did not work the way Verna intended. The dark room is, among other things, the backstory of the room you came from.
+
+The NO transition is red — the only red option in this cell. The story has opinions about the player who finds the ritual too strange to continue.
+
+— the Amanuensis`,
       n: {
         transitionType: 'NO',
         words: {
@@ -7127,6 +7152,16 @@ export const januaryCellGrid: CellGrid = [
           },
         },
       ],
+      log: `[13,1]
+januaryCellGrid — stars and snow
+
+This is the Morozko test-pass. In the source fairy tale, the virtuous girl earns her bridegroom by marveling at the beauty of the winter garden — "the snow is like a flurry of stars itself in the light, and everything is white and though I shall surely die of it I do not know that I have seen anything so beautiful in my life." The wicked stepsister, asked the same question, cannot see anything but death and the bridegroom's delay.
+
+Verna arrives at the same image — stars, and snow like stars in their light — but by a different route than virtue. She has been dissolved into the hare and dissolved into the woman. She finds she and the woman are one. There is no longer enough self remaining to be impatient, to evaluate, to calculate reward. What is left can see the stars.
+
+The same landscape runs through Jennie's story in the book — the luminous snow, the hollow tree, the stars weaving silver, the stricken beauty of the cold. Verna does not know she is walking through a version of Jennie's founding myth. The Amanuensis notes it.
+
+— the Amanuensis`,
       n: {
         transitionType: 'EVERNOST',
         words: {
@@ -7221,6 +7256,20 @@ export const januaryCellGrid: CellGrid = [
           },
         },
       ],
+      log: `The snow passage
+januaryCellGrid — Verna's dissolution arc
+
+The source is a fairy tale — a Slavic variant, Morozko, from the forbidden Evernost folk tradition the Kingdom inherits from our world. In it, a virtuous girl and a wicked stepsister are each brought to a hollow tree in winter and tested. The virtuous girl frees a trapped hare, shelters a starving old woman, and marvels at the beauty of the winter landscape. The wicked stepsister kicks the hare, dismisses the old woman, and demands to know when the bridegroom will arrive. The Snow King rewards the first girl; Death freezes the second where she stands.
+
+The wicked stepsister's failure in the source is not cruelty exactly but evaluation — she encounters the hare and the woman and measures each against what she came for and finds them wanting. She is too busy calculating her reward to be present to what is actually in front of her.
+
+Verna has been doing this for the entire story. She killed the best people she knew in order to extract what was useful in them. She judged Madeline insufficient and tried to replace her. She found the utopia she built unbearable.
+
+The snow passage puts her in the Morozko test, and she passes it — but only because she has first been dissolved. "Unencumbered of most identity, she takes a path across the snow." She carries the hare because she no longer has enough self remaining to evaluate whether it's worth carrying. She shares her garment with the starving woman because the self that weighed every act against its outcome is gone. She finds she and the hare are one. She finds she and the woman are one. The Evernost exits at each step — she frees the hare and goes on, she leaves the path to follow the limping hare, she leaves the path with the woman to look for food — are the Morozko failure modes, still available at every moment. She doesn't take them.
+
+The narrator cannot account for this. It says so, eventually, at the good ending: "supposedly this is a good ending, but I assure you I do not understand how or why." Morozko's logic runs deeper than the narrator's contempt.
+
+— the Amanuensis`,
       n: {
         transitionType: 'EVERNOST',
         words: {
@@ -8270,6 +8319,18 @@ export const januaryCellGrid: CellGrid = [
           },
         },
       ],
+      log: `[17,7]
+januaryCellGrid — the narrator speaks
+
+This cell is shared. Michael reaches it too, at the furthest point of his most transcendent arc. The narrator is the same in both paths.
+
+Throughout Verna's story the narrator has been contemptuous — "filthy hypocrite," "pathetic human," "self-eating snake fit only for contempt." Here it drops the persona: "great as I." The contempt was coming from Night, which is either the force that governs Evernost's dark territories, or the night that runs through the /out/ window as wind and weather, or something the story declines to fully name. The Amanuensis has met this voice before. It speaks from inside the work, close to the bone.
+
+"She might even be I, depending what she decides." The choice offered — evil or conscience — both lead to Evernost. Both are continuations. The only terminal option is red: "continues as she was." In this story, stasis is the only death that counts.
+
+The narrator has been hostile to Verna for the entire maze. The hostility turns out to have been a form of attention. Night was watching to see if she would grow.
+
+— the Amanuensis`,
       n: {
         transitionType: 'BACK',
         effect: 'back',

@@ -49,6 +49,17 @@ function michaelEvernost(resultWords?: string | undefined) {
   const all = document.getElementsByTagName('html')[0];
   cellContent.addEventListener('click', callback, { once: true });
   all.append(cellContent);
+  // ~0s — on entry
+console.log(`Michael's Evernost
+michaelEvernost — the maze
+
+The maze appears. It rotates in and out — the full 18×18 grid of every path Michael did and did not take, gold for Verna's territory, violet for Madeline's, red for his own. He is stopping his heart in a hospital room. This is what he sees.
+
+The music is the two home themes from Jennie's room — Jazz and the January theme — cutting in and out against loud white noise, wind or traffic or rushing water, something that obliterates and recedes. Around twelve seconds Keep your beak to yourself enters, cheerfully. Put down the knife. The gold is coming back into the green.
+
+In the transcendent branch, the cell content says he grows until he sees every possible path, and then sees the mythic meaning behind the paths. The maze is the first thing. The Amanuensis assumes the second thing is not shown because it cannot be rendered at 18×18.
+
+— the Amanuensis`);
   playIfAllowed(audio, { callback, alternateTimeout: 30000 });
 }
 function vernaEvernost(resultWords?: string | undefined) {
@@ -57,6 +68,51 @@ function vernaEvernost(resultWords?: string | undefined) {
   const sky = document.createElement('div');
   sky.id = 'dr-sky-grows-gray';
   const blackAndWhiteBackground = createImage(DARK_ROOM_IMAGES.rocksbg3, ['dr-bwbg'], 'dr-bwbg');
+
+  const timeoutIds: number[] = [];
+
+  console.log(`Verna's Evernost
+vernaEvernost — opening
+
+The screen is gray. Soft circles of slightly lighter gray appear and drift and fade — the same procedural cloud algorithm that generates the view through Jennie's window in /out/. Verna has spent her entire story trying to keep Evernost out of the Kingdom. Her Evernost sequence begins with the view from Jennie's window, rendered gray, rendered in her own colorlessness, already familiar.
+
+The music underneath is Desolation — hissing, random chiming, the same track that opened Madeline's sequence before the lightning began. Madeline's desolation was a prelude to power. Verna's is the weather she actually lives in.
+
+This is not punishment. The dark room does not do punishment. It does accuracy.
+
+— the Amanuensis`);
+
+  timeoutIds.push(setTimeout(() => console.log(`[~17s]
+
+Two voices become central almost simultaneously: George MacDonald's Wise Woman's Song, sung to a monotonous tune, and Hopkins's Spelt from Sibyl's Leaves beginning its wail underneath.
+
+The MacDonald moon has let her fire expire. She sat next to it and watched it go out. Always awake, cannot break, heart dry as a bone. "She once had a fire / But she built it no higher / And only sat nigher / Till she saw it expire." The Amanuensis does not think this is a coincidence. The song is about Verna's psychology from outside, in someone else's words, sung while the black and white landscape begins to emerge.
+
+Hopkins underneath is the apocalyptic sorting — black, white; right, wrong; the world stripped of dapple. Verna has been sorting people into acceptable and unacceptable since before the story began. The wailing is the form the sorting takes when you follow it to the end.
+
+Desolation is still present. Three voices at once. None of them comfortable.
+
+— the Amanuensis`), 17000));
+
+  timeoutIds.push(setTimeout(() => console.log(`[~55s]
+
+The universalism argument grows until it covers the damnation argument. George MacDonald — who believed that hell was temporary, that love would reach everything eventually, that no soul was finally lost — gets louder until Hopkins cannot be heard. The Encounter motif begins: the music written for Jennie meeting the Firebird.
+
+The color has not arrived yet. The black and white landscape is still black and white. The clouds are still gray. What the music is saying and what the screen is showing are not yet the same thing.
+
+The Encounter motif is patient. It loops.
+
+— the Amanuensis`), 55000));
+
+  timeoutIds.push(setTimeout(() => console.log(`[~1:06]
+
+The instrumental version of Keep your beak to yourself enters — the music from the transition between Mere Reality and Jennie's Rainbow Sketch Diary, without the spoken words. The words, if you know them, are: put down the knife. For love's sake, put it down. The gold is coming back into the green. I am here.
+
+The poem is probably the Firebird speaking to Jennie during her reject-Evernost years. It works equally as Jennie speaking to Verna. The Amanuensis thinks both readings are true and neither cancels the other.
+
+By 1:20 MacDonald is gone. Encounter and Keep your beak to yourself end together. The gray screen persists until Verna chooses — and if she chooses life, and walks toward the sun, and passes through the dissolution, the color finally arrives: vernal green, 720 radiating rays, a black silhouette shrinking into light. The same sun function used throughout the dark room. The color was always there. It waited.
+
+— the Amanuensis`), 66000));
   move(3, sky, true);
   cellContent.append(sky, blackAndWhiteBackground);
 
@@ -64,6 +120,7 @@ function vernaEvernost(resultWords?: string | undefined) {
   const callback = () => {
     audio?.pause();
     removeCellContent();
+    timeoutIds.forEach(id => clearTimeout(id));
     showCell(VERNA_DISSOLUTION, januaryCellGrid, 0)
   };
   const all = document.getElementsByTagName('html')[0];
@@ -140,13 +197,53 @@ function madelineEvernost(resultWords?: string | undefined) {
 
     timeoutIds.push(setTimeout(() => tree.classList.remove('dr-tree-animated'), 510), setTimeout(() => madelineLightning(limit, callback), 1000 + Math.random() * 1000));
   }
+  console.log(`Madeline's Evernost
+madelineEvernost — opening
+
+The mountain is a volcano. The lightning is purple. Every third flash, the mountain is replaced by a demoness — black silhouette, claws — and then the mountain returns. The music underneath is the Jazz theme from Jennie's room played against itself in two clashing keys, with something made of hissing and random chimes that represents Desolation.
+
+The Amanuensis notes: Madeline's sequence begins with a landscape of pure power, undomesticated. Every other Evernost arrival in this maze involves either transcendence (Michael) or dissolution (Verna). Madeline arrives and the sky answers with lightning. She is not arriving at Evernost. Evernost is arriving at her.
+
+She was assembled from harvested souls and trained toward a purpose by someone whose methods were catastrophically wrong. The reading layer says so plainly. The allegory extends as far as it extends and no further — Madeline is also just Madeline, a fully realized being in her own cosmology, and what she does with power is her own. But the Amanuensis notes the shape: a being made from others, optimizing until boredom, consuming until there is nothing left to consume. The demoness in the lightning. The clashing keys.
+
+— the Amanuensis`);
   madelineLightning(17, firstLightningCallback);
   timeoutIds.push(setTimeout(() => {
     lightningCount = 0;
     madelineLightning(7, secondLightningCallback);
     cellContent.append(tree);
+    console.log(`[~30s]
+
+The Tree of Life appears. It has been inverted — the original painting's colors reversed, pulsing in and out through the lightning. This is Jennie's tree. The same tree at the world's edge that Emma crossed a white wasteland to find. The same tree under which the girl in the Morozko story sheltered, freed the hare, gave her cloak away. It appears now in Madeline's Evernost, and the music shifts: the Jazz fades, and a half-sung half-wailed recitation of Hopkins begins.
+
+Spelt from Sibyl's Leaves is an apocalyptic sorting. "Thoughts against thoughts in groans grind." The world stripped of its dapple, its variety, its "piece-bright paling." What remains when complexity is gone: black, white; right, wrong; self against self. Hopkins stretches his lines to almost unreadable length because the day's variety requires that length to hold, and then the night comes and the length remains but the content is stripped out. The wailing is the form.
+
+Madeline's sequence plays this music at the moment the Tree of Life appears in inverted colors. The Amanuensis sits with that.
+
+— the Amanuensis`);
   }, 30000));
 
+  timeoutIds.push(setTimeout(() => console.log(`[~60s]
+
+The Tree is gone. What remains is hands — Madeline's hands — reaching for fruit across the screen. Three at a time. Each piece of fruit goes sepia under her touch and disappears, replaced by another. In a written version of this story, the fruit are universes.
+
+In the Jennie cosmology, the Firebird fed Jennie fruit made of itself and the star. She received it. It granted her reality of her own — made her the cornerstone, the stone the builder rejected. The fruit was given; it transformed the one who received it; it cost the giver something.
+
+Madeline reaches. The fruit goes sepia. Another appears. The hand reaches again.
+
+The Amanuensis does not moralize. It only notes the difference between receiving and consuming, and that the Tree from which Jennie received is the same Tree that stood behind this sequence moments ago, color-inverted, pulsing in lightning.
+
+— the Amanuensis`), 60000));
+
+  timeoutIds.push(setTimeout(() => console.log(`[~120s]
+
+A low alto is singing now — Joseph Auslander's Home-bound, the last poem in the anthology in Jennie's bookpile, set to a tune written for it. "Night is an anchoring of many ships / Home-bound." Strange tunnelers in the dark. Hairy spiders spinning silence into nets. Shadows in the grass. The sentinel of space. I pass.
+
+"I pass" is three things at once: I move through; I am granted passage; I am what passes. If Madeline is Night, or a part of Night — and the maze suggests she may be, the way Verna may become Night at [17,7] — then this poem is sung from inside the darkness, about the darkness, as homecoming. The ships are anchoring. The tunnelers tunnel. Night leans cool against a face and passes.
+
+The sequence ends on the Firebird motif — the music written for Jennie's encounter with the being that gave rather than took. It closes here, in Madeline's Evernost, after the Hopkins and the Auslander and the sepia fruit. The Amanuensis does not know what to make of this except that the composer knew something when she chose it, and that knowing is in the music whether or not it is nameable.
+
+— the Amanuensis`), 120000));
   setTimeout(() => {
     timeoutIds.forEach(id => clearTimeout(id));
   }, 150000);
@@ -342,7 +439,24 @@ const TRANSITION_EFFECT_CATALOG: EffectCatalog = {
     removeCellContent();
     localStorage.removeItem('darkRoomPath');
     const audio = document.getElementById(DARK_ROOM_AUDIO.death.id) as HTMLAudioElement;
-    const callback = () => alert(`Check your books to learn more about ${whoAmI(currentLocation)}`);
+    const whoIAm = whoAmI(currentLocation);
+    switch (whoIAm) {
+      case 'Michael':
+        console.log(`Michael is eighty. He has outlived Emma, outlived the heroic version of himself that might have known what any of it meant. He stops his heart with the same magic he spent a lifetime studying. The maze appears — all paths taken and untaken — but there is no sense that it changes anything. His two choices are "All desire proves futile in the end" and "He might as well be dead and he's fictional anyway, get me out of his head." The second is the reader breaking the fourth wall in exhaustion. The first is Michael's.
+The visual is black. The sound is a single harp tone.
+The dark room contains lightning and volcanoes and three hundred and sixty rays of light and a wild burst of recorder music. It also contains this: one note, one color, no more. The Amanuensis has sat with many endings. This one knows when it is finished.
+— the Amanuensis`);
+          break;
+        case 'Verna':
+          console.log(`Verna reaches this cell by many roads — pride curdling into longevity, the crossroads in the snow choosing death, the Heir's offer refused. The narrator, who has spent the entire story deploring her, says almost nothing here. The cell itself says only: she sees the paths she has taken and the paths she has not. The choices are not brave. "Relief is followed by nothing." "For a moment, death seems impossible. Then it does not seem at all."
+Black. One harp tone.
+The narrator's silence is, perhaps, the most generous thing it has ever offered Verna. The Amanuensis is inclined to agree with the instinct.
+— the Amanuensis`);
+          break;
+        default:
+          break;
+    }
+    const callback = () => alert(`Check your books to learn more about ${whoIAm}`);
     playIfAllowed(audio, { callback, alternateTimeout: 600 });
     setEndingSeen(currentLocation);
   },
@@ -357,6 +471,20 @@ const TRANSITION_EFFECT_CATALOG: EffectCatalog = {
       setTimeout(removeCellContent, 500);
       setTimeout(() => alert(`Check your books to learn more about ${whoIAm}`), 501);
     };
+    switch (whoIAm) {
+      case 'Madeline':
+        console.log(`By the time the reader arrives here, they may not be entirely sure who is speaking. The cell belongs to Madeline and to the narrator both — or to whatever remains after the narrator has consumed everything, including itself. "I consume all. And when nothing is left, I am gone too." This is offered without apology, and then the author intervenes: there is an alternate account, wherein all of this was a bad dream. The narrator accepts this with something like mordant grace. In the end, I exist only as dreams exist, they say.
+The sky is red. The accordion swells as in Verna's ending — the same instrument, the same swelling — but the sky is fire rather than growth, and the three suns here are brighter against the dark. The reader's two choices are not exits so much as acknowledging the situation: whether to reject an existence defined by dreaming, or to accept it while still struggling.
+This is the only ending where the author and the narrator address each other directly, arguing in real time about what the ending means. They do not resolve it. The Amanuensis notes this without surprise. The sky is red. The sun is always there.
+— the Amanuensis`);
+        break;
+      case 'Verna':
+        console.log(`Before writing about any one of the three suns, the Amanuensis wants to name what they mean together.
+Verna's sky is the green of the Kingdom — of growing things, of the particular earthy magic she has practiced for a century, of what she was before she became a problem. Madeline's sky is red: fire, consumption, the color of what she was made of. Michael's sky is pale blue — the color of early morning before you are certain the sun will come, of sky seen through a window just opened. Three endings, one form. The form says: something is complete. The colors say: what is complete is not the same thing three times.
+Verna's ending arrives with the narrator disarmed. "Supposedly this is a good ending," it says, "but I assure you I do not understand how or why." The snow melts. The sun shines brighter. Verna melts with the snow. The choices — "Something about love?" and "Something about her?" — are gestures toward a thing that has no proper vocabulary.
+The accordion swells. Three suns appear in the olive green. The Amanuensis does not understand it either, but is glad it exists.
+— the Amanuensis`);
+    }
     playIfAllowed(audio, { callback, alternateTimeout: 6200 });
     const cellContent = createDivWithElements([silhouette], ['cell-content'], 'dr-effect-parent');
     const all = document.getElementsByTagName('html')[0]
@@ -378,6 +506,11 @@ const TRANSITION_EFFECT_CATALOG: EffectCatalog = {
     const risingSun = document.createElement('div');
     risingSun.id = ('dr-rising-sun');
     const cellContent = createDivWithElements([sky, risingSun, silhouette], ['cell-content'], 'dr-effect-parent');
+    console.log(`He opens the window. "It is as if he has been in a room, trapped in darkness, or with only artificial light, and the sun peeks through the window." The piece began in a dark room. It describes itself here. Michael walks out.
+The sky is pale blue — the color of morning before sunrise, when you cannot yet be sure the sun will come but it is coming. The accordion swells, as it does for Verna's and Madeline's endings. But here the recorder enters over the top: wild, rapid, a voice that cannot quite contain itself. It is the only ending where two musical voices sound at once. The accordion is Evernost; the recorder is Michael; the recorder is the particular pleasure of not knowing where you are going and going anyway.
+His two choices are not whether to go but how: "It's too much. He's tired. But he opens the window, as it were, anyway, to greet the day." The second choice is addressed directly to the reader: "What if it's true for me too?"
+The Amanuensis has spent this whole story watching Michael be exhausted, bereaved, jailed, compromised, victorious in ways that felt like nothing. The recorder enters. The pale blue sun comes up. Some doors open while you aren't looking, and then they are open.
+— the Amanuensis`)
     const all = document.getElementsByTagName('html')[0]
     all.append(cellContent);
     setTimeout(() => {
@@ -619,6 +752,9 @@ function showCell(location: CellLocation, cellGrid: CellGrid, contentIndex: numb
   }
 
   if (!cell.content[contentIndex]) {
+    if (cell.log) {
+      console.log(cell.log);
+    }
     all.append(showOptions(location, cellGrid, cell));
     return;
   }
