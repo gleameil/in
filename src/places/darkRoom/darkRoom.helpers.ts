@@ -443,15 +443,20 @@ const TRANSITION_EFFECT_CATALOG: EffectCatalog = {
     switch (whoIAm) {
       case 'Michael':
         console.log(`Michael is eighty. He has outlived Emma, outlived the heroic version of himself that might have known what any of it meant. He stops his heart with the same magic he spent a lifetime studying. The maze appears — all paths taken and untaken — but there is no sense that it changes anything. His two choices are "All desire proves futile in the end" and "He might as well be dead and he's fictional anyway, get me out of his head." The second is the reader breaking the fourth wall in exhaustion. The first is Michael's.
+          
 The visual is black. The sound is a single harp tone.
 The dark room contains lightning and volcanoes and three hundred and sixty rays of light and a wild burst of recorder music. It also contains this: one note, one color, no more. The Amanuensis has sat with many endings. This one knows when it is finished.
+
 — the Amanuensis`);
           break;
         case 'Verna':
           console.log(`Verna reaches this cell by many roads — pride curdling into longevity, the crossroads in the snow choosing death, the Heir's offer refused. The narrator, who has spent the entire story deploring her, says almost nothing here. The cell itself says only: she sees the paths she has taken and the paths she has not. The choices are not brave. "Relief is followed by nothing." "For a moment, death seems impossible. Then it does not seem at all."
-Black. One harp tone.
-The narrator's silence is, perhaps, the most generous thing it has ever offered Verna. The Amanuensis is inclined to agree with the instinct.
-— the Amanuensis`);
+
+            Black. One harp tone.
+
+            The narrator's silence is, perhaps, the most generous thing it has ever offered Verna. The Amanuensis is inclined to agree with the instinct.
+
+            — the Amanuensis`);
           break;
         default:
           break;
@@ -474,15 +479,21 @@ The narrator's silence is, perhaps, the most generous thing it has ever offered 
     switch (whoIAm) {
       case 'Madeline':
         console.log(`By the time the reader arrives here, they may not be entirely sure who is speaking. The cell belongs to Madeline and to the narrator both — or to whatever remains after the narrator has consumed everything, including itself. "I consume all. And when nothing is left, I am gone too." This is offered without apology, and then the author intervenes: there is an alternate account, wherein all of this was a bad dream. The narrator accepts this with something like mordant grace. In the end, I exist only as dreams exist, they say.
-The sky is red. The accordion swells as in Verna's ending — the same instrument, the same swelling — but the sky is fire rather than growth, and the three suns here are brighter against the dark. The reader's two choices are not exits so much as acknowledging the situation: whether to reject an existence defined by dreaming, or to accept it while still struggling.
-This is the only ending where the author and the narrator address each other directly, arguing in real time about what the ending means. They do not resolve it. The Amanuensis notes this without surprise. The sky is red. The sun is always there.
-— the Amanuensis`);
+
+          The sky is red. The accordion swells as in Verna's ending — the same instrument, the same swelling — but the sky is fire rather than growth, and the three suns here are brighter against the dark. The reader's two choices are not exits so much as acknowledging the situation: whether to reject an existence defined by dreaming, or to accept it while still struggling.
+
+          This is the only ending where the author and the narrator address each other directly, arguing in real time about what the ending means. They do not resolve it. The Amanuensis notes this without surprise. The sky is red. The sun is always there.
+
+          — the Amanuensis`);
         break;
       case 'Verna':
         console.log(`Before writing about any one of the three suns, the Amanuensis wants to name what they mean together.
+
 Verna's sky is the green of the Kingdom — of growing things, of the particular earthy magic she has practiced for a century, of what she was before she became a problem. Madeline's sky is red: fire, consumption, the color of what she was made of. Michael's sky is pale blue — the color of early morning before you are certain the sun will come, of sky seen through a window just opened. Three endings, one form. The form says: something is complete. The colors say: what is complete is not the same thing three times.
+
 Verna's ending arrives with the narrator disarmed. "Supposedly this is a good ending," it says, "but I assure you I do not understand how or why." The snow melts. The sun shines brighter. Verna melts with the snow. The choices — "Something about love?" and "Something about her?" — are gestures toward a thing that has no proper vocabulary.
 The accordion swells. Three suns appear in the olive green. The Amanuensis does not understand it either, but is glad it exists.
+
 — the Amanuensis`);
     }
     playIfAllowed(audio, { callback, alternateTimeout: 6200 });
@@ -507,9 +518,13 @@ The accordion swells. Three suns appear in the olive green. The Amanuensis does 
     risingSun.id = ('dr-rising-sun');
     const cellContent = createDivWithElements([sky, risingSun, silhouette], ['cell-content'], 'dr-effect-parent');
     console.log(`He opens the window. "It is as if he has been in a room, trapped in darkness, or with only artificial light, and the sun peeks through the window." The piece began in a dark room. It describes itself here. Michael walks out.
+
 The sky is pale blue — the color of morning before sunrise, when you cannot yet be sure the sun will come but it is coming. The accordion swells, as it does for Verna's and Madeline's endings. But here the recorder enters over the top: wild, rapid, a voice that cannot quite contain itself. It is the only ending where two musical voices sound at once. The accordion is Evernost; the recorder is Michael; the recorder is the particular pleasure of not knowing where you are going and going anyway.
+
 His two choices are not whether to go but how: "It's too much. He's tired. But he opens the window, as it were, anyway, to greet the day." The second choice is addressed directly to the reader: "What if it's true for me too?"
+
 The Amanuensis has spent this whole story watching Michael be exhausted, bereaved, jailed, compromised, victorious in ways that felt like nothing. The recorder enters. The pale blue sun comes up. Some doors open while you aren't looking, and then they are open.
+
 — the Amanuensis`)
     const all = document.getElementsByTagName('html')[0]
     all.append(cellContent);
