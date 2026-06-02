@@ -41,7 +41,12 @@ function michaelEvernost(resultWords?: string | undefined) {
   const mazeVisualization = visualizeCellGrid(januaryCellGrid);
   mazeVisualization.id = 'dr-maze-visualization-michael';
   cellContent.append(mazeVisualization);
+  let callbackHandled = false;
   const callback = () => {
+    if (callbackHandled) {
+      return;
+    }
+    callbackHandled = true;
     audio?.pause();
     removeCellContent();
     showCell(MICHAEL_REBIRTH, januaryCellGrid, 0)
@@ -117,7 +122,13 @@ By 1:20 MacDonald is gone. Encounter and Keep your beak to yourself end together
   cellContent.append(sky, blackAndWhiteBackground);
 
   const audio = document.getElementById(DARK_ROOM_AUDIO.vernaInEvernost.id) as HTMLAudioElement;
+
+  let callbackHandled = false;
   const callback = () => {
+    if (callbackHandled) {
+      return;
+    }
+    callbackHandled = true;
     audio?.pause();
     removeCellContent();
     timeoutIds.forEach(id => clearTimeout(id));
@@ -250,7 +261,13 @@ The sequence ends on the Firebird motif — the music written for Jennie's encou
 
   const audio = document.getElementById(DARK_ROOM_AUDIO.madelineInEvernost.id) as HTMLAudioElement;
 
+  let callbackHandled = false;
+
   const callback = () => {
+    if (callbackHandled) {
+      return;
+    }
+    callbackHandled = true;
     timeoutIds.forEach(id => clearTimeout(id));
     audio?.pause();
     removeCellContent();
