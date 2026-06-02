@@ -613,3 +613,115 @@
     height: auto;
   }
 }
+
+/* Clouds */
+
+@keyframes dissolve {
+  from {
+      opacity: 1;
+  } to {
+      opacity: 0;
+  }
+}
+
+@keyframes in-and-out {
+  from {
+      opacity: 0;
+  } 50% {
+      opacity: 1;
+  } to {
+      opacity: 0;
+  }
+}
+
+.out-container {
+  cursor: url('../../assets/images/out/cursorSmall.png'), auto;
+  position: absolute;
+  bottom: 49vh;
+  width: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.out-container snowflake:hover {
+  color: cyan;
+}
+
+/* Speak into the void */
+
+#speak {
+  position: relative;
+  background-color: #8f908f;
+  height: 30px;
+  width: 50vw;
+  border-radius: 30px;
+  z-index: 1000;
+}
+#speak:hover {
+  background-color: lightgray;
+}
+#speak:focus {
+  background-color: rgb(240, 240, 240)
+}
+/* Clouds */
+
+.cloud-circle {
+  border-radius: 50%;
+  position: absolute;
+}
+
+.dark {
+  background-color: rgb(137, 135, 135);
+  animation-name: in-and-out;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+.light {
+  background-color: rgb(143, 144, 143);
+  animation-name: in-and-out;
+  animation-duration: 12s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+.medium {
+  background-color: rgb(141, 140, 144);
+  animation-name: in-and-out;
+  animation-duration: 11s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+.bg {
+  background-color: rgb(128, 128, 128);
+  animation-name: in-and-out;
+  animation-duration: 11.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+/* Words */
+
+.out-word {
+  position: absolute;
+  font-family: "IM Fell English", serif;
+  font-size: 4vmin;
+  animation-name: in-and-out;
+  animation-duration: 12s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+.out-word:hover {
+  color: gold;
+}
+
+.dissolving {
+  animation-name: dissolve;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}

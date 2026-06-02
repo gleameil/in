@@ -295,73 +295,81 @@ I am here.`
 export const MERE_REALITY_CHAPTERS: Chapters = [
   [
     {
-      title: `Mere reality, take 200`, 
+      title: `Mere reality, take 200`,
       text: `So, I'm trying to abandon elsewhere for real, but what does that leave me? This guy I'm sketching, say.`,
       leftImage: MERE_REALITY_IMAGES.ambassador0,
       rightImage: MERE_REALITY_IMAGES.ambassador0,
-     },
-     {
+      log: `Mere Reality
+Sketchbook, January book pile
+
+The book announces its project in the title: mere reality, as opposed to elsewhere. The narrator is trying to draw strangers — people from photo reference libraries, as far from Evernost as available — to see if they're worth the attention without the second meaning. "Take 200" implies previous failed attempts at this exact experiment.
+
+The question arrives in the first portrait: is careful attentiveness itself of elsewhere? If seeing someone clearly enough to love something about them is already a kind of transcendence, then the experiment may be rigged from the start. The Amanuensis suspects this is known, and is part of the point.
+
+— the Amanuensis`,
+    },
+    {
       text: `Grinning stranger, free from the Wetcanvas reference image library.`,
       leftImage: MERE_REALITY_IMAGES.ambassador1,
       rightImage: MERE_REALITY_IMAGES.ambassador1,
-     },
-     {
+    },
+    {
       text: `Guess I just don't care enough to get him right. Maybe that's good? Maybe attentiveness, or at least the attentiveness that yields — a sense, an impression, a love — is vision and of elsewhere. Maybe it's more than mere reality. Heh. Bad excuse.`,
       leftImage: MERE_REALITY_IMAGES.ambassador2,
       rightImage: MERE_REALITY_IMAGES.ambassador2,
-     },
-     {
+    },
+    {
       text: `If I believed in elsewhere I'd believe I knew something about him. I'd believe he leads a small-town drama company. Works with kids. Big personality to match his big grin. Plays the Beast in Beauty and the Beast.`,
       leftImage: MERE_REALITY_IMAGES.ambassador3,
       rightImage: MERE_REALITY_IMAGES.ambassador3,
-     },
-     {
+    },
+    {
       text: `That grin is so crooked it's driving me nuts. But I'm already coloring. Tooooo late.)`,
       leftImage: MERE_REALITY_IMAGES.ambassador4,
       rightImage: MERE_REALITY_IMAGES.ambassador4,
-     },
-     {
+    },
+    {
       text: `No, not of elsewhere. Reality is guiding my hand; reality yielded these contours (minus mistakes). Still, the impressions they leave — created or recorded? Are they visible to any eye? Does a drawing make them more visible than in a photograph? Am I bringing out something already there or creating something new?`,
       leftImage: MERE_REALITY_IMAGES.ambassador5,
       rightImage: MERE_REALITY_IMAGES.ambassador5,
-     },
-     {
+    },
+    {
       text: `Is the smile real? His eyes are smiling too, but you can learn to fake that.`,
       leftImage: MERE_REALITY_IMAGES.ambassador6,
       rightImage: MERE_REALITY_IMAGES.ambassador6,
-     },
-     {
+    },
+    {
       text: `Why, when you see people smiling in a certain kind of photo, does it always feel fake, whether it is or not? Why do I think I'm going to be staring at this awful thing all night?`,
       leftImage: MERE_REALITY_IMAGES.ambassador7,
       rightImage: MERE_REALITY_IMAGES.ambassador7,
-     },
+    },
   ], // ambassador
   [
     {
       text: `A solemnity in ink. Heaviness. Like this one better though it's worse, technically speaking. Even worse.`,
       leftImage: MERE_REALITY_IMAGES.niobe0,
       rightImage: MERE_REALITY_IMAGES.niobe0,
-     },
+    },
     {
       text: `Remember when I wanted to draw portraits for a living? Liked the idea of showing people their souls. Bringing them closer to elsewhere and themselves, but I didn't have the patience. Maybe I'll leave elsewhere out, and I'll be able to find the patience now?`,
       leftImage: MERE_REALITY_IMAGES.niobe1,
       rightImage: MERE_REALITY_IMAGES.niobe1,
-     },
-     {
+    },
+    {
       text: `Mere reality is heavy, solemn, ugly, wrong. I mean, it would be fine if mere reality were only one thing, but if it's everything I don't think I can stand it.`,
       leftImage: MERE_REALITY_IMAGES.niobe2,
       rightImage: MERE_REALITY_IMAGES.niobe2,
-     },
-     {
+    },
+    {
       text: 'I guess I need to learn to see joy and beauty without elsewhere? Why does that feel even worse?',
       leftImage: MERE_REALITY_IMAGES.niobe3,
       rightImage: MERE_REALITY_IMAGES.niobe3,
-     },
-     {
+    },
+    {
       text: `A sad, concentrated old woman. That's me in the story in my head — miserable, pensive, dull, focused on something in my hands, something small to the point of vanishing. Unless the small thing is elsewhere and the great thing is the world?`,
       leftImage: MERE_REALITY_IMAGES.niobe4,
       rightImage: MERE_REALITY_IMAGES.niobe4,
-     },
+    },
   ], // Niobe
   [
     {
@@ -383,6 +391,12 @@ export const MERE_REALITY_CHAPTERS: Chapters = [
       text: `What if he's a representaiton of me. Cold and empty, leering after beauty that is not mine?`,
       leftImage: MERE_REALITY_IMAGES.creep3,
       rightImage: MERE_REALITY_IMAGES.creep3,
+      log: `Mere Reality
+Creep chapter
+
+Every judgment the narrator has passed on this stranger now lands on herself — cold, empty, leering after something she can't have. The portraits have been building toward this without announcing it. The chapter turns immediately: it didn't feel like that, when elsewhere was present. The self-implication is diagnostic, not final. But the Amanuensis notes that "cold and empty" is a much harder sentence to write about yourself than about a stranger in a reference photo.
+
+— the Amanuensis`,
     },
     {
       text: `It didn't feel like being that person — elsewhere. It was terrifying sometimes, but always glorious and not — being locked out.`,
@@ -415,6 +429,14 @@ export const MERE_REALITY_CHAPTERS: Chapters = [
       text: `He assured me he already was elsewhere. Offered to let me come after him. Knew that's where I belonged. I almost did.`,
       leftImage: MERE_REALITY_IMAGES.beau2,
       rightImage: MERE_REALITY_IMAGES.beau2,
+      log: `Mere Reality
+Beau chapter
+
+"I almost did." Past tense, three words, enormous work. This is the only place in the book where elsewhere appears not as something lost or refused or yearned after, but as a specific door that was open. The dog offered. She almost followed.
+
+The next pages return, quietly, to the ink, the fur, Holly's exclamations. The Amanuensis notes the shape of that movement — from the edge of elsewhere back to Dave's shy approval and the question of whether it's too somber — and finds it the warmest thing in the book.
+
+— the Amanuensis`,
     },
     {
       text: `Mom refused to get another dog. Dad kind of wanted one, but Dad had also wanted Ruff and then did basically nothing to help take care of him, so he didn't press the issue.`,
@@ -467,6 +489,14 @@ export const MERE_REALITY_CHAPTERS: Chapters = [
       text: `I've almost thrown this thing away three times. But I can't.`,
       leftImage: MERE_REALITY_IMAGES.knitter5,
       rightImage: MERE_REALITY_IMAGES.knitter5,
+      log: `Mere Reality
+Knitter chapter
+
+The book's question gets as close to an answer here as it will. The knitter portrait is good — the narrator says so, with audible surprise — and also the most of elsewhere yet, even though nothing impossible is happening in it. Because elsewhere turns out to be second meanings and loving your creation more than yourself. A smiling woman whose glasses let her see her work.
+
+Three near-discards. One drawer. The Amanuensis notes that refusing to throw something away is its own kind of answer to whether it was worth making.
+
+— the Amanuensis`,
     },
     {
       text: `Ok, it's done. It's going into a drawer and there it stays.`,
@@ -533,7 +563,7 @@ export const MERE_REALITY_CHAPTERS: Chapters = [
       rightImage: MERE_REALITY_IMAGES.swans2,
     },
     {
-      text: `Are these brilliant colors of elsewhere? Leaves’ red, that wild yellow and green that say "follow me." The cold blue. That cold blue calls me almost as elsewhere calls me. Violently.`,
+      text: `Are these brilliant colors of elsewhere? Leaves' red, that wild yellow and green that say "follow me." The cold blue. That cold blue calls me almost as elsewhere calls me. Violently.`,
       leftImage: MERE_REALITY_IMAGES.swans3,
       rightImage: MERE_REALITY_IMAGES.swans3,
     },
@@ -574,7 +604,7 @@ export const MERE_REALITY_CHAPTERS: Chapters = [
           div.innerText = stanza;
           return div;
         });
-        
+
         function addNextSwanStanza(index: number) {
           removeByClassName('swan-stanza');
           const nthSwanStanza = swanStanzaDivs.shift()!;
@@ -582,7 +612,7 @@ export const MERE_REALITY_CHAPTERS: Chapters = [
           textContainer.append(nthSwanStanza);
         }
         const callback = () => document.getElementById('homeward')?.click();
-        playIfAllowed(music, { callback, alternateTimeout: 70000 });;
+        playIfAllowed(music, { callback, alternateTimeout: 70000 });
         addNextSwanStanza(0);
         setTimeout(() => addNextSwanStanza(1), 8000);
         setTimeout(() => addNextSwanStanza(2), 18267);
@@ -595,6 +625,14 @@ export const MERE_REALITY_CHAPTERS: Chapters = [
       },
       leftImage: MERE_REALITY_IMAGES.swans7,
       rightImage: MERE_REALITY_IMAGES.swans7,
+      log: `Mere Reality
+Coda — Keep Your Beak to Yourself
+
+The painting the book dismissed six pages ago as not worth the paper fills the screen. The poem moves through accusation and plea and arrives at: "the god is here, / the maiden is here, / I am here."
+
+A book that spent its whole length questioning whether here was worth attending to ends by claiming it. The Amanuensis notes this is not a resolution so much as a decision — and that it arrives while the music is playing, which seems right.
+
+— the Amanuensis`,
     },
   ], // swans
 ]
