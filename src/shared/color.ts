@@ -5,49 +5,66 @@ export class Color {
   a: number;
 
   // Regex <3
-  static rgbPattern = /rgb\(\d{1,3},\s*\d{1,3},\s*\d{1,3}\)/
-  static rgbaPattern = /rgba\(\d{1,3},\s*\d{1,3},\s*\d{1,3},\s*[0,1]\.?\d*\)/
-  static rgbValuePattern = /(?<=\D)\d{1,3}(?=\D)/g
-  static alphaValuePattern = /\D[0,1](\.\d+)?(?=\))/
-  static hexPattern = /#([a-f,\d]{2}){3,4}/
+  static rgbPattern = /rgb\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*\)/
+  static rgbaPattern = /rgba\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*[01]?\.?\d*\s*\)/
+  static hexPattern = /#([a-fA-F\d]{2}){3,4}/
+
+  // Pulls the comma-separated arguments out of an `rgb(...)` / `rgba(...)` string.
+  // Splitting beats a global \d{1,3} match here: a fractional alpha such as 0.5
+  // contains two digit runs, so a naive digit scan reads four channels as five.
+  private static channels(functionalColor: string): string[] {
+    return functionalColor
+      .slice(functionalColor.indexOf('(') + 1, functionalColor.lastIndexOf(')'))
+      .split(',')
+      .map(channel => channel.trim());
+  }
 
   static fromString(colorString: string): Color {
     if (colorString === 'initial') {
       return new Color(255, 255, 255, 1);
     }
 
-    const rgb = colorString.match(Color.rgbPattern)?.[0];
     const rgba = colorString.match(Color.rgbaPattern)?.[0];
-    const hex = colorString.match(Color.hexPattern)?.[0];
-
     if (rgba) {
-      const colorValues = rgba.match(Color.rgbValuePattern)?.map(val => parseInt(val)).filter(val => !Number.isNaN(val));
-      const alphaValue = parseFloat(rgba.match(Color.alphaValuePattern)?.[0] ?? 'no');
-      if (!colorValues || colorValues.length !== 3 || Number.isNaN(alphaValue)) {
+      const channels = Color.channels(rgba);
+      if (channels.length !== 4) {
         throw new Error(`Something wrong here: ${colorString}`);
       }
-      return new Color(colorValues[0], colorValues[1], colorValues[2], alphaValue);
+      const [r, g, b] = channels.slice(0, 3).map(channel => parseInt(channel, 10));
+      const a = parseFloat(channels[3]);
+      if ([r, g, b, a].some(value => Number.isNaN(value))) {
+        throw new Error(`Something wrong here: ${colorString}`);
+      }
+      return new Color(r, g, b, a);
     }
 
+    const rgb = colorString.match(Color.rgbPattern)?.[0];
     if (rgb) {
-      const colorValues = rgb.match(Color.rgbValuePattern)?.map(val => parseInt(val)).filter(val => !Number.isNaN(val));
-      if (!colorValues || colorValues.length !== 3) {
+      const channels = Color.channels(rgb);
+      if (channels.length !== 3) {
         throw new Error(`Something wrong here: ${colorString}`);
       }
-      return new Color(colorValues[0], colorValues[1], colorValues[2]);
+      const [r, g, b] = channels.map(channel => parseInt(channel, 10));
+      if ([r, g, b].some(value => Number.isNaN(value))) {
+        throw new Error(`Something wrong here: ${colorString}`);
+      }
+      return new Color(r, g, b);
     }
 
+    const hex = colorString.match(Color.hexPattern)?.[0];
     if (hex) {
       const r = parseInt(hex.slice(1, 3), 16);
       const g = parseInt(hex.slice(3, 5), 16);
       const b = parseInt(hex.slice(5, 7), 16);
-      const a = (parseInt(hex.slice(7), 16) || 255) / 255;
+      // A fully transparent #rrggbb00 must stay transparent, so the
+      // "no alpha given" case is length-checked rather than falsiness-checked.
+      const a = hex.length >= 9 ? parseInt(hex.slice(7, 9), 16) / 255 : 1;
 
       if ([r, g, b, a].some(val => Number.isNaN(val))) {
         throw new Error(`Something wrong here: ${colorString}`);
       }
       return new Color(r, g, b, a);
-    } 
+    }
     throw Error(`No parsing implemented for color format of string ${colorString}`);
   }
 
@@ -110,7 +127,12 @@ export interface MonthColorSet extends ColorSet {
   gray: Color;
   lightGray: Color;
 }
-export const JANUARY_COLORS: MonthColors = {
+// `as const satisfies MonthColors` rather than `: MonthColors`. An annotation
+// would widen the object back to the interface — and because MonthColors carries
+// an index signature, `keyof` would collapse to `string` and JanuaryColor would
+// mean nothing more than `string`. `satisfies` still enforces the required keys
+// while keeping the literal values, so JanuaryColor is a real union.
+export const JANUARY_COLORS = {
   violet: 'rgb(161, 84, 161)',
   dullViolet: 'rgb(149, 128, 149)',
   paleViolet: 'rgb(252, 243, 252)',
@@ -128,11 +150,11 @@ export const JANUARY_COLORS: MonthColors = {
   lightGray: 'rgb(220, 220, 220)',
   orange: 'rgb(246, 138, 53)',
   dullOrange: 'rgb(220, 166, 117)',
-} as const; 
+} as const satisfies MonthColors;
 
 export type JanuaryColor = typeof JANUARY_COLORS[keyof typeof JANUARY_COLORS];
 
-export const FEBRUARY_COLORS: MonthColors = {
+export const FEBRUARY_COLORS = {
   violet: 'rgb(111, 82, 120)',
   dullViolet: 'rgb(169, 147, 169)',
   indigo: 'rgb(98, 98, 153)',
@@ -150,11 +172,11 @@ export const FEBRUARY_COLORS: MonthColors = {
   black: 'rgb(70, 50, 55)',
   gray: 'rgb(128, 128, 128)',
   lightGray: 'rgb(220, 220, 220)',
-} as const;
+} as const satisfies MonthColors;
 
 export type FebruaryColor = typeof FEBRUARY_COLORS[keyof typeof FEBRUARY_COLORS];
 
-export const OUT_COLORS: Colors = {
+export const OUT_COLORS = {
   almostWhite: 'rgb(240, 240, 240)',
   lightGray: 'rgb(211, 211, 211)',
   gray: 'rgb(128, 128, 128)',
@@ -164,7 +186,7 @@ export const OUT_COLORS: Colors = {
   gold: 'rgb(233, 194, 30)',
   lightYellow: 'rgb(255, 255, 224)',
   red: 'rgb(211, 50, 66)',
-}
+} as const satisfies Colors;
 
 export type OutColor = typeof OUT_COLORS[keyof typeof OUT_COLORS]
 

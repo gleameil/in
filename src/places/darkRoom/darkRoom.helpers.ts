@@ -439,6 +439,7 @@ const TRANSITION_EFFECT_CATALOG: EffectCatalog = {
           return;
         }
         console.error(`Trying to do 'birth' too early or something (wrong y: ${y})`);
+        return;
 
       case 'w':
         if (y === 2) {

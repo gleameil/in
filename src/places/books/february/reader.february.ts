@@ -5,9 +5,23 @@ import './reader.february.css';
 import { changeAudioSource, playIfAllowed } from '../../../shared/sound';
 import { windowKeyHandlers } from '../../../shared/state';
 
+function staticPageKeyHandlerKey(className: string): string {
+  return `${className}-static-page`;
+}
+
+function leaveStaticPage(className: string) {
+  const key = staticPageKeyHandlerKey(className);
+  const existing = windowKeyHandlers.get(key);
+  if (existing) {
+    window.removeEventListener('keydown', existing);
+    windowKeyHandlers.delete(key);
+  }
+}
+
 export function leaveFebruaryReader(className: string) {
   removeByClassName(className);
   leavePoemPage(className);
+  leaveStaticPage(className);
 }
 
 function loadImagesForBook(className: string, book: FebruaryBook) {
@@ -83,11 +97,14 @@ function populateStaticPage(page: StaticPage, back: () => void, forward: () => v
     document.getElementById(`${className}-february-reader-marginalia-bottom`)?.replaceChildren(page.marginalia.bottom.imageRight);
   }
 
-  window.addEventListener('keydown', event => {
+  // Registered rather than fire-and-forget: a `{ once: true }` listener is only
+  // consumed by a keypress, so page-turns made by clicking left theirs pending.
+  // They then all fired on the next arrow key, jumping several pages at once.
+  function handleStaticPageKeydown(event: KeyboardEvent) {
     switch(event.code) {
       case "KeyA":
-      case "ArrowLeft": 
-        back();    
+      case "ArrowLeft":
+        back();
         break;
       case "KeyD":
       case "ArrowRight":
@@ -97,8 +114,10 @@ function populateStaticPage(page: StaticPage, back: () => void, forward: () => v
         break;
       default:
         break;
-      }
-    }, { once: true });
+    }
+  }
+  window.addEventListener('keydown', handleStaticPageKeydown);
+  windowKeyHandlers.set(staticPageKeyHandlerKey(className), handleStaticPageKeydown);
 
   fillWithMarkdown(textContainer, page.markdown);
   staticPageElement.style.display = 'flex';
@@ -288,11 +307,8 @@ export function createFebruaryReader(className: string, book: FebruaryBook, home
     if (chapterIndex >= chapters.length) {
       localStorage.removeItem(`${className}TextIndex`);
       localStorage.removeItem(`${className}ChapterIndex`);
-      const existing = windowKeyHandlers.get(className);
-      if (existing) {
-        window.removeEventListener('keydown', existing);
-        windowKeyHandlers.delete(className);
-      }
+      leavePoemPage(className);
+      leaveStaticPage(className);
       homeward();
       return;
     } else if (textIndex >= chapters[chapterIndex].length) {
@@ -305,7 +321,7 @@ export function createFebruaryReader(className: string, book: FebruaryBook, home
       }
       goToFragment(chapterIndex, 0, isGoingForward);
       return;
-    } else if (isGoingForward && !(chapters[chapterIndex]?.[textIndex]?.canShow ?? (() => true)())) {
+    } else if (isGoingForward && !(chapters[chapterIndex]?.[textIndex]?.canShow ?? (() => true))()) {
       alert('Explore more to keep reading.');
       return;
     }
@@ -329,6 +345,10 @@ export function createFebruaryReader(className: string, book: FebruaryBook, home
       }, { once: true })
     }
 
+    // Retire the outgoing page's key handler before the incoming page registers
+    // its own, so handlers never stack up across page turns or page kinds.
+    leaveStaticPage(className);
+    leavePoemPage(className);
     if ((page as StaticPage).markdown) {
       populateStaticPage(page as StaticPage, back, forward, className);
     } else if ((page as PoemPage).poem) {
