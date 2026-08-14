@@ -1,4 +1,4 @@
-import { ImageCatalog, SHARED_IMAGES } from "../../../shared/constants";
+import { ImageCatalog, SHARED_IMAGES } from "../../../shared/shared.constants";
 import { Chapters } from "../reader.constants";
 
 const TREE_OF_LIFE_IMAGES: ImageCatalog = {}

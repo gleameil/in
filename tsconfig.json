@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "types": [],
+
+    // Parcel does the emitting; tsc is here purely to check.
+    "noEmit": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+
+    // Some imports in this tree are written with an explicit .ts extension.
+    "allowImportingTsExtensions": true,
+
+    // Caught a real bug (a missing `return` in darkRoom's `birth`); kept as the floor.
+    // `noImplicitReturns` is deliberately NOT enabled: the FullPoem/reader protocol
+    // returns `string | undefined` on purpose, so falling off the end is meaningful.
+    "noFallthroughCasesInSwitch": true,
+
+    // `strict` is not on yet — it reports a large backlog in the existing
+    // DOM lookups (`getElementById(...)!` and friends). Worth turning on a
+    // flag at a time; `strictNullChecks` is the one with the most to say.
+    "strict": false
+  },
+  "include": ["src/**/*.ts", "src/types/**/*.d.ts"]
+}

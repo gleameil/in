@@ -99,7 +99,7 @@ export function createReader(className: string, book: Chapters, imageBackgroundC
       if (chapterIndex !== 0) {
         goToFragment(chapterIndex - 1, book[chapterIndex - 1].length - 1, false);   
       }
-    } else if (isGoingForward && !(book[chapterIndex]?.[textIndex]?.canShow ?? (() => true)())) {
+    } else if (isGoingForward && !(book[chapterIndex]?.[textIndex]?.canShow ?? (() => true))()) {
       alert('Explore more to keep reading.');
     } else {
       if (chapterIndex === 0 && textIndex === 0) {
