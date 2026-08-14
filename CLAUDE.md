@@ -14,6 +14,8 @@ This file orients an AI assistant (or future developer) to the `/in/` codebase. 
 
 The experience runs entirely in the browser. No framework — vanilla TypeScript, bundled with Parcel. No backend — all state lives in `localStorage` and `window`.
 
+**Type-checking:** Parcel transpiles TypeScript without type-checking it, so for a long time nothing in either repo ever ran `tsc`. Both repos now carry a `tsconfig.json` and an `npm run typecheck` script — run it before pushing. It is currently non-strict (`strict: false`) because `strictNullChecks` reports a large backlog against the existing `getElementById(...)!` pattern; `noFallthroughCasesInSwitch` is on and found a real missing `return` in the dark room. Turning on one strict flag at a time is the sane migration path. `noImplicitReturns` is deliberately off — the `FullPoem`/reader protocol returns `string | undefined` on purpose.
+
 Live at: `https://gleameil.github.io/in`
 Sister repo: `https://gleameil.github.io/out`
 
@@ -104,8 +106,10 @@ Both repos are hosted under `gleameil.github.io` so they share an origin and `lo
 Colors, assets, and fonts live in `shared/color.ts` and `shared/shared.constants.ts`.
 
 **Two color approaches coexist** — migration in progress:
-- Old (still load-bearing): `JANUARY_COLORS`, `FEBRUARY_COLORS`, `OUT_COLORS` — plain objects of `rgb(...)` strings
+- Old (still load-bearing): `JANUARY_COLORS`, `FEBRUARY_COLORS`, `OUT_COLORS` — plain objects of `rgb(...)` strings, declared `as const satisfies MonthColors`
 - New: `Color` class with `fromString`, `makeTransparent`, `isEqualTo`; `JANUARY_COLOR_SET` etc. as pre-parsed versions
+
+**Declare palettes with `satisfies`, never with a type annotation.** `const X: MonthColors = {…} as const` discards the `as const` — the annotation wins, the index signature on `MonthColors` collapses `keyof` to `string`, and `JanuaryColor`/`DesignColor` degrade to plain `string`. That was the state of both repos until August 2026. See `docs-shared/doc-shared.md` for the full explanation.
 
 Prefer `Color` instances for any logic involving comparison or manipulation. Raw string constants are still needed where CSS strings are required directly.
 
@@ -159,6 +163,7 @@ Full debt details are in each doc. The most important ones to know before workin
 12. **`isValentinesDay()` should be replaced** by the general holidays system (`FEBRUARY_HOLIDAYS`). It is a one-off hardcode that will need to be generalized when other holidays gate content.
 13. **`OUT` URL is a comment-swap gotcha** — localhost URL lives on the adjacent line; has shipped accidentally before. Fix: environment variable.
 14. **`stopTime()` call on entering clock-and-calendar** is currently a no-op for February but will have real effects once goal-gated time advancement is implemented. Revisit when February time mechanics are built.
+15. **`books/treeOfLife/constants.ts` is orphaned** — nothing imports it, so Parcel never sees it. It imported `../../../shared/constants` (an `/out/` path; `/in/` calls the file `shared.constants`) and used `SHARED_IMAGES` from it 60+ times, so wiring it up would have broken the build immediately. Import path fixed August 2026 so it now compiles, but the content is still all `SHARED_IMAGES.noImage` placeholders — it is an unfinished book, not live content.
 
 ---
 
