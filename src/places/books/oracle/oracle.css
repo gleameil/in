@@ -1,0 +1,212 @@
+/*
+ * Ported from the standalone deck's stylesheet.
+ *
+ * The original styled bare `html`, `body`, `main`, `section`, `img` and `button`, which is
+ * safe on a page of its own and ruinous inside `/in/` — a global `img { position: absolute }`
+ * would move every image in the piece. Every rule here is scoped to `#oracle-table` or to an
+ * `oracle-`prefixed class instead. The sizes, colours and geometry are otherwise unchanged.
+ *
+ * Sizing is in `vh` throughout, as in the original: the spread is a 96vh square and each cell
+ * is 28vh. That is why the deck does not survive a narrow viewport. Mobile is deliberately
+ * out of scope for this pass.
+ */
+
+#oracle-table {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  border-left: 25px double black;
+  border-right: 25px double black;
+  font-family: 'Montserrat';
+  color: black;
+}
+
+#oracle-table .oracle-panel {
+  width: 20vw;
+  font-size: medium;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#oracle-table h2 {
+  font-weight: 900;
+  font-size: x-large;
+}
+
+#oracle-table h3 {
+  line-height: 95%;
+}
+
+#oracle-spread {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  height: 96vh;
+  width: 96vh;
+  background-color: black;
+}
+
+#oracle-table img {
+  position: absolute;
+  width: 28vh;
+  height: auto;
+  border-radius: 10%;
+}
+
+/* The Deal button, in the bottom-centre square. */
+#oracle-deal {
+  background-color: white;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  font-family: 'Montserrat';
+  font-size: 20pt;
+  cursor: pointer;
+}
+
+#oracle-deal:hover {
+  background-color: gainsboro;
+}
+
+#oracle-deal:active {
+  background-color: darkgray;
+}
+
+.oracle-square {
+  width: 28vh;
+  height: 28vh;
+  border-radius: 10%;
+  margin: 2vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.oracle-droptarget {
+  background-color: white;
+}
+
+#oracle-square-deck {
+  background-color: black;
+}
+
+.oracle-card {
+  position: absolute;
+  background-color: transparent;
+  width: 28vh;
+  height: 28vh;
+  perspective: 32vw;
+  /* The art is full colour; the deck shows it drained until you hover. */
+  filter: grayscale(100%) brightness(97%) contrast(185%);
+}
+
+.oracle-card:hover {
+  filter: none;
+  cursor: grab;
+}
+
+.oracle-card-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 1px 1px 0px black, 2px 2px 0px white;
+  border-radius: 10%;
+}
+
+.oracle-flip {
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+}
+
+.oracle-front,
+.oracle-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.oracle-back {
+  background-color: white;
+  border-radius: 10%;
+}
+
+.oracle-front {
+  transform: rotateY(180deg);
+}
+
+.oracle-back-design-circle {
+  position: absolute;
+  width: 28vh;
+  height: 28vh;
+  background-color: black;
+  border-radius: 50%;
+  backface-visibility: hidden;
+}
+
+.oracle-back-design-diamond {
+  position: absolute;
+  left: 4.1005vh;
+  top: 4.1005vh;
+  width: 19.799vh;
+  height: 19.799vh;
+  transform: rotate(45deg);
+  background-color: white;
+  backface-visibility: hidden;
+}
+
+.oracle-back-text-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28vh;
+  height: 28vh;
+  color: black;
+  backface-visibility: hidden;
+}
+
+.oracle-instructions {
+  margin-top: 15px;
+  font-size: 30pt;
+  font-family: 'IM Fell English';
+}
+
+.oracle-direction {
+  color: white;
+  text-align: center;
+}
+
+.oracle-word {
+  margin: 3px;
+  font-size: large;
+  font-family: 'IM Fell English';
+}
+
+#oracle-card-title {
+  font-family: 'IM Fell English';
+  color: white;
+  background-color: black;
+  text-align: center;
+}
+
+#oracle-description {
+  flex: 3;
+}
+
+#oracle-nouns,
+#oracle-verbs,
+#oracle-adjectives {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

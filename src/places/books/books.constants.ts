@@ -140,11 +140,11 @@ export const BOOKS: Book[] = [
     showCover: loonOfLoonsCover,
     show: loonOfLoons,
   },
-  // {
-  //   name: 'oracle',
-  //   showCover: oracleBox,
-  //   show: oracle,
-  // },
+  {
+    name: 'oracle',
+    showCover: oracleBox,
+    show: oracle,
+  },
   {
     name: 'anthology',
     showCover: anthologyCover,
